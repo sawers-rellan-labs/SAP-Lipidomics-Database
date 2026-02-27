@@ -1,0 +1,1178 @@
+\documentclass[9pt,twocolumn,twoside]{rilabRxiv}
+% Use the documentclass option 'lineno' to view line numbers
+\setlength{\marginparwidth}{2cm}
+\usepackage[textsize=tiny,colorinlistoftodos]{todonotes} % comments in margins
+\definecolor{cornflowerblue}{rgb}{0.39, 0.58, 0.93}
+\usepackage{blindtext}
+\usepackage{nameref}
+\raggedbottom
+
+%%%%%%%Add comments in color
+\newcommand{\ms}[1]{{\small \textcolor{green}{#1}}}
+\newcommand{\citex}[1]{{\small \textcolor{red}{CITE(#1)}}}
+\newcommand{\X}{{\textcolor{red}{X}}}
+\newcommand{\mex}{\textit{mexicana}\xspace}
+\newcommand{\invfour}{\textit{Inv4m}\xspace}
+\newcommand{\fdrgt} {$\textrm{\textit{FDR}} > 0.05$}
+\newcommand{\fdreq} {$\textrm{\textit{FDR}} = 0.05$}
+\newcommand{\fdrls} {$\textrm{\textit{FDR}} < 0.05$}
+\newcommand{\parv}{\textit{parviglumis}\xspace}
+\newcommand{\jmjii}{\textit{jmj2}\xspace}
+\newcommand{\jmjiv}{\textit{jmj4}\xspace}
+\newcommand{\jmjvi}{\textit{jmj6}\xspace}
+\newcommand{\jmjix}{\textit{jmj9}\xspace}
+\newcommand{\arabidopis}{\textit{Arabidopsis}\xspace}
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+
+% Set supplement numbers to S and start counting newly
+\newcommand{\beginsupplement}{%
+    \setcounter{table}{0}%
+    \renewcommand{\tablename}{}%  % <-- 1. Make the word 'Table' blank
+    \renewcommand{\thetable}{S\arabic{table} Table}%  % <-- 2. Include ' Table' after the number
+    \setcounter{figure}{0}%
+    \renewcommand{\figurename}{}%  % <-- Make the word 'Figure' blank for consistency
+    \renewcommand{\thefigure}{S\arabic{figure} Fig}%  % <-- Include ' Figure' after the number
+}
+
+\usepackage{CJKutf8}
+% \begin{CJK}{UTF8}{min}
+% \verb|Â¯\_(ã)_/Â¯|
+% \end{CJK}
+
+\title{Multi-Omics of Maize Chromosomal Inversion $\invfour$ in Phosphorus Deficiency Show Typical Starvation Responses with Leaf-Age Dependency, Rather Than Adaptive Contributions From the Inverted Karyotype.}
+%\title{Dissecting the Adaptive Value Of the Highland Inv4m Inversion Under Phosphorus Stress}
+
+\author[$1$,$2$,*]{Fausto Rodríguez-Zapata}
+\author[$1$]{Ruthie Stokes}
+\author[$3$]{Allison C. Barnes}
+\author[$1$,$2$]{Nirwan Tandukar}
+\author[$4$]{Sergio Pérez-Limón}
+\author[$4$]{Melanie Perryman}
+\author[$5$]{Miguel A. Piñeros}
+\author[$6$]{Jonathan Odilón Ojeda-Rivera}
+\author[$7$]{Daniel Runcie}
+\author[$4$]{Ruairidh Sawers}
+\author[$1$,*]{Rubén Rellán-Álvarez}
+\affil[$1$,*]{Department of Molecular and Structural Biochemistry, N.C. Plant Sciences Initiative, North Carolina State University, Raleigh, NC, USA.}
+\affil[$2$]{Genetics and Genomics Program, North Carolina State University, Raleigh, NC, USA}
+\affil[$3$]{United States Department of Agriculture, Agricultural Research Service, Plant Science Research Unit, Raleigh, NC 27695}
+\affil[$4$]{Department of Plant Science, Pennsylvania State University, University Park, PA, USA}
+\affil[$5$]{Robert W. Holley Center for Agriculture and Health, USDA-ARS, Ithaca, NY, USA}
+\affil[$6$]{Institute for Genomic Diversity, Cornell University, Ithaca, NY 14853, USA}
+\affil[$7$]{Department of Plant Sciences, University of California, Davis, CA, USA}
+
+
+\keywords{Phosphorus Starvation Response, Sequential Leaf Senescence, Local Adaptation, Highland Maize, Teosinte Mexicana Introgression, Chromosomal Inversion}
+
+\runningtitle{The Role of \textit{Invm4} in adaptation to low phosphorus availability} % For use in the footer
+
+%% For the footnote.
+%% Give the last name of the first author if only one author;
+\runningauthor{Rodríguez-Zapata}
+%% last names of both authors if there are two authors;
+% \runningauthor{FirstAuthorLastname and SecondAuthorLastname}
+%% last name of the first author followed by et al, if more than two authors.
+\runningauthor{Rodríguez-Zapata \textit{et al.}}
+
+
+%%% Abstract %%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Local adaptation of a species involves the selection of adaptive alleles that confer a fitness advantage in their local environment. Inversions prevent recombination between the standard and inverted heterozygous hybrids. Inversions can play a crucial role in local adaptation by locking together a set of co-adapted alleles, acting as supergenes. 
+\invfour is a 13 Mb inversion in maize prevalent in highland maize and highland wild relatives from México. Maize from the highlands of the Trans-Mexican volcanic belt has been shown to be well-adapted to volcanic, acidic soils with low phosphorus availability. \invfour carries several genes involved in P acquisition and utilization. We therefore tested the hypothesis that \invfour contributes to maize adaptation to these environments through enhanced phosphorus acquisition or utilization. Alternatively, \invfour possible adaptive value may operate through constitutive developmental effects independent of nutrient stress responses. To test this hypothesis, we introgressed a highland maize variety from the highlands of Michoacán, México, carrying \invfour into the temperate line B73 and developed Near-Introgression Lines (NILs) carrying \invfour. We then grew NILs carrying the inversion and controls without it in soils with different phosphorus levels and evaluated the fitness effects of the inversion, as well as changes in gene expression using RNA-Seq.  
+Our results show that P starvation elicits highly conserved transcriptomic, lipidomic, and ionomic responses, independently of the \invfour inversion genotype. Therefore, phosphorus deficiency does not seem to be driving the adaptive value of \invfour.  
+Additionally, we observed a phosphorus modulated transcriptional gradient from the collar leaf downward, characterized by a decrease in the expression of photosynthesis genes and an increase in the expression of senescence-associated genes, corresponding to the positional onset and initial stages of sequential leaf senescence.
+Although the magnitude of the phosphorus response increased with leaf age, we did not observe significant interactions with \invfour. Nonetheless, a small number of genotype-by-phosphorus interactions (three genes, all outside inversion boundaries) exceed statistical thresholds, likely reflecting residual flanking introgression rather than \invfour effects \textit{per se}. These exceptions may be linked to phenotypic variation in height and flowering, which is dependent on the \invfour karyotype. Our results highlight the robustness of P starvation responses across inverted and non-inverted \invfour genotypes and provide an entry point for dissecting outlier interactions of potential adaptive significance. 
+\end{abstract}
+
+% (todo: (Fausto) maybe integrate the gradient point?)
+% Adaptation of maize (Zea mays L.) to the Mexican highlands is driven by introgression from wild teosinte (Zea mays ssp. mexicana), most notably through the chromosomal inversion $\invfour$.
+% While $\invfour$ is strongly associated with clinal variation in flowering time, its potential role in adaptation to the phosphorus-fixing Andosols of the highlands remains unresolved. We evaluated the physiological and molecular impact of $\invfour$ using Near Isogenic Lines (NILs) grown under phosphorus-limiting field conditions.
+% Phenotypic data showed that phosphorus deficiency reduced plant height and total kernel weight across all genotypes, while $\invfour$ exerted a constitutive effect on flowering time and height independent of nutrient status.
+% By profiling the transcriptomic and lipidomic landscape across the vertical canopy gradient during the vegetative phase, we identified a monotonic increase in stress signaling from the collar leaf downwards.
+% This gradient revealed a metabolic uncoupling where the remodeling of membranes are characterized by the substitution of phospholipids with galactolipids proceeded prior to visual chlorosis.
+% Contrary to the hypothesis that $\invfour$ confers specific nutrient stress tolerance, the inversion did not alter these conserved metabolic starvation responses.
+% These findings suggest that $\invfour$ facilitates adaptation to highland environments through the regulation of developmental timing rather than by rewiring the fundamental metabolic response to low phosphorus.
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setboolean{displaycopyright}{true}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firststyle}
+%\firstpagefootnote
+\correspondingauthoraffiliation{
+Department of Molecular and Structural Biochemistry, N.C. Plant Sciences Initiative, North Carolina State University, Raleigh, NC, USA.
+E-mail: frodrig4@ncsu.edu, rrellan@ncsu.edu}
+\vspace{-11pt}%
+
+\setboolean{displaylineno}{true}
+\ifthenelse{\boolean{displaylineno}}{\linenumbers}{}
+
+\section{Introduction}
+
+\lettrine[lines=2]{\color{color2}M}aize was originally domesticated in the tropical lowlands of Mexico.
+Before its expansion into temperate regions, maize was introduced to the Mexican highlands, where sympatry with highland teosinte \textit{Zea mays ssp. mexicana} (shorthand \mex) likely facilitated the introgression of adaptive alleles from \mex.
+Teosinte \mex introgression probably facilitated adaptation to temperate zones and further expansion worldwide \cite{yang2023,guo2018,barnes2022}.
+
+However, while the average amount of \mex introgression in modern maize is around 18\% \cite{yang2023}, not all highland loci are present in temperate maize.
+Highland-associated chromosomal inversions, such as \invfour and \textit{Inv9f}, are prevalent in highland teosinte populations \cite{pyhajarvi2013} and traditional Mexican maize varieties (TVs) \cite{crow2020,gonzalez-segovia2019} but are rare in modern temperate maize. 
+
+Chromosomal inversions can contribute to local adaptation by preserving locally adapted alleles across multiple loci and reducing recombination within the inversion \cite{kirkpatrick2006}.
+Genotyping of teosinte populations revealed that \invfour spans 13 Mb and is predominantly found in \mex populations \cite{pyhajarvi2013}.
+In Mexican TVs, \invfour genotype is associated with elevation and flowering time \cite{romeronavarro2017}.
+Additionally, \invfour shows reduced genetic diversity, a clinal relationship with elevation, and is nearly fixed in locations above 2500 m.a.s.l. \cite{crow2020}.
+The inversion shows suppressed recombination, as confirmed in a biparental cross \cite{gonzalez-segovia2019}.
+\invfour demonstrates classic patterns of gene-by-environment interactions indicative of local adaptation.
+Plants carrying the \invfour-highland allele show delayed flowering at low elevations and earlier flowering at high elevations \cite{gates2019,barnes2022}.
+
+Despite strong evidence linking \invfour to local adaptation, the physiological processes and environmental factors underlying its adaptive role remain unclear.
+Furthermore, the specific genes within \invfour that drive local adaptation are largely unidentified.
+Previous research has shown that \invfour-highland upregulates photosynthesis genes in response to cold at the seedling stage \cite{crow2020} and is associated with earlier flowering in the Mexican highlands, which likely enhances fitness in environments with limited growth-degree accumulation throughout the year \cite{romeronavarro2017}.
+However, cold is not the only limiting factor for plant growth in the Mexican highlands.
+Volcanic soils (Andosols), which dominate the Mexican highlands, present an additional constraint.
+Approximately 95\% of natural Andosol profiles in Mexico are found above 2000 m.a.s.l. \cite{paz-pellat2018,inegi2013}.
+These soils are characterized by high phosphorus retention \cite{krasilnikov2013}, which leads to low phosphorus availability for plant uptake \cite{galvan-tejada2014}.
+MICH21, one of the Mexican highland maize accessions analyzed by \cite{crow2020}, originates from the Purépecha Plateau, where Andosols and phosphorus-efficient TVs are common \cite{paz-pellat2018,galvan-tejada2014,bayuelo-jimenez2011,bayuelo-jimenez2014}.
+\invfour may contribute to adaptation in the highlands by carrying alleles that enhance the phosphorus starvation response (PSR). For example, the phosphate transporter gene \textit{ZmPho1;2a}, located within \invfour, is a strong candidate for adaptation to low phosphorus availability \cite{salazar-vidal2016, Ma2021,zhang2014-ew}.  
+
+The developmental differentiation of the canopy serves as a framework for understanding the effects of phosphorus stress on the leaves. 
+Annual plants like \textit{Arabidopsis} \cite{hensel1993} and rice \cite{mondal1984} show sequential or acropetalous senescence \cite{leopold1961}, where aging progresses from the basal to the apical leaves.
+It is a common observation that basal maize leaves senesce and die early in development \cite{dudley1991}, establishing the oldest portion of the vertical senescence axis.
+However, rather than a unidirectional gradient, the vertical profile of physiological activity in maize follows a bell-shaped curve, whose peak depends on the developmental stage \cite{ciganda2008}.
+After flowering, chlorophyll content \cite{ciganda2008}, leaf area and longevity \cite{valentinuz2004}, nitrogen \cite{wei2025}, and water content \cite{gao2023a} first increase and then decline with leaf position, peaking near the ear leaf.
+During the vegetative phase, peak chlorophyll content and metabolic activity occur in the uppermost fully expanded 'collar' leaf \cite{ciganda2008}.
+While the steepness of this gradient is genotype-dependent \cite{gao2023a}, this architecture generally drives an 'outside-in' senescence pattern where aging proceeds from both the top and bottom of the canopy toward the middle \cite{wei2025} of the plant close to the main ear.
+This physiological architecture ensures that leaves closest to the ear, the primary sink in the reproductive phase, retain longevity and photosynthetic activity the longest \cite{valentinuz2004}.
+This delay in senescence near the ear aligns with the principle of proximity allocation, which minimizes transport distances for assimilates and optimizes energy use during the critical grain-filling period \cite{wei2025,valentinuz2004}.
+In contrast, the collar leaf, the youngest and fully developed leaf during vegetative growth, is a source of photosynthates rather than a sink \cite{evert1996}. This pattern might be indicative of its proximity to the main shoot carbon sinks of the vegetative phase: the fastest elongating internodes and immature leaves \cite{zhao2022}.  
+
+Disentangling the phosphorus starvation response from this autonomous sequential senescence gradient is complicated by the known interaction between phosphorus limitation and the genetic circuitry of senescence.
+In \textit{Arabidopsis}, the genetic regulation of phosphorus starvation response and leaf senescence are intertwined, with unambiguous phenotypic consequences following genetic perturbation.
+The transcription factor PHR1 directly binds to and activates senescence-associated genes, including \textit{RNS1}, \textit{PAP17}, and \textit{PLD$\zeta$2}, with overexpression accelerating leaf senescence and facilitating phosphorus transfer to young tissues \cite{zhang2024}.
+Phospholipases PLD$\zeta$2 and NPC4 are highly induced during senescence, and their knockouts delay senescence while impairing phosphorus remobilization \cite{yang2024}.
+Similarly, knocking out the purple acid phosphatase AtPAP26 delays leaf senescence, impairs phosphorus remobilization efficiency and reduces seed phosphorus concentrations \cite{robinson2012}.
+These studies establish a conserved mechanism wherein phosphorus recycling through membrane phospholipid hydrolysis and enzymatic phosphorus scavenging directly promote senescence.
+In maize, phosphorus starvation studies detect molecular machinery homologous to that of \textit{Arabidopsis}: ribonucleases, phosphatases, and membrane lipid remodeling enzymes \cite{zhang2014c,torres-rodriguez2024} are upregulated and proteomic analyses show increased antioxidant enzymes and altered photosynthetic proteins \cite{he2022,zhang2014b}.
+However, details beyond those have yet to be revealed in maize. 
+There is a lack of mechanistic knowledge and inconsistent physiological evidence regarding the effect of P deficiency on sequential senescence.
+Field studies in maize report variable outcomes, ranging from delayed senescence in lower leaves \cite{colomb2000}, to only slight whole-plant effects \cite{plenet2000}, or negligible differences in stalk senescence \cite{russo1995}.
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{figs/Figure_1.png}
+\caption{
+\textbf{Phosphorus Starvation Response.}
+\textbf{(A)} Experimental design schematics showing the four sampled leaves from $\invfour$ and control (CTRL) NILs at 63 DAP ($\sim$ V13).
+An increasing number corresponds to older leaves.
+\textbf{(B)} General appearance of plants at RNA/lipid sampling.
+\textit{Top} +P,  \textit{Botttom} -P treatments. 
+\textit{Right}: Aerial view of the experimental field at Rocksprings, PA. 
+Phosphorus starvation led to delayed anthesis \textbf{(C)} and silking \textbf{(D)}, reduced 50 kernel weight. 
+Cob diameter \textbf{(F)} showed the only significant $\invfour$ genotype dependency, resulting in thinner cobs under phosphorus deficiency.
+\textbf{(G)} Time course of stover dry weight shows lower biomass accumulation under $-P$ across all sampling dates for both genotypes.
+\textbf{(H)} Fitted logistic growth curve, each line corresponds to a plot.
+\textit{FDR} adjusted \textit{t-test} significance: \textit{n.s.} not significant,  $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***), $p < 0.0001$ (****). 
+}
+\label{fig:Figure_1}
+\end{figure*}
+\clearpage
+Evidence from a greenhouse assay suggests that nitrogen remobilization from older to younger leaves occurs in plants experiencing phosphorus limitation \cite{usuda1995}. Specifically, older leaves show a noticeable reduction in both nitrogen and chlorophyll content; however, the phosphorus treatment had little to no impact on the nitrogen and chlorophyll content of the young leaves. 
+
+This suggests that phosphorus restriction regulates leaf senescence differentially, accelerating it in older leaves in order to delay it in younger leaves. 
+These variable results may also reflect differences in sampling strategies and developmental timing. 
+
+In this study, we aimed to understand the physiological and molecular effects of \invfour and to identify candidate genes within the inversion that could elucidate its adaptive role.
+Specifically, we tested whether \invfour-highland contributes to adaptation to low phosphorus availability.
+To achieve this, we backcrossed MICH21, a Mexican highland TV carrying \invfour, into the B73 genetic background for eight generations, generating Near Isogenic Lines (NILs).
+These NILs were grown under temperate field conditions with two phosphorus treatments.
+%We profiled the transcriptomic and lipidomic landscape across the vertical canopy profile to distinguish these conserved metabolic scavenging signals from the baseline gradients of phenological aging. 
+We sampled specific leaf positions at a defined developmental stage (V13, approximately 10-16 days pre-flowering) during the onset of sequential senescence, likely capturing transient molecular responses that whole-plant measurements or variable-timing sampling protocols might miss.
+
+Our multi-omics analysis indicates that the metabolic response to this stress was consistent between the \invfour NILs and the B73 control at the molecular and organismic level.
+We did not find a specific interaction between \invfour and P deficiency; instead, the molecular response was driven by the leaf's position on the plant and nutrient limitation.
+Older leaves showed enhanced stress signatures distinct from those of younger tissues, highlighting the compounding effect of developmental stage on the starvation response.
+Ultimately, \invfour did not significantly alter these metabolic pathways, suggesting that its adaptive value in highland environments may stem from its constitutive effects on phenology rather than a specific modification of phosphorus metabolism.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+\subsection*{Phosphorus starvation has strong maize phenotypic effects independent of \invfour}
+
+Phosphorus deficiency delayed flowering, reduced biomass, and decreased yield  (Fig~\ref{fig:Figure_1}) in both control (CTRL) and  \invfour lines.
+Under $-P$ conditions, anthesis and silking occurred more than three days later relative to $+P$ (Fig~\ref{fig:Figure_1}A and B; anthesis: $3.60 \pm 0.26$~days, $p = 2.3 \times 10^{-20}$; silking: $3.42 \pm 0.23$~days, $p = 5.7 \times 10^{-22}$; marginal effect estimate $\pm$ S.E, \textit{FDR} adjusted \textit{p-value}).
+In reduced phosphorus, the 50-kernel weight decreased by nearly $18\%$ ($-1.86 \pm 0.37$~g, $p = 8.2 \times 10^{-6}$, Fig~\ref{fig:Figure_1}C).
+Biomass accumulation was diminished under phosphorus starvation at all measured time points (Fig~\ref{fig:Figure_1}G): stover dry weight declined by $5.09 \pm 0.71$~g at 40~DAP ($p = 1.3 \times 10^{-9}$), $16.45 \pm 1.11$~g at 50~DAP ($p = 1.8 \times 10^{-20}$), and $27.94 \pm 3.47$~g at 60~DAP ($p = 1.4 \times 10^{-10}$).
+By harvest time (121~DAP), stover biomass remained around $18.5\%$ lower ($-18.70 \pm 3.27$~g, $p = 3.9 \times 10^{-7}$).
+Fitted logistic growth curves captured the effect of P-starvation on multiple model parameters(\ref{supp:Figure_S2}~A). 
+-P treatment significantly reduced the area under both the empirical (AUCE; $-1.96 \pm 0.18~\text{kg} \times \text{day}$, $p=2.2 \times 10^{-14}$) and logistic growth curves (AUCL; $-1.80 \pm 0.19~\text{kg} \times \text{day}$, $p=2.0 \times 10^{-12}$) (\ref{supp:Figure_S2}~A). 
+Additionally, it reduced the fitted maximum stover weight ($\text{STW}_{\text{max}}$) by approximately $23.00 \pm 3.26$ g ($p = 5.6 \times 10^{-9}$) and delayed the time to reach half maximum stover weight ($\text{T}_{1/2}$) by $3.49 \pm 0.80$ days ($p = 6.0 \times 10^{-5}$), relative to the $+\text{P}$ treatment (\ref{supp:Figure_S2}~A). 
+We found no significant difference in the rate of stover biomass accumulation.
+These phenotypic changes match the canonical maize phosphorus starvation syndrome, indicating a robust physiological response to nutrient limitation.
+Crucially, no significant genotype-by-phosphorus interactions were detected for the primary agronomic traits, implying that the \invfour inversion did not alter the direction or magnitude of the main phosphorus response (Fig~\ref{fig:Figure_1}).
+
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\linewidth]{figs/Figure_2.png}
+\caption{\textbf{Ionomic responses of \invfour and control (CTRL) maize lines under phosphorus sufficiency (+P) and deficiency (-P).}
+Boxplots show element concentrations \textbf{(A)} in stover and seeds, and seed/stover ratios \textbf{(B)} for phosphorus (P), zinc (Zn), calcium (Ca), and sulfur (S).
+\textit{t-test FDR} adjusted significance: $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***), $p < 0.0001$ (****). 
+Effect sizes and exact \textit{p values} are reported in Table.}
+\label{fig:Figure_2}
+\end{figure*}
+Nonetheless, we observe a significant $G \times E$ interaction effect for cob diameter, a secondary reproductive trait.
+Specifically, while the cob diameter of control lines was decreased less in P-starved plants($0.19 \pm 0.70$ cm, $p= 0.79$), the $\invfour$ plants grew a cob  $10.7\%$ thinner under nutrient limitation ($-2.81 \pm 0.68$ cm, $p= 1.4 \times 10^{-4}$; conditional effect estimate $\pm$ S.E, \textit{FDR} adjusted \textit{p-value}, Fig~\ref{fig:Figure_1}F).
+Aside from cob diameter, the effects of $\invfour$ were independent of phosphorus conditions and smaller than those of phosphorus starvation.
+
+In both +P and -P treatments, the \invfour plants flowered earlier (anthesis: $-1.31 \pm 0.26$~days, $p = 4.6 \times 10^{-6}$, $p = 1.3 \times 10^{-4}$) and grew taller by $6.41 \pm 1.05$~cm ($p = 7.7 \times 10^{-8}$), \ref{supp:Figure_S1}.
+% accumulated less stover biomass at harvest ($-7.94 \pm 3.27$~g, $p = 1.8 \times 10^{-2}$; Fig Supplementary figure).
+%Phosphorus deficiency, on average, caused a larger lag of stover biomass than the difference due to \invfour throughout the measured time span (ANCOVA main effect $\beta = 54  \pm 13 \%$, $p = 0.0152$.
+We found a significant linear time dependence for -P relative reduction in biomass ($p = 0.027$) but the time effect was not significant for the inversion ($p = 0.90$), \ref{supp:Figure_S2}~B).
+The biomass lag of -P plants relative to the +P decreased as plants matured, from $48\%$ at 40~DAP to $18\%$ at harvest.
+Overall, while phosphorus starvation consistently resulted in severe reproductive and vegetative penalties, we did not find interactions between $\invfour$ and phosphorus deficiency.
+
+\subsection*{Plant mineral concentrations show major responses to phosphorus starvation but only minor perturbations from the \invfour inversion.}
+
+Phosphorus deficiency (-P) induced strong and consisted shifts in mineral accumulation across both genotypes, indicating that the overall ionomic response is largely shared between the \invfour and control lines (Fig \ref{fig:Figure_2} A and B). Phosphorus concentrations declined sharply under -P in both stover (effect estimate $\pm$ s.e: $-1592 \pm 85$~ppm, $p = 1.13 \times 10^{-25}$) and seeds ($-672 \pm 94$~ppm, $p = 1.68 \times 10^{-8}$), accompanied by a strong increase in the seed/stover P ratio ($1.99 \pm 0.13$, $p = 1.25 \times 10^{-19}$). Zinc levels increased in stover ($6.85 \pm 1.12$~ppm, $p = 3.24 \times 10^{-7}$), while Ca rose in seed ($18.96 \pm 3.43$~ppm, $p = 4.35 \times 10^{-6}$), with corresponding changes in Zn and Ca partitioning ratios ($-0.23 \pm 0.04$, $p = 3.62 \times 10^{-6}$; and $+0.0041 \pm 0.00085$, $p = 4.17 \times 10^{-5}$, respectively). Sulfur concentrations also increased under -P in both stover ($113 \pm 21$~ppm, $p = 4.49 \times 10^{-6}$) and seed ($79 \pm 30$~ppm, $p = 2.96 \times 10^{-2}$), while Mg decreased modestly in seed ($-97 \pm 30$~ppm, $p = 7.15 \times 10^{-3}$). 
+We found a genotype-dependent response to phosphorus for stover sulfur where \invfour plants accumulated less sulfur under P deficiency than the control line ( $G \times E$  interaction,  $-93.8 \pm 29.2$~ppm, $p = 6.50 \times 10^{-3}$).
+
+Additionally, we detected additive effects of \invfour for  Mg and Ca.  \invfour plants showed reduced Mg accumulation in seeds ($-95.6 \pm 31.5$~ppm, $p = 1.09 \times 10^{-2}$) and lower Ca concentrations in stover ($-411 \pm 141$~ppm, $p = 1.38 \times 10^{-2}$), in both +P and -P conditions (Fig~\ref{supp:Figure_S3} A and B).  Together, these results indicate that \invfour does not broadly alter phosphorus or micronutrient homeostasis under P stress, but it has modest effects on Ca and Mg accumulation and a specific reduction in S enrichment in stover under -P.
+
+\subsection*{Phosphorus starvation triggers a robust and canonical remodeling of the maize leaf transcriptome}
+
+To further understand the effect of \invfour, P-defiency and leaf age on the at the molecular level we performed an RNA-Seq experiment. 
+A multidimensional scaling (MDS) of gene expression (as $log_2[\text{CPM}]$, counts per million) captured 38\% variance in the first two dimensions (Fig~\ref{fig:Figure_3}A).
+The first dimension alone explained 26\% of variance and is correlated with phosphorus treatment (Pearson $r=0.50$, \textit{t-test} $\textit{FDR} = 6.15 \times 10^{-4}$).
+Phosphorus (P) starvation led to a global transcriptional response with a total of 10,606 differentially expressed genes (DEGs, $\textit{FDR} < 0.05$) out of the 24011 detected in the sampled leaves.
+The core of the response involved classic mechanisms of P mobilization and reallocation, which are conserved across plant species (Fig~\ref{fig:Figure_3}B, \ref{table::leafDEGs}).
+
+The upregulated genes showed enrichment in cellular response to phosphate starvation (Fisher's exact test, \textit{FDR} $=9.07 \times 10^{-11}$) (Fig~\ref{fig:Figure_4}A, \ref{table::PSRupDEGs}).
+Top DEGs known to be upregulated under P starvation \ref{table::phosphorusDEGs} included $\textit{Pap19}$ (\textit{Zm00001eb010130}, $-\log_{10}{FDR}=9.7$, $log_2{FC}=5.99$), encoding a purple acid phosphatase that hydrolyzes organic P compounds;
+$\textit{pilncr1}$ (\textit{Zm00001eb003820}, $-\log_{10}{FDR}=9.6$, $log_2{FC}=7.34$), a P deficiency-induced long non-coding $\text{RNA}$ and precursor to $\textit{miR399}$ (a master regulator of P homeostasis); and $\textit{ips1}$ (\textit{Zm00001eb148590}, $-\log_{10}{FDR}=9.3$, $log_2{FC}=7.08$) which  is a decoy target for $\textit{miR399}$ that prevents it from repressing the \textit{PHO2} transporter, thereby enhancing P uptake efficiency \cite{du2018}.
+The P-starvation response also involved modification of leaf membrane lipids.
+Other upregulated genes included in the overrepresented KEGG set were: several \textit{SPX} family transcription factors, the phosphate transporters \textit{pho1;1} (\textit{Zm00001eb126380}), \textit{pht1} (\textit{Zm00001eb222510}) and \textit{pht7} (\textit{Zm00001eb038730}), which facilitate phosphate uptake and redistribution; and the purple acid phosphatases \textit{Pap1} (\textit{Zm00001eb151650}) and \textit{Pap14} (\textit{Zm00001eb202100}) that increase phosphorus remobilization.
+We also identified an upregulated set of enzymes involved in the process of substituting phospholipids with galactolipids, supported by the enrichment of glycerophospholipid metabolism pathway in KEGG (Fig~\ref{fig:Figure_4}B) and galactolipid biosynthetic process in GO (Fig~\ref{fig:Figure_4} A), respectively. 
+This set included the monogalactosyldiacylglycerol synthase $\textit{mgd2}$ (\textit{Zm00001eb034810}, $-\log_{10}{FDR}=10.69$, $log_2{FC}=4.83$), the glycerophosphodiester phosphodiesterase $\textit{gpx1}$ (\textit{Zm00001eb241920}, $-\log_{10}{FDR}=9.2$, $log_2{FC}=6.48$) and the glutathione peroxidase $\textit{glpx2}$ (\textit{Zm00001eb016270}, $-\log_{10}{FDR}=4.5$, $log_2{FC}=7.01$). 
+Conversely, genes associated with phosphorus-intensive processes and photosynthesis were downregulated.
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\linewidth]{figs/Figure_3.png}
+\caption{\textbf{Transcriptomic and lipidomic responses to phosphorus deficiency and leaf developmental stage.}
+(\textbf{A}) Multidimensional scaling of transcripts. The MDS plot of $\log_{2}(\text{CPM})$. %Leaves tend to cluster by developmental stage and P treatment, showing more differentiation between P groups with increasing age.
+(\textbf{B}) Volcano Plots of Transcriptomic Main Effects. 
+\textit{Right}: Main transcriptional effect of leaf stage (per-stage increase). 
+A total of 1,431 high-confidence DEGs were identified. 
+%Key genes related to development include $\textit{umc1690}$ (Transcription factor PCF7), $\textit{ntf2}$ (NTF2 domain-containing protein), and $\textit{sgrl1}$ (Protein STAY-GREEN LIKE), all significantly downregulated. 
+The x-axis represents the $\log_{2}(\text{Fold Change})$ and the y-axis represents the $-\log_{10}(\text{FDR})$.
+\textit{Left}: Main transcriptional effect of Phosphorus deficiency ($-\text{P}$ treatment). 
+%A total of \textbf{794} high-confidence DEGs were identified.
+%This response highlights key P-starvation mechanisms:
+%\textbf{Upregulated genes} promoting P mobilization and signaling include $\textit{pilncr1}$ ($\log_2\text{FC}=7.34$), a precursor to the P response master regulator $\textit{miR399}$ and $\textit{pap19}$ ($\log_2\text{FC}=5.99$), a purple acid phosphatase.
+%The lipid-remodeling enzyme $\textit{mgd2}$ ($\log_2\text{FC}=4.83$) was also highly upregulated.
+%\textbf{Downregulated genes} include $\textit{peamt2}$ ($\log_2\text{FC}=-6.81$), involved in phospholipid synthesis.
+(\textbf{C}) Multidimensional scaling of lipids. The MDS plot of $\log_{2}(\text{CPM})$. 
+%Dimension 2 tends to separate leaves by P treatment, and dimension 3 separates leaf stage 1 from the older samples.
+(\textbf{D}) Volcano plots of lipidomic main effects.
+\textit{Left}: Main effect of leaf stage on lipids.
+%A total of \textbf{11} high-confidence DALs were identified. 
+The axes and thresholds are analogous to those in panel B, highlighting lipids whose abundance is significantly altered by each factor independently of the other.
+\textit{Right:} Main effect of phosphorus deficiency on lipids.
+%A total of \textbf{23} high-confidence DALs were identified.
+(\textbf{E}) Mass Spectrometry signal profiles of the most differentially abundant lipids. 
+%The most significantly depleted lipids (indicating the membrane remodeling response) include the phospholipids \textbf{PC34:2} ($\log_2\text{FC}=-1.60$), \textbf{LPE18:2} ($\log_2\text{FC}=-2.69$), \textbf{LPC16:1} ($\log_2\text{FC}=-3.50$), \textbf{PC32:2} ($\log_2\text{FC}=-2.58$), and \textbf{PG32:0} ($\log_2\text{FC}=-1.61$). 
+}
+\label{fig:Figure_3}
+\end{figure*}
+This includes $\textit{peamt2}$ (\textit{Zm00001eb294690}, $-\log_{10}{FDR}=4.93$, $log_2{FC}=-6.81$), a phosphoethanolamine $\text{N}$-methyltransferase involved in phospholipid biosynthesis.
+Furthermore, the photosynthetic machinery was repressed, indicated by the downregulation of $\textit{rca3}$ ($-\log_{10}{FDR}=3.8$, $log_2{FC}=-3.40$), which encodes $\textit{RUBISCO}$ activase, reflecting a $\text{P}$-deficiency-induced reduction in carbon fixation capacity.
+This systemic reduction in photosynthesis is also supported by the over-representation of the photosynthetic antenna proteins in $\text{KEGG}$, exemplified by the downregulation of the \textit{light harvesting chlorophyll a/b binding protein10} gene ($\textit{lhcb10}$) (Fig~\ref{fig:Figure_4}B).
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=0.85\linewidth]{figs/Figure_4.png}
+\caption{Controlled vocabulary enrichment. Overrepresentation analysis for (A) Gene ontology Biological Process, in parentheses, the total number of high confidence DEGs in each  category, the sum of annotated genes in all overrepresented terms per category is illustrated in \ref{supp:Figure_S4}~C-D,
+(B) KEGG Pathways, C) Lion lipids.
+}
+\label{fig:Figure_4}
+\end{figure*}
+Multiple transcription factors such as $\textit{zim25}$ ($-\log_{10}{FDR}=4.2$, $log_2{FC}=-3.01$), $\textit{nactf132}$ (\textit{Zm00001eb324550}, $-\log_{10}{FDR}=4.47$, $log_2{FC}=-4.66$), and $\textit{bzip81}$ ($-\log_{10}{FDR}=2.8$, $log_2{FC}=-3.37$) were also repressed, suggesting a broad transcriptional reprogramming that redirects the plant resources.
+
+\subsection*{Elevated triglycerides and reduced phosphoglycerolipids are driven by phosphorus starvation and leaf age.}
+
+Aggregate lipid class composition reveals the expected dominance of PC, MGDG, DGDG, and SQDG in membrane lipids, with phosphorus deficiency causing notable decreases in phosphoglycerolipids across all leaf stages and contrasting developmental trajectories for neutral lipids under $+$P versus $-$P conditions (\ref{supp:Figure_S6}).
+Lipid profiling shows typical changes associated with both leaf aging and phosphorus starvation (Fig~\ref{fig:Figure_3}C-D, \ref{table::leaf_lipids}, \ref{table::phosphorus_lipids}).
+A multidimensional scaling of lipid abundance shows a marked difference between Leaf 1 and older leaves across MDS dimension 3 (17\% of variance explained, Fig~\ref{fig:Figure_3}C).
+Older leaves were depleted in the digalactosyl diacylglicerol lipid $\text{DGDG36:2}$ (($\log_2\text{FC}=0.67 \pm 0.15, \text{FDR}=0.044$), and  accumulated  the diacylglyceryl glucuronide DGGA36:3 ($\log_2\text{FC}=0.67 \pm 0.15, \text{FDR}=0.044$).
+The leaf age also affected the phospholipids associated with phosphatidylethanolamine (PE) turnover, as evidenced by an increase in LPC18:3 and PC36:6, and a decrease in PE32:1 (Fig~\ref{fig:Figure_3}E).
+Phosphorus starvation induces a well-characterized membrane lipid remodeling response, shifting from phosphoglycerolipids to sugar-based glycolipids.
+This process is illustrated by PC34:2, an abundant phospholipid that shows significant reduction in the -P main effect ($\log_2\text{FC}=-1.60 \pm 0.08, \text{FDR}=1.58 \times 10^{-5}$) and that is further decreased in the Leaf $\times$ -P interaction ($\log_2\text{FC}=-0.56 \pm 0.04, \text{FDR}=0.0014$), resulting in a decrease in concentration throughout the developmental gradient that is exacerbated by the phosphorus starvation (Fig~\ref{fig:Figure_3}E).
+
+This widespread reduction in other phosphorus-rich membrane lipids is also seen in: PEs such as PE34:4, ($\log_2\text{FC}=-2.06 \pm 0.27, \text{FDR}=0.0067$); Lysophosphatidylethanolamines (LPEs), with LPE18:2 being highly reduced ($\log_2\text{FC}=-2.69 \pm 0.16, \text{FDR}=7.39 \times 10^{-5}$); and Lysophosphatidylcholines (LPCs), seen in LPC16:1 ($\log_2\text{FC}=-3.50 \pm 0.30, \text{FDR}=0.0007$).
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\linewidth]{figs/Figure_5.png}
+\caption{\textbf{The response to phosphorus starvation increases with leaf stage and is positively correlated with indicators of leaf senescence }.
+(\textbf{A}) Gene Set Transcription Indices Across Leaf Stages. Indices are calculated as the mean $\log_{10}(\text{CPM})$ for genes within defined sets and normalized across the four leaf stages to represent the proportion of the total expression range. The left panel shows Chlorophyll Synthesis (dark green) and Chlorophyll Degradation (light green/orange) sets derived from CornCyc/KEGG. 
+%Chlorophyll Synthesis shows a significant negative correlation with age ($r = -0.78$, $p = 6.3\times 10^{-10}$), while Chlorophyll Degradation shows a positive correlation ($r = 0.53$, $p = 2.5\times 10^{-4}$). The right panel shows Photosynthesis (dark green) and Leaf Senescence (orange) sets from GO. Photosynthesis shows a significant negative correlation ($r = -0.76$, $p = 2.6\times 10^{-9}$), and Leaf Senescence shows a significant positive correlation ($r = 0.77$, $p = 1.2\times 10^{-9}$)). Error bars represent the standard error of the mean (SEM).
+(\textbf{B}) Expression profiles ($\log_{10}(\text{CPM})$) for representative gene pairs illustrating opposing trends across leaf stages. 
+%\textit{pep1} (phosphoenolpyruvate carboxylase, green) and \textit{ssu1} (ribulose bisphosphate carboxylase small subunit 1, green) decline as senescence-associated genes like \textit{Salt homolog 1} (orange), \textit{mir3} (\textit{maize insect resistance 3}, orange), and \textit{nactf108} (\textit{NAC transcription factor 108 / ORE1}) increase. \textit{sgrl1} and \textit{nye2} are STAY-GREEN homologs that exhibit opposing expression trends, despite similar annotated functions. 
+Error bars represent SEM.
+(\textbf{C}) Volcano Plot of Leaf $\times$ Phosphorus (P) Interaction. The plot highlights genes with a significant transcriptional interaction between leaf stage and phosphorus treatment ($+\text{P}$ vs. $-\text{P}$). Genes with a negative $\log_{2}(\text{Fold Change})$ and significant $\text{FDR}$ are colored red (negative interaction), and those with a positive $\log_{2}(\text{Fold Change})$ and significant $\text{FDR}$ are colored blue (positive interaction).
+(\textbf{D}) Gene Set Transcription Indices Split by Phosphorus Treatment. The mean normalized expression for Chlorophyll Synthesis/Degradation (left) and Photosynthesis/Senescence (right) is plotted for phosphorus-deficient ($-\text{P}$, dashed lines) and phosphorus-sufficient ($+\text{P}$, solid lines) conditions. 
+%All four gene sets show a significant $\text{Leaf Stage} \times \text{P-treatment}$ interaction: Chlorophyll Degradation ($\mathbf{p < 0.01}$); Chlorophyll Synthesis ($\mathbf{p < 0.05}$); Photosynthesis ($\mathbf{p < 0.001}$); and Senescence ($\mathbf{p < 0.01}$). Error bars represent SEM.
+(\textbf{E}) Individual Gene Trajectories for Leaf $\times$ Phosphorus Interaction. Genes are partitioned based on their interaction term (Negative: left, Positive: right). Thin lines represent individual gene expression profiles (centered $\log_{2}(\text{CPM})$) across the four leaf stages under $-\text{P}$ (purple) and $+\text{P}$ (yellow) conditions. Bold lines illustrate the mean trend for each group.
+(\textbf{F}) Expression profiles ($\log_{10}(\text{CPM})$) for representative genes from the interaction set. \textit{Right}: leaf $\times$ P interaction (e.g., \textit{multidrug resistance protein mrpa3} and a \textit{Chlorophyll a-b binding protein}). Error bars represent SEM.
+%where the effect of $-\text{P}$ is to increasingly reduce their expression in older leaves. \textit{Left} Positive leaf $\times$ P interaction (e.g., \textit{Pyruvate kinase} and \textit{Tat pathway signal sequence family protein}), where the positive effect of $-\text{P}$ is amplified in older leaves.
+}
+\label{fig:Figure_5}
+\end{figure*}
+Concomitantly, phosphorus starvation leads to a storage response through the accumulation of triacylglycerols (TAGs), evidenced by the highly upregulated TG56:6 ($\log_2\text{FC}=12.71 \pm 0.62, \text{FDR}=0.018$) (Fig~\ref{fig:Figure_3}D)
+LION lipid enrichment analysis confirms these systemic changes, showing an extremely strong enrichment of triacylglycerols ($\text{FDR}=1.06 \times 10^{-11}$, $\text{ES}=0.80$) and associated lipid storage terms, alongside a highly significant decrease in glycerophospholipids ($\text{FDR}=1.46 \times 10^{-8}$, $\text{ES}=-0.60$) and membrane components ($\text{FDR}=4.03 \times 10^{-11}$, $\text{ES}=-0.76$) (Fig~\ref{fig:Figure_3}C)
+\invfour shows no apparent high-confidence main effect on differential lipid production at this level.
+% Add  KEGGenrichemnt stats galactolipid biosynthetic process
+\subsection*{Phosphorus starvation promotes senescence-associated  transcription and the shutdown of light-dependent photosynthesis reaction genes}
+
+To understand the interplay between leaf development and nutrient stress, we first established the baseline transcriptional signatures of leaf aging.
+We observed significant, opposing correlations between leaf stage and the expression of key biological processes (Fig~\ref{fig:Figure_5}.
+Chlorophyll Synthesis shows a significant negative correlation with age
+($r = -0.78$, $p = 6.3\times 10^{-10}$), while Chlorophyll Degradation shows a positive correlation ($r = 0.53$, $p = 2.5\times 10^{-4}$). 
+Photosynthesis shows a significant negative correlation ($r = -0.76$, $p = 2.6\times 10^{-9}$), and Leaf Senescence shows a significant positive correlation ($r = 0.77$, $p = 1.2\times 10^{-9}$)). 
+These developmental trajectories were exemplified by declining expression of photosynthetic genes \textit{pep1} (phosphoenolpyruvate carboxylase) and \textit{ssu1} (RuBisCO small subunit) concurrent with upregulation of senescence-associated genes including \textit{Salt homolog 1} and \textit{mir3} (Fig~\ref{fig:Figure_5} B). 
+Notably, the STAY-GREEN homologs \textit{sgrl1} and \textit{nye2} exhibited opposing expression patterns despite similar functional annotations, suggesting divergent roles in senescence regulation (Fig~\ref{fig:Figure_5} B) Phosphorus deficiency significantly amplified these developmental programs, generating 487 genes with significant leaf stage $\times$ phosphorus interactions (Fig~\ref{fig:Figure_5} C, E).
+Under $-$P conditions, the divergence between anabolic and catabolic processes intensified with leaf age: chlorophyll degradation ($p < 0.01$), chlorophyll synthesis ($p < 0.05$), photosynthesis ($p < 0.001$), and senescence indices ($p < 0.01$) all showed significant interactions between developmental stage and nutrient status (Fig~\ref{fig:Figure_5}D).
+Genes with negative interaction terms, including and \textit{tat, Tat pathway signal sequence family protein} (\textit{Zm00001eb359280}) and \textit{cab, chlorophyll a-b binding protein} (\textit{Zm00001eb207130}), showed larger negative P-starvation responses in older leaves, while those with positive interactions such as \textit{pk, pyruvate kinase} (\textit{Zm00001eb157810}) and \textit{mrpa3, multidrug resistance protein} (\textit{Zm00001eb376160}), which is involved in anthocyanin transport into the vacuole \cite{goodman2004},  displayed amplified positive responses in older leaves (Fig~\ref{fig:Figure_5} F). 
+This interaction pattern indicates that phosphorus deficiency not only triggers immediate metabolic adjustments but also accelerates the natural developmental program of leaf senescence, with older leaves experiencing disproportionately severe molecular stress responses that compound the effects of nutrient limitation.
+
+\section{Discussion}
+
+From our multi-omics analysis, we can infer that the maize phosphorus starvation response is shaped by leaf developmental stage, with older leaves showing enhanced stress responses indicative of the onset of developmental senescence during the vegetative phase.
+While phosphorus deficiency triggered canonical molecular responses across genotypes, the magnitude of these responses varied depending on the leaf developmental position.
+The \invfour chromosomal inversion showed minimal modulation of phosphorus starvation responses, indicating that its contribution to highland adaptation operates through effects on developmental timing rather than enhanced nutrient stress tolerance.
+
+\subsection*{We captured a gradient of sequential leaf senescence in our samples}
+
+By sampling leaves from the topmost fully developed collar and those below, we captured a physiological gradient in gene expression. 
+The gradient appears to accurately reflect the onset and initial phases of sequential senescence in our plants, which we estimated around the V13 stage, approximately 10 to 16 days prior to flowering. 
+We observed this sequential senescence as the progressive aging of the leaves along the plant axis, culminating in the death of the leaves nearest to the soil.
+
+Using gene set transcriptomic indices, we corroborated that chlorophyll biosynthesis and degradation were correlated with this vertical developmental axis Fig~\ref{fig:Figure_5} A. 
+And in particular, Magnesium chelatase \textit{chlh1} (\textit{Zm00001eb433610}), glutamyl-tRNA reductase \textit{gtr3} (\textit{Zm00001eb044210}), and uroporphyrinogen decarboxylase \textit{urod} (\textit{Zm00001eb358510}) consistently decreased expression with each successive sample downwards, while the pheophytinase \textit{pph} (\textit{Zm00001eb231810}) showed the opposite pattern. 
+Simultaneously, the photosynthesis genes \textit{pep1} and \textit{ssu1} (pep carboxylase and rubisco small subunit, respectively)  were downregulated, while the senescence-associated genes \textit{salt1} (\textit{Zm00001eb130570}) and \textit{mir3}  (\textit{Zm00001eb068400}) were upregulated.
+While chlorophyll degradation enzyme \textit{pph} showed positive correlation with leaf age,  \textit{sgrl1} (\textit{Zm00001eb076680}) was downregulated, potentially shifting chlorophyll catabolism towards PPH  from the chlorophyllase pathway, which has been reported to mediate  87\% chlorophyll degradation in maize \cite{wei2025}.
+% All these genes surpassed our statistical and effect size cutoffs for high-confidence DEGs (Supplementary Table \ref{table::}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Discussion}
+
+% Our multi-omics analysis demonstrates that phosphorus starvation elicits a conserved molecular and phenotypic response in maize. Reduced growth, delayed flowering, and yield penalties were paralleled by transcriptomic activation of phosphate scavenging and recycling pathways, lipid remodeling, and nutrient redistribution. Importantly, these responses were consistent across genotypes differing at the \invfour inversion. Nonetheless, we identified a small set of genotype-by-phosphorus interactions exceeding significance thresholds. In transcriptomics, these outliers overlapped with loci previously associated with flowering time and plant height. In lipidomics, phosphatidylethanolamine remodeling showed genotype specificity. Such secondary GxE effects suggest that while the phosphorus starvation program is globally robust, specific genetic variants can modulate its fine-scale execution.
+This developmental framework provides context for interpreting phosphorus starvation responses.
+The leaf-stage variable represents a combined axis of decreasing photosynthetic capacity and the progression of developmental senescence, allowing us to quantify how nutrient stress interacts with natural developmental transitions during vegetative growth.
+The significant interaction terms we observed for chlorophyll metabolism, photosynthesis, and senescence gene sets indicate that phosphorus deficiency does not uniformly shift all leaves along this gradient but rather amplifies the divergence between young and old tissues Fig~\ref{fig:Figure_5}D.
+
+\subsection*{Phosphorus starvation responses accelerate with leaf age}
+
+Phosphorus deficiency activated the expected molecular machinery for nutrient scavenging and remobilization.
+Upregulated genes included non-coding RNAs \textit{pilncr1} and \textit{ips1}, phosphate scavenging enzymes \textit{gpx1}, \textit{pap2} (\textit{Zm00001eb064450}), and \textit{pap19}, phosphate transporters \textit{phos1}, \textit{pht1}, and \textit{pht7}, and galactolipid biosynthesis genes \textit{mgd2}, \textit{sqd2} (\textit{Zm00001eb297970}), \textit{sqd3} (\textit{Zm00001eb335670}), and \textit{glpx2}.
+Gene Ontology enrichment confirmed activation of galactolipid biosynthetic processes and phosphate starvation response pathways, while KEGG analysis highlighted glycerophospholipid metabolism (Fig~\ref{fig:Figure_4} A-B). 
+Downregulated genes included \textit{peamt2} (\textit{Zm00001eb294690}), which catalyzes phosphoethanolamine methylation in the Kennedy pathway for PC biosynthesis, photosynthesis genes \textit{rca3} (\textit{Zm00001eb164380}) and \textit{lhcb10} (\textit{Zm00001eb357740}), and transcription factors \textit{zim25} (\textit{Zm00001eb278320}), \textit{nactf132} (\textit{Zm00001eb324550}), and \textit{bzip81} (\textit{Zm00001eb198410}).
+These patterns validate the canonical phosphorus starvation response documented in previous studies \cite{wang2020a,he2022}.
+
+We detected 555 high-confidence DEGs with a significant and strong interaction between leaf stage and phosphorus treatment Fig~\ref{fig:Figure_4}A-B, meaning that their phosphorus responses increased or decreased linearly with leaf position.
+Our statistical modelling was designed to detect two functionally distinct trajectories.
+Genes with negative interaction terms (194), including light-harvesting proteins \textit{cab}, \textit{psad1}, and \textit{ndho1}, showed increased negative responses to phosphorus starvation in older leaves, corresponding to selective shutdown of the thylakoid light-capture machinery.
+Gene Ontology enrichment for this set highlighted terms related to photosynthesis and the light-harvesting complex, while KEGG analysis specifically identified genes involved in the light-harvesting complex, rather than Calvin cycle components (Fig~\ref{fig:Figure_4}A-B.)
+This distinction suggests distinct developmental regulation: Calvin cycle downregulation occurs uniformly across leaf ages as a direct consequence of ATP limitation, whereas light-harvesting shutdown is more pronounced with increasing leaf age.
+This bifurcation into light-harvesting shutdown versus senescence acceleration reveals that phosphorus deficiency triggers distinct regulatory programs, depending on the developmental context.
+
+Genes with positive interaction terms (Fig~\ref{fig:Figure_4}A-B) i.e. with increased slope of $log_2{\text{FC}}>0.5$ per leaf stage under phosphorus limitation, showed amplified phosphorus-starvation responses in older leaves, corresponding to enhanced senescence and nutrient remobilization signatures.
+Out of 361 high-confidence DEGs with positive interaction with leaf age, 20 genes were annotated with "cellular response to phosphate starvation" and presented in the \ref{table:goleafxP_genes}.
+These genes can be classified into more specific functional groups.
+The glycolytic enzymes, \textit{pfk1}, together with \textit{pep2} and its activating kinase \textit{ppck3}.
+The galactolypid byiosynthetic enzymes \textit{mgd3}, \textit{sqd2}, and \textit{sqd3}, were strongly up-regulated, indicating accelerated replacement of phospholipids with sulfo- and galactolipids in ageing plastids.
+The SPX-domain proteins \textit{spx2} and \textit{spx6}, central regulators of the phosphate-starvation signalling cascade, showed the same trajectory, confirming that the sensing machinery itself is amplified in older tissue.
+Phosphorus-scavenging capacity was reinforced by \text{pap1} and the three inorganic pyrophosphatase paralogues (\textit{ppa1}, \textit{ppa2}, \textit{ppa3}) that recycle Pi from cytosolic pyrophosphate.
+Phospholipid turnover was evidenced by leaf age-dependent upregulation of  \textit{pld16} and the ER-associated \textit{pah1}.
+Collectively, these age-amplified responses reveal a programmed shift from phosphorus conservation to wholesale phosphorus remobilization as maize leaves senesce under phosphorus limitation.
+
+\subsection*{PC34:2 depletion increases with leaf age and correlates with flowering delay and the downregulation of flowering transcription factors}
+
+Lipidomic analysis confirmed the classical membrane remodeling response to phosphorus starvation.
+Phospholipid classes showed widespread depletion: phosphatidylcholines PC34:2, PC32:2, PC32:0, and PC38:6; phosphatidylethanolamines PE34:4, PE34:3, and PE32:1; lysophosphatidylethanolamines LPE18:2, LPE18:3, and LPE16:0; lysophosphatidylcholines LPC16:1, LPC18:3, and LPC18:2; and phosphatidylglycerols PG32:0 and PG34:3.
+Triacylglycerols accumulated under phosphorus stress, with TAG species TG50:3, TG52:6, TG54:9, TG56:6, TG50:2, and TG52:3 showing increased abundance (Fig~\ref{fig:Figure_3}E).
+TG56:6 exhibited accumulation exceeding 12-fold increase.
+Galactolipid accumulation was evidenced by DGGA36:4, a phosphorus-free membrane component (Fig~\ref{fig:Figure_3}E).
+LION lipid enrichment analysis confirmed these systemic changes: triacylglycerols showed strong enrichment, while glycerophospholipids and membrane components were significantly depleted (Fig~\ref{fig:Figure_4}C).  
+
+These patterns align with the established membrane remodeling strategy documented previously: replacement of phosphorus-containing phospholipids with galactolipids conserves phosphorus for nucleic acid and ATP synthesis, while TAG accumulation provides temporary storage for fatty acids released from membrane degradation \cite{wang2020a}.
+%The partial preservation of phosphatidylglycerol species, for which we don't detect statistical differences, despite severe depletion of other phospholipids, likely reflects PG's essential structural role in photosystem II, where it cannot be readily substituted \cite{hagio2000}.
+
+Phosphatidylcholine PC34:2 showed both a strong main effect of phosphorus deficiency and a significant Leaf $\times$ -P interaction, indicating that the magnitude of PC34:2 depletion increased systematically with leaf developmental position (Fig~\ref{fig:Figure_3}E).
+This age-dependent response is noteworthy given PC34:2's binding to ZCN8, the maize florigen ortholog \cite{barnes2022}.
+We previously demonstrated that PC34:2 copurifies with recombinant ZCN8 protein and identified probable binding sites through molecular docking simulations \cite{barnes2022}.
+Additionally, phospholipase HPC1 expression, which influences PC34:2 levels, correlates with flowering-time variation across the maize diversity panel \cite{barnes2022}.
+
+While \invfour does not modulate the PC34:2 response, the coordinate patterns we observed (PC34:2 depletion, flowering delay under phosphorus stress, and \textit{peamt2} suppression) raise the possibility that phosphorus stress influences reproductive timing through multiple mechanisms.
+The dramatic suppression of \textit{peamt2}, which catalyzes sequential methylation of phosphoethanolamine to phosphocholine in the Kennedy pathway, represents one of the strongest transcriptional responses in our dataset.
+In Arabidopsis, the ortholog XIPOTL1 affects flowering time, root architecture, and stress responses \cite{cruz-ramirez2004}.
+In maize, natural variation at the \textit{peamt2} locus associates with flowering time in Mexican highland populations \cite{perez-limon2022,barnes2022}, suggesting that modulation of phospholipid biosynthesis contributes to adaptive variation in developmental timing.
+If ZCN8 florigen activity or stability requires PC34:2 binding, as demonstrated for \textit{Arabidopsis} FT interactions with phosphatidylglycerol in temperature-dependent contexts \cite{susila2021}, then systematic depletion of this specific phospholipid species could potentially impair florigen signaling beyond resource limitation alone.
+
+The downregulation of MADS-box transcription factors \textit{zmm4} and \textit{zmm15} with increasing leaf age further connects lipid remodeling to developmental transitions, as these two transcription factors are associated with the highest flowering time in a TWAS analysis of the Wisconsin panel \cite{torres-rodriguez2024}.
+These flowering-time regulators showed strong negative correlations with leaf stage, consistent with the natural progression from vegetative to reproductive phase transitions during our sampling window around V13 stage.
+
+\subsection*{LPE is a suppressor of senescence in tomato and \textit{Arabidopsis}, but it is a senescence marker in our maize samples.}
+
+ It has been demonstrated in 16:3 plants such as \textit{Arabidopsis} and tomato, that LPE acts as a leaf senescence suppressor \cite{amaro2013}. 
+ In these plants, the application of exogenous LPE delays senescence by inhibiting phospholipase D and preserving membrane integrity \cite{amaro2013,ryu1997}.
+ 
+The behavior of lysophosphatidylethanolamines in our dataset contradicts this established pattern, highlighting a possible new difference in phospholipid metabolism between 16:3 and 18:3 plants.
+Although multiple LPE species (LPE18:2, LPE18:3, and LPE16:0) were depleted under phosphorus deficiency, LPE18:3 showed a strong positive association with increased leaf developmental stage. 
+This accumulation in our samples suggests that, at endogenous concentrations, LPE functions as a marker for initial senescence, contrary to its reported senescence-suppressor role in 16:3 plants.
+
+The lipidomic pattern is paralleled by coordinated transcriptional regulation.
+Phospholipases \textit{plc6} and \textit{pld16} both showed positive Leaf $\times$ -P interactions, indicating enhanced phospholipid hydrolysis in older leaves under phosphorus stress.
+In contrast, lysophosphatidylethanolamine acyltransferase \textit{lpeat2} and choline/ethanolamine kinase \textit{cek4} showed no differential expression, suggesting constitutive regulation.
+
+This divergence might reflect the difference between 16:3 and 18:3 plants in lipid metabolism architecture \cite{mongrand1998,heinz1983}.
+Maize GDG has \~95\% C18/C18 species thought to derive from the eukaryotic pathway of GDG biosynthesis. Previous reports indicated that maize was devoid of C18/C16 GDG species \cite{mongrand1998}, however, the use of mass spectrometry now reveals that a minor amount of GDG biosynthesis proceeds through the prokaryotic pathway in both maize leaves and endosperm \cite{myers2011}.
+In maize's eukaryotic pathway, diacylglycerol derived from phospholipid degradation is transported to the chloroplast outer envelope for galactolipid synthesis, creating direct metabolic flux from PE to LPE to DAG to MGDG \cite{gu2017}.
+The efficiency of this pathway, particularly when PC biosynthesis is blocked by \textit{peamt2} suppression, may preclude LPE accumulation as the lipid is rapidly consumed in downstream reactions.
+This positions LPE as a transient salvage intermediate rather than a regulatory signal in 18:3 plants.
+
+\subsection*{Enhanced PAH1 activity, but not PDAT expression, underlies leaf stage-dependent accumulation of polyunsaturated TAGs }
+
+The accumulation of triacylglycerols (TAGs) in phosphorus-deficient leaves might reflect a substrate-driven lipid salvage mechanism during membrane remodeling. Phosphorus starvation led to enrichment of highly unsaturated TAG species, including TG(54:9) and TG(52:6), both containing 18:3 fatty acids, coinciding with depletion of polyunsaturated phospholipids such as PC(36:6) and LPC(18:3). 
+The preservation of polyunsaturated fatty acids in TAG form is consistent with direct transfer via the PDAT pathway, which moves intact acyl chains from phospholipids to diacylglycerol \cite{chen2012}, avoiding the energetic cost of complete phospholipid degradation and subsequent re-desaturation. 
+However, TAG accumulation occurred without significant transcriptional up-regulation of PDAT genes, indicating that the phospholipid-to-TAG flux is driven primarily by substrate availability rather than increased PDAT expression.
+
+Phosphatidate phosphatase \textit{pah1} showed a positive $\text{Leaf} \times -P$ interaction ($+0.58\ \log_2\text{FC}$ per leaf stage), indicating higher expression in older leaves under phosphorus stress.  
+This increase in activity may be directing lipid flux toward TAG synthesis versus PC synthesis in our samples, as observed in \textit{Arabidopsis} \cite{eastmond2010}.  
+Notably, \textit{pah1} and the co-upregulated phospholipase \textit{pld16} ($+0.56\ \log_2\text{FC}$ per leaf stage) are orthologous to \textit{Arabidopsis} PAH1 and PLD$\zeta$2, which act together in a pathway to convert phospholipid-derived phosphatidic acid into diacylglycerol for TAG assembly during phosphorus deficiency.  
+Beyond lipid remodeling, PLD$\zeta$2 has been linked to autophagy and vacuolar acidification \cite{guan2025}, suggesting coordination between membrane catabolism and cellular recycling to supply lipid substrates under phosphorus stress.
+
+These findings indicate that, in our samples, phosphorus-dependent TAG accumulation is primarily driven by enhanced PAH1-mediated flux from phospholipids to diacylglycerol rather than by PDAT expression.
+This substrate-driven mechanism supports transient storage of fatty acids released from phospholipid catabolism, either for transport to younger tissues or for energy production via $\beta$-oxidation \cite{wang2020a}.
+The age-dependent amplification of TAG accumulation in our dataset is compatible with this interpretation and suggests that substrate-driven lipid salvage operates in senescing tissues during the vegetative phase.
+
+\subsection{Leaf senescence transcription accelerates under phosphorus limitation}
+
+The coordination of developmental senescence with phosphorus starvation might be an adaptive strategy in maize, where leaf age influences the magnitude of nutrient stress responses. 
+Five \textit{Arabidopsis} ortholog genes (SAGs) in~\cite{zhang2014c} are high-confidence DEGs for the effect of leaf stage, providing support for our observed leaf developmental gradient. 
+The NAC transcription factor \textit{nactf108} (\textit{Zm00001eb135910}, ORE1/ANAC092), a regulator known to activate SAG targets during early senescence, was found to increase with leaf position. 
+Similarly, transcripts for chlorophyll degradation enzymes \textit{pph} (\textit{Zm00001eb231810}) (pheophytinase) and \textit{nye1} (\textit{Zm00001eb319560},SGR/STAY-GREEN), along with proteolytic machinery including \textit{see2b} (\textit{Zm00001eb162210}, gamma vacuolar processing enzyme) and \textit{clpb1} (\textit{Zm00001eb242420}, ERD1/SAG15), progressively increased from young to old leaves. 
+This expression pattern is consistent with the canonical progression of natural leaf aging during vegetative growth, establishing a baseline for interpreting stress-induced deviations.
+
+A key observation in our study is the Leaf $\times$ $-$P interaction, which indicates that phosphorus stress does not uniformly affect all leaves but rather compounds with leaf age to create stronger responses in older tissues (Fig~\ref{fig:Figure_5})  
+
+The ribonuclease \textit{rns} (\textit{Zm00001eb144680}) exemplifies this pattern, exhibiting both a strong main effect of phosphorus starvation and significant age-dependent amplification, which suggests that RNA degradation may accelerate specifically where developmental senescence and nutrient stress converge. 
+This interaction extends to \textit{csap} (\textit{Zm00001eb402430}, \textit{chloroplast-localized senescence-associated protein}), implying a potential coordination in the dismantling of the photosynthetic apparatus when both stressors are present, \cite{so2020}. 
+We identified 24 genes within this Leaf $\times$ $-$P interaction term that reveal potential functional specialization. 
+Three hub genes, \textit{rns}, \textit{mybr105} (\textit{Zm00001eb081290}, a protein-binding MYB), and \textit{lkrsdh1} (\textit{Zm00001eb192910}) (involved in lysine catabolism), appear central to these nutrient salvage operations, while transport genes (e.g., the carbohydrate transporter \textit{sweet2} (\textit{Zm00001eb342040}) and \textit{ppt1} (\textit{Zm00001eb097690}) and cell wall remodeling enzymes, \textit{aga2} (\textit{Zm00001eb281720}) and \textit{irx15} (\textit{Zm00001eb068410}),  are upregulated, consistent with nutrient remobilization.
+
+To map the regulatory architecture governing these processes, we compiled a list of SAGs by cross-referencing our high-confidence DEGs with manually curated sources \cite{zhang2014c,liu2011,ojeda2026,berardini2015,durinck2005}, resulting in a total of 110 genes (\nameref{S1_File}). 
+Almost half of these, 53, were transcription factors. 
+They are distributed across 13 families, with the NAC (16 members), WRKY (7), G2-like (5), AP2-EREBP (5), MYB (5), and bHLH (5) families representing the dominant regulatory nodes. 
+Within the NAC family, we observed complex, context-dependent expression patterns. 
+While typical senescence regulators like \textit{nactf108} and \textit{nactf44} (\textit{Zm00001eb015630}) consistently increase with leaf age, \textit{nactf132} (\textit{Zm00001eb324550}, \textit{ZmNAC132}) shows opposing responses: strong downregulation under phosphorus stress but upregulation with leaf age progression. 
+% todo:(fausto) check if nac44 has the same pattern as nac132, upregulation with leaf stage
+This divergence is particularly noteworthy because \textit{nactf132} has been linked to chlorophyll content regulation through \textit{nye1} activation \cite{yuan2023}, and natural variation in its 5$'$UTR associates with chlorophyll B levels~\cite{wallace2014a}. 
+The contrasting responses suggest that developmental senescence and nutrient-stress-amplified senescence might engage partially distinct regulatory networks despite converging on common downstream targets.
+
+Beyond the NAC family, other regulatory groups show similar complexity. 
+The Leaf $\times$ $-$P interaction specifically captures \textit{nactf32} (\textit{Zm00001eb080700}), which shifts from downregulation in standard aging to upregulation under combined stress. 
+The WRKY family also contributes to this stress-integrated network, with \textit{wrky17} (\textit{Zm00001eb330710}), \textit{wrky32} (\textit{Zm00001eb015320}), and \textit{wrky92} (\textit{Zm00001eb350280}) specifically responding to the age-phosphorus interaction. 
+The AP2-EREBP and MYB families also contribute to this stress-integrated network, with members like \textit{myb112} (\textit{Zm00001eb387370}) and \textit{myb163} (\textit{Zm00001eb366540}) responding strongly to phosphorus limitation, potentially bridging the gap between metabolic signaling and transcriptional control.
+Our analysis suggests that phosphorus limitation may accelerate natural senescence programs specifically in older leaves through transcriptional cascades that integrate developmental timing with nutrient availability.
+
+The observed top-bottom gradient of responses suggests that phosphorus deficiency accelerates rather than replaces natural senescence programs. 
+Senescence-associated gene expression increases with age, phospholipids deplete, triacylglycerols accumulate, and photosynthesis declines.
+All of these responses under phosphorus stress are amplified and propagated basipetally (downwards) along the plant axis during the vegetative phase. 
+At the extreme bottom, this culminates in the senescence and sacrifice of lower-canopy leaves to remobilize nutrients, thereby sustaining younger, photosynthetically active tissues and developing reproductive structures \cite{wei2025}.
+Even the observed increase in the seed-to-stover phosphorus ratio under deficiency supports this concept of prioritized allocation. 
+
+We believe that crop improvement strategies might benefit from focusing on optimizing the timing and tissue specificity of senescence responses.
+
+
+\subsection*{$\invfour$ does not alter phosphorus starvation responses}
+
+Despite the strong developmental dependency of phosphorus responses, we found minimal evidence that the \invfour chromosomal inversion modulates these interactions.
+The three genes showing significant genotype-by-phosphorus interactions (\textit{aldh2}, \textit{gras80}, and \textit{flz22}, \ref{supp:Figure_S5}) are located outside the inversion boundaries and did not show additional interactions with leaf stage.
+% Lipidomic analysis detected subtle \invfour effects on specific monogalactosyldiacylglycerol species MGDG34:2 and MGDG34:3 that varied with both phosphorus availability and leaf age, but these effects were restricted to a small number of lipid classes and did not alter the overall pattern of age-dependent stress responses.
+
+The primary effects of \invfour on flowering time and plant height operated independently of both phosphorus treatment and leaf developmental stage.
+This independence indicates that \invfour\'s contribution to highland adaptation does not involve fine-tuning the coordination between leaf senescence and P stress responses.
+Instead, the inversion appears to establish constitutive differences in developmental timing that influence when leaves are produced and when flowering is initiated, without modifying how individual leaves respond to phosphorus limitation as they age.
+
+The absence of significant \invfour modulation of canonical phosphorus starvation machinery (including phosphate scavenging genes, membrane lipid remodeling enzymes, and metabolic adjustment pathways) requires reconsideration of the hypothesis that \invfour enhances phosphorus acquisition or utilization efficiency.
+% PHOS2 responds to Leaf Zm00001eb191650 phos2        phosphate transporter2 log2FC =0.693   std err = 0.207   FDR =0.00963
+The fact that genes like \textit{phos2}, a phosphate transporter located within the inversion and previously proposed as an adaptive candidate, do not show genotype-by-phosphorus interactions suggests that \invfour\'s adaptive value in highland environments comes primarily from coordinating developmental timing with the constrained growing season rather than from direct enhancement of P stress tolerance.
+The earlier flowering observed in \invfour plants, which occurred regardless of phosphorus availability, aligns with previous reports showing that \invfour-highland accelerates flowering specifically at high elevations \cite{gates2019,barnes2022}.
+The absence of \invfour effects on phosphorus responses, combined with its constitutive effects on developmental timing, suggests that its adaptive value in highland environments may operate primarily through phenological adjustment to constrained growing seasons rather than enhanced nutrient stress tolerance.
+
+Regarding a possible effect of \invfour in phosphorus response through control of leaf senescence, the genotype shows negligible effects on senescence gene expression in this experiment. 
+Only \textit{lkrsdh1} exhibits an \invfour main effect, and this gene lies outside the inversion boundaries without additional environment-dependent interactions. 
+This pattern reinforces the idea that the adaptive value of \invfour likely operates through constitutive developmental timing rather than the modulation of environment-specific stress responses.
+
+The one phenotypic exception was cob diameter, which showed a significant \invfour $\times$ phosphorus interaction.
+While control lines maintained consistent cob diameter regardless of phosphorus treatment, \invfour plants developed substantially thinner cobs under phosphorus deficiency.
+This reproductive trait response may reflect altered resource allocation priorities during ear development, possibly linked to the earlier flowering phenology of \invfour plants.
+If \invfour plants initiate reproductive development earlier relative to their vegetative growth stage, they may be more vulnerable to resource limitation during ear formation.
+However, this effect did not extend to other reproductive traits such as seed weight or overall yield, limiting its explanatory power for \invfour\'s adaptive role.
+
+\section*{Conclusion}
+
+Our multi-omics analysis reveals that the maize phosphorus starvation response is influenced by the leaf developmental stage during the vegetative phase, with older leaves positioned below the collar exhibiting enhanced stress responses characteristic of developmental senescence, which integrate nutrient limitation with natural developmental progression.
+The bifurcation of molecular responses into light-harvesting shutdown and senescence acceleration shows coordinated regulation of functionally distinct pathways.
+Lipidomic patterns parallel transcriptomic responses, with age-dependent amplification of phospholipid degradation, galactolipid accumulation, and triacylglycerol synthesis.
+The divergence of lysophosphatidylethanolamine patterns from 16:3 plant models highlights the importance of lipid metabolism architecture differences between 16:3 and 18:3 plant species.
+Despite this strong developmental dependency, the \invfour chromosomal inversion does not substantially modulate phosphorus starvation responses, indicating that its contribution to highland adaptation operates through constitutive effects on developmental timing rather than enhanced nutrient stress tolerance.
+
+
+\section*{Materials and methods}
+
+\subsection*{\invfour Near Introgressed Lines, growth conditions, experimental design, and phenotype measurements}
+
+To measure the effects of \invfour in plant field phenotypes and their phosphorus starvation response transcriptome, we used a highland traditional variety carrying the Highland haplotype of \invfour corresponding to the inverted karyotype.
+The accession Michoacán 21 (referred to as Mi21), from the Mexican Cónico group, was obtained from the International Maize and Wheat Improvement Center (CIMMYT). 
+In contrast, the reference genome of the temperate inbred B73, the recurrent parent for introgression, carries the lowland haplotype corresponding to the standard non-inverted karyotype at \invfour.
+From the cross of Mi21 with B73, one F1 individual was backcrossed to B73 for eight generations. We selected lines carrying  \invfour with a diagnostic SNP during each cycle using a cleaved amplified polymorphic sequence (CAPS) marker. 
+The marker SNP is PZE04175660223 located at position 4:181637780 in the NAM B73v5 \textit{Zea mays} genome assembly.
+Amplification of the polymorphic site was done with the following primer pair: \textit{CTGAGCAGGAGATGATGGCCACTC} and \textit{GGAAAGGACATAAAAGAAAGGTGCA}, and subsequently cleaved by \textit{HinfI}.
+Plants were genotyped using the CASP marker for selecting heterozygous plants at BC8S2 after selfing seeds of \invfour and CTRL homozygous individuals were selected for the field trial.
+
+Plants were planted on May 26 2022 at the Russell E. Larson Agricultural Research Farm in Rock Springs, Pennsylvania (40°42'36" N 77°57'0" W, 366 m.a.s.l.) in soil classified as a Hagerstown silt loam (fine, mixed, semiactive, mesic Typic Hapludalf).
+Experimental conditions were similar to previously described \cite{strock2018}. 
+The experiment had a complete block design with two phosphorus (P) levels. 
+Low-P fields (5 ppm Melich-3 Phosphorus) and high-P fields (36 ppm Melich-3 Phosphorus) were divided into smaller blocks. 
+Three rows per block were planted, with a mean stand count of 8 plants per plot. 
+The plants from the center row were selected for measurements to minimize border effects. 
+Fields received fertilization based on treatment requirements. 
+Drip irrigation was provided during dry periods. 
+Each genotype was replicated four times within its P treatment.
+
+\subsection*{Inductively Coupled Plasma Mass Spectrometry (ICP-MS)}
+
+We followed the protocol described in \cite{baxter2014} for ionome analysis of the flag leaf by  Inductively Coupled Plasma–Mass Spectrometry.
+Briefly, leaf tissue was grounded and then transferred to 110 mm borosilicate glass test tube for digestion with 2.5 mL concentrated nitric acid overnight at 105 \textdegree C. 
+After two serial dilutions of this digestion in ultra pure water (18.2M $\Omega$  Milli-Q system, Millipore) 1:4, and 0.9:4.1, a final aliquot of 1.2 mL was loaded into 96 well autosampler trays.
+The samples were processed in an Agilent 7500 ICP-MS system, and the signal was adjusted to machine drift.
+Collision data was collected for Al, B, Ca, Fe, K, Mg, Mn, Mo, Ni, P, S, Zn, Na, and Cu. 
+The final concentrations of minerals were calculated as mg of element per kg dry seed weight.
+Measurements beyond three times the interquartile range were deemed as outliers and discarded for the following analysis \cite{baxter2013}.
+Additionally, quantifications for Al, B, Mo, Ni, Na, Cu, were discarded because the concentrations were too close to the detection limit of the mass spectrometer as previously reported \cite{baxter2013}.
+
+\subsection*{Phenotype analysis}
+
+For stover mass growth curves, a different plant at each time point (40, 50, 60, and harvest at 121 days after planting) was collected, dried, and weighed for each row.
+Stover dry mass data was fitted to a logistic growth model using the R package \textit{Growthcurver} \cite{sprouffske2016}.
+Maximum stover dry weight was estimated as the maximum across the four time points and not dry weight at harvest.
+Ear measurements were taken for one ear per row at harvest.
+
+We used a two-stage approach to model phenotypic responses to phosphorus treatment and genotype.
+In the first stage, we applied spatial correction separately for each treatment ($+$P and $-$P) using P-spline analysis of spatial trends (SpATS) \cite{rodriguez-alvarez2018} implemented via the \texttt{statgenHTP::fitModels()} function \cite{millet2025}.
+For each phenotype $y$ and treatment separately, SpATS fits a mixed model that decomposes spatial variation into smooth bivariate surfaces using two-dimensional P-splines over field row and column coordinates, while accounting for genotypic effects and replication structure.
+The model estimates genotype-specific predictions adjusted for spatial heterogeneity, which we extracted using the \texttt{getCorrected()} function.
+These spatially-corrected plot-level values remove field position effects while preserving biological variation.
+
+In the second stage, we modeled the spatially-corrected phenotypes $\tilde{y}$ with a linear model to estimate treatment and genotype effects:
+\begin{eqnarray}
+\label{eq:pheno_model}
+\tilde{y}_{ijr} = \beta_0 + \beta_1 \text{P}_i + \beta_2 \textit{\invfour}_j + \beta_3 [\textit{\invfour} \times \text{P}]_{ij} + \varepsilon_{ijr}
+\end{eqnarray}
+
+where the spatially-corrected observation $\tilde{y}_{ijr}$ corresponds to plot $r$ under phosphorus treatment $i$ with genotype $j$.
+The fixed effects coefficients represent the overall mean ($\beta_0$), the effect of phosphorus treatment ($\beta_1$), the effect of genotype ($\beta_2$), and their interaction ($\beta_3$).
+The residuals $\varepsilon_{ijr} \sim \mathcal{N}(0, \sigma_\varepsilon^2)$ capture remaining variation after spatial correction.
+We adjusted p-values for multiple testing using the false discovery rate method and report effects with FDR $< 0.05$.
+
+\subsection*{Tissue sampling, RNA extraction, and sequencing}
+
+We sampled the plants at 63 Days After Planting ($\text{DAP}$).
+We estimated the developmental stage to be around V13. Which meant that at the time of measurement, the plant had grown $\sim 13$ fully collared leaves, from which $\sim 8$ remained green.
+We sampled every other leaf downwards to maximize the developmental divergence between our allotted four samples per individual and represent the physiological age gradient of the available mature canopy.
+We took tissue from the collar leaf (the first leaf with a fully developed collar, designated as Node 0 in \cite{ciganda2008}), and continued sampling every other leaf below it, resulting in a total of four sampled leaves per plant.
+Specifically, the four sampled leaves corresponded to the following nodal positions: Node 0 (Collar Leaf), Node 2, Node 4, and Node 6 (with Node 6 being the most basal/oldest leaf sampled). These leaves were numbered sequentially from 1(most apical, Node 0) to  4 (most basal, Node 6) for analysis purposes. 
+We used four replicate plants per combination of  P treatment and \invfour genotype for a total of 64 tissue samples. 
+We took ten disc samples from the leaf tips with a tissue puncher and immediately froze the tissue in 1.5 mL tubes with two steel beads precooled with liquid nitrogen and kept in dry ice until stored at -80 °C.
+We extracted total RNA with the QIAGEN RNAeasy Plant Mini Kit  RNA extraction kit following manufacturer procedures (QIAGEN 74904), and RNA samples were quantified in nanodrop and sent to the NCSU Core Genomics Laboratory for sequencing.
+Following QC in the Bioanalyzer, Illumina libraries were prepared and sequenced in a lane of the Novaseq according to the manufacturer's recommendations.
+
+\subsection*{Lipid extraction, identification, and quantification by HPLC-MS}
+We used the lipid extraction by methyl-tert-butyl ether \cite{matyash2008} and HPLC-MS methods as described in \cite{barnes2022}. 
+First, we ground the frozen tissue samples using a SPEX Geno/Grinder (Metuchen, NJ, USA). 
+Briefly, cold methanol (MeOH) and internal standard mix were added to the ground frozen tissue. This was vortexed and methyl tert-butyl ether (MTBE) was added before vortexing again.
+After shaking the samples at 4°C, we added LC/MS grade water at room temperature and vortexed. 
+We then centrifuged the samples and collected the supernatant from the upper organic phase, splitting it into two aliquots and drying it in a rotovap. 
+Dry samples were resuspended in 110 $\mu$L of 100\% MeOH (with the internal standard CUDA at 50 ng/mL), vortexed at low speed for 20 s, and then sonicated at room temperature for 5 min. 
+We transferred the samples into amber glass vials with inserts prior to analysis. Lipid profiling was performed using a Thermo Scientific Orbitrap Exploris 480 mass spectrometer coupled to a Thermo Vanquish Horizon UHPLC. Mass spectrometry parameters and details were repeated as in \cite{barnes2022}.
+We converted the RAW files to ABF and imported them into MS-DIAL version 4.24.
+The parameters were as follows: MS1 tolerance 0.01 Da, MS2 tolerance 0.025 Da, Minimum peak height 100,000, mass slice width 0.05 Da.
+A library of retention times from our standards was used for retention time identification, and the ID score cutoff was 80\%.
+We also used the internal MS-DIAL compound library from the Fiehn laboratory with a retention time tolerance of 1 min.
+For alignment, all samples were compared to one of the pooled QCs.
+Quantification was calculated as the area under the peak.
+Any internal standard, non-plant lipid, or odd-chain fatty acid-containing lipid was removed from quantification.
+
+\subsection*{Differential gene expression and differential lipid analysis}
+
+We aligned RNA-seq reads to the maize Zm-B73-REFERENCE-NAM-5.0 genome using \textit{kallisto} \cite{bray2016}.
+Transcript-level alignments were aggregated to gene-level counts per biological replicate.
+Genes with low expression across samples were filtered using \texttt{filterByExpr} from \textit{edgeR} \cite{robinson2010}.
+For lipid analysis, we removed internal standards and odd-chain fatty acid species, then processed MS-Dial peak area data.
+Lipid ion counts were scaled by total ion count and multiplied by $1 \times 10^9$ for numerical stability, then analyzed without further normalization.
+
+We applied TMM normalization to gene expression counts to adjust for sequencing depth differences.
+For both gene expression and lipid abundance data, we calculated variance weights with \textit{voom} \cite{law2014} to model the mean-variance relationship and transformed data to $\log_2$ scale ($\log_2(\text{CPM})$ for genes, $\log_2(\text{scaled abundance})$ for lipids).
+We fitted multivariate linear models separately for gene expression and lipid abundance using \textit{limma} \cite{ritchie2015}.
+
+For the log-transformed response $Y_{ijrs}$ (expression or abundance) from leaf stage $s$, in plant $r$, under phosphorus treatment $i$, with genotype $j$, we have:
+\begin{eqnarray}
+\begin{aligned}
+Y_{ijrs} = {}& \beta_0 + \beta_1 \text{Row}_l + \beta_2 \text{Leaf}_s
++ \beta_3 \text{P}_i + \beta_4 \textit{\invfour}_j \\ 
+& + \beta_5 [\text{Leaf} \times \text{P}]_{si} 
++ \beta_6 [\text{P} \times \textit{\invfour}]_{ij} \\ 
+& + \beta_7 [\text{Leaf} \times \textit{\invfour}]_{sj} 
++ u_c + \varepsilon_{ijrs}
+\end{aligned}
+\end{eqnarray}
+
+with random effect and residuals:
+\begin{eqnarray}
+u_c \sim \mathcal{N}(0, \sigma^2_u), \quad \varepsilon_{ijrs} \sim \mathcal{N}(0, \phi_{ijrs}\sigma^2)
+\end{eqnarray}
+
+where $\text{Leaf}_s$ represents the centered continuous leaf stage variable ($s \in \{1,2,3,4\}$, centered at mean 2.5), such that $\beta_2$ represents the rate of change per leaf stage increment.
+The term $u_c$ is a random effect for plot column nested within treatment, accounting for spatial autocorrelation.
+The residual variance $\phi_{ijrs}\sigma^2$ incorporates heteroscedastic precision weights from \textit{voom}.
+Lipid models additionally included MS injection order as a technical covariate (\ref{supp:Figure_S7}).
+Empirical Bayes moderation was applied using \texttt{eBayes} to stabilize variance estimates across genes or lipids.
+
+We adjusted p-values for multiple testing as false discovery rates (FDR).
+For phosphorus treatment and \invfour genotype main effects, genes or lipids with FDR $< 0.05$ and $|\log_2(\text{FC})| > 1.5$ were classified as high-confidence differentially expressed or abundant.
+For leaf stage and interaction effects, we used a threshold of $|\log_2(\text{FC})| > 0.5$, equivalent to $|\log_2(\text{FC})| > 1.5$ between leaf stages 1 and 4.
+R scripts and expression data are available at the \href{https://github.com/sawers-rellan-labs/inv4m}{inv4m GitHub repository}.
+
+\subsection*{Gene Ontology and KEGG overrepresentation analysis}
+
+Once we had sets of differentially expressed genes for the three predictors (leaf, -P, \invfour) and two types of gene expression response (upregulated and downregulated), we proceeded to annotate them with gene ontology terms and KEGG pathways using \textit{ClusterProfiler} \cite{yu2012,zicola2024}.  
+We started with the B73 NAM v5 gene ontology annotation from \cite{fattel2024} and added GO terms for each intermediate node in the gene ontology tree using the \textit{ClusterProfiler} function \textit{buildGOmap}. 
+Then, we conducted gene over-representation analysis using the function \textit{compareCluster}, with the set of 24011 genes detected in at least one high-quality leaf RNA-seq library as the universe/background. 
+This function calculates the hypergeometric test for overrepresented ontology terms in the specified gene set and returns raw and FDR-adjusted p-values.
+We then manually reviewed the combined 1700 significant (\textit{FDR} $<0.05$) overrepresented GO term associations for the 6 predictor/regulation combinations. For illustration, we selected an \textit{ad hoc} subset representative of biological relevance and minimizing semantic redundancy.
+Similarly, we tested for KEGG pathway overrepresentation using the \textit{enrichKEGG} function from \textit{compareCluster}, which performs the same hypothesis tests on the NCBI RefSeq annotation of the B73 NAM assembly. 
+Both types of overrepresentation analysis were plotted with the package \textit{DOSE} \cite{yu2015}.
+
+\subsection*{Gene Set Transcriptomic Indices}
+% The chlorophyll degradation list was manually curated from CornCyc.
+% Many (6) genes that were in WEi2025 were missing from the corncyc pathways
+% even if the reaction was present, I sent an email asking for the addition of these genes based on manual curation, mainly Wei2025.
+% The chlorophyll synthesis list is about 35 genes. I can add the table or just cite the pathways in corncyc (most economical), no further manual curation was needed
+% Senesce and Photosynthesysis lists were superseded by Ojeda2026 I need his input about how to cite/describe them.
+% todo: (fausto) add the tables and references, and correct the results and discussion correspondingly
+To visualize developmental and stress-induced changes in major biological processes, we calculated transcriptomic indices for four gene sets. Chlorophyll Synthesis and Chlorophyll Degradation gene sets were obtained from CornCyc pathways and KEGG annotations. Photosynthesis and Leaf Senescence gene sets were obtained from Gene Ontology biological process terms using the B73 NAM v5 annotation. 
+
+For each gene set, we calculated the mean $\log_{10}(\text{CPM})$ across all genes in the set for each sample. 
+Index values were then normalized to represent the proportion of the total expression range across the four leaf stages using the formula:
+
+$$\text{Normalized Index} = \frac{\text{Index}_i - \text{Index}_{\min}}{\text{Index}_{\max} - \text{Index}_{\min}}$$
+
+where Index$_i$ represents the mean expression for leaf stage $i$, and Index$_{\min}$ and Index$_{\max}$ represent the minimum and maximum mean expression values across all four leaf stages. This normalization scales all indices to a 0-1 range, facilitating visual comparison of expression trajectories across gene sets with different baseline expression levels.
+
+
+\section{Financial Disclosure Statemen}
+
+This work was supported by NC State startup funds awarded  
+Fieldwork and mapping population development were supported by NSF-PGR award 1546719 
+This work is supported by the Research Capacity Fund (HATCH), project award no. 7005660, from the U.S. Department of Agriculture’s National Institute of Food and Agriculture.  
+The work on this paper and Nirwan Tandukar was supported by the U.S. Department of Energy, Office of Science, Biological and Environmental Research program, Early Career Award Number DE-SC0021889.
+Allison Barnes was supported by NSF-PGRP PRFB grant 2010703. 
+Fausto Rodríguez-Zapata was supported by the Science and Technologies for Phosphorus Sustainability (STEPS) Center, a National Science Foundation Science and Technology Center (CBET-2019435).
+This work was performed in part by the Molecular Education, Technology and Research Innovation Center (METRIC) at NC State University, which is supported by the State of North Carolina. 
+
+\section{Acknowledgments}
+We thank the  Puerto Vallarta Winter Nursery crews who have helped generate introgression populations used in this manuscript.
+We especially want to acknowledge the indigenous people of the Americas and the ingenuity with which they domesticated and facilitated the spread and adaptation of maize throughout the continent.
+This work would not have been possible without the international maize research community and the willingness of so many colleagues to support the development of new research programs.
+Any opinions, findings, conclusions, or recommendations expressed in this publication are those of the author(s) and should not be construed to represent any official USDA, NSF, DOE, ARS or U.S. Government determination or policy.
+
+\bibliography{Inv4mPhosphorus}
+
+\pagebreak
+
+\onecolumn
+
+
+\section*{Supplement}
+\beginsupplement
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{figs/Figure_S1.png}
+\caption{
+\textbf{\invfour differences in Anthesis and Plant Height.}
+\textbf{(A)} Days to anthesis. $\invfour$ reached anthesis significantly earlier than CTRL under both phosphorus sufficient (+P) and deficient (-P) conditions.
+\textbf{(B)} Plant height at sampling. $\invfour$ plants were significantly taller than CTRL plants under both +P and -P treatments.
+Yellow boxplots represent CTRL, purple boxplots represent $\invfour$.
+\textit{FDR} adjusted significance: \textit{n.s.} not significant, $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***).
+}
+\label{supp:Figure_S1}
+\end{figure*}
+\pagebreak
+
+
+\begin{figure}[!hb]
+\centering
+\includegraphics[width=\textwidth]{figs/Figure_S2.png} % Assuming this is the filename
+\caption{
+\textbf{Maize Stover Dry Weight Growth Curves and Derived Parameters Highlight Phosphorus-Dependent Effects with No Genotype-by-Environment Interaction.}
+\textbf{(A)} Derived logistic growth parameters for CTRL and \invfour genotypes under +P and -P. 
+Phosphorus deficiency significantly reduced the Area Under the Curve (AUC) for empirical data \textbf{(B)} and logistic model \textbf{(C)}, prolonged the time to reach half maximum stover weight (T$_{1/2}$) (D), and decreased the maximum stover weight (STW$_{\text{max}}$) (E).
+%Crucially, no significant genotype-by-phosphorus interactions were observed for any of these growth parameters, indicating that \invfour did not modulate the plant's response to phosphorus availability.
+%Furthermore, there were no significant main effects of the \invfour genotype on these stover grotwh parameters.
+\textit{FDR} adjusted \textit{t-test} significance: \textit{n.s.} not significant, $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***), $p < 0.0001$ (****).
+}
+\label{supp:Figure_S2} % Label for your figure
+\end{figure}
+
+\pagebreak
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\linewidth]{figs/Figure_S3.png}
+\caption{\textbf{Secondary Ionomic responses of \invfour and control maize lines under phosphorus sufficiency (+P) and deficiency (-P).}
+Boxplots show element concentrations \textbf{(A)} in Magnesium (Mg), Manganese (Mn), Potassium (K), and Iron (Fe) in stover and seeds, and Seed/stover ratios \textbf{(B)} for the same four minerals.
+%Phosphorus deficiency ($-P$) caused a significant reduction in seed Mg (A) and seed Mn (B). No significant effects of either phosphorus treatment or the \invfour genotype were detected for K, Fe, or the seed/stover partition ratios (B) for any of the four elements.
+\textit{t-test FDR} adjusted significance: $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***), $p < 0.0001$ (****).Â 
+Effect sizes and exact \textit{p values} are reported in Table.}
+\label{supp:Figure_S3}
+\end{figure*}
+
+\pagebreak
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=0.8\linewidth]{figs/Figure_S4.png}
+\caption{
+(\textbf{A}) Euler diagram showing the major two-way intersections among DEGs from the effects of leaf position (Leaf Up/Leaf Down), phosphorus deficiency (-P Up / -P Down), and interaction (Negative and  Positive). Circle sizes represent set sizes, and numbers indicate the counts in each intersection. 
+(\textbf{B}) Upset plot highlighting high-confidence DEG intersections that are significantly enriched relative to expectation (FDR <0.05), the first and second intersections are depicted in A, the third  (Leaf Down $\cap$ -P Down) is not,due to its small size. 
+(\textbf{C}) Summary of high-confidence DEGs and their GO Biological Process (BP) annotation. Black numbers indicate the total number of high-confidence DEGs per group; white numbers denote the subset annotated with significantly enriched BP terms. Neg L$\times$–P: negative Leaf $\times$ –P interaction effect, and Pos L$\times$–P: positive interaction.
+(\textbf{D}) Euler diagram showing overlap among the high-confidence BP annotated DEG sets, illustrating shared and unique functional responses across leaf position, phosphorus deficiency, and their interaction.
+}
+\label{supp:Figure_S4}
+\end{figure*}
+
+\pagebreak
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\linewidth]{figs/Figure_S5.png}
+\caption{
+(\textbf{A}) \textbf{Manhattan plot for differentially expressed genes (DEGs) under $-\text{P}$}. 
+%A total of $\textbf{10,606}$ DEGs were identified for the main effect of P deficiency. 
+Loci associated with key P-starvation response genes, such as $\textit{pilncr1}$, $\textit{pap19}$, $\textit{ips1}$, and $\textit{spx4}$, are highlighted. The $y$-axis represents the $-\log_{10}(\text{FDR})$.
+(\textbf{B}) \textbf{Manhattan plot for DEGs with an $\invfour$ $\mathbf{\times} -\mathbf{P}$ interaction}. 
+%Only $\textbf{3}$ DEGs show a significant interaction effect with the $\invfour$ inversion.  is linked to $\textit{aldh2}$ and $\textit{flz22}$.
+(\textbf{C}) Zoomed-in view of the significant locus on Chromosome 4. The region on chromosome 4 (position 171,050,000 to 171,060,000) shows the candidate gene $\textit{aldh2}$ ($\textit{aldehyde dehydrogenase 2}$)
+(\textbf{D}) Volcano plot for differentially abundant lipids (DALs) under Leaf $\mathbf{\times} -\mathbf{P}$ interaction. 
+%Only two lipids, $\textbf{PC34:2}$ and $\textbf{TG:54:9}$, are identified as significantly differentially abundant, showing a significant interaction between leaf developmental stage and P deficiency treatment. 
+}
+\label{supp:Figure_S5}
+\end{figure*}
+
+\pagebreak
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\linewidth]{figs/Figure_S6.png}
+\caption{
+\textbf{Lipid class composition, and effect of leaf developmental stages and phosphorus treatments.} of
+\textbf{(A)} Membrane lipid composition (Ion \%, log scale) is dominated by PC, MGDG, DGDG, and SQDG, while LPE, PI and DGGA (in +P) represent minor components (<1\%, necessitating log scale). 
+%Phosphorus deficiency causes notable decreases in phosphoglycerolipids across all leaf stages (1-4, apical to basal).
+\textbf{(B)} Treatment effect (-P / +P ) on lipids, as ${log_2\text{Fold Change}}$, shows leaf-stage-dependent responses in DG, TG, PC, and PE. 
+%Phosphoglycerolipids generally decrease under -P, while glycoglycerolipids increase.
+\textbf{(C)} leaf effect, as ${log_2\text{Fold Change}}$, %Developmental trajectories reveal contrasting neutral lipid responses: under +P, DG and TG decrease with leaf age, while under -P this response switches to a decrease.
+%The general trend of increased glycoglycerolipids and decreased phosphoglycerolipids under -P appears additive to developmental effects.
+Error bars indicate standard error of the mean.
+}
+\label{supp:Figure_S6}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\linewidth]{figs/Figure_S7.png}
+\caption{
+\textbf{Mass spectrometry injection order confounds lipid profile variation.}
+\textbf{(A)} Multidimensional scaling (MDS) of lipid profiles. 
+%shows that dimension 1 (31\% variance) strongly correlates with injection order (Pearson $r = 0.96$, $p = 2.2 \times 10^{-16}$), reflecting systematic drift in mass spectrometry measurements over the analysis sequence. 
+Treatment groups (-P, +P) are distinguished by shape, while color gradient represents injection order (purple = early, yellow = late).
+The injection order was used as a covariate in the \textit{limma} mixed linear model of lipid variation; see Methods.
+\textbf{(B)} Lipid data projections on the next most explanatory MDS dimensions  (dim2 vs. dim3) colored by experimental factors. 
+%show expected biological patterns: treatment separation (top left) and leaf developmental stage gradients (bottom right).
+%Unlike dimension 1, these patterns represent biological variation rather than technical artifacts.
+%There is no  obvious sample clustering by genotype (bottom left),
+%collection time (middle left), or batch effects between collectors (top right), 
+}
+\label{supp:Figure_S7}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\footnotesize % Reduces font size for the table content
+\caption{Selected Differentially Expressed Genes under Phosphorus Starvation ($\text{-P}$) effect.}
+\label{table::phosphorusDEGs}
+\begin{tabular}{ccp{7.5cm}cc} % Adjusted width for Name/Description column
+\hline
+\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} &   \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
+\hline
+\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
+\hline
+Zm00001eb003820 & pilncr1 & pi-deficiency-induced long non-coding RNA1 & 9.0 & 7.70\\
+Zm00001eb148590 & ips1 & induced by phosphate starvation1 & 9.0 & 7.10\\
+Zm00001eb241920 & gpx1 & glycerophosphodiester phosphodiesterase1 & 9.0 & 6.84\\
+Zm00001eb064450 & pap2 & purple acid phosphatase2 & 9.0 & 4.64\\
+Zm00001eb154650 & ppa & Inorganic pyrophosphatase 1 & 9.0 & 3.06\\
+Zm00001eb280120 & pfk1 & phosphofructose kinase1 & 9.0 & 2.58\\
+Zm00001eb063230 & plc6 & phospholipase C6 & 9.0 & 1.90\\
+Zm00001eb313760 & flz22 & FLZ-type domain-containing protein & 8.9 & 3.03\\
+Zm00001eb370610 & rfk1 & Riboflavin kinase & 8.9 & 3.98\\
+Zm00001eb007180 & gmp & Mannose-1-phosphate guanyltransferase alpha & 8.8 & 2.29\\
+Zm00001eb010130 & pap19 & purple acid phosphatase19 & 8.8 & 6.09\\
+Zm00001eb099420 & gmps1 & GMP synthase & 4.3 & 9.92\\
+Zm00001eb019570 & spx7 & SPX domain-containing membrane protein7 & 4.1 & 8.04\\
+Zm00001eb425050 & mdr1 & putative multidrug resistance protein & 3.6 & 8.23\\
+Zm00001eb108800 & uam1 & UDP-arabinopyranose mutase & 3.1 & 8.72\\
+Zm00001eb034810 & mgd2 & Monogalactosyldiacylglycerol synthase & 2.9 & 11.12\\
+Zm00001eb388800 & ltsr1 & Low temperature and salt responsive protein & 2.3 & 9.54\\
+\hline
+\multicolumn{5}{l}{\textit{\textbf{Downregulated Genes}}} \\
+\hline
+Zm00001eb433900 & alla1 & allantoinase1 & 6.4 & -1.93\\
+Zm00001eb211170 & toc & Translocase of chloroplast, chloroplastic & 5.9 & -1.61\\
+Zm00001eb214780 & ccp19 & cysteine protease19 & 5.9 & -1.95\\
+Zm00001eb070520 & bhlh148 & bHLH-transcription factor 148 & 5.8 & -2.12\\
+Zm00001eb243180 & sdc & Serine decarboxylase & 5.8 & -1.74\\
+Zm00001eb377880 & - & - & 5.3 & -1.63\\
+Zm00001eb114780 & cfm3 & CRM family member3 & 4.9 & -1.54\\
+Zm00001eb405630 & c3h & C3H transcription factor (Fragment) & 4.9 & -1.57\\
+Zm00001eb377890 & snf12 & SWI/SNF complex component SNF12-like protein & 4.8 & -1.64\\
+Zm00001eb248820 & - & - & 4.7 & -1.84\\
+Zm00001eb294690 & peamt2 & phosphoethanolamine N-methyltransferase 2 & 3.8 & -7.17\\
+Zm00001eb017120 & tps8 & terpene synthase8 & 3.3 & -4.87\\
+Zm00001eb066620 & tut7 & Terminal uridylyltransferase 7 & 2.7 & -4.38\\
+Zm00001eb279680 & aaap48 & amino acid/auxin permease48 & 2.3 & -4.39\\
+Zm00001eb324550 & nactf132 & NAC-transcription factor 132 & 2.2 & -4.33\\
+Zm00001eb292550 & sec14 & SEC14 cytosolic factor family protein / phosphoglyceride transfer family protein & 1.9 & -6.43\\
+Zm00001eb410750 & - & - & 1.4 & -4.18\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\footnotesize % Reduces font size for the table content
+\caption{Selected Differentially Expressed Genes for Leaf Stage effect.}
+\label{table::leafDEGs}
+\begin{tabular}{ccp{7.5cm}cc} % Adjusted width for Name/Description column
+\hline
+\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} &   \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
+\hline
+\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
+\hline
+Zm00001eb297390 & hir3 & hypersensitive induced reaction3 & 7.4 & 0.80\\
+Zm00001eb041700 & gt & Glycosyltransferase & 7.3 & 1.09\\
+Zm00001eb305330 & cyp6 & cytochrome P450 & 7.3 & 0.90\\
+Zm00001eb037440 & bhlh145 & bHLH-transcription factor 145 & 7.0 & 0.89\\
+Zm00001eb293310 & dnaj & DNAJ heat shock N-terminal domain-containing protein & 6.7 & 0.64\\
+Zm00001eb407630 & salt1 & SalT homolog1 & 6.5 & 2.54\\
+Zm00001eb275060 & - & - & 6.1 & 0.73\\
+Zm00001eb098650 & trpp2 & trehalose-6-phosphate phosphatase2 & 6.0 & 1.47\\
+Zm00001eb370960 & wrky111 & WRKY-transcription factor 111 & 6.0 & 0.60\\
+Zm00001eb163980 & sftp & Surfactant protein B containing protein & 6.0 & 0.53\\
+Zm00001eb261620 & imo & Indole-2-monooxygenase & 4.0 & 2.04\\
+Zm00001eb422900 & - & - & 2.8 & 1.91\\
+Zm00001eb104340 & mutl3 & MUTL protein homolog 3 & 2.3 & 1.96\\
+Zm00001eb169810 & sc4mol & sphinganine C4-monooxygenase 1 & 2.2 & 1.79\\
+Zm00001eb294140 & - & - & 2.1 & 1.90\\
+Zm00001eb002760 & cyp78a & Cytochrome P450 family 78 subfamily A polypeptide 8 & 1.8 & 2.45\\
+Zm00001eb137930 & dmas & 2'-deoxymugineic-acid 2'-dioxygenase & 1.6 & 1.89\\
+Zm00001eb403420 & abc\_trans & ABC-type Co2+ transport system, permease component & 1.6 & 1.81\\
+Zm00001eb054710 & chemo & Chemocyanin & 1.5 & 1.89\\\hline
+\multicolumn{5}{l}{\textit{\textbf{Downregulated Genes}}} \\
+\hline
+Zm00001eb152840 & pcf7 & Transcription factor PCF7 & 7.5 & -1.48\\
+Zm00001eb151160 & ntf2 & NTF2 domain-containing protein & 7.5 & -1.15\\
+Zm00001eb076680 & sgrl1 & Protein STAY-GREEN LIKE, chloroplastic & 7.5 & -0.95\\
+Zm00001eb038410 & ucp4 & Mitochondrial uncoupling protein 4 & 7.5 & -0.70\\
+Zm00001eb329970 & tyrtr & Tyrosine-specific transport protein & 7.5 & -0.63\\
+Zm00001eb182020 & mph1 & protein MAINTENANCE OF PSII UNDER HIGH LIGHT 1 & 7.5 & -0.61\\
+Zm00001eb176730 & ndhb1 & photosynthetic NDH subunit of subcomplex B 1, chloroplastic & 7.5 & -0.52\\
+Zm00001eb391900 & tic32 & Short-chain dehydrogenase TIC 32, chloroplastic & 7.4 & -0.60\\
+Zm00001eb057540 & zmm4 & Zea mays MADS4 & 7.1 & -3.40\\
+Zm00001eb154820 & chk & Choline kinase & 7.1 & -0.53\\
+Zm00001eb016200 & bhlh1 & BHLH transcription factor & 6.0 & -3.62\\
+Zm00001eb364940 & plt29 & Lipid-transfer protein DIR1 & 5.2 & -2.80\\
+Zm00001eb214750 & zmm15 & Zea mays MADS-box 15 & 5.1 & -5.04\\
+Zm00001eb320160 & alkt1 & Alkyl transferase & 4.9 & -3.82\\
+Zm00001eb169010 & ccp18 & cysteine protease18 & 4.0 & -2.76\\
+Zm00001eb090330 & aatr1 & amino acid transporter1 & 3.8 & -3.01\\
+Zm00001eb421180 & fp3 & Farnesylated protein 3 & 3.8 & -3.23\\
+Zm00001eb411680 & glu2 & beta-glucosidase2 & 2.5 & -5.12\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\footnotesize % Reduces font size for the table content
+\caption{Selected Differentially Expressed Genes in Leaf $\times$ -P interaction, effect per increased Leaf Stage($\text{-P}$).}
+\label{table::leafxpDEGs}
+\begin{tabular}{ccp{7.5cm}cc} % Adjusted width for Name/Description column
+\hline
+\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} &   \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
+\hline
+\multicolumn{5}{l}{\textit{\textbf{Positively Interacting Genes}}} \\
+\hline
+Zm00001eb157810 & pk & Pyruvate kinase & 5.6 & 1.18\\
+Zm00001eb376160 & mrpa3 & multidrug resistance-associated protein3 & 5.4 & 0.64\\
+Zm00001eb063230 & plc6 & phospholipase C6 & 4.5 & 0.56\\
+Zm00001eb144680 & rns & Ribonuclease T(2) & 4.4 & 0.61\\
+Zm00001eb339870 & pld16 & phospholipase D16 & 4.3 & 0.56\\
+Zm00001eb393060 & piplc & PI-PLC X domain-containing protein & 4.0 & 1.15\\
+Zm00001eb148030 & gmp1 & mannose-1-phosphate guanylyltransferase1 & 3.9 & 0.69\\
+Zm00001eb009430 & htm4 & Heptahelical transmembrane protein 4 & 3.9 & 0.63\\
+Zm00001eb011050 & bgal & Beta-galactosidase & 3.9 & 0.53\\
+Zm00001eb289800 & pah1 & phosphatidate phosphatase 1 & 3.9 & 0.58\\
+Zm00001eb263160 & ring & Zinc finger (C3HC4-type RING finger) family protein & 2.9 & 2.16\\
+\hline
+\multicolumn{5}{l}{\textit{\textbf{Negatively Interacting  Genes}}} \\
+\hline
+Zm00001eb359280 & tat & Tat pathway signal sequence family protein & 5.6 & -0.56\\
+Zm00001eb207130 & cab & Chlorophyll a-b binding protein, chloroplastic & 5.4 & -1.35\\
+Zm00001eb389720 & fbpase & D-fructose-1,6-bisphosphate 1-phosphohydrolase & 5.3 & -0.81\\
+Zm00001eb070520 & bhlh148 & bHLH-transcription factor 148 & 5.1 & -0.96\\
+Zm00001eb212520 & psad1 & photosystem I subunit d1 & 4.6 & -0.62\\
+Zm00001eb179680 & cab & Chlorophyll a-b binding protein, chloroplastic & 4.6 & -0.55\\
+Zm00001eb111630 & med33a & Mediator of RNA polymerase II transcription subunit 33A & 4.4 & -0.60\\
+Zm00001eb362560 & ndho1 & NADH-plastoquinone oxidoreductase1 & 4.4 & -0.58\\
+Zm00001eb214780 & ccp19 & cysteine protease19 & 4.2 & -0.82\\
+Zm00001eb071770 & mex1 & maltose excess protein1 & 4.0 & -0.59\\
+Zm00001eb256120 &  &  & 3.8 & -1.41\\
+Zm00001eb235450 & taf2n & TATA-binding protein-associated factor 2N & 3.6 & -2.07\\
+Zm00001eb138960 &  &  & 2.1 & -2.11\\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\caption{High-confidence -P upregulated DEGs annotated with GO:0016036 "cellular response to phosphate starvation" (\cite{fattel2024})}
+\label{table::PSRupDEGs}
+\begin{tabular}{ccp{7.5cm}cc}
+\hline
+\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} & \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
+\hline
+\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
+\hline
+Zm00001eb241920 & gpx1 & glycerophosphodiester phosphodiesterase1 & 8.96 & 6.84\\
+Zm00001eb154650 & ppa1 & Inorganic pyrophosphatase 1 & 8.96 & 3.06\\
+Zm00001eb280120 & pfk1 & phosphofructose kinase1 & 8.96 & 2.58\\
+Zm00001eb370610 & rfk1 & Riboflavin kinase & 8.88 & 3.98\\
+Zm00001eb297970 & sqd2 & Sulfoquinovosyl transferase SQD2 & 8.05 & 1.83\\
+Zm00001eb347070 & sqd1 & sulfolipid biosynthesis1 & 8.05 & 1.76\\
+Zm00001eb335670 & sqd3 & Sulfoquinovosyl transferase SQD2 & 7.95 & 4.17\\
+Zm00001eb144680 & rns1 & Ribonuclease T(2) & 7.95 & 1.87\\
+Zm00001eb162710 & spx4 & SPX domain-containing membrane protein4 & 7.87 & 5.26\\
+Zm00001eb386270 & spx6 & SPX domain-containing membrane protein6 & 7.72 & 4.71\\
+Zm00001eb036910 & gpx3 & glycerophosphodiester phosphodiesterase3 & 7.72 & 3.50\\
+Zm00001eb151650 & pap1 & purple acid phosphatase1 & 7.37 & 4.61\\
+Zm00001eb351780 & ugp3 & UTP--glucose-1-phosphate uridylyltransferase 3, chloroplastic & 7.10 & 2.12\\
+Zm00001eb361620 & ppa2 & Inorganic pyrophosphatase 1 & 6.80 & 3.80\\
+Zm00001eb222510 & pht1 & phosphate transporter protein1 & 6.77 & 2.29\\
+Zm00001eb247580 & ppck3 & phosphoenolpyruvate carboxylase kinase3 & 6.34 & 2.96\\
+Zm00001eb126380 & phos1 & phosphate transporter1 & 6.12 & 2.17\\
+Zm00001eb038730 & pht7 & phosphate transporter protein7 & 5.68 & 6.56\\
+Zm00001eb116580 & spd1 & Protein seedling plastid development 1 & 5.60 & 1.66\\
+Zm00001eb048730 & spx2 & SPX domain-containing membrane protein2 & 5.42 & 4.90\\
+Zm00001eb069630 & oct4 & Organic cation/carnitine transporter 4 & 4.90 & 1.76\\
+Zm00001eb083520 & dgd1 & Digalactosyldiacylglycerol synthase & 4.85 & 1.77\\
+Zm00001eb430590 & nrx3 & Putative nucleoredoxin 3 & 4.71 & 4.15\\
+Zm00001eb130570 & sag21 & Senescence-associated gene 21, mitochondrial & 4.43 & 1.94\\
+Zm00001eb258130 & mgd3 & Monogalactosyldiacylglycerol synthase & 4.37 & 1.61\\
+Zm00001eb406610 & glk4 & G2-like-transcription factor 4 & 4.31 & 5.67\\
+Zm00001eb239700 & ppa2 & Inorganic pyrophosphatase 2 & 3.20 & 2.67\\
+Zm00001eb034810 & mgd2 & Monogalactosyldiacylglycerol synthase & 2.90 & 11.12\\
+Zm00001eb144670 & rns2 & Ribonuclease T(2) & 2.73 & 1.54\\
+Zm00001eb087720 & pht13 & phosphate transporter protein13 & 2.36 & 1.75\\
+Zm00001eb047070 & pht2 & phosphate transporter protein2 & 2.33 & 4.31\\
+Zm00001eb277280 & gst19 & glutathione transferase19 & 2.05 & 1.66\\
+Zm00001eb041390 & rns3 & Ribonuclease T(2) & 1.80 & 4.15\\
+Zm00001eb202100 & pap14 & purple acid phosphatase14 & 1.54 & 2.82\\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+\begin{table}[h!]
+\centering
+\footnotesize
+\caption{High-confidence Positive Leaf $\times$ -P DEGs annotated with GO:0016036 "cellular response to phosphate starvation" (\cite{fattel2024}) }
+\label{table:goleafxP_genes}
+\begin{tabular}{ccp{7.5cm}cc}
+\hline
+\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} & \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
+\hline
+\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
+\hline
+Zm00001eb144680 & rns1 & Ribonuclease T(2) & 4.39 & 0.61\\
+Zm00001eb339870 & pld16 & phospholipase D16 & 4.30 & 0.56\\
+Zm00001eb289800 & pah1 & phosphatidate phosphatase 1 & 3.86 & 0.58\\
+Zm00001eb297970 & sqd2 & Sulfoquinovosyl transferase SQD2 & 3.86 & 0.53\\
+Zm00001eb154650 & ppa1 & Inorganic pyrophosphatase 1 & 3.42 & 0.73\\
+Zm00001eb258130 & mgd3 & Monogalactosyldiacylglycerol synthase & 2.99 & 0.65\\
+Zm00001eb280120 & pfk1 & phosphofructose kinase1 & 2.99 & 0.56\\
+Zm00001eb335670 & sqd3 & Sulfoquinovosyl transferase SQD2 & 2.81 & 0.96\\
+Zm00001eb130570 & sag21 & Senescence-associated gene 21, mitochondrial & 2.75 & 0.73\\
+Zm00001eb430590 & nrx3 & Putative nucleoredoxin 3 & 2.46 & 1.40\\
+Zm00001eb151650 & pap1 & purple acid phosphatase1 & 2.45 & 1.09\\
+Zm00001eb369590 & nrx1 & Thioredoxin, nucleoredoxin & 2.21 & 0.83\\
+Zm00001eb238670 & pep2 & phosphoenolpyruvate carboxylase2 & 2.16 & 0.58\\
+Zm00001eb370610 & rfk1 & Riboflavin kinase & 2.01 & 0.66\\
+Zm00001eb247580 & ppck3 & phosphoenolpyruvate carboxylase kinase3 & 1.97 & 0.67\\
+Zm00001eb386270 & spx6 & SPX domain-containing membrane protein6 & 1.83 & 0.82\\
+Zm00001eb239700 & ppa2 & Inorganic pyrophosphatase 2 & 1.76 & 0.89\\
+Zm00001eb277280 & gst19 & glutathione transferase19 & 1.71 & 0.80\\
+Zm00001eb048730 & spx2 & SPX domain-containing membrane protein2 & 1.42 & 1.04\\
+Zm00001eb361620 & ppa2 & Inorganic pyrophosphatase 1 & 1.31 & 0.62\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\clearpage
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\caption{High-confidence differentially abundant lipids for leaf main effect.}
+\label{table::leaf_lipids}
+\begin{tabular}{cccc}
+\hline
+\textbf{Lipid (IUB)} & \textbf{Class} & \textbf{$-\log_{10}(\textit{FDR})$} & \textbf{$\log_2(\text{FC})$}\\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Accumulated Lipids}}} \\
+\hline
+LPC18:3 & phospholipid & 3.0 & 1.43\\
+LPE18:3 & phospholipid & 2.5 & 1.26\\
+PC36:6 & phospholipid & 2.5 & 0.73\\
+DGGA36:3 & glycolipid & 1.6 & 0.65\\
+LPE18:2 & phospholipid & 1.6 & 0.55\\
+PC38:5 & phospholipid & 1.6 & 0.67\\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Depleted Lipids}}} \\
+\hline
+DG36:4 & neutral & 4.9 & -0.71\\
+LPC16:0 & phospholipid & 2.9 & -1.36\\
+PE32:1 & phospholipid & 2.9 & -0.74\\
+DG34:2 & neutral & 2.5 & -0.51\\
+PE34:1 & phospholipid & 2.4 & -0.73\\
+PC36:4 & phospholipid & 2.2 & -0.50\\
+DGDG34:1 & glycolipid & 2.1 & -0.56\\
+DG26:0 & neutral & 2.0 & -0.68\\
+DG40:8 & neutral & 1.9 & -0.74\\
+PC36:1 & phospholipid & 1.8 & -0.69\\
+DGGA36:4 & glycolipid & 1.7 & -0.72\\
+DGDG36:1 & glycolipid & 1.6 & -4.09\\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\caption{High-confidence differentially abundant lipids under phosphorus deficiency and its interaction with leaf stage.}
+\label{table::phosphorus_lipids}
+\begin{tabular}{cccc}
+\hline
+\textbf{Lipid (IUB)} & \textbf{Class} & \textbf{$-\log_{10}(\textit{FDR})$} & \textbf{$\log_2(\text{FC})$}\\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Phosphorus Deficiency (–P)}}} \\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Accumulated Lipids}}} \\
+\hline
+DGGA36:6 & glycolipid & 1.5 & 1.66\\
+DGGA35:2 & glycolipid & 1.5 & 7.42\\
+TG50:3 & neutral & 1.5 & 3.05\\
+TG54:9 & neutral & 1.5 & 2.02\\
+TG52:6 & neutral & 1.5 & 2.42\\
+TG50:2 & neutral & 1.4 & 2.53\\
+TG56:6 & neutral & 1.3 & 11.16\\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Depleted Lipids}}} \\
+\hline
+PC34:2 & phospholipid & 4.3 & -1.62\\
+LPC18:2 & phospholipid & 3.9 & -3.69\\
+LPE18:2 & phospholipid & 3.9 & -2.70\\
+DG40:8 & neutral & 3.0 & -2.76\\
+LPC16:1 & phospholipid & 3.0 & -3.52\\
+PC32:2 & phospholipid & 3.0 & -2.56\\
+PE32:1 & phospholipid & 3.0 & -1.85\\
+PG32:0 & phospholipid & 3.0 & -1.62\\
+PE34:4 & phospholipid & 2.2 & -2.08\\
+DG40:9 & neutral & 2.1 & -4.27\\
+LPC18:3 & phospholipid & 2.1 & -2.72\\
+PC32:0 & phospholipid & 2.1 & -2.12\\
+DG26:0 & neutral & 2.1 & -1.84\\
+LPE18:3 & phospholipid & 1.6 & -2.13\\
+PC38:6 & phospholipid & 1.6 & -2.48\\
+PE34:3 & phospholipid & 1.6 & -2.06\\
+PG34:3 & phospholipid & 1.6 & -3.94\\
+PI34:2 & phospholipid & 1.5 & -2.34\\
+LPC18:1 & phospholipid & 1.5 & -1.90\\
+TG58:5 & neutral & 1.3 & -4.08\\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Leaf × Phosphorus Interaction}}} \\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Positively Interacting Lipid}}} \\
+\hline
+TG58:5 & neutral & 2.6 & 4.23\\
+\hline
+\multicolumn{4}{l}{\textit{\textbf{Negatively Interacting Lipid}}} \\
+\hline
+PC34:2 & phospholipid & 2.6 & -0.55\\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+
+\paragraph*{S1 File.}
+\phantomsection
+\makeatletter
+\def\@currentlabelname{S1 File.}
+\makeatother
+\label{S1_File}
+\textbf{High Confidence Senescence Associated DEGs.} High Confidence DEGs that have been reported to be associated with senescence, they might respond to any of the experimental predictors in this study: -P, Leaf, \invfour genotype.
+
+\end{document}
+
+
