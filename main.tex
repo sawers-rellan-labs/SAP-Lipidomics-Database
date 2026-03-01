@@ -107,7 +107,6 @@ We profiled early-stage sorghum lipid profiles from the SAP grown under two cont
 
 Run-order quality control indicated stable analytical performance in both experimental conditions (Supplementary Fig.~S1A,B). Throughout the injection sequence, sample TICs conformed to expectations based on system suitability checks, internal standards, and blanks, and TIC variability among QC samples remained low (Control QC TIC CV = 7.5\%; LowInput QC TIC CV = 6.0\%; Supplementary Fig.~S1A,B). SERRF normalization enhanced technical precision in both environments, reducing the median QC-RSD from 3.6\% to 2.0\% in the Control condition and from 1.6\% to 0.3\% in the LowInput condition (Supplementary Fig.~S1C,D). Consistently, the proportion of features satisfying a QC-RSD $<30\%$ threshold increased from 75.7\% to 94.1\% in Control and from 77.3\% to 89.3\% in LowInput (Supplementary Fig.~S1C,D). In line with the reduction in technical variance, PCA of normalized data revealed a more compact clustering of samples relative to the unprocessed signal (Supplementary Fig.~S1E,F). Given that samples were derived from field-grown material, we further accounted for field-position effects using spatial modeling (SpATS) in R. Residual maps indicated that broad-scale row and column structures were largely mitigated following correction (Supplementary Fig.~S1G,H). Collectively, these procedures generated a normalized, spatially corrected lipid trait matrix that was used for all downstream analyses.
 
-<<<<<<< HEAD
 At the lipid class level, the sorghum lipidome was predominantly composed of chloroplast galactolipids and major membrane phospholipids, with DG and TG constituting a substantial fraction of the neutral-lipid pool (Supplementary Fig.~S2A). Under Control conditions, MGDG accounted for 34.5\% of the mean TIC and declined to 32.1\% under LowInput, whereas PC remained comparatively stable (25.6\% in Control versus 24.8\% in LowInput). In contrast, TG increased from 2.7\% (Control) to 5.4\% (LowInput), and SQDG decreased from 2.9\% (Control) to 1.4\% (LowInput) (Supplementary Fig.~S2A). Compositional contrast analyses corroborated these trends as there was a marked relative depletion of SQDG and a pronounced positive contrast for PS (Fig.~\ref{fig:fig1_lipidomics_landscape}B; Supplementary Table~S2), and TG-referenced ALR contrasts delineated complementary log-ratio shifts across lipid classes (Supplementary Fig.~S2B). Collectively, these findings indicate LowInput-associated lipid remodeling consistent with reduced sulfolipid abundance and increased partitioning into neutral TG lipids.
 
 To characterize structural remodeling beyond total class abundance, we embedded each lipid class into a reduced chemical space defined by the weighted mean total carbon number and weighted mean double-bond count (Fig.~\ref{fig:fig1_lipidomics_landscape}C). TG occupied the high‑carbon region of this space and exhibited a pronounced shift toward higher total carbon under the LowInput condition, accompanied by a comparatively modest change in average unsaturation (Fig.~\ref{fig:fig1_lipidomics_landscape}C). The remaining classes maintained distinct, class‑specific carbon/unsaturation signatures, indicating that the effects of LowInput manifested both as shifts in class abundance (described above) and as coordinated, class‑level changes in acyl‑chain composition. The LION enrichment analysis further supported these observations, revealing coordinated changes in lipid ontology terms between conditions (Fig.~\ref{fig:fig1_lipidomics_landscape}D).
@@ -115,9 +114,6 @@ To characterize structural remodeling beyond total class abundance, we embedded 
 Across both environments, we quantified 244 distinct lipid molecular species, with substantial overlap between conditions (153 shared species) and smaller environment-specific subsets (49 Control-exclusive; 42 LowInput-exclusive; Supplementary Fig.~S3A; Supplementary Table~S3). TG and PC represented the most species-rich classes in each environment (TG: 71 in Control, 69 in LowInput; PC: 39 in Control, 38 in LowInput; Supplementary Table~S3), and broader class-level summaries indicated that glycerolipids and glycerophospholipids constituted the majority of identified species (Supplementary Fig.~S3B,D). PCA of lipid species further revealed that the multivariate structure of the dataset was strongly driven by lipid class, with TGs separating from membrane lipid classes and galactolipids forming distinct clusters under both environmental conditions (Supplementary Fig.~S4).
 
 Given that the SAP encompasses broad genetic diversity, we next evaluated lipid variance across genotypes and identified MGDG(18:3/18:3) as the highest-variance lipid in both environments (Supplementary Fig.~S5A,B; Supplementary Table~S5). Seven of the ten highest-variance lipids were shared between Control and LowInput (Supplementary Fig.~S5C), suggesting that a conserved subset of lipid traits exhibits strong genotype sensitivity across environments. Within this high-variance subset, PC species were the most frequent class in both conditions (Control: 7/10; LowInput: 6/10; Supplementary Fig.~S5D; Supplementary Table~S5), supporting their prioritization for subsequent genetic mapping and predictive modeling analyses.
-
-=======
->>>>>>> f463d1828738022a0ac730aa9e6398388cb8da6f
 
 % =========================
 % MAIN FIGURE 1
@@ -132,65 +128,97 @@ Given that the SAP encompasses broad genetic diversity, we next evaluated lipid 
   \label{fig:fig1_lipidomics_landscape}
 \end{figure*}
 
-<<<<<<< HEAD
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S1_QC_RunOrder_SERRF_PCA_SpATS.png}
-  \caption{\textbf{QC, SERRF normalization, PCA tightening, and SpATS spatial residual diagnostics.}
-  (A,B) Run-order TIC plots for Control and LowInput conditions showing stable analytical performance.
-  (C,D) QC-RSD distributions before and after SERRF normalization.
-  (E,F) PCA score plots before and after normalization showing tighter sample clustering.
-  (G,H) SpATS spatial residual maps indicating mitigation of field-position effects.}
-  \label{fig:suppfig_s1_qc}
-\end{figure*}
+% =========================
+% SUPPLEMENTARY TABLES (S2, S3, S5) for Lipidome Overview
+% Note: Supplementary figures S1-S5 are defined in the Supplement section at the end
+% =========================
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S2_Compositional_Contrasts.png}
-  \caption{\textbf{Class composition and compositional contrasts.}
-  (A) Lipid class composition (percent TIC) in Control and LowInput conditions.
-  (B) TG-referenced ALR (additive log-ratio) contrasts showing relative shifts across lipid classes.}
-  \label{fig:suppfig_s2_composition}
-\end{figure*}
+\begin{table*}[p]
+\centering
+\caption{\textbf{Supplementary Table S2A: Class-level CLR (centered log-ratio) contrasts between LowInput and Control.} Positive effects indicate enrichment under LowInput; negative effects indicate depletion. CI = 95\% confidence interval.}
+\label{tab:supptable_s2a}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Class & Effect & CI Low & CI High \\
+\midrule
+PS    &  0.98 &  0.93 &  1.03 \\
+LPE   &  0.57 &  0.54 &  0.60 \\
+TG    &  0.47 &  0.43 &  0.50 \\
+LPC   &  0.26 &  0.23 &  0.30 \\
+PA    &  0.16 &  0.08 &  0.23 \\
+PG    & $-$0.05 & $-$0.06 & $-$0.03 \\
+PE    & $-$0.10 & $-$0.12 & $-$0.08 \\
+DG    & $-$0.15 & $-$0.17 & $-$0.13 \\
+DGDG  & $-$0.20 & $-$0.21 & $-$0.19 \\
+PC    & $-$0.26 & $-$0.28 & $-$0.23 \\
+MGDG  & $-$0.29 & $-$0.31 & $-$0.27 \\
+MG    & $-$0.42 & $-$0.44 & $-$0.41 \\
+SQDG  & $-$0.98 & $-$1.00 & $-$0.96 \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S3_Lipid_Species_Counts.png}
-  \caption{\textbf{Lipid species counts, overlap, and superclass summaries.}
-  (A) Venn diagram of species overlap between Control and LowInput.
-  (B) Species counts by lipid class in each condition.
-  (C) Euler diagram of shared vs.\ exclusive species.
-  (D) Superclass-level summary of identified lipid species.}
-  \label{fig:suppfig_s3_counts}
-\end{figure*}
+\begin{table*}[p]
+\centering
+\caption{\textbf{Supplementary Table S3: Summary of lipid species counts and overlap between Control and LowInput conditions.}}
+\label{tab:supptable_s3}
+\small
+\begin{tabular}{lr}
+\toprule
+Metric & Count \\
+\midrule
+Control Total     & 202 \\
+LowInput Total    & 195 \\
+Common (shared)   & 153 \\
+Control Only      & 49 \\
+LowInput Only     & 42 \\
+All Unique        & 244 \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S4_PCA_Lipids.png}
-  \caption{\textbf{Lipid PCA in Control and LowInput showing class-structured clustering.}
-  Principal component analysis of lipid species reveals strong separation by lipid class, with TG species clustering distinctly from membrane phospholipids and galactolipids.}
-  \label{fig:suppfig_s4_pca}
-\end{figure*}
+\begin{table*}[p]
+\centering
+\caption{\textbf{Supplementary Table S5: Top 10 high-variance lipids by condition.} Lipids ranked by genotypic variance across the SAP.}
+\label{tab:supptable_s5}
+\small
+\begin{tabular}{clllr}
+\toprule
+Rank & Condition & Lipid & Class & Variance \\
+\midrule
+1 & Control & MGDG(18:3/18:3) & MGDG & 8.58 \\
+2 & Control & PC(16:0/18:2) & PC & 2.91 \\
+3 & Control & DG(18:3/18:3) & DG & 1.01 \\
+4 & Control & PC(16:0/18:1) & PC & 0.92 \\
+5 & Control & PC(16:0/18:0) & PC & 0.37 \\
+6 & Control & DGDG(18:2/18:4) & DGDG & 0.32 \\
+7 & Control & PC(16:0/18:3) & PC & 0.31 \\
+8 & Control & PC(18:1/16:0) & PC & 0.24 \\
+9 & Control & PC(16:0/20:5) & PC & 0.22 \\
+10 & Control & PC(16:0/20:4) & PC & 0.16 \\
+\midrule
+1 & LowInput & MGDG(18:3/18:3) & MGDG & 4.57 \\
+2 & LowInput & PC(16:0/18:2) & PC & 1.90 \\
+3 & LowInput & PC(16:0/18:0) & PC & 0.95 \\
+4 & LowInput & DG(18:3/18:3) & DG & 0.71 \\
+5 & LowInput & DGDG(18:2/18:4) & DGDG & 0.46 \\
+6 & LowInput & PC(16:1/18:2) & PC & 0.33 \\
+7 & LowInput & PC(16:0/18:3) & PC & 0.27 \\
+8 & LowInput & PC(16:0/20:5) & PC & 0.22 \\
+9 & LowInput & PC(18:0/18:1) & PC & 0.18 \\
+10 & LowInput & TG(18:2/18:2/22:1) & TG & 0.14 \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S5_TopVariance_Lipids.png}
-  \caption{\textbf{Top high-variance lipids across genotypes in Control and LowInput.}
-  (A,B) Top 10 highest-variance lipids ranked by genotypic variance in Control and LowInput.
-  (C) Venn diagram showing overlap of top-variance lipids between conditions.
-  (D) Class distribution of top-variance lipids.}
-  \label{fig:suppfig_s5_variance}
-\end{figure*}
-=======
-At the lipid class level, the sorghum lipidome was predominantly composed of chloroplast galactolipids and major membrane phospholipids, with DG and TG constituting a substantial fraction of the neutral-lipid pool (Supplemental Fig.~S2A). Under Control conditions, MGDG accounted for 34.5\% of the mean TIC and declined to 32.1\% under LowInput, whereas PC remained comparatively stable (25.6\% in Control versus 24.8\% in LowInput). In contrast, TG increased from 2.7\% (Control) to 5.4\% (LowInput), and SQDG decreased from 2.9\% (Control) to 1.4\% (LowInput) (Supplemental Fig.~S2A). Compositional contrast analyses corroborated these trends as there was a marked relative depletion of SQDG and a pronounced positive contrast for PS (Fig.~1B), and TG-referenced ALR contrasts delineated complementary log-ratio shifts across lipid classes (Supplemental Fig.~S2B). Collectively, these findings indicate LowInput-associated lipid remodeling consistent with reduced sulfolipid abundance and increased partitioning into neutral TG lipids.
+At the lipid class level, the sorghum lipidome was predominantly composed of chloroplast galactolipids and major membrane phospholipids, with DG and TG constituting a substantial fraction of the neutral-lipid pool (Supplementary Fig.~\ref{fig:suppfig_s2_composition}A; Supplementary Table~S2). Under Control conditions, MGDG accounted for 34.5\% of the mean TIC and declined to 32.1\% under LowInput, whereas PC remained comparatively stable (25.6\% in Control versus 24.8\% in LowInput). In contrast, TG increased from 2.7\% (Control) to 5.4\% (LowInput), and SQDG decreased from 2.9\% (Control) to 1.4\% (LowInput) (Supplementary Fig.~\ref{fig:suppfig_s2_composition}A). Compositional contrast analyses corroborated these trends as there was a marked relative depletion of SQDG and a pronounced positive contrast for PS (Fig.~\ref{fig:fig1_lipidomics_landscape}B; Supplementary Table~S2A), and TG-referenced ALR contrasts delineated complementary log-ratio shifts across lipid classes (Supplementary Fig.~\ref{fig:suppfig_s2_composition}B; Supplementary Table~S2B). Collectively, these findings indicate LowInput-associated lipid remodeling consistent with reduced sulfolipid abundance and increased partitioning into neutral TG lipids.
 
-To characterize structural remodeling beyond total class abundance, we embedded each lipid class into a reduced chemical space defined by the weighted mean total carbon number and weighted mean double-bond count (Fig.~1C). TG occupied the high‑carbon region of this space and exhibited a pronounced shift toward higher total carbon under the LowInput condition, accompanied by a comparatively modest change in average unsaturation (Fig.~1C). The remaining classes maintained distinct, class‑specific carbon/unsaturation signatures, indicating that the effects of LowInput manifested both as shifts in class abundance (described above) and as coordinated, class‑level changes in acyl‑chain composition (Fig.~1C).
+To characterize structural remodeling beyond total class abundance, we embedded each lipid class into a reduced chemical space defined by the weighted mean total carbon number and weighted mean double-bond count (Fig.~\ref{fig:fig1_lipidomics_landscape}C). TG occupied the high‑carbon region of this space and exhibited a pronounced shift toward higher total carbon under the LowInput condition, accompanied by a comparatively modest change in average unsaturation (Fig.~\ref{fig:fig1_lipidomics_landscape}C). The remaining classes maintained distinct, class‑specific carbon/unsaturation signatures, indicating that the effects of LowInput manifested both as shifts in class abundance (described above) and as coordinated, class‑level changes in acyl‑chain composition (Fig.~\ref{fig:fig1_lipidomics_landscape}C).
 
-Across both environments, we quantified 244 distinct lipid molecular species, with substantial overlap between conditions (153 shared species) and smaller environment-specific subsets (49 Control-exclusive; 42 LowInput-exclusive; Supplemental Fig.~S3A). TG and PC represented the most species-rich classes in each environment (TG: 71 in Control, 69 in LowInput; PC: 39 in Control, 38 in LowInput), and broader class-level summaries indicated that glycerolipids and glycerophospholipids constituted the majority of identified species (Supplemental Fig.~S3B,D). PCA of lipid species further revealed that the multivariate structure of the dataset was strongly driven by lipid class, with TGs separating from membrane lipid classes and galactolipids forming distinct clusters under both environmental conditions (Supplemental Fig.~S4). 
+Across both environments, we quantified 244 distinct lipid molecular species, with substantial overlap between conditions (153 shared species) and smaller environment-specific subsets (49 Control-exclusive; 42 LowInput-exclusive; Supplementary Fig.~\ref{fig:suppfig_s3_counts}A; Supplementary Table~S3). TG and PC represented the most species-rich classes in each environment (TG: 71 in Control, 69 in LowInput; PC: 39 in Control, 38 in LowInput), and broader class-level summaries indicated that glycerolipids and glycerophospholipids constituted the majority of identified species (Supplementary Fig.~\ref{fig:suppfig_s3_counts}B,D). PCA of lipid species further revealed that the multivariate structure of the dataset was strongly driven by lipid class, with TGs separating from membrane lipid classes and galactolipids forming distinct clusters under both environmental conditions (Supplementary Fig.~\ref{fig:suppfig_s4_pca}).
 
-
-Given that the SAP encompasses broad genetic diversity, we next evaluated lipid variance across genotypes and identified MGDG(18:3/18:3) as the highest-variance lipid in both environments (Supplemental Fig.~S5A,B). Seven of the ten highest-variance lipids were shared between Control and LowInput (Supplemental Fig.~S5C), suggesting that a conserved subset of lipid traits exhibits strong genotype sensitivity across environments. Within this high-variance subset, PC species were the most frequent class in both conditions (Control: 7/10; LowInput: 6/10; Supplemental Fig.~S5D), supporting their prioritization for subsequent genetic mapping and predictive modeling analyses.
->>>>>>> f463d1828738022a0ac730aa9e6398388cb8da6f
+Given that the SAP encompasses broad genetic diversity, we next evaluated lipid variance across genotypes and identified MGDG(18:3/18:3) as the highest-variance lipid in both environments (Supplementary Fig.~\ref{fig:suppfig_s5_variance}A,B; Supplementary Table~S5). Seven of the ten highest-variance lipids were shared between Control and LowInput (Supplementary Fig.~\ref{fig:suppfig_s5_variance}C), suggesting that a conserved subset of lipid traits exhibits strong genotype sensitivity across environments. Within this high-variance subset, PC species were the most frequent class in both conditions (Control: 7/10; LowInput: 6/10; Supplementary Fig.~\ref{fig:suppfig_s5_variance}D), supporting their prioritization for subsequent genetic mapping and predictive modeling analyses.
 
 % =========================
 % MAIN FIGURE 2 - OPLS-DA
@@ -198,7 +226,7 @@ Given that the SAP encompasses broad genetic diversity, we next evaluated lipid 
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{Figure2_OPLS_DA.png}
+  \includegraphics[width=\textwidth]{figures/main/Figure2_OPLS_DA.png}
   \caption{\textbf{OPLS-DA of lipid class ratios discriminates Control from LowInput.}
   (A) Score plot showing separation along the predictive component.
   (B) VIP-ranked lipid class ratios (VIP $>$ 1).
@@ -209,14 +237,14 @@ Given that the SAP encompasses broad genetic diversity, we next evaluated lipid 
 
 \begin{figure*}[p]
   \centering
-  \includegraphics[width=\textwidth]{SuppFig_S6_Partial_Correlations.png}
+  \includegraphics[width=\textwidth]{figures/supp/SuppFig_S6_Partial_Correlations.png}
   \caption{\textbf{Partial correlations among lipid classes in Control and LowInput conditions.} Sign reversals indicate altered coordination among lipid pools under stress.}
   \label{fig:suppfig_s6_partial_corr}
 \end{figure*}
 
 \begin{figure*}[p]
   \centering
-  \includegraphics[width=\textwidth]{SuppFig_S7_Lipid_Ratios.png}
+  \includegraphics[width=\textwidth]{figures/supp/SuppFig_S7_Lipid_Ratios.png}
   \caption{\textbf{Lipid class ratios discriminating Control and LowInput.} (A) VIP-ranked ratios from OPLS-DA. (B) Ratios derived from partial correlation sign-flip relationships.}
   \label{fig:suppfig_s7_ratios}
 \end{figure*}
@@ -227,34 +255,16 @@ To resolve \emph{relative} reallocations among major lipid pools, rather than ab
 
 VIP-ranked ratios (VIP $>$ 1) revealed a highly structured pattern delineating which lipid pools most strongly discriminate Control from LowInput samples (Fig.~\ref{fig:fig2_opls_da}B; Supplemental Fig.~S7A). First, many of the highest-ranking ratios were anchored on SQDG (e.g., MG/SQDG, PS/SQDG, PG/SQDG, PE/SQDG, PC/SQDG, LPE/SQDG), and these ratios were consistently elevated in LowInput (Supplemental Fig.~S7A), indicating a depletion of SQDG \emph{relative to multiple membrane-associated and neutral lipid pools}. This observation is concordant with the class-level profile, in which SQDG abundance decreases under LowInput conditions, whereas several other lipid classes (such as TG and, to a lesser extent, PS) exhibit relative enrichment (Fig.~1B; Supplemental Fig.~S2). Second, PS emerged as a central node in the remodeling landscape as multiple ratios with PS in the denominator (PC/PS, PE/PS, PG/PS, PA/PS, DG/PS, DGDG/PS, LPC/PS) were elevated in Control (Supplemental Fig.~S7A), implying that the LowInput condition is characterized by \emph{increased PS abundance relative to a broad spectrum of other lipid classes}. Collectively, the SQDG- and PS-centered ratios describe a LowInput-associated remodeling axis defined by (i) reduced representation of sulfolipids and (ii) a coordinated redistribution across the membrane lipid headgroup landscape.
 
-<<<<<<< HEAD
-Beyond these two anchors, the VIP set also highlighted interpretable ``transition-like'' relationships among neutral and membrane pools. Several MG-centered ratios increased in LowInput (MG/MGDG, MG/SQDG, MG/PG), while DG/MG and DGDG/MG were higher in Control (Supplemental Fig.~S7A), indicating that LowInput shifts the balance toward higher MG relative to both DG and galactolipids. In parallel, SQDG/TG was higher in Control (Supplemental Fig.~S7A), consistent with the expansion of TG observed in class composition summaries and the chemical-space displacement of TG under LowInput (Fig.~1C; Supplemental Fig.~S2). While ratio data do not directly measure metabolic flux, the \emph{direction-consistent} behavior of these ratios supports a coherent LowInput program in which plastid-associated glycolipids/sulfolipids are reduced relative to neutral storage and selected membrane pools.
-=======
-
-% =========================
-% MAIN FIGURE 2
-% =========================
-\begin{figure*}[!ht]
-  \centering
-  \includegraphics[width=\textwidth]{figures/main/Figure2_OPLS_DA.png}
-  \caption{\textbf{OPLS-DA of summed lipid class ratios distinguishes Control and LowInput conditions.}
-  (A) OPLS-DA scores plot showing separation of Control and LowInput samples along the predictive component (t$_1$), with the orthogonal component (to$_1$) capturing within-condition variation.
-  (B) Top discriminating lipid class ratios ranked by variable importance in projection (VIP; VIP $>$ 1).
-  (C) Permutation test (n=200) comparing observed $R^2_Y$ and $Q^2$ against the null distribution to evaluate model significance.
-  (D) Model quality metrics summarizing the number of predictive/orthogonal components and cumulative $R^2_X$, $R^2_Y$, and $Q^2$.}
-  \label{fig:Fig2_OPLS_DA}
-\end{figure*}
-
-Beyond these two anchors, the VIP set also highlighted interpretable ``transition-like'' relationships among neutral and membrane pools. Several MG-centered ratios increased in LowInput (MG/MGDG, MG/SQDG, MG/PG), while DG/MG and DGDG/MG were higher in Control (Supplemental Fig.~S9A), indicating that LowInput shifts the balance toward higher MG relative to both DG and galactolipids. In parallel, SQDG/TG was higher in Control (Supplemental Fig.~S9A), consistent with the expansion of TG observed in class composition summaries and the chemical-space displacement of TG under LowInput (Fig.~1C; Supplemental Fig.~S2). While ratio data do not directly measure metabolic flux, the \emph{direction-consistent} behavior of these ratios supports a coherent LowInput program in which plastid-associated glycolipids/sulfolipids are reduced relative to neutral storage and selected membrane pools.
->>>>>>> f463d1828738022a0ac730aa9e6398388cb8da6f
+Beyond these two anchors, the VIP set also highlighted interpretable ``transition-like'' relationships among neutral and membrane pools. Several MG-centered ratios increased in LowInput (MG/MGDG, MG/SQDG, MG/PG), while DG/MG and DGDG/MG were higher in Control (Supplementary Fig.~\ref{fig:suppfig_s7_ratios}A), indicating that LowInput shifts the balance toward higher MG relative to both DG and galactolipids. In parallel, SQDG/TG was higher in Control (Supplementary Fig.~\ref{fig:suppfig_s7_ratios}A), consistent with the expansion of TG observed in class composition summaries and the chemical-space displacement of TG under LowInput (Fig.~\ref{fig:fig1_lipidomics_landscape}C; Supplementary Fig.~\ref{fig:suppfig_s2_composition}). While ratio data do not directly measure metabolic flux, the \emph{direction-consistent} behavior of these ratios supports a coherent LowInput program in which plastid-associated glycolipids/sulfolipids are reduced relative to neutral storage and selected membrane pools.
 
 To further motivate the use of ratios that capture condition-dependent \emph{rewiring} among lipid classes, we quantified partial correlations (controlling for total TIC) within each environment (Supplemental Fig.~S6). Numerous lipid-class pairs exhibited sign reversals in their partial correlations between Control and LowInput, indicating altered coordination among lipid pools under LowInput-associated stress. Ratios constructed from these sign-flip relationships displayed pronounced and directionally consistent shifts across conditions (Supplemental Fig.~S7B). Most significantly, TG increased in relative abundance compared with PE, MGDG, DG, and (in several cases) DGDG under LowInput (TG/PE, TG/MGDG, TG/DG; Supplemental Fig.~S7B), supporting a model of membrane-to-storage redistribution in which DG likely functions as a biosynthetic intermediate toward TG accumulation. In contrast, the TG/MG ratio was elevated in Control (Supplemental Fig.~S7B), indicating that MG increased disproportionately relative to TG under LowInput, consistent with the MG-centered VIP ratios described above (Supplemental Fig.~S7A). PS-centered partial-correlation ratios additionally supported a redistribution of headgroup classes. For example, PS/PC, PS/DG, and PS/MGDG were elevated in LowInput (Supplemental Fig.~S7B), paralleling the reciprocal pattern observed in the VIP analysis (PC/PS and DG/PS enriched in Control; Supplemental Fig.~S7A). Finally, lysophospholipid ratios indicated a reproducible shift in lyso-lipid balance as shown by LPC/LPE and LPC/PS being higher in Control, whereas LowInput favored LPE relative to multiple denominators (e.g., LPE/SQDG; LPE/MGDG; Supplemental Fig.~S7A). These patterns are consistent with stress-associated remodeling of phospholipid turnover pathways (e.g., PC→LPC and PE→LPE branches) rather than a uniform, condition-wide change in total lysolipid abundance (ref).
 
 Thus, the ratio-based analyses converge on four biologically interpretable LowInput-associated lipid signatures that refine and extend the class-composition findings: (i) a broad depletion of SQDG relative to multiple lipid pools (consistent with the SQDG reduction in the global lipidome), (ii) a relative enrichment of PS within the phospholipid network (in line with the emergence of PS as a prominent class in compositional contrasts), (iii) an increase in TG relative to membrane lipids and DG (in line with the LowInput-linked expansion and chemical-space displacement of TG), and (iv) a reproducible lysophospholipid remodeling signal, with LPE increasing relative to multiple membrane pools and a reduced LPC/LPE balance, consistent with stress-responsive phospholipid turnover (PC$\rightarrow$LPC and PE$\rightarrow$LPE branches) rather than uniform scaling of total lyso-lipid abundance (ref). These coordinated patterns yield a concise representation of the lipid pools that increase relative to others and motivate targeted follow-up investigations into plastid membrane remodeling, phospholipid headgroup rebalancing, lysophospholipid turnover, and DG-to-TG conversion underlying storage lipid accumulation under LowInput field stress.
 
 
-<<<<<<< HEAD
-We conducted GWAS with three flavors of the same lipidomics data, (1) individual lipid species (Supp Table 2), (2) aggregates of lipid class abundances, and (3) all conceivable pairwise ratios of these aggregated classes. Utilizing a significance threshold of $\log_{10}(p)\ge7$ for individual lipids and sums and ratios , we identified 2189 and 7363 genes associated with lipid species (see Supplementary Table 6 and 8), X and 10360  genes associated with the ratios of summed classes (refer to Supplementary Table 4) in a 25kb window for C and LI respectively. The full set of annotations is available in Supplementary Table 6,7,8, and 9. Here, the candidate genes can be identified using (i) genes with the highest occurrences, (ii) GWAS pertaining to lipid class, (iii) sum or ratio of lipids, and (iv) individual compounds of interest(Fig \ref{fig:Fig3}). We only show GWAS results for LI. All the GWAS results can be obtained from the shiny app.
+\subsection*{Genome-wide association studies identify candidate genes for lipid remodeling}
+
+We conducted GWAS with three flavors of the same lipidomics data: (1) individual lipid species, (2) aggregates of lipid class abundances, and (3) all conceivable pairwise ratios of these aggregated classes. Utilizing a significance threshold of $-\log_{10}(p)\ge7$ for individual lipids, sums, and ratios, we identified 2189 and 7363 genes associated with lipid species (Supplementary Table~S6 and S8), and 10360 genes associated with the ratios of summed classes (Supplementary Table~S4) in a 25~kb window for Control and LowInput respectively. The full set of annotations is available in Supplementary Tables~S6--S9. Here, the candidate genes can be identified using (i) genes with the highest occurrences, (ii) GWAS pertaining to lipid class, (iii) sum or ratio of lipids, and (iv) individual compounds of interest (Fig.~\ref{fig:Fig3}). We report LowInput results below; all GWAS results are available in the Shiny application.
 
 %Re rin gwas:
 %PG(16:0/18:0)
@@ -428,85 +438,6 @@ Our GWAS for zeaxanthin has identified the gene SORBI\_3002G033800, which has an
     Green dots indicate SNPs within or near the highlighted genes in panels B–F. Panels A and B show traditional lipids (–log\textsubscript{10} $p$\(\geq\)7), and panels C–F show non‐traditional lipids (–log\textsubscript{10} $p$\(\geq\)5).}
   \label{fig:Fig3}
 \end{figure}
-=======
-% =========================
-% RESULTS (paste into Results)
-% =========================
-
-
-\subsection*{Genome-wide Association Studies of Lipid Traits Under LowInput}
-
-We conducted GWAS using three representations of the same lipidomics dataset: (i) individual lipid species, (ii) summed abundances of lipid classes, and (iii) all possible pairwise ratios among these aggregated classes. We used a significance threshold of $p\le10^{-7}$ ($-\log_{10}(p)\ge 7$) and assigned SNPs to genes using a 25~kb window.
-
-To identify and contextualize candidate genes, we used four complementary prioritization views: (1) genes with the highest occurrence across \emph{individual-lipid} GWAS phenotypes (Table~\ref{tab:LI_individual_gene_top}); (2) genes with the highest occurrence across \emph{summed-class and ratio} GWAS phenotypes (Table~\ref{tab:LI_sumratio_gene_top}); (3) lipid-class–focused GWAS (e.g., phospholipids and triacylglycerols) to prioritize class-relevant regulators; and (4) targeted follow-up of specific traits of interest, including sums (e.g., Sum~SQDG), biologically motivated ratios (cold-, nitrogen-, and phosphorus-linked), and individual compounds of interest (e.g., $\alpha$-carotene and zeaxanthin). We report LowInput results in the main text; full GWAS results and annotations for all traits are available in the Supplementary Tables and in the Shiny application.
-
-
-\begin{table}[t]
-\centering
-\caption{Top LowInput genes from \textbf{individual-lipid} GWAS ranked by the maximum number of associated lipid phenotypes (25~kb mapping window; $p\le10^{-7}$). For each leading SNP, we show the single most recurrent gene to avoid redundant adjacent-gene listings at the same signal. Example lipids show a few representatives; full lists are in Supplementary Tables/Shiny.}
-\label{tab:LI_individual_gene_top}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\columnwidth}{l r l l r Y}
-\toprule
-Gene & \#traits & Leading SNP & min $p$ & \#SNPs & Example lipids \\
-\midrule
-\texttt{SORBI\_3010G064200} & 20 & \texttt{SNP\_5083051} & $3.4\times10^{-16}$  & 8  & 3-Epilupeol; NAE(18:0); TG(10:0\_\allowbreak16:0\_\allowbreak16:0); TG(12:0\_\allowbreak14:0\_\allowbreak16:0); \ldots (20 total) \\
-\texttt{SORBI\_3001G057100} & 16 & \texttt{SNP\_4303626} & $7\times10^{-67}$    & 20 & 13-Keto-9Z,11E-octadecadienoic acid; 13S-HOTrE; AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); \ldots (16 total) \\
-\texttt{SORBI\_3003G169600} & 13 & \texttt{SNP\_29153705} & $7\times10^{-67}$    & 4  & AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); PC(18:1\_\allowbreak18:2); PC(18:1\_\allowbreak20:4); \ldots (13 total) \\
-\texttt{SORBI\_3005G041700} & 13 & \texttt{SNP\_3875200}  & $7.7\times10^{-67}$  & 2  & AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); PC(18:1\_\allowbreak18:2); PC(18:1\_\allowbreak20:4); \ldots (13 total) \\
-\texttt{SORBI\_3005G111700} & 13 & \texttt{SNP\_36855919} & $3.5\times10^{-13}$  & 14 & 13-Keto-9Z,11E-octadecadienoic acid; 13S-HOTrE; TG(12:0\_\allowbreak16:0\_\allowbreak16:0); TG(18:1\_\allowbreak20:3\_\allowbreak22:0); \ldots (13 total) \\
-\texttt{SORBI\_3006G044532} & 12 & \texttt{SNP\_31061463} & $3.4\times10^{-16}$  & 3  & TG(12:0\_\allowbreak14:0\_\allowbreak16:0); TG(12:0\_\allowbreak16:0\_\allowbreak16:0); TG(12:0\_\allowbreak16:0\_\allowbreak18:3); \ldots (12 total) \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-
-\begin{table}[t]
-\centering
-\caption{Top LowInput genes from \textbf{summed-class and ratio} GWAS ranked by the maximum number of associated sum/ratio phenotypes (25~kb mapping window; $p\le10^{-7}$). For each leading SNP, we show the single most recurrent gene to avoid redundant adjacent-gene listings at the same signal. Example traits show a few representatives; full lists are in Supplementary Tables/Shiny.}
-\label{tab:LI_sumratio_gene_top}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\columnwidth}{l r l l r Y}
-\toprule
-Gene & \#traits & Leading SNP & min $p$ & \#SNPs & Example sum/ratio traits \\
-\midrule
-\texttt{SORBI\_3008G088836} & 44 & \texttt{SNP\_21312400} & $2.1\times10^{-22}$  & 14 & Sum\_\allowbreak AEG/Sum\_\allowbreak Cer; Sum\_\allowbreak AEG/Sum\_\allowbreak DG; Sum\_\allowbreak AEG/Sum\_\allowbreak GalCer; Sum\_\allowbreak AEG/Sum\_\allowbreak SM; \ldots (44 total) \\
-\texttt{SORBI\_3006G093600} & 37 & \texttt{SNP\_46347720} & $2.2\times10^{-14}$  & 11 & Sum\_\allowbreak AEG/Sum\_\allowbrea kFA; Sum\_\allowbreak AEG/Sum\_\allowbreak PG; Sum\_\allowbreak AEG/Sum\_\allowbreak PS; Sum\_\allowbreak AEG/Sum\_\allowbreak TG; \ldots (37 total) \\
-\texttt{SORBI\_3004G127066} & 36 & \texttt{SNP\_15426192} & $7.7\times10^{-125}$ & 17 & Sum\_\allowbreak AEG/Sum\_\allowbreak Cer; Sum\_\allowbreak AEG/Sum\_\allowbreak DGDG; Sum\_\allowbreak AEG/Sum\_\allowbreak LPC; Sum\_\allowbreak AEG/Sum\_\allowbreak LPE; \ldots (36 total) \\
-\texttt{SORBI\_3004G120000} & 35 & \texttt{SNP\_12933658} & $2.7\times10^{-115}$ & 16 & Sum\_\allowbreak AEG/Sum\_\allowbreak MG; Sum\_\allowbreak AEG/Sum\_\allowbreak MGDG; Sum\_\allowbreak AEG/Sum\_\allowbreak TG; Sum\_\allowbreak Cer; \ldots (35 total) \\
-\texttt{SORBI\_3009G090800} & 33 & \texttt{SNP\_17785435} & $1.1\times10^{-301}$ & 15 & Sum\_\allowbreak AEG/Sum\_\allowbreak DGDG; Sum\_\allowbreakAEG/Sum\_\allowbreak TG; Sum\_\allowbreak Cer/Sum\_\allowbreak DGDG; Sum\_\allowbreakCer/Sum\_\allowbreak PA; \ldots (33 total) \\
-\texttt{SORBI\_3009G086700} & 31 & \texttt{SNP\_14705908} & $4.2\times10^{-275}$ & 13 & Sum\_\allowbreak AEG/Sum\_\allowbreak DG; Sum\_\allowbreak AEG/Sum\_\allowbreak MG; Sum\_\allowbreak AEG/Sum\_\allowbreak MGDG; Sum\_\allowbreak AEG/Sum\_\allowbreak PA; \ldots (31 total) \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-
-
-\subsection{A DG-centered reaction subnetwork links membrane remodeling to TG accumulation under LowInput}
-
-To connect the class-level shifts (SQDG depletion; TG enrichment; lysophospholipid remodeling; PS enrichment) with mechanistic lipid interconversions, we applied reaction-network enrichment (LINEX) and identified a compact DG-centered subnetwork that was preferentially enriched under LowInput (Fig.~5). The enriched module links several abundant DG species (DG(18:1/18:2), DG(16:0/18:2), DG(16:0/18:1)) to a key TG species (TG(16:0/18:1/18:2)) and multiple MG species (MG(16:0), MG(18:1), MG(18:2)), through reaction templates that collectively represent a membrane-to-storage redistribution axis. In particular, two reactions in the module couple TG formation to the *simultaneous* generation of lysophospholipids: (i) a PC–DG transacylation step producing TG and LPC (PC + DG $\leftrightarrow$ TG + LPC), and (ii) a PE–DG transacylation step producing TG and LPE (PE + DG $\leftrightarrow$ TG + LPE). Although LINEX annotates these templates using reference enzymes (e.g., “LRO1” or “PNPLA” labels), the biochemical interpretation in plants is most consistent with PDAT-like phospholipid:diacylglycerol acyltransferase activity (phospholipid $\rightarrow$ lysophospholipid while acylating DG to TG). The prominence of these edges provides a mechanistic explanation for the ratio-based signal showing lysophospholipid remodeling (e.g., LPE increasing relative to multiple pools and a shift in LPC/LPE balance) alongside TG accumulation.
-
-The same subnetwork also contains a TG $\leftrightarrow$ DG reaction template (TG $\leftrightarrow$ DG), consistent with dynamic TAG turnover (lipase-mediated TG hydrolysis) coupled to re-esterification, as well as a DG + MG $\leftrightarrow$ TG template that highlights MG/DG intermediacy in glycerolipid remodeling. Together, these reactions place DG as a central hub that can be (i) generated from membrane lipid remodeling, (ii) funneled into storage TG, or (iii) recycled through TG turnover—exactly the type of coordinated remodeling expected under combined nutrient limitation and early-season stress.
-
-Importantly, the enriched network aligns with candidate genes emerging from our GWAS analyses. The DG-to-TG conversion implied by the DG–TG edges is supported by identification of \textit{DGAT1} (\texttt{SORBI\_3010G170000}) across multiple TG GWAS traits, consistent with its known role catalyzing the terminal acylation of DG to form TG. :contentReference[oaicite:0]{index=0}  In addition, DG kinase genes (DGK2/3/5) were also highlighted among candidates for multiple DG- and TG-related summed/ratio traits, supporting a competing DG fate into PA that can modulate stress signaling and the balance between membrane remodeling and TG storage. :contentReference[oaicite:1]{index=1}  Upstream of these enzymatic steps, a P starvation regulatory node (\textit{PHR1}-like; \texttt{SORBI\_3001G384300}) was repeatedly associated with multiple PC and PE traits, consistent with phosphate-starvation–linked phospholipid remodeling that would feed into the PC/PE $\rightarrow$ lyso-lipid branches seen in the network. :contentReference[oaicite:2]{index=2}  Finally, the network-level emphasis on sulfolipid loss is concordant with a sulfate-assimilation candidate identified for the \emph{sum SQDG} GWAS (\textit{APK3}; \texttt{SORBI\_3005G195600}), providing genetic support for the SQDG depletion axis observed in the global lipidome and compositional contrasts. :contentReference[oaicite:3]{index=3}
-
-Overall, the LINEX-enriched subnetwork provides a mechanistically coherent bridge between (i) the compositional/ratio signatures (SQDG depletion, TG enrichment, and lyso-lipid remodeling) and (ii) GWAS-supported candidate regulators at key branch points, highlighting DG as a metabolic hub and pointing to PDAT/DGAT- and DGK-mediated control of membrane-to-storage lipid reallocation under LowInput field stress.
-
-% =========================
-% FIGURE 5 caption block (Overleaf)
-% =========================
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=\textwidth]{figures/main/Figure5_LINEX_Enriched_Subnetwork.png}
-  \caption{\textbf{LINEX-enriched lipid reaction subnetwork highlights DG-centered remodeling consistent with TG accumulation and lysophospholipid formation.}
-  Circles denote lipid species (colored by class), and squares denote reaction/enzyme templates. The enriched module connects multiple DG species to TG through reaction templates representing DG$\rightarrow$TG formation (DGAT/PDAT-like), TG$\leftrightarrow$DG turnover (lipase/esterase-like), and phospholipid-linked transacylation steps that generate LPC or LPE as by-products (PC + DG $\leftrightarrow$ TG + LPC; PE + DG $\leftrightarrow$ TG + LPE).}
-  \label{fig:Fig5_LINEX_Subnetwork}
-\end{figure*}
->>>>>>> f463d1828738022a0ac730aa9e6398388cb8da6f
 
 
 \subsection*{Lipid modules predict plant height with high accuracy and cross-dataset reproducibility}
@@ -932,7 +863,11 @@ Any opinions, findings, conclusions, or recommendations expressed in this public
 \begin{figure*}[!ht]
   \centering
   \includegraphics[width=\textwidth]{figures/supp/SuppFig_S1_QC_RunOrder_SERRF_PCA_SpATS.png}
-  \caption{\textbf{QC, SERRF normalization, PCA tightening, and SpATS spatial residual diagnostics.}}
+  \caption{\textbf{QC, SERRF normalization, PCA tightening, and SpATS spatial residual diagnostics.}
+  (A,B) Run-order TIC plots for Control and LowInput conditions showing stable analytical performance.
+  (C,D) QC-RSD distributions before and after SERRF normalization.
+  (E,F) PCA score plots before and after normalization showing tighter sample clustering.
+  (G,H) SpATS spatial residual maps indicating mitigation of field-position effects.}
   \label{fig:suppfig_s1_qc}
 \end{figure*}
 
@@ -942,7 +877,9 @@ Any opinions, findings, conclusions, or recommendations expressed in this public
 \begin{figure*}[!ht]
   \centering
   \includegraphics[width=\textwidth]{figures/supp/SuppFig_S2_Compositional_Contrasts.png}
-  \caption{\textbf{Class composition and compositional contrasts.}}
+  \caption{\textbf{Class composition and compositional contrasts.}
+  (A) Lipid class composition (percent TIC) in Control and LowInput conditions.
+  (B) TG-referenced ALR (additive log-ratio) contrasts showing relative shifts across lipid classes.}
   \label{fig:suppfig_s2_composition}
 \end{figure*}
 
@@ -952,7 +889,11 @@ Any opinions, findings, conclusions, or recommendations expressed in this public
 \begin{figure*}[!ht]
   \centering
   \includegraphics[width=\textwidth]{figures/supp/SuppFig_S3_Lipid_Species_Counts.png}
-  \caption{\textbf{Lipid species counts, overlap, and superclass summaries.}}
+  \caption{\textbf{Lipid species counts, overlap, and superclass summaries.}
+  (A) Venn diagram of species overlap between Control and LowInput.
+  (B) Species counts by lipid class in each condition.
+  (C) Euler diagram of shared vs.\ exclusive species.
+  (D) Superclass-level summary of identified lipid species.}
   \label{fig:suppfig_s3_counts}
 \end{figure*}
 
@@ -962,7 +903,8 @@ Any opinions, findings, conclusions, or recommendations expressed in this public
 \begin{figure*}[!ht]
   \centering
   \includegraphics[width=\textwidth]{figures/supp/SuppFig_S4_PCA_Lipids.png}
-  \caption{\textbf{Lipid PCA in Control and LowInput showing class-structured clustering.}}
+  \caption{\textbf{Lipid PCA in Control and LowInput showing class-structured clustering.}
+  Principal component analysis of lipid species reveals strong separation by lipid class, with TG species clustering distinctly from membrane phospholipids and galactolipids.}
   \label{fig:suppfig_s4_pca}
 \end{figure*}
 
@@ -972,7 +914,10 @@ Any opinions, findings, conclusions, or recommendations expressed in this public
 \begin{figure*}[!ht]
   \centering
   \includegraphics[width=\textwidth]{figures/supp/SuppFig_S5_TopVariance_Lipids.png}
-  \caption{\textbf{Top high-variance lipids across genotypes in Control and LowInput.}}
+  \caption{\textbf{Top high-variance lipids across genotypes in Control and LowInput.}
+  (A,B) Top 10 highest-variance lipids ranked by genotypic variance in Control and LowInput.
+  (C) Venn diagram showing overlap of top-variance lipids between conditions.
+  (D) Class distribution of top-variance lipids.}
   \label{fig:suppfig_s5_variance}
 \end{figure*}
 
