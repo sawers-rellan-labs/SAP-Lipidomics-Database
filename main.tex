@@ -6,6 +6,10 @@
 \usepackage{blindtext}
 \usepackage{nameref}
 \raggedbottom
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 %%%%%%%Add comments in color
 \newcommand{\ms}[1]{{\small \textcolor{green}{#1}}}
@@ -90,7 +94,7 @@ E-mail: ntanduk@ncsu.edu, rrellan@ncsu.edu}
 
 \section{Introduction}
 
-\lettrine[lines=2]{\color{color2}S}orghum was originally domesticated in the African regions.
+\lettrine[lines=2]{\color{color2}S}orghum is a plant. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,22 +107,13 @@ We profiled early-stage sorghum lipid profiles from the SAP grown under two cont
 
 Run-order quality control indicated stable analytical performance in both experimental conditions (Supplemental Fig.~S1A,B). Throughout the injection sequence, sample TICs conformed to expectations based on system suitability checks, internal standards, and blanks, and TIC variability among QC samples remained low (Control QC TIC CV = 7.5\%; LowInput QC TIC CV = 6.0\%; Supplemental Fig.~S1A,B). SERRF normalization enhanced technical precision in both environments, reducing the median QC-RSD from 3.6\% to 2.0\% in the Control condition and from 1.6\% to 0.3\% in the LowInput condition (Supplemental Fig.~S1C,D). Consistently, the proportion of features satisfying a QC-RSD $<30\%$ threshold increased from 75.7\% to 94.1\% in Control and from 77.3\% to 89.3\% in LowInput (Supplemental Fig.~S1C,D). In line with the reduction in technical variance, PCA of normalized data revealed a more compact clustering of samples relative to the unprocessed signal (Supplemental Fig.~S1E,F). Given that samples were derived from field-grown material, we further accounted for field-position effects using spatial modeling (SpATS) in R. Residual maps indicated that broad-scale row and column structures were largely mitigated following correction (Supplemental Fig.~S1G,H). Collectively, these procedures generated a normalized, spatially corrected lipid trait matrix that was used for all downstream analyses.
 
-At the lipid class level, the sorghum lipidome was predominantly composed of chloroplast galactolipids and major membrane phospholipids, with DG and TG constituting a substantial fraction of the neutral-lipid pool (Supplemental Fig.~S2A). Under Control conditions, MGDG accounted for 34.5\% of the mean TIC and declined to 32.1\% under LowInput, whereas PC remained comparatively stable (25.6\% in Control versus 24.8\% in LowInput). In contrast, TG increased from 2.7\% (Control) to 5.4\% (LowInput), and SQDG decreased from 2.9\% (Control) to 1.4\% (LowInput) (Supplemental Fig.~S2A). Compositional contrast analyses corroborated these trends as there was a marked relative depletion of SQDG and a pronounced positive contrast for PS (Fig.~1B), and TG-referenced ALR contrasts delineated complementary log-ratio shifts across lipid classes (Supplemental Fig.~S2B). Collectively, these findings indicate LowInput-associated lipid remodeling consistent with reduced sulfolipid abundance and increased partitioning into neutral TG lipids.
-
-To characterize structural remodeling beyond total class abundance, we embedded each lipid class into a reduced chemical space defined by the weighted mean total carbon number and weighted mean double-bond count (Fig.~1C). TG occupied the high‑carbon region of this space and exhibited a pronounced shift toward higher total carbon under the LowInput condition, accompanied by a comparatively modest change in average unsaturation (Fig.~1C). The remaining classes maintained distinct, class‑specific carbon/unsaturation signatures, indicating that the effects of LowInput manifested both as shifts in class abundance (described above) and as coordinated, class‑level changes in acyl‑chain composition (Fig.~1C).
-
-Across both environments, we quantified 244 distinct lipid molecular species, with substantial overlap between conditions (153 shared species) and smaller environment-specific subsets (49 Control-exclusive; 42 LowInput-exclusive; Supplemental Fig.~S3A). TG and PC represented the most species-rich classes in each environment (TG: 71 in Control, 69 in LowInput; PC: 39 in Control, 38 in LowInput), and broader class-level summaries indicated that glycerolipids and glycerophospholipids constituted the majority of identified species (Supplemental Fig.~S3B,D). PCA of lipid species further revealed that the multivariate structure of the dataset was strongly driven by lipid class, with TGs separating from membrane lipid classes and galactolipids forming distinct clusters under both environmental conditions (Supplemental Fig.~S4). 
-
-Given that the SAP encompasses broad genetic diversity, we next evaluated lipid variance across genotypes and identified MGDG(18:3/18:3) as the highest-variance lipid in both environments (Supplemental Fig.~S5A,B). Seven of the ten highest-variance lipids were shared between Control and LowInput (Supplemental Fig.~S5C), suggesting that a conserved subset of lipid traits exhibits strong genotype sensitivity across environments. Within this high-variance subset, PC species were the most frequent class in both conditions (Control: 7/10; LowInput: 6/10; Supplemental Fig.~S5D), supporting their prioritization for subsequent genetic mapping and predictive modeling analyses.
-
 
 % =========================
 % MAIN FIGURE 1
 % =========================
-
-\begin{figure*}[t]
+\begin{figure*}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{Figure1_Lipidomics_Landscape.png}
+  \includegraphics[width=\textwidth]{figures/main/Figure1_Lipidomics_Landscape.png}
   \caption{\textbf{Lipidomics landscape under Control and LowInput field conditions.}
   (A) Field-to-database workflow. (B) Class-level CLR contrasts (LowInput--Control).
   (C) Class-average chemical shifts (weighted mean total carbons and double bonds).
@@ -126,40 +121,14 @@ Given that the SAP encompasses broad genetic diversity, we next evaluated lipid 
   \label{fig:fig1_lipidomics_landscape}
 \end{figure*}
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S1_QC_RunOrder_SERRF_PCA_SpATS.png}
-  \caption{\textbf{QC, SERRF normalization, PCA tightening, and SpATS spatial residual diagnostics.}}
-  \label{fig:suppfig_s1_qc}
-\end{figure*}
+At the lipid class level, the sorghum lipidome was predominantly composed of chloroplast galactolipids and major membrane phospholipids, with DG and TG constituting a substantial fraction of the neutral-lipid pool (Supplemental Fig.~S2A). Under Control conditions, MGDG accounted for 34.5\% of the mean TIC and declined to 32.1\% under LowInput, whereas PC remained comparatively stable (25.6\% in Control versus 24.8\% in LowInput). In contrast, TG increased from 2.7\% (Control) to 5.4\% (LowInput), and SQDG decreased from 2.9\% (Control) to 1.4\% (LowInput) (Supplemental Fig.~S2A). Compositional contrast analyses corroborated these trends as there was a marked relative depletion of SQDG and a pronounced positive contrast for PS (Fig.~1B), and TG-referenced ALR contrasts delineated complementary log-ratio shifts across lipid classes (Supplemental Fig.~S2B). Collectively, these findings indicate LowInput-associated lipid remodeling consistent with reduced sulfolipid abundance and increased partitioning into neutral TG lipids.
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S2_Compositional_Contrasts.png}
-  \caption{\textbf{Class composition and compositional contrasts.}}
-  \label{fig:suppfig_s2_composition}
-\end{figure*}
+To characterize structural remodeling beyond total class abundance, we embedded each lipid class into a reduced chemical space defined by the weighted mean total carbon number and weighted mean double-bond count (Fig.~1C). TG occupied the high‑carbon region of this space and exhibited a pronounced shift toward higher total carbon under the LowInput condition, accompanied by a comparatively modest change in average unsaturation (Fig.~1C). The remaining classes maintained distinct, class‑specific carbon/unsaturation signatures, indicating that the effects of LowInput manifested both as shifts in class abundance (described above) and as coordinated, class‑level changes in acyl‑chain composition (Fig.~1C).
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S3_Lipid_Species_Counts.png}
-  \caption{\textbf{Lipid species counts, overlap, and superclass summaries.}}
-  \label{fig:suppfig_s3_counts}
-\end{figure*}
+Across both environments, we quantified 244 distinct lipid molecular species, with substantial overlap between conditions (153 shared species) and smaller environment-specific subsets (49 Control-exclusive; 42 LowInput-exclusive; Supplemental Fig.~S3A). TG and PC represented the most species-rich classes in each environment (TG: 71 in Control, 69 in LowInput; PC: 39 in Control, 38 in LowInput), and broader class-level summaries indicated that glycerolipids and glycerophospholipids constituted the majority of identified species (Supplemental Fig.~S3B,D). PCA of lipid species further revealed that the multivariate structure of the dataset was strongly driven by lipid class, with TGs separating from membrane lipid classes and galactolipids forming distinct clusters under both environmental conditions (Supplemental Fig.~S4). 
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S4_PCA_Lipids.png}
-  \caption{\textbf{Lipid PCA in Control and LowInput showing class-structured clustering.}}
-  \label{fig:suppfig_s4_pca}
-\end{figure*}
 
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=\textwidth]{SuppFig_S5_TopVariance_Lipids.png}
-  \caption{\textbf{Top high-variance lipids across genotypes in Control and LowInput.}}
-  \label{fig:suppfig_s5_variance}
-\end{figure*}
+Given that the SAP encompasses broad genetic diversity, we next evaluated lipid variance across genotypes and identified MGDG(18:3/18:3) as the highest-variance lipid in both environments (Supplemental Fig.~S5A,B). Seven of the ten highest-variance lipids were shared between Control and LowInput (Supplemental Fig.~S5C), suggesting that a conserved subset of lipid traits exhibits strong genotype sensitivity across environments. Within this high-variance subset, PC species were the most frequent class in both conditions (Control: 7/10; LowInput: 6/10; Supplemental Fig.~S5D), supporting their prioritization for subsequent genetic mapping and predictive modeling analyses.
 
 
 
@@ -169,188 +138,121 @@ To resolve \emph{relative} reallocations among major lipid pools, rather than ab
 
 VIP-ranked ratios (VIP $>$ 1) revealed a highly structured pattern delineating which lipid pools most strongly discriminate Control from LowInput samples (Fig.~3B; Supplemental Fig.~S9A). First, many of the highest-ranking ratios were anchored on SQDG (e.g., MG/SQDG, PS/SQDG, PG/SQDG, PE/SQDG, PC/SQDG, LPE/SQDG), and these ratios were consistently elevated in LowInput (Supplemental Fig.~S9A), indicating a depletion of SQDG \emph{relative to multiple membrane-associated and neutral lipid pools}. This observation is concordant with the class-level profile, in which SQDG abundance decreases under LowInput conditions, whereas several other lipid classes (such as TG and, to a lesser extent, PS) exhibit relative enrichment (Fig.~1B; Supplemental Fig.~S2). Second, PS emerged as a central node in the remodeling landscape as multiple ratios with PS in the denominator (PC/PS, PE/PS, PG/PS, PA/PS, DG/PS, DGDG/PS, LPC/PS) were elevated in Control (Supplemental Fig.~S9A), implying that the LowInput condition is characterized by \emph{increased PS abundance relative to a broad spectrum of other lipid classes}. Collectively, the SQDG- and PS-centered ratios describe a LowInput-associated remodeling axis defined by (i) reduced representation of sulfolipids and (ii) a coordinated redistribution across the membrane lipid headgroup landscape.
 
+
+% =========================
+% MAIN FIGURE 2
+% =========================
+\begin{figure*}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{figures/main/Figure2_OPLS_DA.png}
+  \caption{\textbf{OPLS-DA of summed lipid class ratios distinguishes Control and LowInput conditions.}
+  (A) OPLS-DA scores plot showing separation of Control and LowInput samples along the predictive component (t$_1$), with the orthogonal component (to$_1$) capturing within-condition variation.
+  (B) Top discriminating lipid class ratios ranked by variable importance in projection (VIP; VIP $>$ 1).
+  (C) Permutation test (n=200) comparing observed $R^2_Y$ and $Q^2$ against the null distribution to evaluate model significance.
+  (D) Model quality metrics summarizing the number of predictive/orthogonal components and cumulative $R^2_X$, $R^2_Y$, and $Q^2$.}
+  \label{fig:Fig2_OPLS_DA}
+\end{figure*}
+
 Beyond these two anchors, the VIP set also highlighted interpretable ``transition-like'' relationships among neutral and membrane pools. Several MG-centered ratios increased in LowInput (MG/MGDG, MG/SQDG, MG/PG), while DG/MG and DGDG/MG were higher in Control (Supplemental Fig.~S9A), indicating that LowInput shifts the balance toward higher MG relative to both DG and galactolipids. In parallel, SQDG/TG was higher in Control (Supplemental Fig.~S9A), consistent with the expansion of TG observed in class composition summaries and the chemical-space displacement of TG under LowInput (Fig.~1C; Supplemental Fig.~S2). While ratio data do not directly measure metabolic flux, the \emph{direction-consistent} behavior of these ratios supports a coherent LowInput program in which plastid-associated glycolipids/sulfolipids are reduced relative to neutral storage and selected membrane pools.
 
 To further motivate the use of ratios that capture condition-dependent \emph{rewiring} among lipid classes, we quantified partial correlations (controlling for total TIC) within each environment (Supplemental Fig.~S8). Numerous lipid-class pairs exhibited sign reversals in their partial correlations between Control and LowInput, indicating altered coordination among lipid pools under LowInput-associated stress. Ratios constructed from these sign-flip relationships displayed pronounced and directionally consistent shifts across conditions (Supplemental Fig.~S9B). Most significantly, TG increased in relative abundance compared with PE, MGDG, DG, and (in several cases) DGDG under LowInput (TG/PE, TG/MGDG, TG/DG; Supplemental Fig.~S9B), supporting a model of membrane-to-storage redistribution in which DG likely functions as a biosynthetic intermediate toward TG accumulation. In contrast, the TG/MG ratio was elevated in Control (Supplemental Fig.~S9B), indicating that MG increased disproportionately relative to TG under LowInput, consistent with the MG-centered VIP ratios described above (Supplemental Fig.~S9A). PS-centered partial-correlation ratios additionally supported a redistribution of headgroup classes. For example, PS/PC, PS/DG, and PS/MGDG were elevated in LowInput (Supplemental Fig.~S9B), paralleling the reciprocal pattern observed in the VIP analysis (PC/PS and DG/PS enriched in Control; Supplemental Fig.~S9A). Finally, lysophospholipid ratios indicated a reproducible shift in lyso-lipid balance as shown by LPC/LPE and LPC/PS being higher in Control, whereas LowInput favored LPE relative to multiple denominators (e.g., LPE/SQDG; LPE/MGDG; Supplemental Fig.~S9A). These patterns are consistent with stress-associated remodeling of phospholipid turnover pathways (e.g., PC→LPC and PE→LPE branches) rather than a uniform, condition-wide change in total lysolipid abundance (ref).
 
 Thus, the ratio-based analyses converge on four biologically interpretable LowInput-associated lipid signatures that refine and extend the class-composition findings: (i) a broad depletion of SQDG relative to multiple lipid pools (consistent with the SQDG reduction in the global lipidome), (ii) a relative enrichment of PS within the phospholipid network (in line with the emergence of PS as a prominent class in compositional contrasts), (iii) an increase in TG relative to membrane lipids and DG (in line with the LowInput-linked expansion and chemical-space displacement of TG), and (iv) a reproducible lysophospholipid remodeling signal, with LPE increasing relative to multiple membrane pools and a reduced LPC/LPE balance, consistent with stress-responsive phospholipid turnover (PC$\rightarrow$LPC and PE$\rightarrow$LPE branches) rather than uniform scaling of total lyso-lipid abundance (ref). These coordinated patterns yield a concise representation of the lipid pools that increase relative to others and motivate targeted follow-up investigations into plastid membrane remodeling, phospholipid headgroup rebalancing, lysophospholipid turnover, and DG-to-TG conversion underlying storage lipid accumulation under LowInput field stress.
 
-\subsection*{Genome-wide Association Studies of Lipids Associated with Control and Lowinput}
 
-We conducted GWAS with three flavors of the same lipidomics data, (1) individual lipid species (Supp Table 2), (2) aggregates of lipid class abundances, and (3) all conceivable pairwise ratios of these aggregated classes. Utilizing a significance threshold of $\log_{10}(p)\ge7$ for individual lipids and sums and ratios , we identified 2189 and 7363 genes associated with lipid species (see Supplementary Table 6 and 8), X and 10360  genes associated with the ratios of summed classes (refer to Supplementary Table 4) in a 25kb window for C and LI respectively. The full set of annotations is available in Supplementary Table 6,7,8, and 9. Here, the candidate genes can be identified using (i) genes with the highest occurrences, (ii) GWAS pertaining to lipid class, (iii) sum or ratio of lipids, and (iv) individual compounds of interest(Fig \ref{fig:Fig3}). We only show GWAS results for LI. All the GWAS results can be obtained from the shiny app.
-
-%Re rin gwas:
-%PG(16:0/18:0)
-
-
-\subsubsection{Candidate Gene Identification using Genes with Highest Occurrences}
-
-
-\subsubsection{Candidate Gene Identification using lipid classes}
-
-\subsubsection*{1. Phospholipid GWAS Identifies a Phosphate Starvation Response Gene}
-Candidate genes were prioritized by analyzing GWAS results within the phospholipid lipid class. The Myb-like DNA-binding domain gene \texttt{SORBI\_3001G384300} was consistently identified (Fig \ref{fig:Fig3}A). This gene exhibits homology with \textit{PHR1} (PHOSPHATE STARVATION RESPONSE 1) in rice, a principal regulator of phosphate homeostasis. It demonstrated associations with several phospholipid traits, namely PC(16:0/20:3), PC(16:0/22:5), PC(16:0/22:6), PC(18:1/20:1), PE(16:0/18:1), PC(18:1/24:1), PC(18:2/20:0), and PC(18:3/0:0), indicating a prospective correlation between phospholipid remodeling and phosphate starvation signaling.
-
-\textit{PHR1} serves as a central transcription factor within plants, balancing the responses to phosphate (Pi) deprivation. It is categorized under the MYB-CC family of transcription factors and demonstrates a high level of conservation across both vascular plants and unicellular algae (Rubio et al., 2001). \textit{PHR1} exhibits specific binding affinity to a cis-regulatory element termed the P1BS (GNATATNC) motif, which resides in the promoters of numerous genes induced by Pi starvation, thereby facilitating their expression in conditions of Pi deficiency. These genes encompass those that encode phosphate transporters, signaling components, and enzymes that partake in metabolic adaptations to Pi scarcity (Bustos et al., 2010). Loss-of-function phr1 mutants display compromised expression of genes responsive to Pi starvation and a diminished accumulation of anthocyanins, starch, and sugars under conditions of Pi deficiency, along with modified Pi distribution between roots and shoots (Rubio et al., 2001; Bustos et al., 2010). In contrast, overexpression of PHR1 results in augmented Pi uptake and improved responses to Pi starvation (Nilsson et al., 2007). In addition to maintaining phosphorus homeostasis, PHR1 also plays a crucial role in regulating sulfate homeostasis, particularly under conditions of phosphate deficiency. It enhances the expression of the sulfate transporter gene SULTR1;3 and influences the translocation of sulfate from the aerial parts to the roots during phosphorus starvation. The observation that mutants in either \texttt{phr1} or \texttt{sultr1;3} demonstrate diminished sulfate transfer from shoots to roots suggests that PHR1 is integral to the interaction and coordinated regulation of P and sulfur homeostasis (Rouached et al., 2011). 
-
-%SPX1 is a nuclear protein that interacts directly with PHR1 and functions as a phosphate-dependent inhibitor of PHR1 activity. This interaction is critically influenced by intracellular phosphate (Pi) concentrations; during conditions of Pi sufficiency, SPX1 binds to PHR1, thereby inhibiting its interaction with the P1BS motif in target gene promoters and consequently repressing Pi starvation responses. Conversely, under conditions of Pi deprivation, this interaction is attenuated, allowing PHR1 to activate its target genes (Puga et al., 2014). This mechanism establishes a molecular connection between Pi sensing and signaling, wherein Pi itself regulates the activity of the PHR1 transcription factor through SPX1. Notably, the Pi analog phosphite (Phi), which lacks metabolic capability but suppresses Pi starvation responses, can replicate Pi in promoting the SPX1-PHR1 interaction, further substantiating the hypothesis that SPX1 facilitates a direct perception of Pi levels (Puga et al., 2014).
-
-High-throughput plant imaging pipelines routinely generate terabyte-scale datasets; however, the transformation of these image collections into robust, quantitative phenotypic traits suitable for downstream genetic analyses remains a major bottleneck. We are developing an end-to-end, open-source phenotyping platform that integrates interactive image segmentation with machine learning–based, phenotype-specific mask prediction and shape completion. Within this framework, users can specify traits of interest—such as leaf tip damage, lesions, discoloration, and morphological alterations—by interactively annotating regions of interest and subsequently fine-tuning models to their specific experimental conditions and imaging setups.
-
-A central challenge in real-world, particularly field-based, imaging is visual occlusion: plants overlap, leaves curl or fold, and organs are frequently truncated at image boundaries, resulting in incomplete segmentation masks and noisy trait estimates. We address this problem using two complementary modeling approaches: (1) targeted segmentation, which isolates phenotype-relevant structures while suppressing background clutter and imaging artifacts, and (2) mask completion, which infers full plant or organ boundaries from partial observations, thereby stabilizing quantitative measurements and enabling recovery of occluded structures.
-
-The resulting output is a high-dimensional matrix of image-derived phenotypes explicitly structured for integration into genetic and genomic analyses, positioning image data as a first-class primary measurement source alongside, or in some contexts as a replacement for, conventional wet-lab phenotyping assays. To render this workflow practical at terabyte scale and across distributed collaborators, we employ Globus as the underlying data management and automation infrastructure. Globus facilitates high-performance, reliable transfer of image data from acquisition instruments to institutional storage and HPC or cloud resources; secure sharing of large image repositories and associated trait matrices; and orchestration of ingest → preprocessing → inference → trait export workflows to support reproducible and repeatable phenotyping campaigns. By treating both datasets and model artifacts (including trained weights, configuration files, and curated training sets) as shareable research objects, the Globus-enabled ecosystem supports multi-site benchmarking, collaborative annotation, and continuous model refinement. The platform is openly available at https://github.com/nirwan1265/Image-Segmentation, with planned extensions to support video-based phenotyping.
-
-%References
-
-%Rubio V, Linhares F, Solano R, Martín AC, Iglesias J, Leyva A, Paz-Ares J. (2001). A conserved MYB transcription factor involved in phosphate starvation signaling both in vascular plants and in unicellular algae. Genes & Development, 15(16), 2122–2133.
-
-%Bustos R, Castrillo G, Linhares F, Puga MI, Rubio V, Pérez-Pérez J, Solano R, Leyva A, Paz-Ares J. (2010). A central regulatory system largely controls transcriptional activation and repression responses to phosphate starvation in Arabidopsis. PLoS Genetics, 6(9), e1001102.
-
-%Nilsson L, Muller R, Nielsen TH. (2007). Increased expression of the MYB-related transcription factor, PHR1, leads to enhanced phosphate uptake in Arabidopsis thaliana. Plant Cell and Environment, 30(11), 1499–1512.
-
-%Rouached H, Secco D, Arpat AB, Poirier Y. (2011). The transcription factor PHR1 plays a key role in the regulation of sulfate shoot-to-root flux upon phosphate starvation in Arabidopsis. BMC Plant Biology, 11, 19.
-
-%Puga MI, Mateos I, Charukesi R, Wang Z, Franco-Zorrilla JM, de Lorenzo L, Irigoyen ML, Masiero S, Bustos R, Rodríguez J, Leyva A, Rubio V, Sommer H, Paz-Ares J. (2014). SPX1 is a phosphate-dependent inhibitor of PHOSPHATE STARVATION RESPONSE 1 in Arabidopsis. Proceedings of the National Academy of Sciences of the United States of America, 111(41), 14947–14952.
-
-
-\subsubsection*{2. DGAT1 Controls Triacylglycerol Storage in Response to Nitrogen Limitation and Cold}
-
-We identified the gene \textit{SORBI\_3010G170000}, which encodes Acyl‐CoA:diacylglycerol acyltransferase 1 (DGAT1, analogous to Arabidopsis TG1), in five distinct GWASs: TG(18:1/18:3/22:0), TG(518:2/20:3/22:0), TG(18:2/18:2/18:4), TG(18:2/20:3/22:0), and TG(18:3/18:3/18:3) (Fig \ref{fig:Fig3})B. DGAT1 is responsible for the essential final conversion of DG into TG, which is a key lipid for carbon and energy storage in seeds and stress-affected vegetative tissues \cite{Zhang2009,Yang2011}. In Arabidopsis, low N levels result in the TG accumulation within leaves due to increased levels of DGAT1 and OLEOSIN1 \cite{Yang2011}. The ABA signaling pathway, involving the transcription factor ABI4, directly stimulates DGAT1 by interacting with CE1 elements (CACCG) in its promoter. In \emph{abi4} mutants, both DGAT1 stimulation and TG accumulation are reduced, emphasizing the significance of ABI4 during N deficiency \cite{Yang2011}. Additionally, DGAT1 is highly responsive to cold temperatures (4°C) and plays an essential role in freeze tolerance. Arabidopsis mutants deficient in \emph{dgat1} develop chlorosis and increased cell mortality under cold stress, with reduced TG but higher DG and PA levels \cite{Tan2018}. This elevated PA production induces RbohD-dependent ROS formation, causing oxidative stress. Increased DG kinase activity (DGK2/3/5) (Also a candidate in our GWAS results for Sum\_AEG/Sum\_DG, Sum\_Cer/Sum\_DG, Sum\_DG/Sum\_TG, Sum\_DGDG/Sum\_TG, Sum\_MG/Sum\_TG, Sum\_MGDG/Sum\_TG, Supp Table 7) further boosts PA (also, seen with our dataset, Fig. \ref{fig:Fig1_lipid_class}), while the removal of \emph{dgk} genes restores cold tolerance, suggesting a balance between DGAT1 and DGK is essential for managing ROS and adapting to cold stress \cite{Tan2018}. In seeds, both DGAT1 and phospholipid:diacylglycerol acyltransferase 1 (PDAT1) are vital for optimal oil body development. \emph{dgat1} mutants have a 20–40\% decline in seed oil content (see Lipid annotation Section 5), whereas double mutants (\emph{dgat1/pdat1}) or RNAi lines demonstrate an 80\% decrease in TG, resulting in fertility and embryonic issues \cite{Zhang2009}. Overexpression of DGAT1 enhances seed weight and oil production, highlighting its crucial role in regulating TG levels throughout plant development \cite{Zhang2009,Yang2011}.
-
-
-\subsubsection*{Candidate Gene Identification using Sum and Ratios of Lipids}
-
-\subsubsection*{1. Sum of SQDG GWAS Identifies a Sulphate Assimilation Gene}
-Our GWAS for the sum of SQDG identified a sulphate assimilation gene, called the adenylyl-sulfate kinase gene (APK3, SORBI\_3005G195600). APK3 is one of the four isoforms of APS kinase (adenosine 5'-phosphosulfate kinase) in \textit{Arabidopsis thaliana}, an enzyme that plays a critical role in sulfur metabolism by phosphorylating adenosine 5'-phosphosulfate (APS) to produce 3'-phosphoadenosine 5'-phosphosulfate (PAPS), the active sulfate donor required for sulfation reactions in secondary metabolism (Mugford et al., 2009, p.1-2). Unlike the other APK isoforms, APK3 is uniquely localized in the cytosol, whereas APK1, APK2, and APK4 are plastid-localized (Mugford et al., 2009, p.4). The enzyme's activity influences sulfur partitioning between primary and secondary metabolism, particularly affecting the synthesis of sulfated secondary metabolites such as glucosinolates, which are important for plant defense (Mugford et al., 2009, p.1-2). Studies have shown that disruption of APK1 and APK2 leads to a significant reduction in glucosinolate levels and an increase in thiols, indicating that APKs regulate the availability of PAPS and thus control the flux toward secondary sulfated compounds (Mugford et al., 2009, p.2-3). However, the specific disruption of APK3, the cytosolic isoform, does not significantly affect primary sulfate assimilation or glucosinolate levels, suggesting a more specialized or possibly redundant role compared to plastidic APKs (Mugford et al., 2009, p.4). Furthermore, the C-terminal STAS domain of SULTR1;2, a sulfate transporter, interacts with OAS-TL and is involved in feedback regulation of sulfate transporter activity, but how APK3 activity integrates within this regulatory network remains unclear (Sum\_SQDG\_APK3\_S\_starvation.pdf, p.4). Overall, APK3 contributes to sulfur metabolism by modulating PAPS production in the cytosol, influencing sulfur flux balancing, but its precise regulatory role requires further elucidation.
-
-%References:
-
-%Mugford, S.G., Lee, B.-R., Koprivova, A., Matthewman, C.A., and Kopriva, S. (2009). Disruption of adenosine-5′-phosphosulfate kinase in Arabidopsis reduces levels of sulfated secondary metabolites. Plant Cell 21, 910–927. (Sum_SQDG_APK3_secondary_S.pdf, pp. 1–5)
-%Kopriva, S., Mugford, S.G., Baraniecka, P., Lee, B.R., Matthewman, C.A., and Koprivova, A. (2012). Control of sulfur partitioning between primary and secondary metabolism in Arabidopsis. Frontiers in Plant Science, 3, 163. (Sum_SQDG_APK3_S_starvation.pdf, p.14)
-%Takahashi, H. (2019). Sulfate transport systems in plants: functional diversity and molecular mechanisms underlying regulatory coordination. J. Exp. Bot. 70, 4075–4087. (Sum_SQDG_APK3_S_starvation.pdf, p.16) 
-
-
-%\subsection*{SQDG Metabolism and Its Role in Phosphate‐Starvation Responses}
-
-%In our GWAS of SQDG(32:0) levels, the top locus was \textit{SORBI\_3002G000600}, which encodes the plant ortholog of sulfoquinovosyltransferase (SQD2). SQDG is a negatively charged glycolipid (sulfoquinovose = 6‑deoxy‑6‑sulfonato‑glucose) that constitutes up to 10–20\% of chloroplast thylakoid lipids and is critical for stabilizing photosystem II, photosystem I, and cytochrome \emph{b}\(_6\)\emph{f} complexes \citep{Yu2002,Qin2015,Umena2011}.
-
-%Biosynthesis proceeds in two enzymatic steps \citep{Yu2002,Sun2021}:
-%\begin{enumerate}[label=(\arabic*)]
-%  \item \textit{SQD1} (UDP‑sulfoquinovose synthase): 
-%        \[
-%           \mathrm{UDP\!-\!Glc} + \mathrm{SO_3^{2-}} \;\longrightarrow\; \mathrm{UDP\!-\!sulfoquinovose}
-%        \]
-%  \item \textit{SQD2} (sulfoquinovosyltransferase): 
-%        \[
-%           \mathrm{UDP\!-\!sulfoquinovose} + %\mathrm{diacylglycerol} \;\longrightarrow\; \mathrm{SQDG}
-%        \]
-%\end{enumerate}
-
-%Under phosphate (Pi) starvation, plants degrade phospholipids (e.g.\ PG) to recycle Pi, while \textit{SQD1} and \textit{SQD2} are transcriptionally upregulated, leading to increased SQDG accumulation and preservation of thylakoid membrane functions \citep{Essigmann1998,Nakamura2013,Sun2021}. In rice, \textit{OsPHR2} directly activates \textit{OsSQD1} under Pi deficiency, and loss of \textit{OsPHR2} impairs SQDG levels, alters fatty‐acid composition, and reduces photosynthetic efficiency \citep{Sun2021}. Similarly, \emph{sqd2} mutants in \emph{Arabidopsis thaliana} are unable to synthesize SQDG and exhibit growth defects under low‐Pi conditions, underscoring the essential role of SQDG in replacing anionic phospholipids in the chloroplast \citep{Yu2002}.
-
-
-
-\subsubsection*{2. Lipid Ratios identifies a Lecithin-Cholesterol Acyltransferase-like 1 Gene}
-
-Two LCAT-like-1 genes on chromosome 3, \textit{SORBI\_3003G074500} and \textit{SORBI\_3003G074600}, were identified through GWAS with three distinct ratio phenotypes, (Sum\_AEG/Sum\_GalCer, Sum\_DG/Sum\_GalCer, Sum\_DGDG/Sum\_GalCer). The genes were in close proximity and were identified through the 25kb window. The phenotype is corroborated by 24 significant single nucleotide polymorphisms (SNPs), with the  SNP\_6349502 as the most significant with p-value 8.90 $\times 10^{-10}$. An additional LCAT-like gene on chromosome 1, \textit{SORBI\_3001G448800}, is associated with an extra lipid ratio (Sum\_Cer/Sum\_LPE), which harbors 84 significant SNPs with SNP\_72606991 having the best p-value of $9.33 \times 10^{-8}$. Studies have indicated that in yeast, Lro1 (LCAT-like) catalyzes this specific reaction, exerting substantial influence over the synthesis of TG. Its deletion results in a reduction of TG, whereas its overexpression leads to an increase in TG levels (Oelkers \textit{et al.}, JBC 2000). In plants, there are distinct PDAT orthologs that exhibit comparable chemical activities ( I don't know about this my guy. they maybe completely different genes). 
-
-
-Taken together, the multiple ratios converging on the same loci, overlap with OPLS--DA ratios, and the global distributional shifts in the lipidome (higher TG, depressed DG-anchored ratios, and reduced LPC-anchored ratios in LI), the genetic signal is \emph{consistent} with natural allelic variation at LCAT/PDAT-like enzymes. The lecithin--cholesterol acyltransferase--like (LCAT-like) family comprises enzymes such as phospholipid:diacylglycerol acyltransferases (PDATs) (this is true but do they perform the same function? In maize they make fatty acyl which in turn makes TGs. \url{https://maizegdb.org/gene_center/gene/Zm00001eb025570}, \url{https://pmn.plantcyc.org/pathway?orgid=CORN\&id=PWY-6803}). These enzymes facilitate the transfer of an acyl group from PC to diacylglycerol (DG), yielding triacylglycerol (TG) and lysophosphatidylcholine (LPC) through a CoA-independent mechanism.
-\[
-\text{PC} + \text{DG} \;\xrightarrow{\text{LCAT/PDAT}}\; \text{TG} + \text{LPC}.
-\]
-
-
-%\subsection*{Senescence‐linked lipid remodeling and the SAG39 candidate}
-
-%Tier 1 – strongest mechanistic readouts (use these first)
-%Sum_LPE / Sum_MGDG and Sum_LPC / Sum_MGDG
-%Lysophospholipids (LPE/LPC) rise with PLA-mediated deacylation during membrane breakdown, while MGDG (core thylakoid galactolipid) falls as chloroplasts dismantle. These ratios jump when senescence intensifies—exactly the context where a SAD39 protease would be high.
-
-%Sum_DGDG / Sum_PS and Sum_PG / Sum_PS
-%DGDG/PG are plastid lipids; PS is extraplastidic/ER-derived. Senescence shifts lipid balance away from plastid membranes and toward extraplastidic pools. Expect these ratios to decrease with stronger senescence.
-
-%Tier 2 – flux to storage / membrane remodeling (very good)
-%Sum_DG / Sum_TG
-%Senescing leaves divert DAG to TAG (lipid droplets). As storage rises, DG/TG tends to drop. A SAD39 allele marking stronger senescence should track that direction.
-%Sum_PC / Sum_SQDG and Sum_PE / Sum_SQDG
-%SQDG (plastid sulfolipid) diminishes with thylakoid loss; PC/PE (ER phospholipids) often hold or increase. These ratios typically increase with senescence.
-
-%Our GWAS identified a senescence-specific cysteine protease SORBI\_3010G113600 (SAG39) as a candidate based on distinctive membrane lipid ratios (Supplementary Table), particularly LPE/MGDG and plastid/extraplastid contrasts such as DGDG/PS and PG/PS. These lipid ratios are mechanistically involved in chloroplast dismantling, a defining feature of senescence. Under low-input conditions, there is a decline in chloroplast thylakoid galactolipids like MGDG and DGDG (Fig), attributed to PLA-type deacylation. Conversely, lysophospholipids such as LPE and LPC accumulate as direct products of phospholipase activity (Jimbo \& Wada, 2023; Domínguez \& Cejudo, 2021). Therefore, the rise in LPE/MGDG suggests an active deacylation process of chloroplast membranes, leading to a reduction in thylakoid mass. This creates a biochemical environment where proteases such as SAG39 are involved in breaking down stromal and thylakoid proteins (Fig).
-
-%Similarly, during leaf senescence, the ratio of DGDG to PS declines, signifying a redistribution of lipid pools from plastid-dominated galactolipids to extraplastidial phospholipids. DGDG is a crucial component of thylakoid membranes, responsible for maintaining the structure and stability of photosynthetic complexes. However, it undergoes active degradation during chloroplast dismantling, a pivotal event in senescence, mediated through the activity of galactosidases and lipases that liberate its constituent diacylglycerol and galactose (Domínguez \& Cejudo, 2021; Lee et al., 2009; Springer et al., 2016). This depletion of plastidial galactolipids causes a reduction in the numerator of the DGDG/PS ratio. In contrast, PS, an extraplastidial phospholipid primarily situated in the inner leaflet of the plasma membrane and endomembrane system, undergoes dynamic remodeling during senescence, specifically through the elongation of its acyl chains from approximately C37 to C41 (Li et al., 2014). This elongation is accelerated under conditions of stress and aging, potentially stabilizing membrane curvature or aiding in repair, whereas excessive elongation and eventual externalization of PS can also signal programmed cell death. As plastid membranes disassemble and extraplastidial membranes undergo remodeling, the relative abundance of PS increases (Supp Fig 5), contributing to the reduction in the DGDG/PS ratio. Consequently, a decreasing DGDG/PS ratio encapsulates both aspects of senescence-associated membrane remodeling: the enzymatic degradation of plastid galactolipids and the compositional and structural modifications within extraplastidial PS. This ratio serves as a reliable biochemical marker that signifies the transition from plastid lipid pools to extraplastid lipid pools, supporting nutrient recycling, membrane restructuring, and cellular reprogramming during leaf senescence (Domínguez \& Cejudo, 2021; Li et al., 2014).
-
-%Thus, the presence of SAG39 in these ratio GWAS strengthens the interpretation that our low‐input lipidomic shifts are not incidental but part of a coordinated senescence program coupling lipid catabolism, proteolysis, and neutral‐lipid sequestration (Besagni \& Kessler, 2013; Wang et al., 2018; Domínguez & Cejudo, 2021; Jimbo & Wada, 2023).
-
-
-%\subsection*{MG and MGDG Ratio GWAS Identifies a PG Biosynthesis Gene}
-%Among the three stressors, anticipated lipid alterations establish a flux competition at the DAG/CDP-DAG hub, potentially driving MG/MGDG downward while rendering genotypic differences in PG synthesis highly significant. Under conditions of nitrogen deficiency, the biogenesis of thylakoid membranes decelerates, leading to a reduction in chlorophyll content, impairment of chloroplast ultrastructure, and a decrease in MGDG levels, particularly in highly unsaturated forms such as 34:6- and 36:6-MGDG, along with other thylakoid lipids. This results in a decline of the MG/MGDG ratio due to a diminishing denominator (MGDG), with MG often also experiencing a decline as a consequence of reduced thylakoid membrane construction or turnover. Phosphorus deficiency typically induces a substitution of phospholipids by galactolipids, resulting in PG depletion and an increase in non-phosphorus lipids such as MGDG/DGDG and SQDG. Nevertheless, this lipid remodeling relies on the same DAG/CDP-DAG precursor pool, whereby genetic variability in the metabolic pathway towards PG as opposed to galactolipids can alter the MGDG supply and thus affect the MG/MGDG ratio.
-
-%Cold conditions specifically enhance the dependency on phosphatidylglycerol (PG) for the function of photosystems. PG plays a critical role in the structure, repair, and stability of photosystem II and I (PSII/PSI), and cold-tolerant plant species often adjust PG content and degree of unsaturation to sustain photosynthetic efficacy. The biosynthesis of plastidic PG follows a pathway from CDP-diacylglycerol (CDP-DAG) to phosphatidylglycerophosphate (PGP) to PG; mutations affecting this pathway, such as those observed in PGP1, result in photosynthetic impairments. In cold environments, plants tend to sustain or increase PG levels even under conditions of low phosphorus availability, as PG is functionally irreplaceable, with squamous glycolipid (SQDG) only capable of partially substituting for it. Cold stress also disrupts the fluxes of phosphatidylcholine (PC) and phosphatidic acid (PA) that converge at the same diacylglycerol (DAG) pool, thereby further affecting monogalactosyldiacylglycerol (MGDG) availability.
-
-%Integrating these observed phenomena within the context of the low-input (LI) treatment reveals that reduced nitrogen levels lead to the contraction of thylakoid membranes, thereby decreasing MGDG; phosphate deficiency would typically suppress PG levels, yet low temperatures mitigate this effect by ensuring the maintenance of PG for the stabilization and repair of photosystems. Our data elucidate a net result — a decrease in MG and MGDG, and an increase (or preservation) of PG — which aligns with a cold-induced fortification of PG that overrides aspects of the low-phosphate substitution framework. This biochemical competition clarifies why allelic variations within the plastid PG-biosynthesis pathway (e.g., CDS/PGP) emerge as significant in GWAS: genotypes that channel increased DAG/CDP-DAG flux to PG consequently deplete the DAG available for MGDG, further reducing MG/MGDG levels and positioning the PG gene as the predominant association, despite PG itself not forming part of the ratio.
-
-%Phosphatidylglycerol (PG) constitutes the primary phospholipid within chloroplasts and is integral to plant tolerance against chilling stress. It is exclusively synthesized through the prokaryotic pathway within chloroplasts, and it is essential for both the development of chloroplasts and their photosynthetic functionality (Nussberger et al., 1993; Hagio et al., 2002; Wada & Murata, 2007). The fatty acid composition of PG, particularly the proportion of high-melting-point molecular species (HMP-PG) enriched in 16:0, 18:0, and 16:1-trans, is closely associated with chilling sensitivity. Plants resistant to chilling typically possess less than 10 \% HMP-PG, whereas numerous chilling-sensitive species have levels exceeding 30 \% (Murata, 1983; Roughan, 1985; Wada & Murata, 2007). Elevated HMP-PG levels induce a gel-phase transition at reduced temperatures, thereby perturbing membrane fluidity and resulting in cellular damage (Murata & Yamaya, 1984). Genetic and transgenic investigations have substantiated that increased HMP-PG content instigates chilling sensitivity. For instance, the Arabidopsis fab1 mutant, which accumulates approximately 40–50 \% HMP-PG, experiences a collapse in photosynthesis and eventual death after prolonged exposure to cold (Wu & Browse, 1995; Barkan et al., 2006; Gao et al., 2015). The targeted reduction of HMP-PG in fab1 restores cold tolerance, thereby demonstrating causality (Gao et al., 2020). This accumulation of evidence emphasizes the role of PG biosynthesis genes as critical regulatory points under light and temperature stress. They influence the MG/MGDG ratio indirectly via precursor competition and directly determine the plant’s capacity to sustain photosynthetic proficiency and withstand combined nutrient and temperature challenges.
-
-%References (as provided):
-%Nitrogen_deficiency.pdf pp. 6–9; membrane_remodeling_phosphorus.pdf pp. 237–243; membrane_lipid_P_reuse.pdf pp. 13–14; glycerolipid_remodeling_P_starve.pdf p. 7; glycolipid_remodeling_nitrogen_phosphorus_deficiency.pdf p. 13; Cold_tolerance_barley.pdf pp. 7–9; Glycerolipid_freezing.pdf pp. 4–8; Photosynthesis_thylakoid_glycerolipid.pdf pp. 4–7; Cold_tolerance_maize.pdf pp. 8–9.
-%Nussberger et al., 1993; Hagio et al., 2002; Wada & Murata, 2007; Murata, 1983; Roughan, 1985; Murata & Yamaya, 1984; Murata et al., 1992; Wolter et al., 1992; Moon et al., 1995; Ishizaki-Nishizawa et al., 1996; Wu & Browse, 1995; Barkan et al., 2006; Gao et al., 2015; Gao et al., 2020.
-
-
-\subsubsection*{Candidate Gene Identification using Individual Lipid}
-
-\subsubsection*{1. Alternative Oxidase Roles in Photoprotection and Nitrate Assimilation}
-
-Through our GWAS focused on alpha-carotene, we  identified an alternative oxidase (AOX) gene. \(\alpha\)-carotene, a secondary chloroplast carotenoid, is primarily located within the reaction centers of photosystem I (PSI) and photosystem II (PSII), with only minor quantities found in the peripheral light-harvesting complexes \citep{Young1989}. It bears structural similarity to \(\beta\)-carotene, absorbs blue-green light, and facilitates energy transfer to chlorophyll while concurrently quenching triplet chlorophyll and reactive oxygen species (ROS) to safeguard the photosynthetic apparatus from photooxidative damage under intense light stress. Its co-localization with \(\beta\)-carotene in pigment–protein complexes indicates a contributory role in stabilizing the core structures of PSII and PSI \citep{Young1989}. The mitochondrial AOX pathway offers a non-phosphorylating alternative to cytochrome oxidase, directly oxidizing ubiquinol to water, thereby preventing over-reduction of the photosynthetic electron transport chain \citep{Vishwakarma2015}. AOX1A, the dominant isoform in green tissues, plays a role in dissipating excess reducing equivalents produced by photosynthesis, supports non-photochemical quenching (NPQ), and collaborates with the chloroplast malate–oxaloacetate shuttle to sustain cellular redox homeostasis. Under conditions of stress, such as high light or drought, that inhibit the cytochrome pathway, AOX activity curbs ROS formation and maintains photosynthetic efficiency \citep{Vishwakarma2015}. In addition to its photoprotective function, AOX is vital for nitrate assimilation in plants. During NO\(_3^-\) reduction, the accumulation of reducing equivalents may lead to chloroplast over-reduction. AOX counters this by channeling excess reductants into mitochondrial respiration, thereby preventing oxidative stress and sustaining photosynthesis \citep{Gandin2014}. Studies involving \textit{aox1a} T-DNA insertion mutants in \emph{Arabidopsis thaliana} corroborate that AOX engages with nitrate assimilation pathways to uphold redox balance and optimize C-N metabolism under varying N conditions \citep{Gandin2014,Vishwakarma2015}.
-
-
-%\subsection*{Beta‑Sitosterol GWAS Links Cellulose Synthase to Membrane Stability}
-%In our GWAS of beta-sitosterol (BS), we detected a significant association peak at the cellulose synthase locus SORBI\_3003G049600, indicating that variations in this CesA gene may affect BS accumulation or its function in stabilizing membranes in sorghum. BS is a common phytosterol in plants that integrates into lipid bilayers to regulate membrane fluidity and stability. Although its exact role in cell wall structure is not fully understood, BS is suggested to protect cells from abiotic and biotic stress by enhancing plasma membrane integrity and potentially interacting with cytoplasmic and chloroplast membranes \citep{Sayeed2016}. Studies from Arabidopsis implies that BS plays a role in defense responses, yet a conclusive characterization of its role in cell wall mechanics remains necessary \citep{Sayeed2016}. The cellulose synthase (CesA) complexes are responsible for synthesizing the β-1,4-glucan chains of cellulose, the primary load-bearing polysaccharide in plant cell walls. In Arabidopsis, specific CesA isoforms form plasma-membrane rosettes to produce primary-wall (e.g., AtCesA1, 3, 6) and secondary-wall cellulose (e.g., AtCesA4, 7, 8), which support cell expansion, mechanical strength, and biomass accumulation \citep{Mueller1980,Somerville2006,Hu2018}. Mutations in CesA genes (e.g., \emph{rsw1}, \emph{prc1‑1}) result in decreased cellulose content, weakened cell walls, altered cell morphology, and reduced stress resistance \citep{Hu2018,Arioli1998,Persson2007,CanoDelgado2003,HernandezBlanco2007}. Although CesA primarily directs carbon towards cellulose production, downregulation or mutation of certain CesA genes can redirect carbon flux towards storage compounds. In Arabidopsis seeds, suppression of CesA leads to a slight reduction in cellulose content and prompts compensatory increases in non-cellulosic polysaccharides or proteins \citep{Hu2020}. It has been proposed that redirecting carbon from cell wall polysaccharides to seed storage proteins and oils may enhance nutritional quality, addressing the inverse relationship between seed oil and protein content \citep{Tomlinson2004,Ekman2008,Iyer2008,Shi2012,Tan2011,YoshieStark2008,Knowles1983}. 
-
-
-%\subsubsection*{2. Gibberellic Acid Response GWAS Identifies a MADS‑Box Regulator of Flowering Time}
-
-%In the gibberellic acid (GA) GWAS, we detected \textit{SORBI\_3007G090421}. GA\(_3\) enhances floral initiation in short-day sorghum genotypes, predominantly when in conjunction with far-red light (FR). Williams and Morgan (1979) demonstrated that the combination of GA\(_3\) and FR results in an advancement of flowering by 30 to 80 days in early to intermediate maturity lines, and independently facilitates stem elongation \citep{Williams1979}. Lee \emph{et al.} (1998) further elucidated that photoperiod and phytochrome B are instrumental in regulating endogenous GA\(_1\)/GA\(_{20}\) rhythms, with altered GA peaks in \emph{phyB}-deficient genotypes being associated with early flowering under non-inductive day lengths \citep{Lee1998}. In our GA GWAS, the MADS-box transcription factor gene \textit{SORBI\_3007G090421} was identified. MADS-box proteins, particularly Type II C-function genes, are key regulators of floral organ identity and flowering time, whereas Type I MADS (e.g., \emph{AGL62}) affects endosperm development with consequential indirect effects on reproductive timing \citep{Paul2020}. Environmental temperature influences the effects of GA3 on development. Jabir and Mahmoud (2021) reported that elevated temperatures at planting dates, coupled with GA\(_3\) (100 ppm), expedited sorghum flowering, improved germination, and enhanced enzymatic activities for nutrient mobilization \citep{Jabir2021}. Williams and Morgan also observed genotype-specific temperature responses under controlled versus field conditions, casting light on temperature as a crucial element in GA3-mediated flowering regulation.
-
-
-\subsubsection*{2. GWAS of Zeaxanthin Reveals High Light-inducible Protein}
-
-Zeaxanthin is an essential carotenoid that plays a significant role in the photoprotection mechanisms of photosynthetic organisms, predominantly acting within the framework of the xanthophyll cycle. Under conditions of high light (HL) stress, violaxanthin undergoes enzymatic de-epoxidation to form antheraxanthin, which is further converted into zeaxanthin. This carotenoid is instrumental in dissipating excess excitation energy by quenching excited chlorophyll molecules. The process effectively averts the generation of deleterious reactive oxygen species (ROS), thus safeguarding photosystem II (PSII) from photoinhibition (Levin and Schuster 2023). Zeaxanthin associates with light-harvesting complexes, such as LHCII and certain LHC-like proteins, thereby facilitating non-photochemical quenching (NPQ) to efficiently transmute excess absorbed photonic energy into thermal energy (Levin and Schuster 2023).
-
-Our GWAS for zeaxanthin has identified the gene SORBI\_3002G033800, which has an orthologous counterpart in \textit{Arabidopsis}, referred to as One-helix proteins (OHPs). These OHPs share homology with the high light-inducible proteins (HLIPs) found in cyanobacteria. These function as small chlorophyll a/b-binding proteins characterized by a single transmembrane helix with an LHC motif. OHPs are upregulated under high light conditions, playing a pivotal role in the biogenesis and repair of PSII. They transiently associate with PSII core proteins and temporarily bind chlorophyll pigments during the PSII repair cycle, shielding chlorophyll molecules from photooxidative damage by facilitating energy dissipation through the direct transfer between chlorophyll a and β-carotene (Levin and Schuster 2023). In \textit{Arabidopsis}, mutations in OHP1 result in compromised chlorophyll accumulation, thylakoid architecture, and photosystem functionality, highlighting their essential role in photoprotection and photosynthetic efficiency (Levin and Schuster 2023).
-
-
-%References:
-%Levin, G., & Schuster, G. (2023). LHC-like Proteins: The Guardians of Photosynthesis. International Journal of Molecular Sciences, 24, 2503. 12568911
-%Levin, G., Yasmin, M., Simanowitz, M.C., Meir, A., Tadmor, Y., Hirschberg, J., Adir, N., & Schuster, G. (2022). A Desert Green Alga That Thrives at Extreme High-Light Intensities Using a Unique Photoinhibition Protection Mechanism. bioRxiv. 911
-%Myouga, F., Takahashi, K., Tanaka, R., Nagata, N., Kiss, A.Z., Funk, C., Nomura, Y., Nakagami, H., Jansson, S., and Shinozaki, K. (2018). Stable accumulation of photosystem II requires ONE-HELIX PROTEIN1 (OHP1) of the light harvesting-like family. Plant Physiology, 176(4), 2277–2291.
-%Hey, D., and Grimm, B. (2018). ONE-HELIX PROTEIN2 (OHP2) is required for the stability of OHP1 and assembly factor HCF244 and is functionally linked to PSII biogenesis. Plant Physiology, 177(4), 1453–1472.
-
-\begin{figure}[htbp]
+% =========================
+% RESULTS (paste into Results)
+% =========================
+
+
+\subsection*{Genome-wide Association Studies of Lipid Traits Under LowInput}
+
+We conducted GWAS using three representations of the same lipidomics dataset: (i) individual lipid species, (ii) summed abundances of lipid classes, and (iii) all possible pairwise ratios among these aggregated classes. We used a significance threshold of $p\le10^{-7}$ ($-\log_{10}(p)\ge 7$) and assigned SNPs to genes using a 25~kb window.
+
+To identify and contextualize candidate genes, we used four complementary prioritization views: (1) genes with the highest occurrence across \emph{individual-lipid} GWAS phenotypes (Table~\ref{tab:LI_individual_gene_top}); (2) genes with the highest occurrence across \emph{summed-class and ratio} GWAS phenotypes (Table~\ref{tab:LI_sumratio_gene_top}); (3) lipid-class–focused GWAS (e.g., phospholipids and triacylglycerols) to prioritize class-relevant regulators; and (4) targeted follow-up of specific traits of interest, including sums (e.g., Sum~SQDG), biologically motivated ratios (cold-, nitrogen-, and phosphorus-linked), and individual compounds of interest (e.g., $\alpha$-carotene and zeaxanthin). We report LowInput results in the main text; full GWAS results and annotations for all traits are available in the Supplementary Tables and in the Shiny application.
+
+
+\begin{table}[t]
+\centering
+\caption{Top LowInput genes from \textbf{individual-lipid} GWAS ranked by the maximum number of associated lipid phenotypes (25~kb mapping window; $p\le10^{-7}$). For each leading SNP, we show the single most recurrent gene to avoid redundant adjacent-gene listings at the same signal. Example lipids show a few representatives; full lists are in Supplementary Tables/Shiny.}
+\label{tab:LI_individual_gene_top}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\columnwidth}{l r l l r Y}
+\toprule
+Gene & \#traits & Leading SNP & min $p$ & \#SNPs & Example lipids \\
+\midrule
+\texttt{SORBI\_3010G064200} & 20 & \texttt{SNP\_5083051} & $3.4\times10^{-16}$  & 8  & 3-Epilupeol; NAE(18:0); TG(10:0\_\allowbreak16:0\_\allowbreak16:0); TG(12:0\_\allowbreak14:0\_\allowbreak16:0); \ldots (20 total) \\
+\texttt{SORBI\_3001G057100} & 16 & \texttt{SNP\_4303626} & $7\times10^{-67}$    & 20 & 13-Keto-9Z,11E-octadecadienoic acid; 13S-HOTrE; AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); \ldots (16 total) \\
+\texttt{SORBI\_3003G169600} & 13 & \texttt{SNP\_29153705} & $7\times10^{-67}$    & 4  & AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); PC(18:1\_\allowbreak18:2); PC(18:1\_\allowbreak20:4); \ldots (13 total) \\
+\texttt{SORBI\_3005G041700} & 13 & \texttt{SNP\_3875200}  & $7.7\times10^{-67}$  & 2  & AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); PC(18:1\_\allowbreak18:2); PC(18:1\_\allowbreak20:4); \ldots (13 total) \\
+\texttt{SORBI\_3005G111700} & 13 & \texttt{SNP\_36855919} & $3.5\times10^{-13}$  & 14 & 13-Keto-9Z,11E-octadecadienoic acid; 13S-HOTrE; TG(12:0\_\allowbreak16:0\_\allowbreak16:0); TG(18:1\_\allowbreak20:3\_\allowbreak22:0); \ldots (13 total) \\
+\texttt{SORBI\_3006G044532} & 12 & \texttt{SNP\_31061463} & $3.4\times10^{-16}$  & 3  & TG(12:0\_\allowbreak14:0\_\allowbreak16:0); TG(12:0\_\allowbreak16:0\_\allowbreak16:0); TG(12:0\_\allowbreak16:0\_\allowbreak18:3); \ldots (12 total) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\begin{table}[t]
+\centering
+\caption{Top LowInput genes from \textbf{summed-class and ratio} GWAS ranked by the maximum number of associated sum/ratio phenotypes (25~kb mapping window; $p\le10^{-7}$). For each leading SNP, we show the single most recurrent gene to avoid redundant adjacent-gene listings at the same signal. Example traits show a few representatives; full lists are in Supplementary Tables/Shiny.}
+\label{tab:LI_sumratio_gene_top}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\columnwidth}{l r l l r Y}
+\toprule
+Gene & \#traits & Leading SNP & min $p$ & \#SNPs & Example sum/ratio traits \\
+\midrule
+\texttt{SORBI\_3008G088836} & 44 & \texttt{SNP\_21312400} & $2.1\times10^{-22}$  & 14 & Sum\_\allowbreak AEG/Sum\_\allowbreak Cer; Sum\_\allowbreak AEG/Sum\_\allowbreak DG; Sum\_\allowbreak AEG/Sum\_\allowbreak GalCer; Sum\_\allowbreak AEG/Sum\_\allowbreak SM; \ldots (44 total) \\
+\texttt{SORBI\_3006G093600} & 37 & \texttt{SNP\_46347720} & $2.2\times10^{-14}$  & 11 & Sum\_\allowbreak AEG/Sum\_\allowbrea kFA; Sum\_\allowbreak AEG/Sum\_\allowbreak PG; Sum\_\allowbreak AEG/Sum\_\allowbreak PS; Sum\_\allowbreak AEG/Sum\_\allowbreak TG; \ldots (37 total) \\
+\texttt{SORBI\_3004G127066} & 36 & \texttt{SNP\_15426192} & $7.7\times10^{-125}$ & 17 & Sum\_\allowbreak AEG/Sum\_\allowbreak Cer; Sum\_\allowbreak AEG/Sum\_\allowbreak DGDG; Sum\_\allowbreak AEG/Sum\_\allowbreak LPC; Sum\_\allowbreak AEG/Sum\_\allowbreak LPE; \ldots (36 total) \\
+\texttt{SORBI\_3004G120000} & 35 & \texttt{SNP\_12933658} & $2.7\times10^{-115}$ & 16 & Sum\_\allowbreak AEG/Sum\_\allowbreak MG; Sum\_\allowbreak AEG/Sum\_\allowbreak MGDG; Sum\_\allowbreak AEG/Sum\_\allowbreak TG; Sum\_\allowbreak Cer; \ldots (35 total) \\
+\texttt{SORBI\_3009G090800} & 33 & \texttt{SNP\_17785435} & $1.1\times10^{-301}$ & 15 & Sum\_\allowbreak AEG/Sum\_\allowbreak DGDG; Sum\_\allowbreakAEG/Sum\_\allowbreak TG; Sum\_\allowbreak Cer/Sum\_\allowbreak DGDG; Sum\_\allowbreakCer/Sum\_\allowbreak PA; \ldots (33 total) \\
+\texttt{SORBI\_3009G086700} & 31 & \texttt{SNP\_14705908} & $4.2\times10^{-275}$ & 13 & Sum\_\allowbreak AEG/Sum\_\allowbreak DG; Sum\_\allowbreak AEG/Sum\_\allowbreak MG; Sum\_\allowbreak AEG/Sum\_\allowbreak MGDG; Sum\_\allowbreak AEG/Sum\_\allowbreak PA; \ldots (31 total) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+\subsection{A DG-centered reaction subnetwork links membrane remodeling to TG accumulation under LowInput}
+
+To connect the class-level shifts (SQDG depletion; TG enrichment; lysophospholipid remodeling; PS enrichment) with mechanistic lipid interconversions, we applied reaction-network enrichment (LINEX) and identified a compact DG-centered subnetwork that was preferentially enriched under LowInput (Fig.~5). The enriched module links several abundant DG species (DG(18:1/18:2), DG(16:0/18:2), DG(16:0/18:1)) to a key TG species (TG(16:0/18:1/18:2)) and multiple MG species (MG(16:0), MG(18:1), MG(18:2)), through reaction templates that collectively represent a membrane-to-storage redistribution axis. In particular, two reactions in the module couple TG formation to the *simultaneous* generation of lysophospholipids: (i) a PC–DG transacylation step producing TG and LPC (PC + DG $\leftrightarrow$ TG + LPC), and (ii) a PE–DG transacylation step producing TG and LPE (PE + DG $\leftrightarrow$ TG + LPE). Although LINEX annotates these templates using reference enzymes (e.g., “LRO1” or “PNPLA” labels), the biochemical interpretation in plants is most consistent with PDAT-like phospholipid:diacylglycerol acyltransferase activity (phospholipid $\rightarrow$ lysophospholipid while acylating DG to TG). The prominence of these edges provides a mechanistic explanation for the ratio-based signal showing lysophospholipid remodeling (e.g., LPE increasing relative to multiple pools and a shift in LPC/LPE balance) alongside TG accumulation.
+
+The same subnetwork also contains a TG $\leftrightarrow$ DG reaction template (TG $\leftrightarrow$ DG), consistent with dynamic TAG turnover (lipase-mediated TG hydrolysis) coupled to re-esterification, as well as a DG + MG $\leftrightarrow$ TG template that highlights MG/DG intermediacy in glycerolipid remodeling. Together, these reactions place DG as a central hub that can be (i) generated from membrane lipid remodeling, (ii) funneled into storage TG, or (iii) recycled through TG turnover—exactly the type of coordinated remodeling expected under combined nutrient limitation and early-season stress.
+
+Importantly, the enriched network aligns with candidate genes emerging from our GWAS analyses. The DG-to-TG conversion implied by the DG–TG edges is supported by identification of \textit{DGAT1} (\texttt{SORBI\_3010G170000}) across multiple TG GWAS traits, consistent with its known role catalyzing the terminal acylation of DG to form TG. :contentReference[oaicite:0]{index=0}  In addition, DG kinase genes (DGK2/3/5) were also highlighted among candidates for multiple DG- and TG-related summed/ratio traits, supporting a competing DG fate into PA that can modulate stress signaling and the balance between membrane remodeling and TG storage. :contentReference[oaicite:1]{index=1}  Upstream of these enzymatic steps, a P starvation regulatory node (\textit{PHR1}-like; \texttt{SORBI\_3001G384300}) was repeatedly associated with multiple PC and PE traits, consistent with phosphate-starvation–linked phospholipid remodeling that would feed into the PC/PE $\rightarrow$ lyso-lipid branches seen in the network. :contentReference[oaicite:2]{index=2}  Finally, the network-level emphasis on sulfolipid loss is concordant with a sulfate-assimilation candidate identified for the \emph{sum SQDG} GWAS (\textit{APK3}; \texttt{SORBI\_3005G195600}), providing genetic support for the SQDG depletion axis observed in the global lipidome and compositional contrasts. :contentReference[oaicite:3]{index=3}
+
+Overall, the LINEX-enriched subnetwork provides a mechanistically coherent bridge between (i) the compositional/ratio signatures (SQDG depletion, TG enrichment, and lyso-lipid remodeling) and (ii) GWAS-supported candidate regulators at key branch points, highlighting DG as a metabolic hub and pointing to PDAT/DGAT- and DGK-mediated control of membrane-to-storage lipid reallocation under LowInput field stress.
+
+% =========================
+% FIGURE 5 caption block (Overleaf)
+% =========================
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{fig/main/Fig3.png}
-  \caption{\textbf{Low‐input lipid GWAS Manhattan plots}
-    \textbf{(A)} Manhattan plots for five Phosphplipids PC(16:0/20:3),PC(16:0/22:5),PC(16:0/22:6),PC(16:1/20:1), and PE(16:1/18:1), all peaking at PHR1 locus (\textit{SORBI\_3001G384300}) in chromosome 1; the vertical green dashed line marks the SNP position for this gene.  
-    \textbf{(B)} Manhattan plots for five TG species TG(18:1/18:3/22:0),TG(18:1/20:3/22:0),PC(18:2/18:2/16:4),TG(18:2/20:3/22:0), and TG(18:3/18:3/18:3), all peaking at DGAT1 locus (\textit{SORBI\_3010G170000}) in chromosome 10; the vertical green dashed line marks the SNP position for this gene. 
-    \textbf{(C)} Sum of SQDG Manhattan plot, identifying an adenylate sulfate kinase (\textit{SORBI\_3005G195600}).  
-    \textbf{(D)} \(\alpha\)‐Carotene Manhattan plot, identifying an alternative oxidase (\textit{SORBI\_3006G202500}).  
-    \textbf{(E)} Gibberellic acid Manhattan plot, at a sugar transporter SORBI/_3010G030600 and a MADS‐box transcription factor locus (\textit{SORBI\_3007G090421}) .  
-    \textbf{(F)} Zeaxanthin Manhattan plot, marking a chloroplast RNA‐binding protein (\textit{SORBI\_3001G357200}).  
-    Green dots indicate SNPs within or near the highlighted genes in panels B–F. Panels A and B show traditional lipids (–log\textsubscript{10} $p$\(\geq\)7), and panels C–F show non‐traditional lipids (–log\textsubscript{10} $p$\(\geq\)5).}
-  \label{fig:Fig3}
-\end{figure}
+  \includegraphics[width=\textwidth]{figures/main/Figure5_LINEX_Enriched_Subnetwork.png}
+  \caption{\textbf{LINEX-enriched lipid reaction subnetwork highlights DG-centered remodeling consistent with TG accumulation and lysophospholipid formation.}
+  Circles denote lipid species (colored by class), and squares denote reaction/enzyme templates. The enriched module connects multiple DG species to TG through reaction templates representing DG$\rightarrow$TG formation (DGAT/PDAT-like), TG$\leftrightarrow$DG turnover (lipase/esterase-like), and phospholipid-linked transacylation steps that generate LPC or LPE as by-products (PC + DG $\leftrightarrow$ TG + LPC; PE + DG $\leftrightarrow$ TG + LPE).}
+  \label{fig:Fig5_LINEX_Subnetwork}
+\end{figure*}
 
 
-\subsubsection{Random forest prediction of plant height identifies reproducible lipid predictors}
+\subsection*{Lipid modules predict plant height with high accuracy and cross-dataset reproducibility}
 
-To test whether lipid variation in the SAP captures information relevant to agronomic performance, we trained a random forest (RF) model to predict plant height using individual lipid species as features and interpreted feature contributions using TreeSHAP. To minimize confounding due to broad-scale population stratification, plant height was first transformed into a covariate-adjusted (principal component–residualized) phenotype prior to model fitting (Supplemental Fig.~S10A). Using these residualized phenotypes, the RF model exhibited high predictive performance (Fig.~4A; RMSE = 24.213; $R^2 = 0.688$), and this performance was consistently maintained across 5-fold cross-validation replicates (Supplemental Fig.~S10D; mean $R^2 \approx 0.680$).
+To identify lipid features predictive of agronomic traits, we applied XGBoost regression with SHAP-based interpretation. Given the high correlation among lipid species within biochemical classes, we first grouped the 226 individual lipid variables into 27 correlation-derived modules using hierarchical clustering based on Spearman correlation distances (Methods). This module-level strategy mitigates the recognized limitation whereby SHAP importance values become attenuated and unstable in the presence of highly collinear predictors.
 
-TreeSHAP feature ranking indicated that the predictive signal was highly enriched for TGs, with a particular overrepresentation of medium-chain TG species that dominated the highest-importance features (Fig.~4B). The single most influential predictor was TG(10:0/10:0/10:0), followed by additional medium-chain TGs, including TG(12:0/12:0/14:0), TG(10:0/12:0/16:0), and TG(12:0/12:0/16:1) (Fig.~4B). Non-TG lipids were also present among the top 20 predictors, such as MG(20:4), PC(18:1/22:1), PA(16:0/18:2), MGDG(18:2/18:2), and a ceramide (Cer(24:1)), as well as apocarotenal (Fig.~4B). At a broader level, TGs constituted the majority of the top 50 SHAP-ranked lipids (Supplemental Fig.~S10B), which is consistent with the RF model relying predominantly on variation in storage lipids to account for height differences across genotypes (ref). Most notably, SHAP-derived importance did not collapse to simple marginal associations. Across the lipidome, correlation with plant height accounted for only a modest proportion of the variance in SHAP values (Supplemental Fig.~S10C), indicating that the RF exploits non-linear effects and higher-order interactions, such that a lipid can be highly predictive even when its univariate correlation is weak.
+\paragraph{Plant height prediction.}
+For plant height, the XGBoost model exhibited robust predictive performance on our dataset ($R^2 = 0.752 \pm 0.027$, 5-fold CV; $n = 388$; Fig.~4A). Module-level SHAP analysis indicated that a single TG-dominated module (M1; 22 lipids) contributed the majority of the predictive signal, with a mean absolute module SHAP approximately 10-fold higher than the second-ranked module (Fig.~4B). Lipids assigned to M1 consisted primarily of short- and medium-chain triglycerides, including TG(10:0/10:0/10:0), TG(12:0/12:0/14:0), and TG(10:0/12:0/16:0). Although these individual lipids were associated with high SHAP values, they are statistically interchangeable as members of the same highly correlated module.
 
-To assess the robustness of these lipid-based predictors beyond our field sampling, we reapplied the RF$+$TreeSHAP analytical framework to an independent SAP plant height dataset reported by Boyles et~al. (ref) and compared the resulting feature importance rankings. The top-20 SHAP-derived lipid sets demonstrated substantial concordance. Fourteen of the 20 highest-ranking lipids were shared between the two datasets (Fig.~4C), and the SHAP effect sizes for the most influential predictors were strongly correlated across studies (Fig.~4D; $r=0.90$ for the overlapping features). This cross-study consistency indicates that a reproducible subset of lipid traits, predominantly TG species together with membrane- and signaling-associated lipids, captures biologically meaningful variation associated with plant height.
+To further substantiate these findings, we replicated the analysis using plant height phenotypes obtained from an independent study (Boyles et al.). Although the overall predictive performance was reduced in this dataset ($R^2 = 0.36 \pm 0.154$; $n = 264$), the ranking of module importance was highly concordant i.e., 8 of the top 10 modules were shared between datasets, and the correlation of module importance scores was effectively perfect ($r = 0.99$; Fig.~4C,D). Notably, M1 (TG-enriched) remained the top-ranked module in both datasets, indicating that short-chain triglycerides represent robust and reproducible biomarkers of plant height across independent studies.
 
-We next assessed whether the same lipid-based RF$+$SHAP framework could be generalized to flowering time across multiple field environments. However, the predictive accuracy for flowering time was near zero or negative in all environments examined (Supplemental Fig.~S11B; test $r$ ranging from 0.038 to $-0.050$), indicating that lipid profiles did not reliably predict flowering time. The SHAP-derived importance profiles similarly exhibited pronounced environment dependence. The majority of the top-20 SHAP-ranked lipids were specific to a single environment (Supplemental Fig.~S11C), with only one lipid consistently ranked among the top 20 in all five environments (DG(16:0/18:0); Supplemental Fig.~S11D). Most importantly, gibberellic acid was among the recurrent predictors in three environments (Supplemental Fig.~S11D), consistent with the established role of gibberellins in the hormonal regulation of flowering (ref). However, this also underscores that the lipid and hormone signatures associated with flowering time lacked the cross-environment stability observed for plant height.
+\paragraph{Flowering time shows no lipid-based predictive signal but reveals consistent module patterns.}
+In contrast to plant height, lipid modules exhibited negligible predictive power for flowering time (days to anthesis). Across all five environments evaluated, including our DTA measurements and the four environments reported in Wei et al.\ (MI20, NE20, IA21\_1, IA21\_2), the cross-validated $R^2$ values were negative or close to zero (range: $-0.39$ to $-0.05$; Fig.~S11B), indicating that lipid profiles do not explain appreciable variation in flowering time.
+
+Despite the absence of predictive signal, we evaluated whether any lipid modules exhibited consistent importance across environments. Four modules were recurrently ranked within the top 10 in all five environments: M1 (22 lipids, TG-dominated), M2 (22 lipids, PC-dominated), M5 (15 lipids, PC-dominated), and M6 (15 lipids, TG-dominated) (Fig.~S11A,D). Two additional modules (M3, M13) were among the top 10 in four of the five environments. This cross-environment consistency indicates that, although these lipid programs do not predict flowering time with sufficient accuracy for practical applications, they likely exhibit weak yet reproducible associations with developmental timing.
+
 
 % =========================
 % FIGURE PLACEHOLDERS
@@ -393,175 +295,102 @@ From our multi-omics analysis, we can infer that the maize phosphorus starvation
 While phosphorus deficiency triggered canonical molecular responses across genotypes, the magnitude of these responses varied depending on the leaf developmental position.
 The \invfour chromosomal inversion showed minimal modulation of phosphorus starvation responses, indicating that its contribution to highland adaptation operates through effects on developmental timing rather than enhanced nutrient stress tolerance.
 
-\subsection*{We captured a gradient of sequential leaf senescence in our samples}
 
-By sampling leaves from the topmost fully developed collar and those below, we captured a physiological gradient in gene expression. 
-The gradient appears to accurately reflect the onset and initial phases of sequential senescence in our plants, which we estimated around the V13 stage, approximately 10 to 16 days prior to flowering. 
-We observed this sequential senescence as the progressive aging of the leaves along the plant axis, culminating in the death of the leaves nearest to the soil.
+\subsection*{Candidate Gene Identification using Genes with Highest Occurrences in Lipid GWAS}
 
-Using gene set transcriptomic indices, we corroborated that chlorophyll biosynthesis and degradation were correlated with this vertical developmental axis Fig~\ref{fig:Figure_5} A. 
-And in particular, Magnesium chelatase \textit{chlh1} (\textit{Zm00001eb433610}), glutamyl-tRNA reductase \textit{gtr3} (\textit{Zm00001eb044210}), and uroporphyrinogen decarboxylase \textit{urod} (\textit{Zm00001eb358510}) consistently decreased expression with each successive sample downwards, while the pheophytinase \textit{pph} (\textit{Zm00001eb231810}) showed the opposite pattern. 
-Simultaneously, the photosynthesis genes \textit{pep1} and \textit{ssu1} (pep carboxylase and rubisco small subunit, respectively)  were downregulated, while the senescence-associated genes \textit{salt1} (\textit{Zm00001eb130570}) and \textit{mir3}  (\textit{Zm00001eb068400}) were upregulated.
-While chlorophyll degradation enzyme \textit{pph} showed positive correlation with leaf age,  \textit{sgrl1} (\textit{Zm00001eb076680}) was downregulated, potentially shifting chlorophyll catabolism towards PPH  from the chlorophyllase pathway, which has been reported to mediate  87\% chlorophyll degradation in maize \cite{wei2025}.
-% All these genes surpassed our statistical and effect size cutoffs for high-confidence DEGs (Supplementary Table \ref{table::}).
+\paragraph{I. Candidate Gene Identification using Genes with Highest Occurrences in Individual GWAS}
+Upon tabulation of all genes across all genotypes, the gene \texttt{SORBI\_3010G064200} exhibited the highest frequency of occurrence. This gene has a close homolog in rice, designated as GSL5, and in \emph{Arabidopsis thaliana}, designated as CalS5. Callose, a $\beta$-1,3-glucan, is a dynamic cell wall polysaccharide that plays a critical role in plant development, particularly during microsporogenesis. In rice, GLUCAN SYNTHASE-LIKE 5 (GSL5) has been identified as an essential callose synthase responsible for the deposition of callose in the primary cell walls of meiocytes and in the newly formed cell plates of tetrads \citep{Shi2015}. Loss-of-function mutations in GSL5 result in defective callose walls surrounding microspores, leading to male sterility, aberrant exine formation, and reduced pollen viability \citep{Shi2015}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Discussion}
+This functional role is highly conserved in its \emph{Arabidopsis} ortholog, AtGSL2 (also referred to as CalS5), which similarly regulates callose deposition in the cell walls of meiocytes, tetrads, and microspores, and is indispensable for proper pollen wall patterning and reproductive fertility \citep{Dong2005}. Moreover, ectopic or experimental expression of CalS5 has been shown to induce artificial callose accumulation in cell walls, thereby modifying cell wall permeability and mechanical properties \citep{Xie2012}.
 
-% Our multi-omics analysis demonstrates that phosphorus starvation elicits a conserved molecular and phenotypic response in maize. Reduced growth, delayed flowering, and yield penalties were paralleled by transcriptomic activation of phosphate scavenging and recycling pathways, lipid remodeling, and nutrient redistribution. Importantly, these responses were consistent across genotypes differing at the \invfour inversion. Nonetheless, we identified a small set of genotype-by-phosphorus interactions exceeding significance thresholds. In transcriptomics, these outliers overlapped with loci previously associated with flowering time and plant height. In lipidomics, phosphatidylethanolamine remodeling showed genotype specificity. Such secondary GxE effects suggest that while the phosphorus starvation program is globally robust, specific genetic variants can modulate its fine-scale execution.
-This developmental framework provides context for interpreting phosphorus starvation responses.
-The leaf-stage variable represents a combined axis of decreasing photosynthetic capacity and the progression of developmental senescence, allowing us to quantify how nutrient stress interacts with natural developmental transitions during vegetative growth.
-The significant interaction terms we observed for chlorophyll metabolism, photosynthesis, and senescence gene sets indicate that phosphorus deficiency does not uniformly shift all leaves along this gradient but rather amplifies the divergence between young and old tissues Fig~\ref{fig:Figure_5}D.
+An important environmental dimension has been documented in rice, where callose synthase expression in anthers is strongly chilling-responsive, indicating a molecular link between cold stress, callose metabolism, and the onset of male sterility \citep{Yamaguchi2006}. Collectively, these observations emphasize the conserved and central role of GSL5/AtGSL2 in regulating callose dynamics required for successful plant reproduction, while also highlighting the sensitivity of this pathway to environmental perturbations such as low temperature.
 
-\subsection*{Phosphorus starvation responses accelerate with leaf age}
+\paragraph{II. Candidate Gene Identification using Genes with Highest Occurrences in Sum and Ratio GWAS}
+Regarding the sums and ratios of lipids, one of the most highly represented genes was \texttt{SORBI\_3004G120000} (Supp Table). Expansins constitute a superfamily of cell wall–loosening proteins, classified into α-expansins (EXPAs), β-expansins (EXPBs), and the expansin-like A (EXLA) and B (EXLB) subfamilies (Lee et al., 2001, p. 1; Choi et al., 2006, p. 1, 3). These proteins mediate pH-dependent extension of the plant cell wall and overall cell growth by disrupting non-covalent bonds between cell wall polysaccharides, thereby enabling turgor-driven polymer creep without detectable hydrolysis of cell wall polymers (Lee et al., 2001, p. 1, 2, 4). Through this mode of action, expansins directly modulate cell wall architecture, influencing processes such as fruit softening and the crystalline cellulose fraction (Lee et al., 2001, p. 5; Choi et al., 2006, p. 6).
 
-Phosphorus deficiency activated the expected molecular machinery for nutrient scavenging and remobilization.
-Upregulated genes included non-coding RNAs \textit{pilncr1} and \textit{ips1}, phosphate scavenging enzymes \textit{gpx1}, \textit{pap2} (\textit{Zm00001eb064450}), and \textit{pap19}, phosphate transporters \textit{phos1}, \textit{pht1}, and \textit{pht7}, and galactolipid biosynthesis genes \textit{mgd2}, \textit{sqd2} (\textit{Zm00001eb297970}), \textit{sqd3} (\textit{Zm00001eb335670}), and \textit{glpx2}.
-Gene Ontology enrichment confirmed activation of galactolipid biosynthetic processes and phosphate starvation response pathways, while KEGG analysis highlighted glycerophospholipid metabolism (Fig~\ref{fig:Figure_4} A-B). 
-Downregulated genes included \textit{peamt2} (\textit{Zm00001eb294690}), which catalyzes phosphoethanolamine methylation in the Kennedy pathway for PC biosynthesis, photosynthesis genes \textit{rca3} (\textit{Zm00001eb164380}) and \textit{lhcb10} (\textit{Zm00001eb357740}), and transcription factors \textit{zim25} (\textit{Zm00001eb278320}), \textit{nactf132} (\textit{Zm00001eb324550}), and \textit{bzip81} (\textit{Zm00001eb198410}).
-These patterns validate the canonical phosphorus starvation response documented in previous studies \cite{wang2020a,he2022}.
+In addition, expansins play a pivotal role in plant adaptive responses to environmental stresses, with their expression associated with acclimation mechanisms under submergence, ethylene exposure, O\textsubscript{2} deficiency, and drought-induced cell wall folding and desiccation tolerance (Lee et al., 2001, p. 3; Choi et al., 2006, p. 5–6). Expansin gene expression is also finely regulated by nitrogen availability, largely through cytokinin-dependent signaling pathways. Under low nitrate supply, reduced cytokinin levels promote primary root elongation, which correlates with elevated expression of expansin (EXP) and xyloglucan endotransglucosylase/hydrolase (XTH) genes (Teixeira et al., 2024, p. 1, 8). In contrast, high nitrate availability typically elevates cytokinin concentrations and suppresses primary root elongation (Teixeira et al., 2024, p. 1).
 
-We detected 555 high-confidence DEGs with a significant and strong interaction between leaf stage and phosphorus treatment Fig~\ref{fig:Figure_4}A-B, meaning that their phosphorus responses increased or decreased linearly with leaf position.
-Our statistical modelling was designed to detect two functionally distinct trajectories.
-Genes with negative interaction terms (194), including light-harvesting proteins \textit{cab}, \textit{psad1}, and \textit{ndho1}, showed increased negative responses to phosphorus starvation in older leaves, corresponding to selective shutdown of the thylakoid light-capture machinery.
-Gene Ontology enrichment for this set highlighted terms related to photosynthesis and the light-harvesting complex, while KEGG analysis specifically identified genes involved in the light-harvesting complex, rather than Calvin cycle components (Fig~\ref{fig:Figure_4}A-B.)
-This distinction suggests distinct developmental regulation: Calvin cycle downregulation occurs uniformly across leaf ages as a direct consequence of ATP limitation, whereas light-harvesting shutdown is more pronounced with increasing leaf age.
-This bifurcation into light-harvesting shutdown versus senescence acceleration reveals that phosphorus deficiency triggers distinct regulatory programs, depending on the developmental context.
+Selenium (Se) further modulates this regulatory network. Under low nitrate conditions, Se application increases root cytokinin concentrations and inhibits root growth by downregulating EXP and XTH gene expression, an effect associated with enhanced shoot sugar accumulation. Under high nitrate, Se exerts a negative effect on root cytokinin biosynthesis, which in turn upregulates EXP and XTH transcripts and results in increased root size (Teixeira et al., 2024, p. 8, 9). Collectively, these findings indicate that Se modifies the nitrate–cytokinin regulatory balance to adjust the partitioning of growth between shoot and root tissues.
 
-Genes with positive interaction terms (Fig~\ref{fig:Figure_4}A-B) i.e. with increased slope of $log_2{\text{FC}}>0.5$ per leaf stage under phosphorus limitation, showed amplified phosphorus-starvation responses in older leaves, corresponding to enhanced senescence and nutrient remobilization signatures.
-Out of 361 high-confidence DEGs with positive interaction with leaf age, 20 genes were annotated with "cellular response to phosphate starvation" and presented in the \ref{table:goleafxP_genes}.
-These genes can be classified into more specific functional groups.
-The glycolytic enzymes, \textit{pfk1}, together with \textit{pep2} and its activating kinase \textit{ppck3}.
-The galactolypid byiosynthetic enzymes \textit{mgd3}, \textit{sqd2}, and \textit{sqd3}, were strongly up-regulated, indicating accelerated replacement of phospholipids with sulfo- and galactolipids in ageing plastids.
-The SPX-domain proteins \textit{spx2} and \textit{spx6}, central regulators of the phosphate-starvation signalling cascade, showed the same trajectory, confirming that the sensing machinery itself is amplified in older tissue.
-Phosphorus-scavenging capacity was reinforced by \text{pap1} and the three inorganic pyrophosphatase paralogues (\textit{ppa1}, \textit{ppa2}, \textit{ppa3}) that recycle Pi from cytosolic pyrophosphate.
-Phospholipid turnover was evidenced by leaf age-dependent upregulation of  \textit{pld16} and the ER-associated \textit{pah1}.
-Collectively, these age-amplified responses reveal a programmed shift from phosphorus conservation to wholesale phosphorus remobilization as maize leaves senesce under phosphorus limitation.
+\subsection{Candidate Gene Identification using lipid classes}
 
-\subsection*{PC34:2 depletion increases with leaf age and correlates with flowering delay and the downregulation of flowering transcription factors}
+\paragraph{I. Phospholipid GWAS Identifies a Phosphate Starvation Response Gene}
+Candidate genes were prioritized by analyzing GWAS results within the phospholipid lipid class. The Myb-like DNA-binding domain gene \texttt{SORBI\_3001G384300} was consistently identified (Fig \ref{fig:Fig3}A). This gene exhibits homology with \textit{PHR1} (PHOSPHATE STARVATION RESPONSE 1) in rice, a principal regulator of phosphate homeostasis. It demonstrated associations with several phospholipid traits, namely PC(16:0/20:3), PC(16:0/22:5), PC(16:0/22:6), PC(18:1/20:1), PE(16:0/18:1), PC(18:1/24:1), PC(18:2/20:0), and PC(18:3/0:0), indicating a prospective correlation between phospholipid remodeling and phosphate starvation signaling (Supp Table).
 
-Lipidomic analysis confirmed the classical membrane remodeling response to phosphorus starvation.
-Phospholipid classes showed widespread depletion: phosphatidylcholines PC34:2, PC32:2, PC32:0, and PC38:6; phosphatidylethanolamines PE34:4, PE34:3, and PE32:1; lysophosphatidylethanolamines LPE18:2, LPE18:3, and LPE16:0; lysophosphatidylcholines LPC16:1, LPC18:3, and LPC18:2; and phosphatidylglycerols PG32:0 and PG34:3.
-Triacylglycerols accumulated under phosphorus stress, with TAG species TG50:3, TG52:6, TG54:9, TG56:6, TG50:2, and TG52:3 showing increased abundance (Fig~\ref{fig:Figure_3}E).
-TG56:6 exhibited accumulation exceeding 12-fold increase.
-Galactolipid accumulation was evidenced by DGGA36:4, a phosphorus-free membrane component (Fig~\ref{fig:Figure_3}E).
-LION lipid enrichment analysis confirmed these systemic changes: triacylglycerols showed strong enrichment, while glycerophospholipids and membrane components were significantly depleted (Fig~\ref{fig:Figure_4}C).  
-
-These patterns align with the established membrane remodeling strategy documented previously: replacement of phosphorus-containing phospholipids with galactolipids conserves phosphorus for nucleic acid and ATP synthesis, while TAG accumulation provides temporary storage for fatty acids released from membrane degradation \cite{wang2020a}.
-%The partial preservation of phosphatidylglycerol species, for which we don't detect statistical differences, despite severe depletion of other phospholipids, likely reflects PG's essential structural role in photosystem II, where it cannot be readily substituted \cite{hagio2000}.
-
-Phosphatidylcholine PC34:2 showed both a strong main effect of phosphorus deficiency and a significant Leaf $\times$ -P interaction, indicating that the magnitude of PC34:2 depletion increased systematically with leaf developmental position (Fig~\ref{fig:Figure_3}E).
-This age-dependent response is noteworthy given PC34:2's binding to ZCN8, the maize florigen ortholog \cite{barnes2022}.
-We previously demonstrated that PC34:2 copurifies with recombinant ZCN8 protein and identified probable binding sites through molecular docking simulations \cite{barnes2022}.
-Additionally, phospholipase HPC1 expression, which influences PC34:2 levels, correlates with flowering-time variation across the maize diversity panel \cite{barnes2022}.
-
-While \invfour does not modulate the PC34:2 response, the coordinate patterns we observed (PC34:2 depletion, flowering delay under phosphorus stress, and \textit{peamt2} suppression) raise the possibility that phosphorus stress influences reproductive timing through multiple mechanisms.
-The dramatic suppression of \textit{peamt2}, which catalyzes sequential methylation of phosphoethanolamine to phosphocholine in the Kennedy pathway, represents one of the strongest transcriptional responses in our dataset.
-In Arabidopsis, the ortholog XIPOTL1 affects flowering time, root architecture, and stress responses \cite{cruz-ramirez2004}.
-In maize, natural variation at the \textit{peamt2} locus associates with flowering time in Mexican highland populations \cite{perez-limon2022,barnes2022}, suggesting that modulation of phospholipid biosynthesis contributes to adaptive variation in developmental timing.
-If ZCN8 florigen activity or stability requires PC34:2 binding, as demonstrated for \textit{Arabidopsis} FT interactions with phosphatidylglycerol in temperature-dependent contexts \cite{susila2021}, then systematic depletion of this specific phospholipid species could potentially impair florigen signaling beyond resource limitation alone.
-
-The downregulation of MADS-box transcription factors \textit{zmm4} and \textit{zmm15} with increasing leaf age further connects lipid remodeling to developmental transitions, as these two transcription factors are associated with the highest flowering time in a TWAS analysis of the Wisconsin panel \cite{torres-rodriguez2024}.
-These flowering-time regulators showed strong negative correlations with leaf stage, consistent with the natural progression from vegetative to reproductive phase transitions during our sampling window around V13 stage.
-
-\subsection*{LPE is a suppressor of senescence in tomato and \textit{Arabidopsis}, but it is a senescence marker in our maize samples.}
-
- It has been demonstrated in 16:3 plants such as \textit{Arabidopsis} and tomato, that LPE acts as a leaf senescence suppressor \cite{amaro2013}. 
- In these plants, the application of exogenous LPE delays senescence by inhibiting phospholipase D and preserving membrane integrity \cite{amaro2013,ryu1997}.
- 
-The behavior of lysophosphatidylethanolamines in our dataset contradicts this established pattern, highlighting a possible new difference in phospholipid metabolism between 16:3 and 18:3 plants.
-Although multiple LPE species (LPE18:2, LPE18:3, and LPE16:0) were depleted under phosphorus deficiency, LPE18:3 showed a strong positive association with increased leaf developmental stage. 
-This accumulation in our samples suggests that, at endogenous concentrations, LPE functions as a marker for initial senescence, contrary to its reported senescence-suppressor role in 16:3 plants.
-
-The lipidomic pattern is paralleled by coordinated transcriptional regulation.
-Phospholipases \textit{plc6} and \textit{pld16} both showed positive Leaf $\times$ -P interactions, indicating enhanced phospholipid hydrolysis in older leaves under phosphorus stress.
-In contrast, lysophosphatidylethanolamine acyltransferase \textit{lpeat2} and choline/ethanolamine kinase \textit{cek4} showed no differential expression, suggesting constitutive regulation.
-
-This divergence might reflect the difference between 16:3 and 18:3 plants in lipid metabolism architecture \cite{mongrand1998,heinz1983}.
-Maize GDG has \~95\% C18/C18 species thought to derive from the eukaryotic pathway of GDG biosynthesis. Previous reports indicated that maize was devoid of C18/C16 GDG species \cite{mongrand1998}, however, the use of mass spectrometry now reveals that a minor amount of GDG biosynthesis proceeds through the prokaryotic pathway in both maize leaves and endosperm \cite{myers2011}.
-In maize's eukaryotic pathway, diacylglycerol derived from phospholipid degradation is transported to the chloroplast outer envelope for galactolipid synthesis, creating direct metabolic flux from PE to LPE to DAG to MGDG \cite{gu2017}.
-The efficiency of this pathway, particularly when PC biosynthesis is blocked by \textit{peamt2} suppression, may preclude LPE accumulation as the lipid is rapidly consumed in downstream reactions.
-This positions LPE as a transient salvage intermediate rather than a regulatory signal in 18:3 plants.
-
-\subsection*{Enhanced PAH1 activity, but not PDAT expression, underlies leaf stage-dependent accumulation of polyunsaturated TAGs }
-
-The accumulation of triacylglycerols (TAGs) in phosphorus-deficient leaves might reflect a substrate-driven lipid salvage mechanism during membrane remodeling. Phosphorus starvation led to enrichment of highly unsaturated TAG species, including TG(54:9) and TG(52:6), both containing 18:3 fatty acids, coinciding with depletion of polyunsaturated phospholipids such as PC(36:6) and LPC(18:3). 
-The preservation of polyunsaturated fatty acids in TAG form is consistent with direct transfer via the PDAT pathway, which moves intact acyl chains from phospholipids to diacylglycerol \cite{chen2012}, avoiding the energetic cost of complete phospholipid degradation and subsequent re-desaturation. 
-However, TAG accumulation occurred without significant transcriptional up-regulation of PDAT genes, indicating that the phospholipid-to-TAG flux is driven primarily by substrate availability rather than increased PDAT expression.
-
-Phosphatidate phosphatase \textit{pah1} showed a positive $\text{Leaf} \times -P$ interaction ($+0.58\ \log_2\text{FC}$ per leaf stage), indicating higher expression in older leaves under phosphorus stress.  
-This increase in activity may be directing lipid flux toward TAG synthesis versus PC synthesis in our samples, as observed in \textit{Arabidopsis} \cite{eastmond2010}.  
-Notably, \textit{pah1} and the co-upregulated phospholipase \textit{pld16} ($+0.56\ \log_2\text{FC}$ per leaf stage) are orthologous to \textit{Arabidopsis} PAH1 and PLD$\zeta$2, which act together in a pathway to convert phospholipid-derived phosphatidic acid into diacylglycerol for TAG assembly during phosphorus deficiency.  
-Beyond lipid remodeling, PLD$\zeta$2 has been linked to autophagy and vacuolar acidification \cite{guan2025}, suggesting coordination between membrane catabolism and cellular recycling to supply lipid substrates under phosphorus stress.
-
-These findings indicate that, in our samples, phosphorus-dependent TAG accumulation is primarily driven by enhanced PAH1-mediated flux from phospholipids to diacylglycerol rather than by PDAT expression.
-This substrate-driven mechanism supports transient storage of fatty acids released from phospholipid catabolism, either for transport to younger tissues or for energy production via $\beta$-oxidation \cite{wang2020a}.
-The age-dependent amplification of TAG accumulation in our dataset is compatible with this interpretation and suggests that substrate-driven lipid salvage operates in senescing tissues during the vegetative phase.
-
-\subsection{Leaf senescence transcription accelerates under phosphorus limitation}
-
-The coordination of developmental senescence with phosphorus starvation might be an adaptive strategy in maize, where leaf age influences the magnitude of nutrient stress responses. 
-Five \textit{Arabidopsis} ortholog genes (SAGs) in~\cite{zhang2014c} are high-confidence DEGs for the effect of leaf stage, providing support for our observed leaf developmental gradient. 
-The NAC transcription factor \textit{nactf108} (\textit{Zm00001eb135910}, ORE1/ANAC092), a regulator known to activate SAG targets during early senescence, was found to increase with leaf position. 
-Similarly, transcripts for chlorophyll degradation enzymes \textit{pph} (\textit{Zm00001eb231810}) (pheophytinase) and \textit{nye1} (\textit{Zm00001eb319560},SGR/STAY-GREEN), along with proteolytic machinery including \textit{see2b} (\textit{Zm00001eb162210}, gamma vacuolar processing enzyme) and \textit{clpb1} (\textit{Zm00001eb242420}, ERD1/SAG15), progressively increased from young to old leaves. 
-This expression pattern is consistent with the canonical progression of natural leaf aging during vegetative growth, establishing a baseline for interpreting stress-induced deviations.
-
-A key observation in our study is the Leaf $\times$ $-$P interaction, which indicates that phosphorus stress does not uniformly affect all leaves but rather compounds with leaf age to create stronger responses in older tissues (Fig~\ref{fig:Figure_5})  
-
-The ribonuclease \textit{rns} (\textit{Zm00001eb144680}) exemplifies this pattern, exhibiting both a strong main effect of phosphorus starvation and significant age-dependent amplification, which suggests that RNA degradation may accelerate specifically where developmental senescence and nutrient stress converge. 
-This interaction extends to \textit{csap} (\textit{Zm00001eb402430}, \textit{chloroplast-localized senescence-associated protein}), implying a potential coordination in the dismantling of the photosynthetic apparatus when both stressors are present, \cite{so2020}. 
-We identified 24 genes within this Leaf $\times$ $-$P interaction term that reveal potential functional specialization. 
-Three hub genes, \textit{rns}, \textit{mybr105} (\textit{Zm00001eb081290}, a protein-binding MYB), and \textit{lkrsdh1} (\textit{Zm00001eb192910}) (involved in lysine catabolism), appear central to these nutrient salvage operations, while transport genes (e.g., the carbohydrate transporter \textit{sweet2} (\textit{Zm00001eb342040}) and \textit{ppt1} (\textit{Zm00001eb097690}) and cell wall remodeling enzymes, \textit{aga2} (\textit{Zm00001eb281720}) and \textit{irx15} (\textit{Zm00001eb068410}),  are upregulated, consistent with nutrient remobilization.
-
-To map the regulatory architecture governing these processes, we compiled a list of SAGs by cross-referencing our high-confidence DEGs with manually curated sources \cite{zhang2014c,liu2011,ojeda2026,berardini2015,durinck2005}, resulting in a total of 110 genes (\nameref{S1_File}). 
-Almost half of these, 53, were transcription factors. 
-They are distributed across 13 families, with the NAC (16 members), WRKY (7), G2-like (5), AP2-EREBP (5), MYB (5), and bHLH (5) families representing the dominant regulatory nodes. 
-Within the NAC family, we observed complex, context-dependent expression patterns. 
-While typical senescence regulators like \textit{nactf108} and \textit{nactf44} (\textit{Zm00001eb015630}) consistently increase with leaf age, \textit{nactf132} (\textit{Zm00001eb324550}, \textit{ZmNAC132}) shows opposing responses: strong downregulation under phosphorus stress but upregulation with leaf age progression. 
-% todo:(fausto) check if nac44 has the same pattern as nac132, upregulation with leaf stage
-This divergence is particularly noteworthy because \textit{nactf132} has been linked to chlorophyll content regulation through \textit{nye1} activation \cite{yuan2023}, and natural variation in its 5$'$UTR associates with chlorophyll B levels~\cite{wallace2014a}. 
-The contrasting responses suggest that developmental senescence and nutrient-stress-amplified senescence might engage partially distinct regulatory networks despite converging on common downstream targets.
-
-Beyond the NAC family, other regulatory groups show similar complexity. 
-The Leaf $\times$ $-$P interaction specifically captures \textit{nactf32} (\textit{Zm00001eb080700}), which shifts from downregulation in standard aging to upregulation under combined stress. 
-The WRKY family also contributes to this stress-integrated network, with \textit{wrky17} (\textit{Zm00001eb330710}), \textit{wrky32} (\textit{Zm00001eb015320}), and \textit{wrky92} (\textit{Zm00001eb350280}) specifically responding to the age-phosphorus interaction. 
-The AP2-EREBP and MYB families also contribute to this stress-integrated network, with members like \textit{myb112} (\textit{Zm00001eb387370}) and \textit{myb163} (\textit{Zm00001eb366540}) responding strongly to phosphorus limitation, potentially bridging the gap between metabolic signaling and transcriptional control.
-Our analysis suggests that phosphorus limitation may accelerate natural senescence programs specifically in older leaves through transcriptional cascades that integrate developmental timing with nutrient availability.
-
-The observed top-bottom gradient of responses suggests that phosphorus deficiency accelerates rather than replaces natural senescence programs. 
-Senescence-associated gene expression increases with age, phospholipids deplete, triacylglycerols accumulate, and photosynthesis declines.
-All of these responses under phosphorus stress are amplified and propagated basipetally (downwards) along the plant axis during the vegetative phase. 
-At the extreme bottom, this culminates in the senescence and sacrifice of lower-canopy leaves to remobilize nutrients, thereby sustaining younger, photosynthetically active tissues and developing reproductive structures \cite{wei2025}.
-Even the observed increase in the seed-to-stover phosphorus ratio under deficiency supports this concept of prioritized allocation. 
-
-We believe that crop improvement strategies might benefit from focusing on optimizing the timing and tissue specificity of senescence responses.
+\textit{PHR1} serves as a central transcription factor within plants, balancing the responses to phosphate (Pi) deprivation. It is categorized under the MYB-CC family of transcription factors and demonstrates a high level of conservation across both vascular plants and unicellular algae (Rubio et al., 2001). \textit{PHR1} exhibits specific binding affinity to a cis-regulatory element termed the P1BS (GNATATNC) motif, which resides in the promoters of numerous genes induced by Pi starvation, thereby facilitating their expression in conditions of Pi deficiency. These genes encompass those that encode phosphate transporters, signaling components, and enzymes that partake in metabolic adaptations to Pi scarcity (Bustos et al., 2010). Loss-of-function phr1 mutants display compromised expression of genes responsive to Pi starvation and a diminished accumulation of anthocyanins, starch, and sugars under conditions of Pi deficiency, along with modified Pi distribution between roots and shoots (Rubio et al., 2001; Bustos et al., 2010). In contrast, overexpression of PHR1 results in augmented Pi uptake and improved responses to Pi starvation (Nilsson et al., 2007). In addition to maintaining phosphorus homeostasis, \textit{PHR1} also plays a crucial role in regulating sulfate homeostasis, particularly under conditions of phosphate deficiency. It enhances the expression of the sulfate transporter gene SULTR1;3 and influences the translocation of sulfate from the aerial parts to the roots during phosphorus starvation. The observation that mutants in either \texttt{phr1} or \texttt{sultr1;3} demonstrate diminished sulfate transfer from shoots to roots suggests that PHR1 is integral to the interaction and coordinated regulation of P and sulfur homeostasis (Rouached et al., 2011).
 
 
-\subsection*{$\invfour$ does not alter phosphorus starvation responses}
+%References
 
-Despite the strong developmental dependency of phosphorus responses, we found minimal evidence that the \invfour chromosomal inversion modulates these interactions.
-The three genes showing significant genotype-by-phosphorus interactions (\textit{aldh2}, \textit{gras80}, and \textit{flz22}, \ref{supp:Figure_S5}) are located outside the inversion boundaries and did not show additional interactions with leaf stage.
-% Lipidomic analysis detected subtle \invfour effects on specific monogalactosyldiacylglycerol species MGDG34:2 and MGDG34:3 that varied with both phosphorus availability and leaf age, but these effects were restricted to a small number of lipid classes and did not alter the overall pattern of age-dependent stress responses.
+%Rubio V, Linhares F, Solano R, Martín AC, Iglesias J, Leyva A, Paz-Ares J. (2001). A conserved MYB transcription factor involved in phosphate starvation signaling both in vascular plants and in unicellular algae. Genes & Development, 15(16), 2122–2133.
 
-The primary effects of \invfour on flowering time and plant height operated independently of both phosphorus treatment and leaf developmental stage.
-This independence indicates that \invfour\'s contribution to highland adaptation does not involve fine-tuning the coordination between leaf senescence and P stress responses.
-Instead, the inversion appears to establish constitutive differences in developmental timing that influence when leaves are produced and when flowering is initiated, without modifying how individual leaves respond to phosphorus limitation as they age.
+%Bustos R, Castrillo G, Linhares F, Puga MI, Rubio V, Pérez-Pérez J, Solano R, Leyva A, Paz-Ares J. (2010). A central regulatory system largely controls transcriptional activation and repression responses to phosphate starvation in Arabidopsis. PLoS Genetics, 6(9), e1001102.
 
-The absence of significant \invfour modulation of canonical phosphorus starvation machinery (including phosphate scavenging genes, membrane lipid remodeling enzymes, and metabolic adjustment pathways) requires reconsideration of the hypothesis that \invfour enhances phosphorus acquisition or utilization efficiency.
-% PHOS2 responds to Leaf Zm00001eb191650 phos2        phosphate transporter2 log2FC =0.693   std err = 0.207   FDR =0.00963
-The fact that genes like \textit{phos2}, a phosphate transporter located within the inversion and previously proposed as an adaptive candidate, do not show genotype-by-phosphorus interactions suggests that \invfour\'s adaptive value in highland environments comes primarily from coordinating developmental timing with the constrained growing season rather than from direct enhancement of P stress tolerance.
-The earlier flowering observed in \invfour plants, which occurred regardless of phosphorus availability, aligns with previous reports showing that \invfour-highland accelerates flowering specifically at high elevations \cite{gates2019,barnes2022}.
-The absence of \invfour effects on phosphorus responses, combined with its constitutive effects on developmental timing, suggests that its adaptive value in highland environments may operate primarily through phenological adjustment to constrained growing seasons rather than enhanced nutrient stress tolerance.
+%Nilsson L, Muller R, Nielsen TH. (2007). Increased expression of the MYB-related transcription factor, PHR1, leads to enhanced phosphate uptake in Arabidopsis thaliana. Plant Cell and Environment, 30(11), 1499–1512.
 
-Regarding a possible effect of \invfour in phosphorus response through control of leaf senescence, the genotype shows negligible effects on senescence gene expression in this experiment. 
-Only \textit{lkrsdh1} exhibits an \invfour main effect, and this gene lies outside the inversion boundaries without additional environment-dependent interactions. 
-This pattern reinforces the idea that the adaptive value of \invfour likely operates through constitutive developmental timing rather than the modulation of environment-specific stress responses.
+%Rouached H, Secco D, Arpat AB, Poirier Y. (2011). The transcription factor PHR1 plays a key role in the regulation of sulfate shoot-to-root flux upon phosphate starvation in Arabidopsis. BMC Plant Biology, 11, 19.
 
-The one phenotypic exception was cob diameter, which showed a significant \invfour $\times$ phosphorus interaction.
-While control lines maintained consistent cob diameter regardless of phosphorus treatment, \invfour plants developed substantially thinner cobs under phosphorus deficiency.
-This reproductive trait response may reflect altered resource allocation priorities during ear development, possibly linked to the earlier flowering phenology of \invfour plants.
-If \invfour plants initiate reproductive development earlier relative to their vegetative growth stage, they may be more vulnerable to resource limitation during ear formation.
-However, this effect did not extend to other reproductive traits such as seed weight or overall yield, limiting its explanatory power for \invfour\'s adaptive role.
+%Puga MI, Mateos I, Charukesi R, Wang Z, Franco-Zorrilla JM, de Lorenzo L, Irigoyen ML, Masiero S, Bustos R, Rodríguez J, Leyva A, Rubio V, Sommer H, Paz-Ares J. (2014). SPX1 is a phosphate-dependent inhibitor of PHOSPHATE STARVATION RESPONSE 1 in Arabidopsis. Proceedings of the National Academy of Sciences of the United States of America, 111(41), 14947–14952.
+
+\paragraph{II. DGAT1 Controls Triacylglycerol Storage in Response to Nitrogen Limitation and Cold}
+We identified the gene \texttt{SORBI\_3010G170000}, which encodes Acyl‐CoA:diacylglycerol acyltransferase 1 (DGAT1, analogous to Arabidopsis TG1), in five distinct GWASs: TG(18:1/18:3/22:0), TG(18:1/20:3/22:0), TG(18:2/18:2/18:4), TG(18:2/20:3/22:0), and TG(18:3/18:3/18:3) (Fig \ref{fig:Fig3}B). \textit{DGAT1} is responsible for the essential final conversion of DG into TG, which is a key lipid for carbon and energy storage in seeds and stress-affected vegetative tissues \cite{Zhang2009,Yang2011}. In Arabidopsis, low N levels result in TG accumulation within leaves due to increased levels of \textit{DGAT1} and \textit{OLEOSIN1} \cite{Yang2011}. The ABA signaling pathway, involving the transcription factor \textit{ABI4}, directly stimulates \textit{DGAT1} by interacting with CE1 elements (CACCG) in its promoter. In \emph{abi4} mutants, both \textit{DGAT1} stimulation and TG accumulation are reduced, emphasizing the significance of \textit{ABI4} during N deficiency \cite{Yang2011}. Additionally, \textit{DGAT1} is highly responsive to cold temperatures (4°C) and plays an essential role in freeze tolerance. Arabidopsis mutants deficient in \emph{dgat1} develop chlorosis and increased cell mortality under cold stress, with reduced TG but higher DG and PA levels \cite{Tan2018}. This elevated PA production induces RbohD-dependent ROS formation, causing oxidative stress. Increased DG kinase activity (DGK2/3/5) (also a candidate in our GWAS results for Sum\_AEG/Sum\_DG, Sum\_Cer/Sum\_DG, Sum\_DG/Sum\_TG, Sum\_DGDG/Sum\_TG, Sum\_MG/Sum\_TG, Sum\_MGDG/Sum\_TG; Supp Table 7) further boosts PA (also observed in our dataset, Fig. \ref{fig:Fig1_lipid_class}), while the removal of \emph{dgk} genes restores cold tolerance, suggesting a balance between \textit{DGAT1} and \textit{DGK} is essential for managing ROS and adapting to cold stress \cite{Tan2018}. In seeds, both \textit{DGAT1} and phospholipid:diacylglycerol acyltransferase 1 (\textit{PDAT1}) are vital for optimal oil body development. \emph{dgat1} mutants have a 20–40\% decline in seed oil content (see Lipid annotation Section 5), whereas double mutants (\emph{dgat1/pdat1}) or RNAi lines demonstrate an 80\% decrease in TG, resulting in fertility and embryonic issues \cite{Zhang2009}. Overexpression of \textit{DGAT1} enhances seed weight and oil production, highlighting its crucial role in regulating TG levels throughout plant development \cite{Zhang2009,Yang2011}.
+
+\subsection{Candidate Gene Identification using Sum and Ratios of Lipids}
+
+\paragraph{I. Sum of SQDG GWAS Identifies a Sulphate Assimilation Gene}
+Our GWAS for the sum of SQDG species identified a sulfate assimilation gene called the adenylyl-sulfate kinase gene (\textit{APK3}, \texttt{SORBI\_3005G195600}). \textit{APK3} is one of the four isoforms of APS kinase (adenosine 5'-phosphosulfate kinase) in \textit{Arabidopsis thaliana}, an enzyme that plays a critical role in sulfur metabolism by phosphorylating adenosine 5'-phosphosulfate (APS) to produce 3'-phosphoadenosine 5'-phosphosulfate (PAPS), the active sulfate donor required for sulfation reactions in secondary metabolism (Mugford et al., 2009, p. 1–2). Unlike the other APK isoforms, \textit{APK3} is uniquely localized in the cytosol, whereas \textit{APK1}, \textit{APK2}, and \textit{APK4} are plastid-localized (Mugford et al., 2009, p. 4). The enzyme's activity influences sulfur partitioning between primary and secondary metabolism, particularly affecting the synthesis of sulfated secondary metabolites such as glucosinolates, which are important for plant defense (Mugford et al., 2009, p. 1–2). Studies have shown that disruption of \textit{APK1} and \textit{APK2} leads to a significant reduction in glucosinolate levels and an increase in thiols, indicating that APKs regulate the availability of PAPS and thus control the flux toward secondary sulfated compounds (Mugford et al., 2009, p. 2–3). However, the specific disruption of \textit{APK3}, the cytosolic isoform, does not significantly affect primary sulfate assimilation or glucosinolate levels, suggesting a more specialized or possibly redundant role compared to plastidic APKs (Mugford et al., 2009, p. 4). Overall, \textit{APK3} contributes to sulfur metabolism by modulating PAPS production in the cytosol, influencing sulfur flux balancing, but its precise regulatory role requires further elucidation.
+
+%References:
+
+%Mugford, S.G., Lee, B.-R., Koprivova, A., Matthewman, C.A., and Kopriva, S. (2009). Disruption of adenosine-5′-phosphosulfate kinase in Arabidopsis reduces levels of sulfated secondary metabolites. Plant Cell 21, 910–927. (Sum_SQDG_APK3_secondary_S.pdf, pp. 1–5)
+%Kopriva, S., Mugford, S.G., Baraniecka, P., Lee, B.R., Matthewman, C.A., and Koprivova, A. (2012). Control of sulfur partitioning between primary and secondary metabolism in Arabidopsis. Frontiers in Plant Science, 3, 163. (Sum_SQDG_APK3_S_starvation.pdf, p.14)
+%Takahashi, H. (2019). Sulfate transport systems in plants: functional diversity and molecular mechanisms underlying regulatory coordination. J. Exp. Bot. 70, 4075–4087. (Sum_SQDG_APK3_S_starvation.pdf, p.16) 
+
+\paragraph*{II. Lipid Ratios identifies a Cold stress gene}
+Calcium-dependent protein kinases (CDPKs) function as key regulators within plant signal transduction networks, modulating Ca$^{2+}$-dependent signaling cascades that are essential for plant growth, development, and adaptation to diverse environmental stimuli \cite{Abbasi_2004, Ye_2009}. Our findings corroborate a critical role for CDPKs in orchestrating cold stress responses in rice. In particular, the rice CDPK gene \textit{OsCDPK13} displayed pronounced accumulation in the leaf sheath of 2-week-old seedlings and in callus tissue, and its protein kinase activity in cytosolic extracts from leaf sheaths increased markedly following cold treatment at $5\,^{\circ}\mathrm{C}$ \cite{Abbasi_2004}. This cold-induced activation was accompanied by a coordinated up-regulation of \textit{OsCDPK13} transcript and protein levels, which reached maximal induction at $5\,^{\circ}\mathrm{C}$ and became detectable within 3 hours after the onset of cold stress \cite{Abbasi_2004}.
+
+The direct contribution of \textit{OsCDPK13} to cold tolerance has been further corroborated by functional analyses. Transgenic rice lines overexpressing sense \textit{OsCDPK13} exhibited significantly higher recovery rates following exposure to low-temperature stress than vector control plants, indicating enhanced stress resilience \cite{Abbasi_2004}. This protective function is aligned with the observation that \textit{OsCDPK13} transcript accumulation is greater in cold-tolerant rice cultivars than in cold-sensitive ones \cite{Abbasi_2004}. Concordant results have been reported for other CDPK family members, such as \textit{OsCPK7} (also designated as \textit{OsCDPK13} in certain studies), which display elevated transcript levels in rice seedlings subjected to cold and salt stress; moreover, overexpression of these kinases confers broad-spectrum tolerance to cold, drought, and salinity \cite{Ye_2009}. Collectively, these findings identify \textit{OsCDPK13} as a pivotal signaling node that orchestrates rice acclimation to cold stress through coordinated regulation of gene expression, modulation of protein activities, and consequent physiological adjustments.
+
+\paragraph*{III. Lipid Ratios identifies a Nitrogen stress gene}
+Tryptophan (Trp), an aromatic amino acid, functions as an essential substrate for protein biosynthesis and as a pivotal signaling molecule in plants, where it contributes significantly to growth, development, and adaptation to a wide range of environmental stresses, including the regulation of osmotic homeostasis \citep{Wang2025}. It is a central metabolite and the principal precursor of indole-3-acetic acid (IAA), the predominant endogenous auxin in plants \citep{Fu2022, Liu2024}. The Trp-dependent pathway is regarded as the major route for IAA biosynthesis, which is indispensable for coordinating root cell division and elongation, hypocotyl elongation, and leaf expansion \citep{Fu2022, Liu2024}. Accordingly, exogenous Trp supplementation has been demonstrated to promote plant height, root system elongation, and overall vegetative growth, while concurrently enhancing plant tolerance to various abiotic and biotic stresses, in part through the modulation of carbon (C) and nitrogen (N) metabolism \citep{Fu2022}.
+
+Under nitrogen-limiting conditions, tryptophan (Trp) metabolism exhibits significant alterations, directly influencing plant adaptive responses. For example, low-N tolerant sorghum genotypes exhibit higher endogenous Trp concentrations than sensitive genotypes, and transcriptome analyses have revealed distinct transcriptional reconfiguration of genes involved in the Trp metabolic pathway \citep{Liu2024}. Exogenous Trp application significantly elevates both Trp and indole-3-acetic acid (IAA) levels in sorghum roots under low-nitrogen stress, thereby promoting root system development and enhancing key physiological processes associated with carbon and N metabolism, which collectively confer improved low-nitrogen tolerance \citep{Liu2024}. Consistently, Trp also contributes to the mitigation of other abiotic stresses, such as salt–alkali stress in soybean, by enhancing photosynthetic performance and modulating sucrose–starch metabolism, ultimately resulting in increased yield \citep{Wang2025}. The Tryptophan Aminotransferase of Arabidopsis 1 (TAA1, also referred to as SAV3), a key enzyme in Trp-dependent IAA biosynthesis, has been identified as a central regulator of chlorophyll accumulation and N assimilation, thereby underscoring Trp’s role as a master regulatory node responsive to nitrogen availability \citep{Fu2022}. Collectively, these findings highlight the pivotal function of Trp in integrating root growth and stress tolerance through its regulation of IAA homeostasis and the coordinated balance of carbon and N metabolism.
+
+\paragraph*{IV. Lipid Ratios identifies a Phosphorus stress gene}
+Plant phosphate transporters (PTs), particularly members of the Pht1 family, play a pivotal role in phosphorus (P) homeostasis by mediating the active uptake of inorganic phosphate (Pi) from the soil and facilitating its subsequent translocation within the plant (Jia et al., 2011, p. 1; Li et al., 2015, p. 1). This transporter family is indispensable for the efficient remobilization of internal Pi from source to sink organs, a process that is critical for optimizing plant growth and development, particularly under P-deficient conditions (Li et al., 2015, p. 1, 7). For example, OsPht1;8 (OsPT8) in rice (\emph{Oryza sativa}) has been characterized as a high-affinity PT that actively contributes to Pi acquisition and long-distance transport from roots to shoots (Jia et al., 2011, p. 1, 7). The expression of OsPht1;8 has been detected in multiple tissues, including roots, shoots, and seeds, underscoring its broad physiological significance across diverse developmental stages (Jia et al., 2011, p. 1, 2).
+
+The function of phosphate transporters (PTs) is tightly integrated with the plant’s adaptive responses to phosphorus (P) deficiency. Under inorganic phosphate (Pi)-limiting conditions, plants typically remobilize Pi from mature, senescing leaves to sustain metabolically active young tissues, a process critically mediated by transporters such as OsPT8 (Li et al., 2015, pp. 1, 5, 7). Our analysis demonstrated that OsPT8 transcript abundance in roots is markedly induced under Pi starvation (Jia et al., 2011, p. 2; Li et al., 2015, p. 7). Targeted knockdown of OsPT8 in rice shoots disrupted internal P redistribution, resulting in excessive P retention in older leaf blades and decreased P accumulation in younger blades when external Pi supply was limiting (Li et al., 2015, pp. 1, 5). In contrast, constitutive overexpression of OsPT8 caused pronounced Pi hyperaccumulation across plant tissues, leading to Pi toxicity symptoms under high-Pi conditions (Jia et al., 2011, pp. 1, 4). Collectively, these data highlight the essential role of Pht1 family transporters, particularly OsPT8, in controlling Pi uptake and internal redistribution, thereby maintaining P homeostasis under fluctuating environmental Pi availability.
+
+%References (as provided):
+%Nitrogen_deficiency.pdf pp. 6–9; membrane_remodeling_phosphorus.pdf pp. 237–243; membrane_lipid_P_reuse.pdf pp. 13–14; glycerolipid_remodeling_P_starve.pdf p. 7; glycolipid_remodeling_nitrogen_phosphorus_deficiency.pdf p. 13; Cold_tolerance_barley.pdf pp. 7–9; Glycerolipid_freezing.pdf pp. 4–8; Photosynthesis_thylakoid_glycerolipid.pdf pp. 4–7; Cold_tolerance_maize.pdf pp. 8–9.
+%Nussberger et al., 1993; Hagio et al., 2002; Wada & Murata, 2007; Murata, 1983; Roughan, 1985; Murata & Yamaya, 1984; Murata et al., 1992; Wolter et al., 1992; Moon et al., 1995; Ishizaki-Nishizawa et al., 1996; Wu & Browse, 1995; Barkan et al., 2006; Gao et al., 2015; Gao et al., 2020.
+
+\subsection*{Candidate Gene Identification using Individual Lipid}
+
+\paragraph*{I. Alternative Oxidase Roles in Photoprotection and Nitrate Assimilation}
+Through our GWAS focused on alpha-carotene, we identified an alternative oxidase (AOX) gene. $\alpha$-carotene, a secondary chloroplast carotenoid, is primarily located within the reaction centers of photosystem I (PSI) and photosystem II (PSII), with only minor quantities found in the peripheral light-harvesting complexes \citep{Young1989}. It bears structural similarity to $\beta$-carotene, absorbs blue-green light, and facilitates energy transfer to chlorophyll while concurrently quenching triplet chlorophyll and reactive oxygen species (ROS) to safeguard the photosynthetic apparatus from photooxidative damage under intense light stress. Its co-localization with $\beta$-carotene in pigment–protein complexes indicates a contributory role in stabilizing the core structures of PSI and PSII \citep{Young1989}. The mitochondrial AOX pathway offers a non-phosphorylating alternative to cytochrome oxidase, directly oxidizing ubiquinol to water, thereby preventing over-reduction of the photosynthetic electron transport chain \citep{Vishwakarma2015}. AOX1A, the dominant isoform in green tissues, plays a role in dissipating excess reducing equivalents produced by photosynthesis, supports non-photochemical quenching (NPQ), and collaborates with the chloroplast malate–oxaloacetate shuttle to sustain cellular redox homeostasis. Under conditions of stress, such as high light or drought, that inhibit the cytochrome pathway, AOX activity curbs ROS formation and maintains photosynthetic efficiency \citep{Vishwakarma2015}. In addition to its photoprotective function, AOX is also vital for nitrate assimilation in plants. During NO$_3^-$ reduction, the accumulation of reducing equivalents may lead to chloroplast over-reduction. AOX counters this by channeling excess reductants into mitochondrial respiration, thereby preventing oxidative stress and sustaining photosynthesis \citep{Gandin2014}. Studies involving \textit{aox1a} T-DNA insertion mutants in \emph{Arabidopsis thaliana} corroborate that AOX engages with nitrate assimilation pathways to uphold redox balance and optimize C-N metabolism under varying N conditions \citep{Gandin2014,Vishwakarma2015}.
+
+\paragraph{II. GWAS of Zeaxanthin Reveals High Light-inducible Protein.}
+Zeaxanthin is an essential carotenoid that plays a significant role in the photoprotection mechanisms of photosynthetic organisms, predominantly acting within the framework of the xanthophyll cycle. Under conditions of high light (HL) stress, violaxanthin undergoes enzymatic de-epoxidation to form antheraxanthin, which is further converted into zeaxanthin. This carotenoid is instrumental in dissipating excess excitation energy by quenching excited chlorophyll molecules. The process effectively averts the generation of deleterious reactive oxygen species (ROS), thus safeguarding PSII from photoinhibition (Levin and Schuster 2023). Zeaxanthin associates with light-harvesting complexes, such as LHCII and certain LHC-like proteins, thereby facilitating non-photochemical quenching (NPQ) to efficiently transmute excess absorbed photonic energy into thermal energy (Levin and Schuster 2023).
+
+Our GWAS for zeaxanthin has identified the gene \texttt{SORBI\_3002G033800}, which has an orthologous counterpart in \emph{Arabidopsis}, referred to as One-helix proteins (OHPs). These OHPs also share homology with the high light-inducible proteins (HLIPs) found in cyanobacteria. These function as small chlorophyll a/b-binding proteins characterized by a single transmembrane helix with an LHC motif. OHPs are upregulated under high light conditions, playing a pivotal role in the biogenesis and repair of PSII. They transiently associate with PSII core proteins and temporarily bind chlorophyll pigments during the PSII repair cycle, shielding chlorophyll molecules from photooxidative damage by facilitating energy dissipation through the direct transfer between chlorophyll a and $\beta$-carotene (Levin and Schuster 2023). In \emph{Arabidopsis}, mutations in OHP1 result in compromised chlorophyll accumulation, thylakoid architecture, and photosystem functionality, highlighting their essential role in photoprotection and photosynthetic efficiency (Levin and Schuster 2023).
+
+%References:
+%Levin, G., & Schuster, G. (2023). LHC-like Proteins: The Guardians of Photosynthesis. International Journal of Molecular Sciences, 24, 2503. 12568911
+%Levin, G., Yasmin, M., Simanowitz, M.C., Meir, A., Tadmor, Y., Hirschberg, J., Adir, N., & Schuster, G. (2022). A Desert Green Alga That Thrives at Extreme High-Light Intensities Using a Unique Photoinhibition Protection Mechanism. bioRxiv. 911
+%Myouga, F., Takahashi, K., Tanaka, R., Nagata, N., Kiss, A.Z., Funk, C., Nomura, Y., Nakagami, H., Jansson, S., and Shinozaki, K. (2018). Stable accumulation of photosystem II requires ONE-HELIX PROTEIN1 (OHP1) of the light harvesting-like family. Plant Physiology, 176(4), 2277–2291.
+%Hey, D., and Grimm, B. (2018). ONE-HELIX PROTEIN2 (OHP2) is required for the stability of OHP1 and assembly factor HCF244 and is functionally linked to PSII biogenesis. Plant Physiology, 177(4), 1453–1472.
+
+
+
+\subsection*{Biological interpretation of TG in plant height}
+The predominance of triglyceride modules in plant height prediction is biologically well substantiated. Triglycerides constitute the principal form of energy storage in seeds and vegetative tissues, and their mobilization supplies both carbon skeletons and metabolic energy required for growth processes. In particular, short-chain triglycerides may serve as indicators of metabolic flux through fatty acid biosynthetic pathways that support rapid biomass accumulation. The finding that these associations are consistently observed across independent datasets strengthens confidence that they represent true underlying biological relationships rather than artifacts of model overfitting.
+
+The absence of robust lipid-based predictors for flowering time is itself informative. Floral transition is predominantly regulated by genetic determinants and environmental cues (e.g., photoperiod, vernalization) acting through well-characterized signaling networks. Although lipid metabolic processes intersect with these regulatory pathways, our findings indicate that steady-state lipid profiles obtained at a single developmental stage are insufficient to capture the underlying regulatory complexity governing flowering time specially because the lipid profiles were samples at the XXX stage. 
+
+
+
+
 
 \section*{Conclusion}
 
@@ -714,60 +543,72 @@ We used the Lipid Network Explorer (LINEX2; \url{https://exbio.wzw.tum.de/linex/
 We conducted functional ontology for lipids using LION/web (Molenaar \emph{et al.}, 2019; \url{http://www.lipidontology.com}). Lipid nomenclature was standardized according to LIPID MAPS annotations. The default settings of LION/web were applied for enrichment statistics and multiple-testing correction. We retained terms for $q \leq 0.10$. A hierarchical classification analysis of individual lipids and functional ontologies was also performed using the LION/web.
 
 
-\subsection*{Random-forest modeling and TreeSHAP interpretation}
+\subsection*{Gradient boosting modeling and module-based SHAP interpretation}
 
 \paragraph{Lipid data processing.}
-To achieve variance stabilization and address zero values, each lipid intensity underwent transformation as outlined in OLPS-DA section. Following this transformation, lipid columns were median-centered across samples through feature-wise subtraction of the column median, effectively removing global offsets while maintaining inter-sample variability.
+To achieve variance stabilization and address zero values, each lipid intensity was log\textsubscript{10}-transformed with a pseudocount of 1:
+\[
+L_{ij}^{\prime} = \log_{10}(L_{ij} + 1),
+\]
+where $L_{ij}$ is the raw intensity of lipid $j$ in sample $i$. Following transformation, lipid columns were median-centered across samples through feature-wise subtraction of the column median, effectively removing global offsets while maintaining inter-sample variability.
 
 \paragraph{Phenotype and population structure covariates.}
-The phenotypic traits for SAP include plant height (PT) and days to anthesis (FT) (Supp Table 10), which served as the response variables. To reduce the likelihood of the model highlighting population structure over biological factors, both response variables and lipid predictors underwent adjustment through residualization with respect to the principal components, employing the ordinary least squares (OLS) method.
+The phenotypic traits for SAP include plant height (PH) and days to anthesis (DTA) (Supp.\ Table~10), which served as response variables. To reduce the likelihood of the model capturing population structure rather than biological associations, both response variables and lipid predictors underwent adjustment through residualization with respect to the first three principal components (PCs), employing ordinary least squares (OLS) regression.
 
-Let \(y\) denote the phenotype of the SAP and \(X_{\mathrm{PC}}\) the PC design matrix (with intercept). We computed the residual phenotype as
+Let $y$ denote the phenotype vector and $X_{\mathrm{PC}}$ the PC design matrix (with intercept). We computed the residual phenotype as
 \[
-rFT \;=\; y - \hat{y}, 
-\qquad 
-\hat{y} \;=\; X_{\mathrm{PC}}\,(X_{\mathrm{PC}}^{\top}X_{\mathrm{PC}})^{-1}X_{\mathrm{PC}}^{\top}y,
+y_{\mathrm{adj}} = y - X_{\mathrm{PC}}(X_{\mathrm{PC}}^{\top}X_{\mathrm{PC}})^{-1}X_{\mathrm{PC}}^{\top}y,
 \]
-i.e.\ the residuals from the regression \(y \sim X_{\mathrm{PC}}\).
-For the lipid matrix \(L\) (samples \(\times\) features), we removed PC effects feature-wise via the same projection:
+i.e., the residuals from the regression $y \sim X_{\mathrm{PC}}$.
+For the lipid matrix $L$ (samples $\times$ features), we removed PC effects feature-wise via the same projection:
 \[
-L_{\mathrm{adj}} \;=\; L \;-\; P L,
-\qquad
-P \;=\; X_{\mathrm{PC}}\,(X_{\mathrm{PC}}^{\top}X_{\mathrm{PC}})^{-1}X_{\mathrm{PC}}^{\top}.
+L_{\mathrm{adj}} = L - X_{\mathrm{PC}}(X_{\mathrm{PC}}^{\top}X_{\mathrm{PC}})^{-1}X_{\mathrm{PC}}^{\top}L.
 \]
-The adjusted lipid matrix \(L_{\mathrm{adj}}\) and the residual phenotype \(rFT\) were used for all downstream modeling.
+The adjusted lipid matrix $L_{\mathrm{adj}}$ and the residual phenotype $y_{\mathrm{adj}}$ were used for all downstream modeling. Importantly, residualization was performed separately within each cross-validation fold to prevent data leakage: coefficients were estimated on training data only and applied to both training and test sets.
 
-\paragraph{Train/test split stratified by genetic background.}
-In order to maintain a balance of population structure across the splits, we employed \(k\)-means clustering in principal component (PC) space, as referenced in \(k=6\). An 80/20 train/test split was subsequently carried out. To ensure the reproducibility of the findings, random seeds were fixed.
+\paragraph{Lipid module construction via correlation clustering.}
+Due to high correlation among lipid species within the same biochemical class, interpreting SHAP values for individual lipids can be misleading---importance tends to be distributed across correlated features, making it difficult to identify which lipids (or lipid programs) are truly predictive. To address this, we grouped lipids into correlation-based modules prior to interpretation.
 
-\paragraph{Random forest tuning, cross-validation, and training.}
-We employed a random forest model (\texttt{ranger} in R) to represent \(rFT\) as a function of the adjusted lipid features. The hyperparameters were optimized using \texttt{tuneRanger}, with 1,000 trees and a search conducted over \texttt{mtry}, \texttt{min.node.size}, \texttt{sample.fraction}, to minimize the root-mean-squared error (RMSE) within the training dataset. To assess the expected generalization performance on the training data, we implemented a 5-fold cross-validation using \texttt{mlr} with the optimized parameters and reported the fold-wise RMSE, mean absolute error (MAE), and \(R^2\).
-
-A conclusive forest model (ranger; 1,000 trees) was constructed using the complete training dataset in conjunction with the optimized parameters. Due to the potential issue where excessively large \texttt{min.node.size} values may lead to over-smoothing of trees, resulting in predictions that are nearly constant. Thus, we imposed a practical limitation that if the optimized \texttt{min.node.size} exceeded 15, it was adjusted to 15 for the final construction, while all other optimized values remained unchanged.
-
-\paragraph{Model evaluation metrics.}
-We evaluated the final model once on the test set. The following metrics were computed:
+We computed the pairwise Spearman correlation matrix across all lipid features and converted it to a distance matrix:
 \[
-\mathrm{RMSE} \;=\; \sqrt{\frac{1}{n}\sum_{i=1}^{n}\bigl(\hat{y}_i - y_i\bigr)^2}, 
-\qquad
-\mathrm{MAE} \;=\; \frac{1}{n}\sum_{i=1}^{n}\bigl|\hat{y}_i - y_i\bigr|,
+D_{jk} = 1 - |r_{jk}|,
 \]
-\[
-r \;=\; \mathrm{cor}(\hat{\bm{y}}, \bm{y}), 
-\qquad
-R^2 \;=\; r^2,
-\qquad
-\mathrm{Bias} \;=\; \frac{1}{n}\sum_{i=1}^{n}\bigl(\hat{y}_i - y_i\bigr),
-\]
-\[
-\mathrm{NRMSE}~(\%) \;=\; \frac{\mathrm{RMSE}}{\mathrm{SD}(rFT)} \times 100\%.
-\]
+where $r_{jk}$ is the Spearman correlation between lipids $j$ and $k$. Hierarchical clustering (average linkage) was performed on this distance matrix, and modules were identified using the dynamic tree cut algorithm (\texttt{dynamicTreeCut} in R) with \texttt{deepSplit = 2} and a minimum cluster size of 3. Lipids not assigned to any cluster were treated as singleton modules. This procedure yielded 27 lipid modules, each characterized by its dominant lipid class (e.g., TG, PC, DG).
 
-\paragraph{TreeSHAP computation and feature ranking.}
-Exact TreeSHAP values were calculated for the fitted forest using \texttt{treeshap} in R to achieve local attributions for each lipid. The trained model was transformed into a unified tree representation , wherein TreeSHAP was executed on the identical feature frame utilized during the training phase. This procedure results in an \(n \times p\) matrix of SHAP values \(\phi_{ij}\), representing the impact of lipid \(j\) on sample \(i\). The global importance associated with lipid \(j\) was encapsulated as the mean absolute SHAP.\[
-\overline{|\phi|}_j \;=\; \frac{1}{n}\sum_{i=1}^{n} \bigl|\phi_{ij}\bigr|,
+\paragraph{XGBoost model training and cross-validation.}
+We employed gradient-boosted trees (XGBoost) to model the PC-residualized phenotype as a function of the adjusted lipid features. XGBoost was chosen over random forests for its typically superior performance on tabular data and its built-in L1/L2 regularization, which encourages sparsity when features are correlated.
+
+The model was trained with the following hyperparameters: learning rate $\eta = 0.1$, maximum tree depth = 6, row subsampling = 0.8, column subsampling = 0.8, L2 regularization $\lambda = 1$, and L1 regularization $\alpha = 0.5$. Models were trained for 150--200 boosting rounds.
+
+To assess generalization performance, we implemented 5-fold cross-validation with PC residualization performed within each fold. For each fold, we computed:
+\[
+R^2 = 1 - \frac{\sum_{i}(y_i - \hat{y}_i)^2}{\sum_{i}(y_i - \bar{y})^2}, \quad
+\mathrm{RMSE} = \sqrt{\frac{1}{n}\sum_{i}(\hat{y}_i - y_i)^2}, \quad
+\mathrm{MAE} = \frac{1}{n}\sum_{i}|\hat{y}_i - y_i|.
 \]
-and features were ranked by \(\overline{|\phi|}_j\) in descending order.
+We report the mean $\pm$ standard deviation of $R^2$ across folds.
+
+\paragraph{SHAP computation and module-level aggregation.}
+For model interpretation, a final XGBoost model was trained on all samples (after PC residualization). SHAP (SHapley Additive exPlanations) values were computed using the \texttt{shapviz} package in R, which provides exact TreeSHAP values for gradient-boosted tree ensembles. This yielded an $n \times p$ matrix of SHAP values $\phi_{ij}$, representing the contribution of lipid $j$ to the prediction for sample $i$.
+
+To obtain module-level importance, we aggregated SHAP values within each module. For module $m$ containing lipids $\mathcal{L}_m$, we computed the module SHAP for each sample as:
+\[
+\Phi_{im} = \sum_{j \in \mathcal{L}_m} \phi_{ij},
+\]
+and the global module importance as:
+\[
+\overline{|\Phi|}_m = \frac{1}{n}\sum_{i=1}^{n}|\Phi_{im}|.
+\]
+Modules were ranked by $\overline{|\Phi|}_m$ in descending order.
+
+\paragraph{Bootstrap stability analysis.}
+To assess the stability of module importance rankings, we performed bootstrap resampling (50--100 iterations). In each bootstrap iteration, we: (1) resampled $n$ observations with replacement, (2) trained an XGBoost model on the bootstrap sample, (3) computed SHAP values and module-level aggregations, and (4) recorded the mean absolute module SHAP. From the bootstrap distribution, we computed 95\% confidence intervals for each module's importance. This procedure identifies modules whose importance is robust to sampling variability, as opposed to those whose rankings are unstable.
+
+\paragraph{Cross-dataset and cross-environment validation.}
+For plant height, we validated our findings using an independent phenotype dataset from Boyles et al. We computed module SHAP importance separately for each dataset and assessed concordance by: (1) counting the overlap of top-10 modules between datasets, and (2) computing the Pearson correlation of module importance scores across all modules.
+
+For flowering time, we extended the analysis across five environments (our DTA data plus four environments from Wei et al.: MI20, NE20, IA21\_1, IA21\_2). For each environment, we computed module SHAP importance and identified modules that consistently appeared in the top 10 across multiple environments. This cross-environment consistency analysis reveals lipid programs with reproducible associations, even when overall predictive power is limited.
+googl
 
 
 \subsection*{Data Availability}
@@ -801,453 +642,55 @@ Any opinions, findings, conclusions, or recommendations expressed in this public
 \section*{Supplement}
 \beginsupplement
 
+% =========================
+% SUPP FIGURE 1
+% =========================
 \begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{figs/Figure_S1.png}
-\caption{
-\textbf{\invfour differences in Anthesis and Plant Height.}
-\textbf{(A)} Days to anthesis. $\invfour$ reached anthesis significantly earlier than CTRL under both phosphorus sufficient (+P) and deficient (-P) conditions.
-\textbf{(B)} Plant height at sampling. $\invfour$ plants were significantly taller than CTRL plants under both +P and -P treatments.
-Yellow boxplots represent CTRL, purple boxplots represent $\invfour$.
-\textit{FDR} adjusted significance: \textit{n.s.} not significant, $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***).
-}
-\label{supp:Figure_S1}
-\end{figure*}
-\pagebreak
-
-
-\begin{figure}[!hb]
-\centering
-\includegraphics[width=\textwidth]{figs/Figure_S2.png} % Assuming this is the filename
-\caption{
-\textbf{Maize Stover Dry Weight Growth Curves and Derived Parameters Highlight Phosphorus-Dependent Effects with No Genotype-by-Environment Interaction.}
-\textbf{(A)} Derived logistic growth parameters for CTRL and \invfour genotypes under +P and -P. 
-Phosphorus deficiency significantly reduced the Area Under the Curve (AUC) for empirical data \textbf{(B)} and logistic model \textbf{(C)}, prolonged the time to reach half maximum stover weight (T$_{1/2}$) (D), and decreased the maximum stover weight (STW$_{\text{max}}$) (E).
-%Crucially, no significant genotype-by-phosphorus interactions were observed for any of these growth parameters, indicating that \invfour did not modulate the plant's response to phosphorus availability.
-%Furthermore, there were no significant main effects of the \invfour genotype on these stover grotwh parameters.
-\textit{FDR} adjusted \textit{t-test} significance: \textit{n.s.} not significant, $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***), $p < 0.0001$ (****).
-}
-\label{supp:Figure_S2} % Label for your figure
-\end{figure}
-
-\pagebreak
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\linewidth]{figs/Figure_S3.png}
-\caption{\textbf{Secondary Ionomic responses of \invfour and control maize lines under phosphorus sufficiency (+P) and deficiency (-P).}
-Boxplots show element concentrations \textbf{(A)} in Magnesium (Mg), Manganese (Mn), Potassium (K), and Iron (Fe) in stover and seeds, and Seed/stover ratios \textbf{(B)} for the same four minerals.
-%Phosphorus deficiency ($-P$) caused a significant reduction in seed Mg (A) and seed Mn (B). No significant effects of either phosphorus treatment or the \invfour genotype were detected for K, Fe, or the seed/stover partition ratios (B) for any of the four elements.
-\textit{t-test FDR} adjusted significance: $p < 0.05$ (*), $p < 0.01$ (**), $p < 0.001$ (***), $p < 0.0001$ (****).Â 
-Effect sizes and exact \textit{p values} are reported in Table.}
-\label{supp:Figure_S3}
+  \centering
+  \includegraphics[width=\textwidth]{figures/supp/SuppFig_S1_QC_RunOrder_SERRF_PCA_SpATS.png}
+  \caption{\textbf{QC, SERRF normalization, PCA tightening, and SpATS spatial residual diagnostics.}}
+  \label{fig:suppfig_s1_qc}
 \end{figure*}
 
-\pagebreak
-
+% =========================
+% SUPP FIGURE 2
+% =========================
 \begin{figure*}[!ht]
-\centering
-\includegraphics[width=0.8\linewidth]{figs/Figure_S4.png}
-\caption{
-(\textbf{A}) Euler diagram showing the major two-way intersections among DEGs from the effects of leaf position (Leaf Up/Leaf Down), phosphorus deficiency (-P Up / -P Down), and interaction (Negative and  Positive). Circle sizes represent set sizes, and numbers indicate the counts in each intersection. 
-(\textbf{B}) Upset plot highlighting high-confidence DEG intersections that are significantly enriched relative to expectation (FDR <0.05), the first and second intersections are depicted in A, the third  (Leaf Down $\cap$ -P Down) is not,due to its small size. 
-(\textbf{C}) Summary of high-confidence DEGs and their GO Biological Process (BP) annotation. Black numbers indicate the total number of high-confidence DEGs per group; white numbers denote the subset annotated with significantly enriched BP terms. Neg L$\times$–P: negative Leaf $\times$ –P interaction effect, and Pos L$\times$–P: positive interaction.
-(\textbf{D}) Euler diagram showing overlap among the high-confidence BP annotated DEG sets, illustrating shared and unique functional responses across leaf position, phosphorus deficiency, and their interaction.
-}
-\label{supp:Figure_S4}
+  \centering
+  \includegraphics[width=\textwidth]{figures/supp/SuppFig_S2_Compositional_Contrasts.png}
+  \caption{\textbf{Class composition and compositional contrasts.}}
+  \label{fig:suppfig_s2_composition}
 \end{figure*}
 
-\pagebreak
-
+% =========================
+% SUPP FIGURE 3
+% =========================
 \begin{figure*}[!ht]
-\centering
-\includegraphics[width=\linewidth]{figs/Figure_S5.png}
-\caption{
-(\textbf{A}) \textbf{Manhattan plot for differentially expressed genes (DEGs) under $-\text{P}$}. 
-%A total of $\textbf{10,606}$ DEGs were identified for the main effect of P deficiency. 
-Loci associated with key P-starvation response genes, such as $\textit{pilncr1}$, $\textit{pap19}$, $\textit{ips1}$, and $\textit{spx4}$, are highlighted. The $y$-axis represents the $-\log_{10}(\text{FDR})$.
-(\textbf{B}) \textbf{Manhattan plot for DEGs with an $\invfour$ $\mathbf{\times} -\mathbf{P}$ interaction}. 
-%Only $\textbf{3}$ DEGs show a significant interaction effect with the $\invfour$ inversion.  is linked to $\textit{aldh2}$ and $\textit{flz22}$.
-(\textbf{C}) Zoomed-in view of the significant locus on Chromosome 4. The region on chromosome 4 (position 171,050,000 to 171,060,000) shows the candidate gene $\textit{aldh2}$ ($\textit{aldehyde dehydrogenase 2}$)
-(\textbf{D}) Volcano plot for differentially abundant lipids (DALs) under Leaf $\mathbf{\times} -\mathbf{P}$ interaction. 
-%Only two lipids, $\textbf{PC34:2}$ and $\textbf{TG:54:9}$, are identified as significantly differentially abundant, showing a significant interaction between leaf developmental stage and P deficiency treatment. 
-}
-\label{supp:Figure_S5}
+  \centering
+  \includegraphics[width=\textwidth]{figures/supp/SuppFig_S3_Lipid_Species_Counts.png}
+  \caption{\textbf{Lipid species counts, overlap, and superclass summaries.}}
+  \label{fig:suppfig_s3_counts}
 \end{figure*}
 
-\pagebreak
+% =========================
+% SUPP FIGURE 4
+% =========================
+\begin{figure*}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{figures/supp/SuppFig_S4_PCA_Lipids.png}
+  \caption{\textbf{Lipid PCA in Control and LowInput showing class-structured clustering.}}
+  \label{fig:suppfig_s4_pca}
+\end{figure*}
 
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=\linewidth]{figs/Figure_S6.png}
-\caption{
-\textbf{Lipid class composition, and effect of leaf developmental stages and phosphorus treatments.} of
-\textbf{(A)} Membrane lipid composition (Ion \%, log scale) is dominated by PC, MGDG, DGDG, and SQDG, while LPE, PI and DGGA (in +P) represent minor components (<1\%, necessitating log scale). 
-%Phosphorus deficiency causes notable decreases in phosphoglycerolipids across all leaf stages (1-4, apical to basal).
-\textbf{(B)} Treatment effect (-P / +P ) on lipids, as ${log_2\text{Fold Change}}$, shows leaf-stage-dependent responses in DG, TG, PC, and PE. 
-%Phosphoglycerolipids generally decrease under -P, while glycoglycerolipids increase.
-\textbf{(C)} leaf effect, as ${log_2\text{Fold Change}}$, %Developmental trajectories reveal contrasting neutral lipid responses: under +P, DG and TG decrease with leaf age, while under -P this response switches to a decrease.
-%The general trend of increased glycoglycerolipids and decreased phosphoglycerolipids under -P appears additive to developmental effects.
-Error bars indicate standard error of the mean.
-}
-\label{supp:Figure_S6}
-\end{figure}
-
-\pagebreak
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=\linewidth]{figs/Figure_S7.png}
-\caption{
-\textbf{Mass spectrometry injection order confounds lipid profile variation.}
-\textbf{(A)} Multidimensional scaling (MDS) of lipid profiles. 
-%shows that dimension 1 (31\% variance) strongly correlates with injection order (Pearson $r = 0.96$, $p = 2.2 \times 10^{-16}$), reflecting systematic drift in mass spectrometry measurements over the analysis sequence. 
-Treatment groups (-P, +P) are distinguished by shape, while color gradient represents injection order (purple = early, yellow = late).
-The injection order was used as a covariate in the \textit{limma} mixed linear model of lipid variation; see Methods.
-\textbf{(B)} Lipid data projections on the next most explanatory MDS dimensions  (dim2 vs. dim3) colored by experimental factors. 
-%show expected biological patterns: treatment separation (top left) and leaf developmental stage gradients (bottom right).
-%Unlike dimension 1, these patterns represent biological variation rather than technical artifacts.
-%There is no  obvious sample clustering by genotype (bottom left),
-%collection time (middle left), or batch effects between collectors (top right), 
-}
-\label{supp:Figure_S7}
-\end{figure}
-
-\begin{table}[h!]
-\centering
-\footnotesize % Reduces font size for the table content
-\caption{Selected Differentially Expressed Genes under Phosphorus Starvation ($\text{-P}$) effect.}
-\label{table::phosphorusDEGs}
-\begin{tabular}{ccp{7.5cm}cc} % Adjusted width for Name/Description column
-\hline
-\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} &   \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
-\hline
-\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
-\hline
-Zm00001eb003820 & pilncr1 & pi-deficiency-induced long non-coding RNA1 & 9.0 & 7.70\\
-Zm00001eb148590 & ips1 & induced by phosphate starvation1 & 9.0 & 7.10\\
-Zm00001eb241920 & gpx1 & glycerophosphodiester phosphodiesterase1 & 9.0 & 6.84\\
-Zm00001eb064450 & pap2 & purple acid phosphatase2 & 9.0 & 4.64\\
-Zm00001eb154650 & ppa & Inorganic pyrophosphatase 1 & 9.0 & 3.06\\
-Zm00001eb280120 & pfk1 & phosphofructose kinase1 & 9.0 & 2.58\\
-Zm00001eb063230 & plc6 & phospholipase C6 & 9.0 & 1.90\\
-Zm00001eb313760 & flz22 & FLZ-type domain-containing protein & 8.9 & 3.03\\
-Zm00001eb370610 & rfk1 & Riboflavin kinase & 8.9 & 3.98\\
-Zm00001eb007180 & gmp & Mannose-1-phosphate guanyltransferase alpha & 8.8 & 2.29\\
-Zm00001eb010130 & pap19 & purple acid phosphatase19 & 8.8 & 6.09\\
-Zm00001eb099420 & gmps1 & GMP synthase & 4.3 & 9.92\\
-Zm00001eb019570 & spx7 & SPX domain-containing membrane protein7 & 4.1 & 8.04\\
-Zm00001eb425050 & mdr1 & putative multidrug resistance protein & 3.6 & 8.23\\
-Zm00001eb108800 & uam1 & UDP-arabinopyranose mutase & 3.1 & 8.72\\
-Zm00001eb034810 & mgd2 & Monogalactosyldiacylglycerol synthase & 2.9 & 11.12\\
-Zm00001eb388800 & ltsr1 & Low temperature and salt responsive protein & 2.3 & 9.54\\
-\hline
-\multicolumn{5}{l}{\textit{\textbf{Downregulated Genes}}} \\
-\hline
-Zm00001eb433900 & alla1 & allantoinase1 & 6.4 & -1.93\\
-Zm00001eb211170 & toc & Translocase of chloroplast, chloroplastic & 5.9 & -1.61\\
-Zm00001eb214780 & ccp19 & cysteine protease19 & 5.9 & -1.95\\
-Zm00001eb070520 & bhlh148 & bHLH-transcription factor 148 & 5.8 & -2.12\\
-Zm00001eb243180 & sdc & Serine decarboxylase & 5.8 & -1.74\\
-Zm00001eb377880 & - & - & 5.3 & -1.63\\
-Zm00001eb114780 & cfm3 & CRM family member3 & 4.9 & -1.54\\
-Zm00001eb405630 & c3h & C3H transcription factor (Fragment) & 4.9 & -1.57\\
-Zm00001eb377890 & snf12 & SWI/SNF complex component SNF12-like protein & 4.8 & -1.64\\
-Zm00001eb248820 & - & - & 4.7 & -1.84\\
-Zm00001eb294690 & peamt2 & phosphoethanolamine N-methyltransferase 2 & 3.8 & -7.17\\
-Zm00001eb017120 & tps8 & terpene synthase8 & 3.3 & -4.87\\
-Zm00001eb066620 & tut7 & Terminal uridylyltransferase 7 & 2.7 & -4.38\\
-Zm00001eb279680 & aaap48 & amino acid/auxin permease48 & 2.3 & -4.39\\
-Zm00001eb324550 & nactf132 & NAC-transcription factor 132 & 2.2 & -4.33\\
-Zm00001eb292550 & sec14 & SEC14 cytosolic factor family protein / phosphoglyceride transfer family protein & 1.9 & -6.43\\
-Zm00001eb410750 & - & - & 1.4 & -4.18\\
-\hline
-\end{tabular}
-\end{table}
-
-
-\begin{table}[h!]
-\centering
-\footnotesize % Reduces font size for the table content
-\caption{Selected Differentially Expressed Genes for Leaf Stage effect.}
-\label{table::leafDEGs}
-\begin{tabular}{ccp{7.5cm}cc} % Adjusted width for Name/Description column
-\hline
-\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} &   \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
-\hline
-\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
-\hline
-Zm00001eb297390 & hir3 & hypersensitive induced reaction3 & 7.4 & 0.80\\
-Zm00001eb041700 & gt & Glycosyltransferase & 7.3 & 1.09\\
-Zm00001eb305330 & cyp6 & cytochrome P450 & 7.3 & 0.90\\
-Zm00001eb037440 & bhlh145 & bHLH-transcription factor 145 & 7.0 & 0.89\\
-Zm00001eb293310 & dnaj & DNAJ heat shock N-terminal domain-containing protein & 6.7 & 0.64\\
-Zm00001eb407630 & salt1 & SalT homolog1 & 6.5 & 2.54\\
-Zm00001eb275060 & - & - & 6.1 & 0.73\\
-Zm00001eb098650 & trpp2 & trehalose-6-phosphate phosphatase2 & 6.0 & 1.47\\
-Zm00001eb370960 & wrky111 & WRKY-transcription factor 111 & 6.0 & 0.60\\
-Zm00001eb163980 & sftp & Surfactant protein B containing protein & 6.0 & 0.53\\
-Zm00001eb261620 & imo & Indole-2-monooxygenase & 4.0 & 2.04\\
-Zm00001eb422900 & - & - & 2.8 & 1.91\\
-Zm00001eb104340 & mutl3 & MUTL protein homolog 3 & 2.3 & 1.96\\
-Zm00001eb169810 & sc4mol & sphinganine C4-monooxygenase 1 & 2.2 & 1.79\\
-Zm00001eb294140 & - & - & 2.1 & 1.90\\
-Zm00001eb002760 & cyp78a & Cytochrome P450 family 78 subfamily A polypeptide 8 & 1.8 & 2.45\\
-Zm00001eb137930 & dmas & 2'-deoxymugineic-acid 2'-dioxygenase & 1.6 & 1.89\\
-Zm00001eb403420 & abc\_trans & ABC-type Co2+ transport system, permease component & 1.6 & 1.81\\
-Zm00001eb054710 & chemo & Chemocyanin & 1.5 & 1.89\\\hline
-\multicolumn{5}{l}{\textit{\textbf{Downregulated Genes}}} \\
-\hline
-Zm00001eb152840 & pcf7 & Transcription factor PCF7 & 7.5 & -1.48\\
-Zm00001eb151160 & ntf2 & NTF2 domain-containing protein & 7.5 & -1.15\\
-Zm00001eb076680 & sgrl1 & Protein STAY-GREEN LIKE, chloroplastic & 7.5 & -0.95\\
-Zm00001eb038410 & ucp4 & Mitochondrial uncoupling protein 4 & 7.5 & -0.70\\
-Zm00001eb329970 & tyrtr & Tyrosine-specific transport protein & 7.5 & -0.63\\
-Zm00001eb182020 & mph1 & protein MAINTENANCE OF PSII UNDER HIGH LIGHT 1 & 7.5 & -0.61\\
-Zm00001eb176730 & ndhb1 & photosynthetic NDH subunit of subcomplex B 1, chloroplastic & 7.5 & -0.52\\
-Zm00001eb391900 & tic32 & Short-chain dehydrogenase TIC 32, chloroplastic & 7.4 & -0.60\\
-Zm00001eb057540 & zmm4 & Zea mays MADS4 & 7.1 & -3.40\\
-Zm00001eb154820 & chk & Choline kinase & 7.1 & -0.53\\
-Zm00001eb016200 & bhlh1 & BHLH transcription factor & 6.0 & -3.62\\
-Zm00001eb364940 & plt29 & Lipid-transfer protein DIR1 & 5.2 & -2.80\\
-Zm00001eb214750 & zmm15 & Zea mays MADS-box 15 & 5.1 & -5.04\\
-Zm00001eb320160 & alkt1 & Alkyl transferase & 4.9 & -3.82\\
-Zm00001eb169010 & ccp18 & cysteine protease18 & 4.0 & -2.76\\
-Zm00001eb090330 & aatr1 & amino acid transporter1 & 3.8 & -3.01\\
-Zm00001eb421180 & fp3 & Farnesylated protein 3 & 3.8 & -3.23\\
-Zm00001eb411680 & glu2 & beta-glucosidase2 & 2.5 & -5.12\\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h!]
-\centering
-\footnotesize % Reduces font size for the table content
-\caption{Selected Differentially Expressed Genes in Leaf $\times$ -P interaction, effect per increased Leaf Stage($\text{-P}$).}
-\label{table::leafxpDEGs}
-\begin{tabular}{ccp{7.5cm}cc} % Adjusted width for Name/Description column
-\hline
-\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} &   \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
-\hline
-\multicolumn{5}{l}{\textit{\textbf{Positively Interacting Genes}}} \\
-\hline
-Zm00001eb157810 & pk & Pyruvate kinase & 5.6 & 1.18\\
-Zm00001eb376160 & mrpa3 & multidrug resistance-associated protein3 & 5.4 & 0.64\\
-Zm00001eb063230 & plc6 & phospholipase C6 & 4.5 & 0.56\\
-Zm00001eb144680 & rns & Ribonuclease T(2) & 4.4 & 0.61\\
-Zm00001eb339870 & pld16 & phospholipase D16 & 4.3 & 0.56\\
-Zm00001eb393060 & piplc & PI-PLC X domain-containing protein & 4.0 & 1.15\\
-Zm00001eb148030 & gmp1 & mannose-1-phosphate guanylyltransferase1 & 3.9 & 0.69\\
-Zm00001eb009430 & htm4 & Heptahelical transmembrane protein 4 & 3.9 & 0.63\\
-Zm00001eb011050 & bgal & Beta-galactosidase & 3.9 & 0.53\\
-Zm00001eb289800 & pah1 & phosphatidate phosphatase 1 & 3.9 & 0.58\\
-Zm00001eb263160 & ring & Zinc finger (C3HC4-type RING finger) family protein & 2.9 & 2.16\\
-\hline
-\multicolumn{5}{l}{\textit{\textbf{Negatively Interacting  Genes}}} \\
-\hline
-Zm00001eb359280 & tat & Tat pathway signal sequence family protein & 5.6 & -0.56\\
-Zm00001eb207130 & cab & Chlorophyll a-b binding protein, chloroplastic & 5.4 & -1.35\\
-Zm00001eb389720 & fbpase & D-fructose-1,6-bisphosphate 1-phosphohydrolase & 5.3 & -0.81\\
-Zm00001eb070520 & bhlh148 & bHLH-transcription factor 148 & 5.1 & -0.96\\
-Zm00001eb212520 & psad1 & photosystem I subunit d1 & 4.6 & -0.62\\
-Zm00001eb179680 & cab & Chlorophyll a-b binding protein, chloroplastic & 4.6 & -0.55\\
-Zm00001eb111630 & med33a & Mediator of RNA polymerase II transcription subunit 33A & 4.4 & -0.60\\
-Zm00001eb362560 & ndho1 & NADH-plastoquinone oxidoreductase1 & 4.4 & -0.58\\
-Zm00001eb214780 & ccp19 & cysteine protease19 & 4.2 & -0.82\\
-Zm00001eb071770 & mex1 & maltose excess protein1 & 4.0 & -0.59\\
-Zm00001eb256120 &  &  & 3.8 & -1.41\\
-Zm00001eb235450 & taf2n & TATA-binding protein-associated factor 2N & 3.6 & -2.07\\
-Zm00001eb138960 &  &  & 2.1 & -2.11\\
-\hline
-\end{tabular}
-\end{table}
-
-\clearpage
-
-
-\begin{table}[h!]
-\centering
-\footnotesize
-\caption{High-confidence -P upregulated DEGs annotated with GO:0016036 "cellular response to phosphate starvation" (\cite{fattel2024})}
-\label{table::PSRupDEGs}
-\begin{tabular}{ccp{7.5cm}cc}
-\hline
-\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} & \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
-\hline
-\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
-\hline
-Zm00001eb241920 & gpx1 & glycerophosphodiester phosphodiesterase1 & 8.96 & 6.84\\
-Zm00001eb154650 & ppa1 & Inorganic pyrophosphatase 1 & 8.96 & 3.06\\
-Zm00001eb280120 & pfk1 & phosphofructose kinase1 & 8.96 & 2.58\\
-Zm00001eb370610 & rfk1 & Riboflavin kinase & 8.88 & 3.98\\
-Zm00001eb297970 & sqd2 & Sulfoquinovosyl transferase SQD2 & 8.05 & 1.83\\
-Zm00001eb347070 & sqd1 & sulfolipid biosynthesis1 & 8.05 & 1.76\\
-Zm00001eb335670 & sqd3 & Sulfoquinovosyl transferase SQD2 & 7.95 & 4.17\\
-Zm00001eb144680 & rns1 & Ribonuclease T(2) & 7.95 & 1.87\\
-Zm00001eb162710 & spx4 & SPX domain-containing membrane protein4 & 7.87 & 5.26\\
-Zm00001eb386270 & spx6 & SPX domain-containing membrane protein6 & 7.72 & 4.71\\
-Zm00001eb036910 & gpx3 & glycerophosphodiester phosphodiesterase3 & 7.72 & 3.50\\
-Zm00001eb151650 & pap1 & purple acid phosphatase1 & 7.37 & 4.61\\
-Zm00001eb351780 & ugp3 & UTP--glucose-1-phosphate uridylyltransferase 3, chloroplastic & 7.10 & 2.12\\
-Zm00001eb361620 & ppa2 & Inorganic pyrophosphatase 1 & 6.80 & 3.80\\
-Zm00001eb222510 & pht1 & phosphate transporter protein1 & 6.77 & 2.29\\
-Zm00001eb247580 & ppck3 & phosphoenolpyruvate carboxylase kinase3 & 6.34 & 2.96\\
-Zm00001eb126380 & phos1 & phosphate transporter1 & 6.12 & 2.17\\
-Zm00001eb038730 & pht7 & phosphate transporter protein7 & 5.68 & 6.56\\
-Zm00001eb116580 & spd1 & Protein seedling plastid development 1 & 5.60 & 1.66\\
-Zm00001eb048730 & spx2 & SPX domain-containing membrane protein2 & 5.42 & 4.90\\
-Zm00001eb069630 & oct4 & Organic cation/carnitine transporter 4 & 4.90 & 1.76\\
-Zm00001eb083520 & dgd1 & Digalactosyldiacylglycerol synthase & 4.85 & 1.77\\
-Zm00001eb430590 & nrx3 & Putative nucleoredoxin 3 & 4.71 & 4.15\\
-Zm00001eb130570 & sag21 & Senescence-associated gene 21, mitochondrial & 4.43 & 1.94\\
-Zm00001eb258130 & mgd3 & Monogalactosyldiacylglycerol synthase & 4.37 & 1.61\\
-Zm00001eb406610 & glk4 & G2-like-transcription factor 4 & 4.31 & 5.67\\
-Zm00001eb239700 & ppa2 & Inorganic pyrophosphatase 2 & 3.20 & 2.67\\
-Zm00001eb034810 & mgd2 & Monogalactosyldiacylglycerol synthase & 2.90 & 11.12\\
-Zm00001eb144670 & rns2 & Ribonuclease T(2) & 2.73 & 1.54\\
-Zm00001eb087720 & pht13 & phosphate transporter protein13 & 2.36 & 1.75\\
-Zm00001eb047070 & pht2 & phosphate transporter protein2 & 2.33 & 4.31\\
-Zm00001eb277280 & gst19 & glutathione transferase19 & 2.05 & 1.66\\
-Zm00001eb041390 & rns3 & Ribonuclease T(2) & 1.80 & 4.15\\
-Zm00001eb202100 & pap14 & purple acid phosphatase14 & 1.54 & 2.82\\
-\hline
-\end{tabular}
-\end{table}
-
-\clearpage
-\begin{table}[h!]
-\centering
-\footnotesize
-\caption{High-confidence Positive Leaf $\times$ -P DEGs annotated with GO:0016036 "cellular response to phosphate starvation" (\cite{fattel2024}) }
-\label{table:goleafxP_genes}
-\begin{tabular}{ccp{7.5cm}cc}
-\hline
-\textbf{ID} & \textbf{Locus label} & \multicolumn{1}{c}{\textbf{Description}} & \textbf{$-\log_{10}{\textit{FDR}}$} & \textbf{$\log_2{\text{FC}}$}\\
-\hline
-\multicolumn{5}{l}{\textit{\textbf{Upregulated Genes}}} \\
-\hline
-Zm00001eb144680 & rns1 & Ribonuclease T(2) & 4.39 & 0.61\\
-Zm00001eb339870 & pld16 & phospholipase D16 & 4.30 & 0.56\\
-Zm00001eb289800 & pah1 & phosphatidate phosphatase 1 & 3.86 & 0.58\\
-Zm00001eb297970 & sqd2 & Sulfoquinovosyl transferase SQD2 & 3.86 & 0.53\\
-Zm00001eb154650 & ppa1 & Inorganic pyrophosphatase 1 & 3.42 & 0.73\\
-Zm00001eb258130 & mgd3 & Monogalactosyldiacylglycerol synthase & 2.99 & 0.65\\
-Zm00001eb280120 & pfk1 & phosphofructose kinase1 & 2.99 & 0.56\\
-Zm00001eb335670 & sqd3 & Sulfoquinovosyl transferase SQD2 & 2.81 & 0.96\\
-Zm00001eb130570 & sag21 & Senescence-associated gene 21, mitochondrial & 2.75 & 0.73\\
-Zm00001eb430590 & nrx3 & Putative nucleoredoxin 3 & 2.46 & 1.40\\
-Zm00001eb151650 & pap1 & purple acid phosphatase1 & 2.45 & 1.09\\
-Zm00001eb369590 & nrx1 & Thioredoxin, nucleoredoxin & 2.21 & 0.83\\
-Zm00001eb238670 & pep2 & phosphoenolpyruvate carboxylase2 & 2.16 & 0.58\\
-Zm00001eb370610 & rfk1 & Riboflavin kinase & 2.01 & 0.66\\
-Zm00001eb247580 & ppck3 & phosphoenolpyruvate carboxylase kinase3 & 1.97 & 0.67\\
-Zm00001eb386270 & spx6 & SPX domain-containing membrane protein6 & 1.83 & 0.82\\
-Zm00001eb239700 & ppa2 & Inorganic pyrophosphatase 2 & 1.76 & 0.89\\
-Zm00001eb277280 & gst19 & glutathione transferase19 & 1.71 & 0.80\\
-Zm00001eb048730 & spx2 & SPX domain-containing membrane protein2 & 1.42 & 1.04\\
-Zm00001eb361620 & ppa2 & Inorganic pyrophosphatase 1 & 1.31 & 0.62\\
-\hline
-\end{tabular}
-\end{table}
-
-
-\clearpage
-
-\begin{table}[h!]
-\centering
-\footnotesize
-\caption{High-confidence differentially abundant lipids for leaf main effect.}
-\label{table::leaf_lipids}
-\begin{tabular}{cccc}
-\hline
-\textbf{Lipid (IUB)} & \textbf{Class} & \textbf{$-\log_{10}(\textit{FDR})$} & \textbf{$\log_2(\text{FC})$}\\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Accumulated Lipids}}} \\
-\hline
-LPC18:3 & phospholipid & 3.0 & 1.43\\
-LPE18:3 & phospholipid & 2.5 & 1.26\\
-PC36:6 & phospholipid & 2.5 & 0.73\\
-DGGA36:3 & glycolipid & 1.6 & 0.65\\
-LPE18:2 & phospholipid & 1.6 & 0.55\\
-PC38:5 & phospholipid & 1.6 & 0.67\\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Depleted Lipids}}} \\
-\hline
-DG36:4 & neutral & 4.9 & -0.71\\
-LPC16:0 & phospholipid & 2.9 & -1.36\\
-PE32:1 & phospholipid & 2.9 & -0.74\\
-DG34:2 & neutral & 2.5 & -0.51\\
-PE34:1 & phospholipid & 2.4 & -0.73\\
-PC36:4 & phospholipid & 2.2 & -0.50\\
-DGDG34:1 & glycolipid & 2.1 & -0.56\\
-DG26:0 & neutral & 2.0 & -0.68\\
-DG40:8 & neutral & 1.9 & -0.74\\
-PC36:1 & phospholipid & 1.8 & -0.69\\
-DGGA36:4 & glycolipid & 1.7 & -0.72\\
-DGDG36:1 & glycolipid & 1.6 & -4.09\\
-\hline
-\end{tabular}
-\end{table}
-
-\clearpage
-
-\begin{table}[h!]
-\centering
-\footnotesize
-\caption{High-confidence differentially abundant lipids under phosphorus deficiency and its interaction with leaf stage.}
-\label{table::phosphorus_lipids}
-\begin{tabular}{cccc}
-\hline
-\textbf{Lipid (IUB)} & \textbf{Class} & \textbf{$-\log_{10}(\textit{FDR})$} & \textbf{$\log_2(\text{FC})$}\\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Phosphorus Deficiency (–P)}}} \\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Accumulated Lipids}}} \\
-\hline
-DGGA36:6 & glycolipid & 1.5 & 1.66\\
-DGGA35:2 & glycolipid & 1.5 & 7.42\\
-TG50:3 & neutral & 1.5 & 3.05\\
-TG54:9 & neutral & 1.5 & 2.02\\
-TG52:6 & neutral & 1.5 & 2.42\\
-TG50:2 & neutral & 1.4 & 2.53\\
-TG56:6 & neutral & 1.3 & 11.16\\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Depleted Lipids}}} \\
-\hline
-PC34:2 & phospholipid & 4.3 & -1.62\\
-LPC18:2 & phospholipid & 3.9 & -3.69\\
-LPE18:2 & phospholipid & 3.9 & -2.70\\
-DG40:8 & neutral & 3.0 & -2.76\\
-LPC16:1 & phospholipid & 3.0 & -3.52\\
-PC32:2 & phospholipid & 3.0 & -2.56\\
-PE32:1 & phospholipid & 3.0 & -1.85\\
-PG32:0 & phospholipid & 3.0 & -1.62\\
-PE34:4 & phospholipid & 2.2 & -2.08\\
-DG40:9 & neutral & 2.1 & -4.27\\
-LPC18:3 & phospholipid & 2.1 & -2.72\\
-PC32:0 & phospholipid & 2.1 & -2.12\\
-DG26:0 & neutral & 2.1 & -1.84\\
-LPE18:3 & phospholipid & 1.6 & -2.13\\
-PC38:6 & phospholipid & 1.6 & -2.48\\
-PE34:3 & phospholipid & 1.6 & -2.06\\
-PG34:3 & phospholipid & 1.6 & -3.94\\
-PI34:2 & phospholipid & 1.5 & -2.34\\
-LPC18:1 & phospholipid & 1.5 & -1.90\\
-TG58:5 & neutral & 1.3 & -4.08\\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Leaf × Phosphorus Interaction}}} \\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Positively Interacting Lipid}}} \\
-\hline
-TG58:5 & neutral & 2.6 & 4.23\\
-\hline
-\multicolumn{4}{l}{\textit{\textbf{Negatively Interacting Lipid}}} \\
-\hline
-PC34:2 & phospholipid & 2.6 & -0.55\\
-\hline
-\end{tabular}
-\end{table}
+% =========================
+% SUPP FIGURE 5
+% =========================
+\begin{figure*}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{figures/supp/SuppFig_S5_TopVariance_Lipids.png}
+  \caption{\textbf{Top high-variance lipids across genotypes in Control and LowInput.}}
+  \label{fig:suppfig_s5_variance}
+\end{figure*}
 
 \clearpage
 
