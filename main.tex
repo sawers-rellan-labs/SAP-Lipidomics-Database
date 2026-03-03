@@ -109,6 +109,9 @@ We profiled early-stage sorghum lipid profiles from SAP grown under two contrast
 
 Run-order quality control indicated stable analytical performance in both experimental conditions (Supplementary Fig.~S1A,B). Throughout the injection sequence, sample TICs conformed to expectations based on system suitability checks, internal standards, and blanks. TIC variability among QC samples also remained low (Control QC TIC CV = 7.5\%; LI QC TIC CV = 6.0\%; Supplementary Fig.~S1A,B). SERRF normalization enhanced technical precision in both environments, reducing the median QC-RSD from 3.6\% to 2.0\% in the C, and from 1.6\% to 0.3\% in the LI condition (Supplementary Fig.~S1C,D). Consistently, the proportion of features satisfying a QC-RSD $<30\%$ threshold increased from 75.7\% to 94.1\% in C and from 77.3\% to 89.3\% in LI (Supplementary Fig.~S1C,D). Furthermore, PCA of normalized data revealed a more compact clustering of samples relative to the unprocessed signal (Supplementary Fig.~S1E,F). Given that samples were derived from field-grown material, we further accounted for field-position effects using spatial modeling (SpATS) in R. Residual maps indicated that broad-scale row and column structures were largely mitigated following correction (Supplementary Fig.~S1G,H). All together, these procedures generated a normalized, spatially corrected lipid trait matrix that was used for all downstream analyses.
 
+\subsection*{Robustness of lipid changes across genotypes}                                         
+                                                                                                     
+To assess whether observed lipid differences between C and LI conditions reflected population-wide metabolic shifts rather than outlier-driven artifacts, we performed two-sample Wilcoxon rank-sum tests with leave-one-out jackknife stability analysis at both the class-ratio and individual species levels. At the class level, all 33 lipid ratios showed significant differences between conditions (Benjamini-Hochberg adjusted $p < 0.05$), with each achieving perfect jackknife stability (1.0; Supplementary Table~S7). The largest effects were observed for phosphatidylserine-related ratios (e.g., PS/SQDG fold-change = 12.78). At the individual species level, 134 of 218 lipids were significantly altered, and 139 species achieved perfect jackknife stability (1.0; Supplementary Table~S7b). Across all 13 lipid classes, the minimum species-level jackknife stability was 1.0 (Supplementary Table~S7c), confirming that even species-specific changes were not driven by extreme genotypes. These results indicate that the observed lipidomic remodeling under low-input conditions represents a consistent, population-wide response across the SAP genotypes tested.    
 
 \subsection*{Lipidome overview under Control and Low-input field conditions}
 
@@ -263,58 +266,76 @@ To further motivate the use of ratios that capture condition-dependent rewiring 
 Several ratio-derived signatures were further substantiated by independent abundance-, composition-, and ontology-based analyses. TG enrichment was corroborated by increased \%TIC and a shift in TG chemical space toward higher carbon, and was additionally supported by LION ontology enrichment for neutral glycerolipid and storage-related categories (e.g., TG and lipid storage/lipid droplet). SQDG depletion was validated by a reduction in \%TIC in conjunction with widespread changes in SQDG-denominator ratios, whereas PS enrichment was supported by its pronounced positive centered log-ratio (CLR) contrast together with PS-centered ratios. In addition, lysophospholipid remodeling emerged as a reproducible ratio signature, with LPE increasing relative to multiple membrane pools and a reduced LPC/LPE balance, consistent with stress-responsive phospholipid turnover (PC\,$\to$\,LPC and PE\,$\to$\,LPE branches) rather than uniform scaling of total lyso-lipid abundance. By contrast, MG, MGDG, and DGDG patterns were predominantly driven by ratio rebalancing, with only modest alterations in class-level composition (e.g., a slight decrease in MGDG \%TIC). This emphasizes that some LI effects are expressed mainly as redistribution among biochemically interconnected lipid pools rather than large changes in any single lipid class.
 
 
-\subsection*{Genome-wide Association Studies of Lipid Traits Under LowInput}
+\subsection*{Genome-wide Association Studies of Lipid Traits Under LowInput}                       
+                                                                                                     
+We performed GWAS using three representations of the same lipidomics dataset: (i) individual lipid species, (ii) summed abundances at the level of lipid classes, and (iii) all possible pairwise ratios among these aggregated classes. Statistical significance was defined as $p \le 10^{-7}$ (equivalently, $-\log_{10}(p) \ge 7$), and SNPs were mapped to genes using a symmetric 25~kb flanking window around each gene. To prioritize genes exhibiting robust pleiotropic effects across multiple lipid-related traits, we implemented additional filters based on the number of associated phenotypes. Only Genes associated with $\ge 4$ individual lipid species or $\ge 23$ class-level sum/ratio phenotypes (corresponding to upper-quartile cutoffs) were retained for downstream functional annotation.
 
-We performed GWAS using three representations of the same lipidomics dataset: (i) individual lipid species, (ii) summed abundances at the level of lipid classes, and (iii) all possible pairwise ratios among these aggregated classes. Statistical significance was defined as $p \le 10^{-7}$ (equivalently, $-\log_{10}(p) \ge 7$), and SNPs were mapped to genes using a symmetric 25~kb flanking window.
+Under LowInput conditions, we detected 10,884 distinct genes significantly associated with at least one individual lipid species and 6,516 genes significantly associated with at least one summed-class or ratio lipid phenotype at the genome-wide level. To situate these associations within established stress response pathways, we categorized the candidate genes into four functional groups based on Gene Ontology (GO) annotations, gene family membership, gene name, and known function from literature: P homeostasis, N metabolism, cold stress response, and lipid metabolism.  Comprehensive GWAS summary statistics and corresponding gene annotations are presented in Supplementary Tables~S7--S9, as well as within the accompanying interactive Shiny application.
 
-Using this stringent threshold, we identified 11,286 unique genes associated with at least one individual lipid species and 15,975 genes associated with at least one summed-class or ratio phenotype under LowInput conditions. The most highly connected gene in the individual-lipid GWAS was \texttt{SORBI\_3010G064200} (chromosome 10), which exhibited significant associations with 20 distinct lipid phenotypes (best $p = 3.4 \times 10^{-16}$), predominantly short- and medium-chain triglycerides including TG(10:0\_16:0\_16:0), TG(12:0\_14:0\_16:0), and TG(14:0\_16:0\_18:1) (Table~\ref{tab:LI_individual_gene_top}). The second most-connected gene, \texttt{SORBI\_3001G057100} (chromosome 1), was associated with 16 lipid phenotypes spanning multiple classes including PC, DG, and TG species ($p_{\min} = 7.0 \times 10^{-67}$).
+\paragraph{Lipid metabolism genes.}                                                                
+One of the most highly connected genes across all GWAS was \texttt{SORBI\_3007G223801}, encoding a glycerol-3-phosphate dehydrogenase (GPDH), which was associated with 48 distinct sum/ratio phenotypes ($p_{\min} = 1.2 \times 10^{-18}$). GPDH catalyzes the reduction of dihydroxyacetone phosphate to glycerol-3-phosphate, a key precursor for glycerolipid biosynthesis, positioning this gene at a critical metabolic branch point. The Kennedy pathway enzyme diacylglycerol O-acyltransferase 1 (\texttt{SORBI\_3010G170000}, DGAT1) showed associations with 5 individual lipid species ($p_{\min} = 3.2 \times 10^{-15}$) and 17 sum/ratio phenotypes ($p = 2.8 \times      
+10^{-10}$), consistent with its established role in TG biosynthesis. Additionally, \texttt{SORBI\_3001G283700}, encoding a chloroplastic glycerol-3-phosphate acyltransferase (GPAT), is associated with 47 sum/ratio phenotypes ($p = 2.1 \times 10^{-13}$), implicating plastidial lipid biosynthesis in the LI response. Two lecithin-cholesterol acyltransferase-like genes were also identified: \texttt{SORBI\_3001G103800} (LCAT-like 1) was associated with 4 individual lipids and 15 sum/ratio phenotypes ($p = 3.1 \times 10^{-12}$), while \texttt{SORBI\_3006G214500} (LCAT like 4) showed associations with 4 individual lipids ($p = 4.1 \times 10^{-10}$).
 
-For the summed-class and ratio GWAS, the most highly connected gene was \texttt{SORBI\_3008G088836} (chromosome 8), which was associated with 44 distinct sum/ratio phenotypes (best $p = 2.1 \times 10^{-22}$), including numerous AEG-referenced ratios (Sum\_AEG/Sum\_Cer, Sum\_AEG/Sum\_DG, Sum\_AEG/Sum\_TG) as well as ceramide- and DG-referenced ratios (Table~\ref{tab:LI_sumratio_gene_top}). The second and third most-connected genes, \texttt{SORBI\_3006G093600} and \texttt{SORBI\_3004G127066}, were associated with 37 and 36 sum/ratio phenotypes, respectively, with minimum p-values reaching $10^{-14}$ to $10^{-125}$.
+\paragraph{Nitrogen metabolism genes.}                                                             
+Among the nitrogen-associated candidate genes, \texttt{SORBI\_3001G541900}, which encodes a NRT1/PTR FAMILY 6.3–type transporter homolog, was significantly associated with 37 sum and ratio phenotypes ($p = 3.8 \times 10^{-11}$). NRT1/PTR transporters are known to mediate nitrate uptake and redistribution, thereby coupling nitrogen acquisition to downstream metabolic reprogramming (ref). In addition, three tandemly arranged tryptophan synthase genes (\texttt{SORBI\_3001G056400}, \texttt{SORBI\_3001G056500}, \texttt{SORBI\_3001G056601}) were each associated with 5–7 individual lipid species ($p_{\min} = 1.6 \times 10^{-10}$) and 16–17 sum/ratio phenotypes, indicative of coordinated regulation of amino acid and lipid metabolism under nutrient limitation. The amino acid transporter gene \texttt{SORBI\_3010G116400} exhibited robust associations with both individual lipid traits ($p = 2.5 \times 10^{-12}$, 3 traits) and ratio phenotypes ($p = 
+1.9 \times 10^{-12}$, 26 traits).
+                                                                                                 
+\paragraph{Phosphorus homeostasis genes.}                                                          
+The transcription factor PHOSPHATE STARVATION RESPONSE 1 (\texttt{SORBI\_3001G384300}, PHR1) exhibited significant associations with nine individual lipid species ($p_{\min} = 6.6 \times 10^{-11}$), consistent with its established function in coordinating phospholipid remodeling under phosphate deficiency. Purple acid phosphatase 18 (\texttt{SORBI\_3001G186800}, PAP18) was associated with five individual lipid species ($p = 5.7 \times 10^{-9}$); PAP enzymes catalyze the mobilization of organic phosphorus and are transcriptionally upregulated in response to phosphate deprivation.  Additionally, the MYB-CC transcription factor PHOSPHATE STARVATION RESPONSE 1-LIKE  (\texttt{SORBI\_3002G161700}, PHL) was associated with 29 sum/ratio phenotypes ($p = 1.4 \times    
+  10^{-9}$), reinforcing the central role of the PHR1/PHL regulatory network in lipid remodeling under nutrient limitation.   
+                                                                                                 
+\paragraph{Cold stress response genes.}                                                            
+Three genes with previously characterized functions in cold acclimation were significantly associated with variation in lipid-related phenotypes. The bZIP transcription factor \texttt{SORBI\_3003G363400}, a homolog of ABA-INSENSITIVE 5 (ABI5), was associated with 28 aggregate or ratio-based lipid phenotypes ($p = 6.4 \times 10^{-10}$); ABI5 is known to integrate abscisic acid (ABA) and low-temperature signaling to modulate membrane lipid composition. The AP2/ERF family member \texttt{SORBI\_3003G324400} (AP37) was associated with five individual lipid species (<#\(p = 1.3 \times 
+10^{-8}\)#>) and has been reported to confer enhanced drought and cold tolerance in cereal crops. The WRKY transcription factor \texttt{SORBI\_3002G128400}#> exhibited significant associations in both GWAS analyses ($p = 3.6 \times 
+10^{-9}$, 4–5 traits), notably, carries a phosphorus-responsive functional annotation, suggesting possible cross-talk between cold and phosphate signaling pathways.                                                                        
 
-To identify and contextualize candidate genes, we used four complementary prioritization views: (1) genes with the highest occurrence across \emph{individual-lipid} GWAS phenotypes (Table~\ref{tab:LI_individual_gene_top}); (2) genes with the highest occurrence across \emph{summed-class and ratio} GWAS phenotypes (Table~\ref{tab:LI_sumratio_gene_top}); (3) lipid-class--focused GWAS (e.g., phospholipids and triacylglycerols) to prioritize class-relevant regulators; and (4) targeted follow-up of specific traits of interest, including sums (e.g., Sum~SQDG), biologically motivated ratios (cold-, nitrogen-, and phosphorus-linked), and individual compounds of interest (e.g., $\alpha$-carotene and zeaxanthin). We report LowInput results in the main text; full GWAS results and annotations for all traits are available in Supplementary Tables~S7--S9 and in the Shiny application.
+
+                                                                                                   
+  \begin{table}[!ht]                                                                                 
+  \centering                                                                                         
+  \caption{Representative GWAS candidate genes by functional category under LowInput conditions. For 
+  each gene, we report the best p-value and number of associated traits from individual lipid species
+   (Ind) and summed-class/ratio (SR) analyses. Significance threshold: $p \le 10^{-7}$; 25~kb gene   
+  mapping window.}                                                                                   
+  \label{tab:gwas_categories}                                                                        
+  \scriptsize                                                                                        
+  \setlength{\tabcolsep}{3pt}                                                                        
+  \renewcommand{\arraystretch}{1.15}                                                                 
+  \begin{tabular}{llcccc}                                                                            
+  \toprule                                                                                           
+  \textbf{Category} & \textbf{Gene / Name} & \textbf{Ind $p$} & \textbf{Ind} & \textbf{SR $p$} &     
+  \textbf{SR} \\                                                                                     
+   &  &  & \textbf{traits} &  & \textbf{traits} \\                                                   
+  \midrule                                                                                           
+  \multicolumn{6}{l}{\textit{Lipid metabolism}} \\                                                   
+  & SORBI\_3007G223801 / GPDH & -- & -- & $1.2 \times 10^{-18}$ & 48 \\                              
+  & SORBI\_3010G170000 / DGAT1 & $3.2 \times 10^{-15}$ & 5 & $2.8 \times 10^{-10}$ & 17 \\           
+  & SORBI\_3001G283700 / GPAT & $8.1 \times 10^{-8}$ & 1 & $2.1 \times 10^{-13}$ & 47 \\             
+  & SORBI\_3001G103800 / LCAT-like 1 & $3.1 \times 10^{-12}$ & 4 & $3.1 \times 10^{-12}$ & 15 \\     
+  & SORBI\_3006G214500 / LCAT-like 4 & $4.1 \times 10^{-10}$ & 4 & $8.3 \times 10^{-8}$ & 1 \\       
+  \midrule                                                                                           
+  \multicolumn{6}{l}{\textit{Nitrogen metabolism}} \\                                                
+  & SORBI\_3001G541900 / NRT1/PTR 6.3 & -- & -- & $3.8 \times 10^{-11}$ & 37 \\                      
+  & SORBI\_3001G056400 / Trp synthase & $1.6 \times 10^{-10}$ & 7 & $1.7 \times 10^{-9}$ & 16 \\     
+  & SORBI\_3010G116400 / AA transporter & $2.5 \times 10^{-12}$ & 3 & $1.9 \times 10^{-12}$ & 26 \\  
+  \midrule                                                                                           
+  \multicolumn{6}{l}{\textit{Phosphorus homeostasis}} \\                                             
+  & SORBI\_3001G384300 / PHR1 & $6.6 \times 10^{-11}$ & 9 & -- & -- \\                               
+  & SORBI\_3001G186800 / PAP18 & $5.7 \times 10^{-9}$ & 5 & -- & -- \\                               
+  & SORBI\_3002G161700 / PHL & -- & -- & $1.4 \times 10^{-9}$ & 29 \\                                
+  \midrule                                                                                           
+  \multicolumn{6}{l}{\textit{Cold stress response}} \\                                               
+  & SORBI\_3003G363400 / ABI5 (bZIP) & -- & -- & $6.4 \times 10^{-10}$ & 28 \\                       
+  & SORBI\_3003G324400 / AP37 & $1.3 \times 10^{-8}$ & 5 & -- & -- \\                                
+  & SORBI\_3002G128400 / WRKY$^{*}$ & $3.6 \times 10^{-9}$ & 4 & $3.6 \times 10^{-9}$ & 5 \\         
+  \bottomrule                                                                                        
+  \end{tabular}                                                                                      
+  \begin{flushleft}                                                                                  
+  \scriptsize{$^{*}$Also annotated as phosphorus-responsive. --: not significant at $p \le 10^{-7}$.}
+  \end{flushleft}                                                                                    
+  \end{table}           
 
 
-\begin{table}[!ht]
-\centering
-\caption{Top LowInput genes from \textbf{individual-lipid} GWAS ranked by the maximum number of associated lipid phenotypes (25~kb mapping window; $p\le10^{-7}$). For each leading SNP, we show the single most recurrent gene to avoid redundant adjacent-gene listings at the same signal. Example lipids show a few representatives; full lists are in Supplementary Tables/Shiny.}
-\label{tab:LI_individual_gene_top}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\columnwidth}{l r l l r Y}
-\toprule
-Gene & \#traits & Leading SNP & min $p$ & \#SNPs & Example lipids \\
-\midrule
-\texttt{SORBI\_3010G064200} & 20 & \texttt{SNP\_5083051} & $3.4\times10^{-16}$  & 8  & 3-Epilupeol; NAE(18:0); TG(10:0\_\allowbreak16:0\_\allowbreak16:0); TG(12:0\_\allowbreak14:0\_\allowbreak16:0); \ldots (20 total) \\
-\texttt{SORBI\_3001G057100} & 16 & \texttt{SNP\_4303626} & $7\times10^{-67}$    & 20 & 13-Keto-9Z,11E-octadecadienoic acid; 13S-HOTrE; AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); \ldots (16 total) \\
-\texttt{SORBI\_3003G169600} & 13 & \texttt{SNP\_29153705} & $7\times10^{-67}$    & 4  & AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); PC(18:1\_\allowbreak18:2); PC(18:1\_\allowbreak20:4); \ldots (13 total) \\
-\texttt{SORBI\_3005G041700} & 13 & \texttt{SNP\_3875200}  & $7.7\times10^{-67}$  & 2  & AEG(o-15:2\_\allowbreak15:0); DG(18:0\_\allowbreak20:3); PC(18:1\_\allowbreak18:2); PC(18:1\_\allowbreak20:4); \ldots (13 total) \\
-\texttt{SORBI\_3005G111700} & 13 & \texttt{SNP\_36855919} & $3.5\times10^{-13}$  & 14 & 13-Keto-9Z,11E-octadecadienoic acid; 13S-HOTrE; TG(12:0\_\allowbreak16:0\_\allowbreak16:0); TG(18:1\_\allowbreak20:3\_\allowbreak22:0); \ldots (13 total) \\
-\texttt{SORBI\_3006G044532} & 12 & \texttt{SNP\_31061463} & $3.4\times10^{-16}$  & 3  & TG(12:0\_\allowbreak14:0\_\allowbreak16:0); TG(12:0\_\allowbreak16:0\_\allowbreak16:0); TG(12:0\_\allowbreak16:0\_\allowbreak18:3); \ldots (12 total) \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-\begin{table}[!t]
-\centering
-\caption{Top LowInput genes from \textbf{summed-class and ratio} GWAS ranked by the maximum number of associated sum/ratio phenotypes (25~kb mapping window; $p\le10^{-7}$). For each leading SNP, we show the single most recurrent gene to avoid redundant adjacent-gene listings at the same signal. Example traits show a few representatives; full lists are in Supplementary Tables/Shiny.}
-\label{tab:LI_sumratio_gene_top}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\columnwidth}{l r l l r Y}
-\toprule
-Gene & \#traits & Leading SNP & min $p$ & \#SNPs & Example sum/ratio traits \\
-\midrule
-\texttt{SORBI\_3008G088836} & 44 & \texttt{SNP\_21312400} & $2.1\times10^{-22}$  & 14 & Sum\_\allowbreakAEG/Sum\_\allowbreakCer; Sum\_\allowbreakAEG/Sum\_\allowbreakDG; Sum\_\allowbreakAEG/Sum\_\allowbreakGalCer; Sum\_\allowbreakAEG/Sum\_\allowbreakSM; \ldots (44 total) \\
-\texttt{SORBI\_3006G093600} & 37 & \texttt{SNP\_46347720} & $2.2\times10^{-14}$  & 11 & Sum\_\allowbreakAEG/Sum\_\allowbreakFA; Sum\_\allowbreakAEG/Sum\_\allowbreakPG; Sum\_\allowbreakAEG/Sum\_\allowbreakPS; Sum\_\allowbreakAEG/Sum\_\allowbreakTG; \ldots (37 total) \\
-\texttt{SORBI\_3004G127066} & 36 & \texttt{SNP\_15426192} & $7.7\times10^{-125}$ & 17 & Sum\_\allowbreakAEG/Sum\_\allowbreakCer; Sum\_\allowbreakAEG/Sum\_\allowbreakDGDG; Sum\_\allowbreakAEG/Sum\_\allowbreakLPC; Sum\_\allowbreakAEG/Sum\_\allowbreakLPE; \ldots (36 total) \\
-\texttt{SORBI\_3004G120000} & 35 & \texttt{SNP\_12933658} & $2.7\times10^{-115}$ & 16 & Sum\_\allowbreakAEG/Sum\_\allowbreakMG; Sum\_\allowbreakAEG/Sum\_\allowbreakMGDG; Sum\_\allowbreakAEG/Sum\_\allowbreakTG; Sum\_\allowbreakCer; \ldots (35 total) \\
-\texttt{SORBI\_3009G090800} & 33 & \texttt{SNP\_17785435} & $1.1\times10^{-301}$ & 15 & Sum\_\allowbreakAEG/Sum\_\allowbreakDGDG; Sum\_\allowbreakAEG/Sum\_\allowbreakTG; Sum\_\allowbreakCer/Sum\_\allowbreakDGDG; Sum\_\allowbreakCer/Sum\_\allowbreakPA; \ldots (33 total) \\
-\texttt{SORBI\_3009G086700} & 31 & \texttt{SNP\_14705908} & $4.2\times10^{-275}$ & 13 & Sum\_\allowbreakAEG/Sum\_\allowbreakDG; Sum\_\allowbreakAEG/Sum\_\allowbreakMG; Sum\_\allowbreakAEG/Sum\_\allowbreakMGDG; Sum\_\allowbreakAEG/Sum\_\allowbreakPA; \ldots (31 total) \\
-\bottomrule
-\end{tabularx}
-\end{table}
 
 % =========================
 % MAIN FIGURE 3 - GWAS
@@ -343,27 +364,52 @@ Gene & \#traits & Leading SNP & min $p$ & \#SNPs & Example sum/ratio traits \\
 
 \subsection*{LINEX-based lipid reaction network analysis}
 
-To place the observed lipid species within a biochemical framework, we queried the LINEX2 (Lipid Network Explorer) database to identify enzyme-catalyzed reactions linking those lipids. Our analysis specifically focused on reactions involving glycerolipid and phospholipid classes. The resulting enriched subnetwork (Fig.~\ref{fig:fig5_linex}) comprises four enzymatic activities that define the interconversion among these lipid pools:
+To place the observed lipid associations into a biochemical framework, we queried LINEX2 to retrieve RHEA-annotated reactions connecting the glycerolipid and glycerophospholipid species enriched in our dataset. The resulting subnetwork (Fig.~\ref{fig:fig5_linex}) highlights four acyl-transfer or lipase activities linking DG, MG, TG, and lysophospholipid pools. Two of these activities are strongly supported by our GWAS results, while the remaining reactions are currently supported primarily by the reaction-network topology.
 
-\begin{enumerate}                                                                                  
-\item \textbf{LCAT-like transacylation (hypothesized):} Lecithin-cholesterol acyltransferase (LCAT)
-catalyzes the reversible transfer of a fatty acyl chain from phosphatidylcholine to               
-diacylglycerol, yielding lysophosphatidylcholine and triacylglycerol (PC + DG $\leftrightarrow$ LPC
-+ TG). While canonical LCAT activity is best characterized in mammalian lipoprotein metabolism,   
-plant homologs with analogous phospholipid:diacylglycerol acyltransferase (PDAT) activity have been
-reported. We include this reaction as a hypothesized route consistent with the correlated shifts  
-in PC/LPC and DG/TG ratios observed under LowInput.                                                
-                                                                                                 
-\item \textbf{PNPLA1-mediated TG hydrolysis:} Patatin-like phospholipase domain-containing protein 1 (PNPLA1) catalyzes the hydrolysis of TG to DG with the release of a free fatty acid (TG $\rightarrow$ DG + FA). This lipase activity provides a direct route for TG mobilization and DG regeneration.                                           
+\begin{enumerate}
+\item \textbf{RHEA-annotated PC +DG $\rightarrow$LPC + TG transacylation (LCAT-like activity):}
+LINEX identifies an acyl-transfer reaction  PC and DG with LPC and TG (PC + DG $\leftrightarrow$ LPC + TG; RHEA annotation provided in Supplementary Table~S12). Although LINEX assigns this reaction to a canonical enzyme class in its reference database, the specific catalytic gene product operating in sorghum cannot be inferred from the network topology alone. Two LCAT-like loci show strong GWAS signals: SORBI\_3001G103800 (best $p = 3.1 \times 10^{-12}$) and SORBI\_3006G214500 (best $p = 4.1 \times 10^{-10}$). These associations are consistent with genetically mediated variation in phospholipid-to-TG remodeling, in which LPC is generated as a coproduct.
 
-\item \textbf{LRO1 transacylation:} The phospholipid:diacylglycerol acyltransferase LRO1 transfers a fatty acyl chain from PE to DG, producing triacylglycerol and  LPE  (PE + DG $\rightarrow$ TG + LPE). This reaction couples phospholipid  turnover directly to TG biosynthesis, bypassing the canonical Kennedy pathway. 
+\item  \textbf{Bidirectional TG$\leftrightarrow$DG flux (DGAT-mediated synthesis and lipase-mediated hydrolysis):}
+LINEX links TG and DG as an interconvertible lipid pair. Our GWAS results indicate genetic regulation of both directions of this interconversion. In particular, a putative acyl-CoA:diacylglycerol acyltransferase (DGAT1) locus, SORBI\_3010G170000 , exhibits strong association signals with multiple TG molecular species (Table), consistent with a role in DG-to-TG biosynthesis (DG$\rightarrow$TG).
 
-\item \textbf{PNPLA3-mediated transacylation:} PNPLA3 catalyzes the CoA-independent transfer of fatty acids between DG and MG to form TG (DG + MG $\rightarrow$ TG). This transacylase activity enables TG synthesis from partial glycerides without requiring acyl-CoA substrates.
-\end{enumerate}                                                                                    
-                                                                                                 
-A unifying feature of this subnetwork is the central position of diacylglycerol (DG), which participates as either substrate or product in all four reactions. This topology is consistent with DG functioning as a metabolic branch point that integrates signals from phospholipid remodeling (via LCAT and LRO1), storage lipid mobilization (via PNPLA1), and glyceride interconversion (via PNPLA3). The ratio-based multivariate analyses presented above identified DG-to-TG flux as a dominant axis of lipid remodeling under LowInput stress; the LINEX subnetwork provides candidate enzymatic routes through which this flux may be regulated.
+Second, lipase activity consistent with TG mobilization (TG$\rightarrow$DG + FA) is supported by a triacylglycerol lipase locus, SORBI\_3001G041900, which is associated with multiple TG species (minimum $p = 1.13 \times 10^{-9}$), and by SORBI\_3010G270700, annotated as participating in triacylglycerol catabolism and identified in the sum/ratio GWAS (minimum $p = 3.07 \times 10^{-8}$), including associations with LPC/TG-related phenotypes (e.g., Sum\_LPC\_over\_TG) (Table). Together, these loci provide evidence for coordinated regulation of TG synthesis and degradation that modulates DG availability within this reaction module.
 
-Notably, lysophospholipid accumulation (LPC, LPE) emerges as a necessary byproduct of the LCAT and LRO1 reactions. Lysophospholipids are bioactive signaling molecules implicated in membrane stress responses, suggesting that the observed lipid remodeling may serve dual roles in both energy storage (TG accumulation) and stress signaling (lysophospholipid production). The full reaction annotations, including RHEA database identifiers and literature sources, are provided in Supplementary Table~S12.
+\item \textbf{PE$\rightarrow$LPE transacylation (LRO1/PDAT-type activity):}
+The LINEX subnetwork incorporates a DG acyltransferase reaction consistent with PDAT/LRO1 enzymatic activity, in which an acyl chain is transferred from  PE to DG to generate TG and LPE (PE + DG \(\rightarrow\) TG + LPE; Supplementary Table\~S12). In our GWAS-based gene-level summary analyses at the reporting threshold, we did not detect a discrete candidate locus that provides specific support for this.
+
+\item \textbf{DG + MG $\leftrightarrow$ TG interconversion (PNPLA3-labeled step):}
+LINEX also includes a DG, MG, TG interconversion reaction (DG + MG $\leftrightarrow$ TG), which is annotated as PNPLA3 within the subnetwork. In the two GWAS gene-summary tables examined here, we did not identify any additional locus that corresponds to this reaction. 
+\end{enumerate}
+
+
+Across all four reactions, diacylglycerol (DG) occupies a central position, functioning as both substrate and product and thereby acting as a metabolic branch point between membrane-lipid remodeling and neutral-lipid storage. The strongest GWAS support maps to (i) RHEA-annotated phospholipid$\rightarrow$lysophospholipid transacylation producing TG, and (ii) PNPLA-like TG turnover, together providing candidate loci through which DG-to-TG flux and TG mobilization may be regulated under nutrient limitation. Reaction annotations and RHEA identifiers are provided in Supplementary Table~S12.
+
+Lysophospholipid accumulation (LPC, LPE) is a byproduct of the LCAT and LRO1 reactions. Reaction annotations and RHEA identifiers are provided in Supplementary Table~S12.  
+
+
+\subsection*{LINEX-based lipid reaction network analysis}
+
+To place the observed lipid associations into a biochemical framework, we queried LINEX2 to retrieve RHEA-annotated reactions connecting the glycerolipid and glycerophospholipid species enriched in our dataset. The resulting subnetwork (Fig.~\ref{fig:fig5_linex}) highlights four acyl-transfer or lipase activities linking DG, MG, TG, and lysophospholipid pools. Two of these activities are strongly supported by our GWAS results, while the remaining reactions are currently supported primarily by reaction-network topology.
+
+\begin{enumerate}
+\item \textbf{RHEA-annotated PC + DG $\leftrightarrow$ LPC + TG transacylation (LCAT-like activity):}
+LINEX identifies an acyl-transfer reaction linking phosphatidylcholine (PC) and diacylglycerol (DG) to lysophosphatidylcholine (LPC) and triacylglycerol (TG) (PC + DG $\leftrightarrow$ LPC + TG; RHEA annotation in Supplementary Table~S12). Although LINEX assigns this reaction to a canonical enzyme class in its reference database, the specific catalytic gene product operating in sorghum cannot be inferred from network topology alone. Two LCAT-like loci show strong GWAS signals: SORBI\_3001G103800 (best $p = 3.1 \times 10^{-12}$) and SORBI\_3006G214500 (best $p = 4.1 \times 10^{-10}$). These associations are consistent with genetically mediated variation in phospholipid-to-TG remodeling in which LPC is produced as a coproduct.
+
+\item \textbf{Bidirectional TG$\leftrightarrow$DG flux (DGAT-mediated synthesis and lipase-mediated hydrolysis):}
+LINEX links TG and DG as an interconvertible lipid pair. Our GWAS results support genetic regulation of both directions of this interconversion via distinct loci (Table~\ref{tab:linex_gwas_support}). A putative acyl-CoA:diacylglycerol acyltransferase (DGAT1) locus, SORBI\_3010G170000, exhibits strong association signals with multiple TG molecular species, consistent with a role in DG-to-TG biosynthesis (DG $\rightarrow$ TG). Conversely, TG mobilization (TG $\rightarrow$ DG + FA) is supported by a triacylglycerol lipase locus, SORBI\_3001G041900 (minimum $p = 1.13 \times 10^{-9}$), and by SORBI\_3010G270700, annotated as participating in triacylglycerol catabolism and identified in the sum/ratio GWAS (minimum $p = 3.07 \times 10^{-8}$), including associations with LPC/TG-related phenotypes (e.g., Sum\_LPC\_over\_TG). Together, these loci support coordinated genetic control of TG synthesis and degradation that can modulate DG availability within this module.
+
+\item \textbf{PE$\rightarrow$LPE transacylation (LRO1/PDAT-type activity):}
+The LINEX subnetwork incorporates a phospholipid:diacylglycerol acyltransferase reaction consistent with PDAT/LRO1-like activity, in which an acyl chain is transferred from phosphatidylethanolamine (PE) to DG to generate TG and lysophosphatidylethanolamine (LPE) (PE + DG $\rightarrow$ TG + LPE; Supplementary Table~S12). In our GWAS gene-level summaries at the reporting threshold, we did not detect a discrete candidate locus that provides specific support for this PE$\rightarrow$LPE branch.
+
+\item \textbf{DG + MG $\leftrightarrow$ TG interconversion (PNPLA3-labeled step):}
+LINEX also includes a DG--MG--TG interconversion reaction (DG + MG $\leftrightarrow$ TG), annotated as PNPLA3 within the subnetwork. In the two GWAS gene-summary tables examined here, we did not identify an additional locus that directly corresponds to this reaction.
+\end{enumerate}
+
+Across all four reactions, diacylglycerol (DG) occupies a central position, functioning as both substrate and product and thereby acting as a metabolic branch point between membrane-lipid remodeling and neutral-lipid storage. The strongest GWAS support maps to (i) the PC + DG $\leftrightarrow$ LPC + TG transacylation module (LCAT-like loci) and (ii) the TG$\leftrightarrow$DG module, including DGAT-like DG$\rightarrow$TG synthesis and lipase/catabolism-associated TG$\rightarrow$DG turnover (Table~\ref{tab:linex_gwas_support}). Reaction annotations and RHEA identifiers are provided in Supplementary Table~S12.
+
+Within this subnetwork, lysophospholipids (LPC, LPE) arise as coproducts of the PC- and PE-linked acyl-transfer reactions (items 1 and 3), linking membrane-lipid remodeling to neutral-lipid dynamics.
+
 
 % =========================
 % MAIN FIGURE 5 - LINEX
@@ -428,36 +474,19 @@ Despite the absence of predictive signal, we evaluated whether any lipid modules
 
 \section{Discussion}
 
-From our multi-omics analysis, we can infer that the maize phosphorus starvation response is shaped by leaf developmental stage, with older leaves showing enhanced stress responses indicative of the onset of developmental senescence during the vegetative phase.
-While phosphorus deficiency triggered canonical molecular responses across genotypes, the magnitude of these responses varied depending on the leaf developmental position.
-The \invfour chromosomal inversion showed minimal modulation of phosphorus starvation responses, indicating that its contribution to highland adaptation operates through effects on developmental timing rather than enhanced nutrient stress tolerance.
+From our lipidomics analysis, we can infer that the Sorghum Association Panel undergoes extensive lipid remodeiling with TG, PS, LPC/LPE, and SQDG showing the most changes for LI. While we identified several key genes that might explain the changes in these lipid, and/or gene relating to stress responses, further action might be needed to test test these genes. We also showed that lipid features are a good predictors for a phenotype like plant height but it did not work well in the flowering time probably because we sampled the lipids during an early stage when the plants were not ready for flowering. Finally, we have created an interactive Shiny app where we can visualize all the data for the lipids
 
-
-\subsubsection*{Ratio- and ontology-based evidence supports coordinated redistribution across lipid pools under Low-input}
+\subsubsection*{Ratio-, ontology-, and network- based evidence supports coordinated redistribution across lipid pools under Low-input}
 
 Class ratios provide a direct readout of relative lipid reallocation within each sample, enabling us to distinguish compositional tradeoffs from uniform scaling of total signal. Across LowInput, ratio signatures consistently indicated (i) depletion of SQDG relative to multiple pools, (ii) enrichment of PS within the phospholipid network, (iii) increased TG relative to membrane pools and glycerolipid intermediates such as DG, and (iv) lysophospholipid remodeling characterized by increased LPE relative to multiple membrane pools and a reduced LPC/LPE balance, consistent with stress-responsive phospholipid turnover rather than a uniform increase in total lyso-lipid abundance. A fifth, MG-centered signature was also reproducible, with LI favoring higher MG relative to MGDG and SQDG and Control favoring higher DG/MG and DGDG/MG, indicating condition-dependent rebalancing among monoacyl, diacyl, and (glyco)diacyl pools.
 
 LION enrichment analysis provided an orthogonal corroboration of these ratio-defined patterns by identifying coherent ontology shifts aligned with neutral-lipid accumulation and storage biology (e.g., enrichment for triacylglycerols and lipid storage/lipid droplet terms) and concurrent remodeling within membrane-associated lipid categories. Together, the ratio and LION results support the interpretation that LowInput lipid remodeling is dominated by coordinated redistribution across interconnected lipid pools, rather than isolated changes in a single class.
 
-\subsection*{Candidate Gene Identification using Genes with Highest Occurrences in Lipid GWAS}
 
-\paragraph{I. Candidate Gene Identification using Genes with Highest Occurrences in Individual GWAS}
-Upon tabulation of all genes across all genotypes, the gene \texttt{SORBI\_3010G064200} exhibited the highest frequency of occurrence. This gene has a close homolog in rice, designated as GSL5, and in \emph{Arabidopsis thaliana}, designated as CalS5. Callose, a $\beta$-1,3-glucan, is a dynamic cell wall polysaccharide that plays a critical role in plant development, particularly during microsporogenesis. In rice, GLUCAN SYNTHASE-LIKE 5 (GSL5) has been identified as an essential callose synthase responsible for the deposition of callose in the primary cell walls of meiocytes and in the newly formed cell plates of tetrads \citep{Shi2015}. Loss-of-function mutations in GSL5 result in defective callose walls surrounding microspores, leading to male sterility, aberrant exine formation, and reduced pollen viability \citep{Shi2015}.
 
-This functional role is highly conserved in its \emph{Arabidopsis} ortholog, AtGSL2 (also referred to as CalS5), which similarly regulates callose deposition in the cell walls of meiocytes, tetrads, and microspores, and is indispensable for proper pollen wall patterning and reproductive fertility \citep{Dong2005}. Moreover, ectopic or experimental expression of CalS5 has been shown to induce artificial callose accumulation in cell walls, thereby modifying cell wall permeability and mechanical properties \citep{Xie2012}.
 
-An important environmental dimension has been documented in rice, where callose synthase expression in anthers is strongly chilling-responsive, indicating a molecular link between cold stress, callose metabolism, and the onset of male sterility \citep{Yamaguchi2006}. Collectively, these observations emphasize the conserved and central role of GSL5/AtGSL2 in regulating callose dynamics required for successful plant reproduction, while also highlighting the sensitivity of this pathway to environmental perturbations such as low temperature.
 
-\paragraph{II. Candidate Gene Identification using Genes with Highest Occurrences in Sum and Ratio GWAS}
-Regarding the sums and ratios of lipids, one of the most highly represented genes was \texttt{SORBI\_3004G120000} (Supp Table). Expansins constitute a superfamily of cell wall–loosening proteins, classified into α-expansins (EXPAs), β-expansins (EXPBs), and the expansin-like A (EXLA) and B (EXLB) subfamilies (Lee et al., 2001, p. 1; Choi et al., 2006, p. 1, 3). These proteins mediate pH-dependent extension of the plant cell wall and overall cell growth by disrupting non-covalent bonds between cell wall polysaccharides, thereby enabling turgor-driven polymer creep without detectable hydrolysis of cell wall polymers (Lee et al., 2001, p. 1, 2, 4). Through this mode of action, expansins directly modulate cell wall architecture, influencing processes such as fruit softening and the crystalline cellulose fraction (Lee et al., 2001, p. 5; Choi et al., 2006, p. 6).
-
-In addition, expansins play a pivotal role in plant adaptive responses to environmental stresses, with their expression associated with acclimation mechanisms under submergence, ethylene exposure, O\textsubscript{2} deficiency, and drought-induced cell wall folding and desiccation tolerance (Lee et al., 2001, p. 3; Choi et al., 2006, p. 5–6). Expansin gene expression is also finely regulated by nitrogen availability, largely through cytokinin-dependent signaling pathways. Under low nitrate supply, reduced cytokinin levels promote primary root elongation, which correlates with elevated expression of expansin (EXP) and xyloglucan endotransglucosylase/hydrolase (XTH) genes (Teixeira et al., 2024, p. 1, 8). In contrast, high nitrate availability typically elevates cytokinin concentrations and suppresses primary root elongation (Teixeira et al., 2024, p. 1).
-
-Selenium (Se) further modulates this regulatory network. Under low nitrate conditions, Se application increases root cytokinin concentrations and inhibits root growth by downregulating EXP and XTH gene expression, an effect associated with enhanced shoot sugar accumulation. Under high nitrate, Se exerts a negative effect on root cytokinin biosynthesis, which in turn upregulates EXP and XTH transcripts and results in increased root size (Teixeira et al., 2024, p. 8, 9). Collectively, these findings indicate that Se modifies the nitrate–cytokinin regulatory balance to adjust the partitioning of growth between shoot and root tissues.
-
-\subsection{Candidate Gene Identification using lipid classes}
-
-\paragraph{I. Phospholipid GWAS Identifies a Phosphate Starvation Response Gene}
+\subsection{Lipid GWAS Identifies a Phosphate Starvation Response Gene}
 Candidate genes were prioritized by analyzing GWAS results within the phospholipid lipid class. The Myb-like DNA-binding domain gene \texttt{SORBI\_3001G384300} was consistently identified (Fig \ref{fig:Fig3}A). This gene exhibits homology with \textit{PHR1} (PHOSPHATE STARVATION RESPONSE 1) in rice, a principal regulator of phosphate homeostasis. It demonstrated associations with several phospholipid traits, namely PC(16:0/20:3), PC(16:0/22:5), PC(16:0/22:6), PC(18:1/20:1), PE(16:0/18:1), PC(18:1/24:1), PC(18:2/20:0), and PC(18:3/0:0), indicating a prospective correlation between phospholipid remodeling and phosphate starvation signaling (Supp Table).
 
 \textit{PHR1} serves as a central transcription factor within plants, balancing the responses to phosphate (Pi) deprivation. It is categorized under the MYB-CC family of transcription factors and demonstrates a high level of conservation across both vascular plants and unicellular algae (Rubio et al., 2001). \textit{PHR1} exhibits specific binding affinity to a cis-regulatory element termed the P1BS (GNATATNC) motif, which resides in the promoters of numerous genes induced by Pi starvation, thereby facilitating their expression in conditions of Pi deficiency. These genes encompass those that encode phosphate transporters, signaling components, and enzymes that partake in metabolic adaptations to Pi scarcity (Bustos et al., 2010). Loss-of-function phr1 mutants display compromised expression of genes responsive to Pi starvation and a diminished accumulation of anthocyanins, starch, and sugars under conditions of Pi deficiency, along with modified Pi distribution between roots and shoots (Rubio et al., 2001; Bustos et al., 2010). In contrast, overexpression of PHR1 results in augmented Pi uptake and improved responses to Pi starvation (Nilsson et al., 2007). In addition to maintaining phosphorus homeostasis, \textit{PHR1} also plays a crucial role in regulating sulfate homeostasis, particularly under conditions of phosphate deficiency. It enhances the expression of the sulfate transporter gene SULTR1;3 and influences the translocation of sulfate from the aerial parts to the roots during phosphorus starvation. The observation that mutants in either \texttt{phr1} or \texttt{sultr1;3} demonstrate diminished sulfate transfer from shoots to roots suggests that PHR1 is integral to the interaction and coordinated regulation of P and sulfur homeostasis (Rouached et al., 2011).
