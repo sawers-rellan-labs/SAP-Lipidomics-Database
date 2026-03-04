@@ -1,0 +1,5 @@
+"Reaction_ID","Gene_Symbol","Reaction_Type","Substrates","Products","RHEA_IDs","Notes"
+"R1","LCAT","L_FAdelete","PC, DG","LPC, TG","RHEA:32843, RHEA:44236","Hypothesized based on reaction specificity (not from LINEX)"
+"R2","PNPLA1","L_FAdelete","TG","DG","RHEA:61528, RHEA:44676, RHEA:40615, RHEA:40619","From LINEX database"
+"R3","LRO1","L_FAdelete","PE, DG","TG, LPE","RHEA:44252, RHEA:32847, RHEA:44232","From LINEX database"
+"R4","PNPLA3","L_FAdelete","DG, MG","TG","RHEA:44436, RHEA:44440","From LINEX database"
