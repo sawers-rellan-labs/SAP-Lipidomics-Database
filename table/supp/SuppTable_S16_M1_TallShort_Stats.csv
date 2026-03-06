@@ -1,0 +1,12 @@
+"Metric","Value"
+"N_total",388
+"N_short",97
+"N_tall",97
+"M1_vs_PH_spearman_rho",0.559133545457398
+"M1_vs_PH_spearman_p",2.73000718591585e-33
+"M1_vs_PH_PC_adjusted_spearman_rho",0.561277659409022
+"M1_vs_PH_PC_adjusted_spearman_p",2.2250738585072e-308
+"Tall_vs_Short_M1_wilcox_p",3.62108893561128e-18
+"Tall_minus_Short_M1_median_diff",1.26505509950064
+"Tall_vs_Short_M1_Cliffs_delta",0.722393453076841
+"Tall_vs_Short_M1_AUC",0.861196726538421
