@@ -327,7 +327,7 @@ top-ranked module in both.}
 % =========================
 
 \paragraph{M1 module score stratifies tall and short genotypes.}
-To assess whether the TG-enriched module M1 could be distilled into a practical lipid marker, we computed a per-sample M1 score as the mean of the (z)-scored abundances of the 22 lipids in M1 (Supplementary Table 12). The M1 score exhibited a strong positive association with plant height (Spearman’s $\rho = 0.559$, $p = 2.7\times10^{-33}$; Supplementary \ref{.~S11A), indicating that individuals with higher M1 abundance tended to be taller. In line with this association, stratification of genotypes into short and tall groups (bottom and top quartiles of plant height, respectively) revealed a marked shift in the distribution of M1 scores (Wilcoxon $p = 3.6\times10^{-18}$; Fig.~S11B). This separation might be of practical relevance. The M1 score yielded an AUC of 0.861 for discriminating tall from short genotypes, reflecting a high probability that a randomly selected tall genotype exhibits a higher M1 score than a randomly selected short genotype (Fig.~S11B,D). Within M1, the lipids most strongly correlated with plant height were primarily short- and medium-chain TG species (Fig.~S11C), consistent with the module’s SHAP dominance in the XGBoost models. Thus, these findings support M1 as a compact, biologically interpretable lipid marker that captures plant height–associated variation in the SAP and could be used for other sorghum populations.
+To assess whether the TG-enriched module M1 could be distilled into a practical lipid marker, we computed a per-sample M1 score as the mean of the (z)-scored abundances of the 22 lipids in M1 (Supplementary Table 12). The M1 score exhibited a strong positive association with plant height (Spearman’s $\rho = 0.559$, $p = 2.7\times10^{-33}$; Supplementary \ref{fig/supp/SuppFig_S10_FT_Module_environments.png}.~S11A), indicating that individuals with higher M1 abundance tended to be taller. In line with this association, stratification of genotypes into short and tall groups (bottom and top quartiles of plant height, respectively) revealed a marked shift in the distribution of M1 scores (Wilcoxon $p = 3.6\times10^{-18}$; Fig.~S11B). This separation might be of practical relevance. The M1 score yielded an AUC of 0.861 for discriminating tall from short genotypes, reflecting a high probability that a randomly selected tall genotype exhibits a higher M1 score than a randomly selected short genotype (Fig.~S11B,D). Within M1, the lipids most strongly correlated with plant height were primarily short- and medium-chain TG species (Fig.~S11C), consistent with the module’s SHAP dominance in the XGBoost models. Thus, these findings support M1 as a compact, biologically interpretable lipid marker that captures plant height–associated variation in the SAP and could be used for other sorghum populations.
 
 \paragraph{Flowering time shows no lipid-based predictive signal but reveals consistent module patterns.}                                                                                         
 In contrast to plant height, lipid modules exhibited negligible predictive power for flowering time(days to anthesis). Across all five environments evaluated, including our DTA measurements and the flowering time phenotype in four different environments reported in Wei et al.\ (MI20, NE20, IA21\_1, IA21\_2), the cross-validated $R^2$ values were negative or close to zero (range: $-0.39$ to $-0.05$; Fig.~S10B), indicating that lipid profiles do not explain appreciable variation in flowering time.
@@ -738,7 +738,7 @@ Any opinions, findings, conclusions, or recommendations expressed in this public
   % =========================                                                                        
 \begin{figure*}[!ht]
 \centering  
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S6_Partial_Correlations.png}
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S6_CLR_Correlations.png}
 \caption{\textbf{Partial correlation analysis of lipid class abundances.}    
 
 (A) Control and (B) LowInput Pearson correlation matrices computed on class-level CLR abundances.
@@ -749,67 +749,73 @@ Lower triangle shows correlation coefficients; upper triangle shows significance
 \end{figure*}                                                                          
   
   
-  % =========================                                                                        
-  % SUPP FIGURE S7                                                                                   
-  % =========================                                                                        
-  \begin{figure*}[!ht]                                                                               
-    \centering                                                                                       
-    \includegraphics[width=\textwidth]{fig/supp/SuppFig_S7_Lipid_Ratios.png}                         
-    \caption{\textbf{Discriminatory lipid class ratios.}                                             
-    (A) Violin plots of OPLS-DA-derived class ratios (VIP $>$ 1) comparing Control and LowInput      
-  conditions. Significance indicated by * $p<0.05$, ** $p<0.01$, *** $p<0.001$ (Wilcoxon test).      
-    (B) Lipid class ratios motivated by partial correlation analysis showing significant sign changes
-   between conditions.}                                                                              
-    \label{fig:suppfig_s7_ratios}                                                                    
-  \end{figure*}                                                                                      
-                                                                                                     
-  % =========================                                                                        
-  % SUPP FIGURE S8                                                                                   
-  % =========================                                                                        
-  \begin{figure*}[!ht]                                                                               
-    \centering                                                                                       
-    \includegraphics[width=\textwidth]{fig/supp/SuppFig_S8_XGB_SHAP_FloweringTime.png}               
-    \caption{\textbf{XGBoost module-level SHAP analysis for flowering time.}                         
-    (A) Observed versus predicted flowering time (days to anthesis) from 5-fold cross-validation,    
-  showing negligible predictive performance ($R^2 < 0$).                                             
-    (B) Module-level mean absolute SHAP values ranked by importance.                                 
-    (C) SHAP beeswarm plot showing the distribution and direction of module contributions.           
-    (D) Bootstrap stability analysis of module SHAP rankings across 50 resamples.}                   
-    \label{fig:suppfig_s8_ft_shap}                                                                   
-  \end{figure*}                                                                                      
-                                                                                                     
-  % =========================                                                                        
-  % SUPP FIGURE S9                                                                                   
-  % =========================                                                                        
-  \begin{figure*}[!ht]                                                                               
-    \centering                                                                                       
-    \includegraphics[width=\textwidth]{fig/supp/SuppFig_S9_FT_Module_Environments.png}               
-    \caption{\textbf{Flowering time module analysis across five environments.}                       
-    (A) Heatmap of module SHAP importance across all five environments (Ours\_DTA, MI20, NE20,       
-  IA21\_1, IA21\_2).                                                                                 
-    (B) Cross-validated $R^2$ for each environment, showing consistently negative values indicating  
-  lack of predictive signal.                                                                         
-    (C) Module consistency analysis: number of environments in which each module appears in the top  
-  10.                                                                                                
-    (D) Modules consistently ranked in the top 10 across all five environments (M1, M2, M5, M6).}    
-    \label{fig:suppfig_s9_ft_envs}                                                                   
-  \end{figure*}  
-
+  % =========================                                                                      
+  % SUPP FIGURE S7                                                                                 
+  % =========================                                                                      
+  
+  \begin{figure*}[!ht]  
+    \centering
+    \includegraphics[width=\textwidth]{fig/supp/SuppFig_S7_Lipid_Ratios.png}
+    \caption{\textbf{Discriminatory lipid class ratios.}
+    (A) Violin plots of OPLS-DA-derived class ratios (VIP $>$ 1) comparing Control and LowInput
+  conditions. Significance indicated by * $p<0.05$, ** $p<0.01$, *** $p<0.001$ (Wilcoxon test).  
+  (B) Lipid class ratios motivated by partial correlation analysis showing significant sign changes
+   between conditions.}  
+    \label{fig:suppfig_s7_ratios}
+  \end{figure*}
 
 
 % =========================
-% SUPP FIGURE S11                                                                            
+% SUPP FIGURE S8                                                                            
 % =========================
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S11_M1_Tall_vs_Short.png}
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S9_M1_Tall_vs_Short.png}
 \caption{\textbf{M1 module score associates with plant height and separates tall versus short genotypes.}
 (A) Relationship between M1 score (mean $z$-scored abundance of M1 lipids) and plant height (Spearman $\rho = 0.559$, $p = 2.7\times10^{-33}$).
 (B) Tall versus short comparison (top and bottom quartiles of plant height) showing higher M1 scores in the tall group (Wilcoxon $p = 3.6\times10^{-18}$; AUC = 0.861).
 (C) Top M1 lipids ranked by Spearman correlation with plant height.
 (D) Density distributions of M1 score for short and tall groups.}
-\label{fig:suppfig_s11_m1_tall_short}
+\label{fig:suppfig_s8_m1_tall_short}
 \end{figure*}
+
+% =========================  
+% SUPP FIGURE S9
+% =========================                                                                        
+\begin{figure*}[!ht]                                                                               
+\centering                                                                                       
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S8_XGB_SHAP_FloweringTime.png}               
+\caption{\textbf{XGBoost module-level SHAP analysis for flowering time.}                         
+(A) Observed versus predicted flowering time (days to anthesis) from 5-fold cross-validation,    
+showing negligible predictive performance ($R^2 < 0$).                                             
+(B) Module-level mean absolute SHAP values ranked by importance.                                 
+(C) SHAP beeswarm plot showing the distribution and direction of module contributions.           
+(D) Bootstrap stability analysis of module SHAP rankings across 50 resamples.}                   
+\label{fig:suppfig_s9_ft_shap}                                                                   
+\end{figure*}
+
+
+% =========================
+% SUPP FIGURE S10
+% =========================                                                                        
+
+\begin{figure*}[!ht]                                                                               
+\centering                                                                                       
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S9_FT_Module_Environments.png}               
+\caption{\textbf{Flowering time module analysis across five environments.}                       
+(A) Heatmap of module SHAP importance across all five environments (Ours\_DTA, MI20, NE20,       
+IA21\_1, IA21\_2).                                                                                 
+(B) Cross-validated $R^2$ for each environment, showing consistently negative values indicating  
+lack of predictive signal.                                                                         
+(C) Module consistency analysis: number of environments in which each module appears in the top  
+10.                                                                                                
+(D) Modules consistently ranked in the top 10 across all five environments (M1, M2, M5, M6).}    
+\label{fig:suppfig_s10_ft_envs}                                                                   
+\end{figure*}  
+
+
+
+
 
 \clearpage
 
