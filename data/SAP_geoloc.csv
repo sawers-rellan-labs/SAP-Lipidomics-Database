@@ -1,0 +1,403 @@
+﻿Taxa,K.Cluster,Common,SC_Number,Origin,Original_Race,Working_Group,GBS,Testa,Subgroup
+PI152651,6,Feterita Geshaish,NA,NA,NA,NA,Y,1,Bred
+PI17548,6,RED AMBER,NA,NA,NA,NA,Y,0,Bred
+PI24969,5,DWARF YELLOW MILO,NA,NA,NA,NA,Y,0,Bred
+PI276837,3,NA,NA,NA,NA,NA,Y,0,NA
+PI329435,3,Mashila,NA,NA,NA,NA,Y,0,Bred
+PI329440,2,Mashila,NA,NA,NA,NA,Y,0,NA
+PI34911,3,F.C.I. 4201,NA,NA,NA,NA,Y,1,NA
+PI35038,2,SUMAC,NA,NA,NA,NA,Y,1,NA
+PI48770,2,WHITE KAFIR,NA,NA,NA,NA,Y,0,Bred
+PI533750,5,K.3 Perimanjial Irungu Cholam,SC214,India,Bicolor,Dochna,Y,0,Converted
+PI533752,3,54.K.94(Witchweed res.),SC103,S. Africa,Caudatum,Caudatum,Y,1,Converted
+PI533754,6,SAP-219,SC309,Sudan,Bicolor,Dochna,Y,1,Converted
+PI533755,6,Feterita Gondal,SC55,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI533757,3,Monshal,SC64,Sudan,Kafir-Caudatum,Caudatum-kafir,Y,1,Converted
+PI533758,3,IS 18684,SC423,Sudan,Caudatum,Zerazera,Y,1,Converted
+PI533759,3,Mugbash 56/56,SC118,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI533760,3,Zera Zera White,SC120,Sudan,Caudatum,Zerazera,Y,NA,Converted
+PI533761,3,SAP-230,SC333,Ethiopia,Caudatum,Caudatum,Y,1,Converted
+PI533762,3,Tambroro 7,SC425,Sudan,Durra-Caudatum,Caudatum-durra,Y,1,Converted
+PI533766,4,No. 4 Hadoui,SC265,W. Volta,Guinea,Conspicuum,Y,0,Converted
+PI533769,3,290 Feterita Shendi 2,SC420,Sudan,Kafir-Caudatum,Caudatum-kafir,Y,1,Converted
+PI533776,4,KA 3,SC370,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI533785,4,SO 16,SC299,Nigeria,Guinea,Conspicuum,Y,0,Converted
+PI533788,6,SAP-263,SC53,Sudan,Durra-Caudatum,Durra-nigricans,Y,1,Converted
+PI533789,3,Kodilib,SC57,Sudan,Guinea-Caudatum,Caudatum-guineense,Y,1,Converted
+PI533792,4,No. 1 Gambela,SC108,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI533794,3,No. 5 Gambela,SC110,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI533799,3,SAP-404,SC173,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI533800,3,IS 12666C,SC175,Ethiopia,Caudatum,Zerazera,Y,1,Converted
+PI533807,3,SAP-206,SC223,Nigeria,Kafir-Caudatum,Caudatum-kafir,Y,1,Converted
+PI533810,6,Karad 2-7-11,SC199,India,Durra,Nandyal,Y,0,Converted
+PI533814,6,N.9 Cherukupatcha Jonna,SC206,India,Durra,Durra,Y,0,Converted
+PI533821,1,AS4660 Kikuma,SC322,Tanzania,Caudatum,Nigricans,Y,1,Converted
+PI533822,3,AS4616 Balangira-Mwanza,SC418,Tanzania,Kafir-Caudatum,Caudatum-kafir,Y,0,Converted
+PI533824,1,Bonkum,SC331,Nigeria,Durra-Caudatum,Nigricans-durra,Y,1,Converted
+PI533830,6,Culum Brick,SC52,Sudan,Caudatum,Nigricans-feterita,Y,NA,Converted
+PI533831,3,Deburr,SC414,Sudan,Kafir-Caudatum,Caudatum-kafir,Y,0,Converted
+PI533833,3,Sorghum Soroti,SC319,Uganda,Caudatum-Bicolor,Dochna-nigricans,Y,1,Converted
+PI533838,6,BA45 Faria Bonkum,SC329,Nigeria,Caudatum,Nigricans-feterita,Y,1,Converted
+PI533839,1,K037 Camjin,SC303,Nigeria,Guinea,Margaritiferum,Y,0,Converted
+PI533841,4,ZA41 Danye,SC261,Nigeria,Guinea,Conspicuum,Y,0,Converted
+PI533842,6,Nandyal,SC240,India,Durra,Nandyal,Y,0,Converted
+PI533843,1,SV 34,SC241,India,Guinea,Roxburghii,Y,0,Converted
+PI533845,1,EC 18246 (preconverted),NA,NA,NA,NA,N,NA,NA
+PI533852,6,Cholia Talijhari,SC450,India,Durra,Durra,Y,0,Converted
+PI533855,1,Chanan Singoo,SC317,India,Guinea-Bicolor,Dochna-roxburghii,Y,0,Converted
+PI533856,6,Jola Nandyal,SC489,India,Durra,Nandyal,Y,0,Converted
+PI533863,6,740 Oua Berr,SC320,Chad,Kafir,Caffrorum,Y,0,Converted
+PI533866,4,255 Tirter,NA,NA,NA,NA,Y,NA,NA
+PI533869,1,Msumbji SB 117,SC283,Tanzania,Guinea,Conspicuum,Y,0,Converted
+PI533871,4,M 1,SC566,Nigeria,Caudatum,Caudatum,Y,0,Converted
+PI533876,3,KA 12 Janjari,SC563,Nigeria,Caudatum,Caudatum,Y,1,Converted
+PI533877,4,KA 15 Yazgar Giwa,SC396,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI533878,4,KA 21 Gajerar Kaura,SC372,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI533882,4,KO 61 Baragwan Doki,SC399,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI533901,3,A-96,SC424,Japan,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI533902,6,Orange No. l Baijo,SC6,Ethiopia,Durra-Bicolor,Subglabrescens,Y,1,Converted
+PI533903,1,No. 35 Mab,SC17,Ethiopia,Bicolor,Dochna,Y,1,Converted
+PI533910,3,Klor,SC56,Sudan,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI533911,3,Kokla,SC58,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI533912,6,Mendo,NA,NA,NA,NA,Y,NA,NA
+PI533913,1,Nyan Dok,SC66,Sudan,Guinea-Caudatum,Nigricans-guineense,Y,1,Converted
+PI533915,6,No. 755 Muzeba,SC79,Kenya,NA,NA,Y,0,Converted
+PI533919,6,R1_4,SC124,Ethiopia,Durra-Bicolor,Durra-dochna,Y,1,Converted
+PI533921,6,R1_38,SC144,Ethiopia,Durra-Caudatum,Durra-feterita/kaura,N,0,Converted
+PI533924,1,R3_121,SC166,Ethiopia,Durra-Bicolor,Durra-bicolor,Y,1,Converted
+PI533927,1,J.A.T.S. #67,SC224,Ethiopia,Bicolor,Dochna,Y,1,Converted
+PI533936,2,1903 AS 4633,SC603,Tanzania,Guinea,Conspicuum,Y,1,Converted
+PI533937,2,AS 4136 Masaka Luwemba,SC630,Zambia,Kafir,Caffrorum,Y,0,Converted
+PI533938,1,AS 5826 Holcus,SC558,Zaire,Caudatum,Nigricans,Y,1,Converted
+PI533939,6,AS 4055 N Kambwa,SC557,Mozambique,Caudatum,Nigricans,Y,1,Converted
+PI533940,2,AS 4601 Pawaga,SC614,Tanzania,Bicolor,Bicolor,Y,0,Converted
+PI533943,6,AS 2613 NT,SC467,India,Durra-Bicolor,Durra-dochna,Y,0,Converted
+PI533948,2,Nebraska 6350,SC663,USA,Guinea-Kafir,Caffrorum-roxburghii,Y,0,Converted
+PI533949,3,Maja Abiad Q2/2/68,SC760,Sudan,Kafir-Caudatum,Caudatum-kafir,Y,1,Converted
+PI533954,2,P 3742,SC101,S. Africa,Caudatum,Sumac,Y,0,Converted
+PI533955,2,P 3749 Q2/5/62,SC648,S. Africa,Kafir-Caudatum,Caffrorum-birdproof,Y,1,Converted
+PI533956,6,MN 586 (preconverted),SC623,Congo,Durra-Bicolor,Dochna-durra,Y,1,Converted
+PI533957,6,MN 707 (preconverted),SC325,USA,Caudatum,Nigricans,Y,1,Converted
+PI533961,3,Wit Lichtenburg DL/59/1530,SC121,S. Africa,Caudatum,Caudatum,Y,1,Converted
+PI533962,3,Malwal Aweil,SC60,Sudan,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI533964,3,Safara Kordafan,SC803,Sudan,Caudatum,Zerazera,Y,0,Converted
+PI533965,3,SAP-148,SC115,Uganda,Caudatum-Bicolor,Nigricans-bicolor,Y,1,Converted
+PI533967,3,SB-283,SC805,Uganda,Caudatum,Zerazera,Y,0,Converted
+PI533970,3,2033Z-3,SC708,Uganda,Caudatum,Caudatum,Y,1,Converted
+PI533972,3,Dobbs,SC964,Uganda,Caudatum,Dobbs,Y,1,Converted
+PI533976,3,Framiola DL/59/1539,SC655,S. Africa,Kafir-Caudatum,Caffrorum-birdproof,Y,1,Converted
+PI533979,2,Bulfontein White Kafir Corn DL/60/133,SC628,S. Africa,Kafir,Caffrorum,Y,0,Converted
+PI533980,3,SAP-275,SC572,China,Kafir-Caudatum,Caudatum-kafir,Y,0,Converted
+PI533985,3,Barking 119,SC701,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI533986,3,Huria White 621,SC334,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI533987,3,Kireniga 317,SC562,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI533989,3,Nyithin,SC798,Sudan,Caudatum,Zerazera,Y,0,Converted
+PI533991,3,Sinidyil 177,SC748,Sudan,Guinea-Caudatum,Caudatum-guineense,Y,0,Converted
+PI533996,6,Hamaisi 38,SC502,Sudan,Durra-Caudatum,Durra-nigricans,Y,1,Converted
+PI533997,1,MN 1592 (preconverted),SC465,Arabia,Guinea-Durra,Durra-roxburghii,Y,0,Converted
+PI534009,6,Yerra Jonna Goda,SC441,India,Durra,Durra,Y,0,Converted
+PI534021,6,Jola Nandyal,SC587,India,Durra,Nandyal,Y,0,Converted
+PI534028,6,Jonar Tamargundi,SC473,India,Durra,Nandyal,Y,0,Converted
+PI534037,6,6428 Sian,SC305,Chad,Guinea-Caudatum,Membranaceum,Y,1,Converted
+PI534046,1,420 Kalatilansa,SC679,Sudan,Guinea-Caudatum,Nigricans-guineense,Y,1,Converted
+PI534047,3,450 Bori Light Brown,SC719,Sudan,Caudatum,Caudatum,N,1,Converted
+PI534053,3,T 28,SC564,Uganda,Caudatum,Caudatum,Y,1,Converted
+PI534054,2,194 Kano,SC671,Kenya,Kafir-Caudatum,Caffrorum-feterita,Y,0,Converted
+PI534063,4,NA,SC553,Nigeria,Guinea-Caudatum,Membranaceum,Y,0,Converted
+PI534070,4,BE 25,SC279,Nigeria,Guinea,Conspicuum,Y,0,Converted
+PI534075,4,KA 24,SC348,Nigeria,Caudatum,Caudatum,Y,0,Converted
+PI534079,6,PL 47,SC413,Nigeria,Caudatum-Bicolor,Caudatum-dochna,Y,1,Converted
+PI534088,4,ZA 6,SC382,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI534092,4,ZA 71,SC569,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI534096,1,SO 85,SC605,Kenya,Guinea,Margaritiferum,Y,0,Converted
+PI534097,2,HC 6028,SC625,Japan,Kafir,Caffrorum,Y,0,Converted
+PI534099,3,A 84,SC704,Japan,Caudatum,Caudatum,Y,1,Converted
+PI534101,3,A-106,SC725,Japan,Caudatum,Caudatum,Y,1,Converted
+PI534105,3,EC 21361 G30,SC637,Uganda,Kafir-Caudatum,Caffrorum-darso,Y,1,Converted
+PI534108,3,EC 21428 SB 63,SC645,Uganda,Kafir-Caudatum,Caffrorum-darso,Y,1,Converted
+PI534112,3,EC 21463 STR 5/1,SC328,Uganda,Caudatum,Dobbs,Y,1,Converted
+PI534114,3,Accho Karuho,SC574,Pakistan,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI534115,3,Akwu,SC984,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI534116,1,Mashica,SC987,Ethiopia,Durra-Bicolor,Subglabrescens,Y,1,Converted
+PI534117,1,Mashica,SC991,Uganda,Bicolor,Bicolor,Y,1,Converted
+PI534123,1,No. 25 Gobo Kaichama Ethiopia,SC13,Ethiopia,Durra-Bicolor,Subglabrescens,Y,1,Converted
+PI534124,1,No. 28 Lyle Marawa Ethiopia,SC15,Ethiopia,Guinea-Bicolor,Dochna-honey,Y,1,Converted
+PI534127,6,No. 37 Ubi Abelti Ethiopia,SC21,Ethiopia,Kafir-Bicolor,Dochna-kafir,Y,1,Converted
+PI534128,5,No. 65 Amelsie Kimbolcha Ethiopia,SC23,Ethiopia,Durra,Durra,Y,0,Converted
+PI534132,5,No. 59 Bekedjie Kembolcha Ethiopia,SC33,Ethiopia,Durra,Durra,Y,0,Converted
+PI534133,5,No. 69 Mashela Tinguish Warakul Ethiopi,SC35,Ethiopia,Durra,Durra,Y,0,Converted
+PI534135,5,No. 64 Netch Addesho Ethiopia,SC38,Ethiopia,Durra,Durra,Y,0,Converted
+PI534137,6,Budy,SC51,Sudan,Caudatum,Caudatum-kaura,Y,0,Converted
+PI534138,1,Matchikah,NA,NA,Guinea-Caudatum,Bicolor,N,NA,NA
+PI534139,6,Tuery 11,NA,NA,NA,NA,N,NA,NA
+PI534144,6,Kabutuwa,SC84,Uganda,Durra-Caudatum,Durra-nigricans,Y,1,Converted
+PI534145,4,No. 902 Sorghum arundi,SC91,Zimbabwe,NA,NA,Y,0,Converted
+PI534148,5,R1_21,SC135,Ethiopia,Durra-Bicolor,Durra-dochna,Y,0,Converted
+PI534155,5,R3_80,SC155,Ethiopia,Durra-Bicolor,Durra-dochna/subglabrescens,Y,1,Converted
+PI534157,3,R4_B1,SC170,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI534163,3,Rexx,SC599,USA,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI534167,5,F.R. Miller,SC998,Unknown,Durra-Bicolor,Subglabrescens,Y,0,Converted
+PI540816,6,Tx2882,NA,NA,NA,NA,N,NA,Bred
+PI542406,3,R LINE AR2002,NA,NA,NA,NA,Y,1,Bred
+PI542718,6,SAN CHI SAN,NA,NA,Bicolor,NA,Y,1,NA
+PI548797,3,Tx2891,NA,NA,NA,NA,Y,0,Bred
+PI552856,3,A/BTx626,NA,NA,NA,NA,Y,0,Bred
+PI552861,NA,A/BTx631,NA,NA,NA,NA,Y,1,Bred
+PI552861,2,A/BTx631,NA,NA,NA,NA,Y,1,Bred
+PI561071,6,RTx436,NA,NA,NA,NA,Y,0,Bred
+PI561072,2,A/BTxARG-1,NA,NA,NA,NA,Y,0,Bred
+PI561073,3,A/BTx635,NA,NA,NA,NA,Y,0,Bred
+PI561472,3,SURENO,NA,NA,NA,NA,Y,0,Bred
+PI562730,1,NA,NA,NA,NA,NA,Y,NA,NA
+PI564163,2,BTx623,NA,NA,NA,NA,Y,0,Bred
+PI564164,5,RTX433,NA,NA,NA,NA,Y,NA,Bred
+PI564165,3,RTX434,NA,NA,NA,NA,Y,0,Bred
+PI565121,3,MACIA,NA,NA,NA,NA,Y,0,NA
+PI566819,2,DELLA,NA,NA,NA,NA,Y,1,NA
+PI576130,3,ICSV 745,NA,NA,NA,NA,Y,NA,NA
+PI576332,2,SAP-287,SC609,China,Bicolor,Nervosum-kaoliang,Y,1,Converted
+PI576333,2,SAP-306,SC659,USA,Guinea-Kafir,Caffrorum-roxburghii,Y,NA,Converted
+PI576337,6,SAP-280,SC598,Uganda,Verticilliflorum,Virgatum,N,1,Converted
+PI576339,2,SAP-312,SC673,Zimbabwe,Kafir-Caudatum,Caffrorum-feterita,Y,0,Converted
+PI576340,2,Nkuli Swaziland,SC650,S. Africa,Kafir-Caudatum,Caffrorum-birdproof,Y,NA,Converted
+PI576345,2,SAP-294,SC627,S. Africa,Kafir,Caffrorum,Y,1,Converted
+PI576347,6,SAP-342,SC941,USA,Bicolor,Sudanense,Y,1,Converted
+PI576348,6,SAP-341,SC937,USA,Bicolor,Sudanense,Y,1,Converted
+PI576349,1,SAP-343,SC942,USA,Bicolor,Sudanense,Y,1,Converted
+PI576350,6,SAP-417,SC755,USA,Kafir-Caudatum,Caudatum-kafir,Y,1,Converted
+PI576352,2,Marupantse,SC757,Botswana,Kafir-Caudatum,Caudatum-kafir,Y,0,Converted
+PI576359,6,Butivori,SC910,India,Guinea-Durra,Durra-membranaceum,Y,0,Converted
+PI576364,2,Chari Uri,SC782,India,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI576366,6,Jowar Red Jankinagar,SC624,India,Durra-Bicolor,Dochna-durra,Y,1,Converted
+PI576373,6,SAP-325,SC749,Japan,Caudatum-Bicolor,Caudatum-bicolor,Y,1,Converted
+PI576375,5,SAP-124,SC1014,Ethiopia,Durra-Bicolor,Subglabrescens/Durra-dochna,Y,0,Converted
+PI576376,5,SAP-125,SC1017,Ethiopia,Durra-Bicolor,Subglabrescens/Durra-dochna,Y,0,Converted
+PI576380,3,Mashica,SC982,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI576381,5,Mashica,SC1038,Ethiopia,Durra-Bicolor,Subglabrescens/Durra-dochna,Y,0,Converted
+PI576385,4,SAP-135,SC1070,Nigeria,NA,NA,Y,0,Converted
+PI576386,3,SAP-347,SC970,Uganda,NA,NA,Y,1,Converted
+PI576387,3,Awanlek,SC1056,Sudan,NA,NA,Y,1,Converted
+PI576390,6,Kharuth Waragel,SC192,India,Durra,Cernuum,Y,0,Converted
+PI576391,6,K.1 Irungu cholam,SC213,India,Bicolor,Dochna,Y,1,Converted
+PI576393,3,MN 708 (preconverted),SC42,Ethiopia,Caudatum,Nigricans,Y,1,Converted
+PI576394,2,Lambas,SC734,Sudan,Caudatum,Caudatum,Y,0,Converted
+PI576396,3,SAP-225,SC324,Uganda,Caudatum,Nigricans,Y,1,Converted
+PI576399,1,SAP-224,SC323,Sudan,Caudatum,Nigricans,Y,1,Converted
+PI576401,6,Mehra Sonthia,SC1085,India,Durra,Cernuum,Y,0,Converted
+PI576418,4,SAP-147,SC1124,Nigeria,Guinea,Conspicuum,Y,0,Converted
+PI576422,2,SAP-141,SC1080,S. Africa,Kafir,Caffrorum,Y,0,Converted
+PI576425,5,SAP-150,SC1155,Ethiopia,Durra-Bicolor,Durra/Subglabrescens,Y,1,Converted
+PI576426,5,SAP-128,SC1033,Ethiopia,Durra-Bicolor,Subglabrescens/Durra-dochna,Y,NA,Converted
+PI576428,3,Mashica,SC979,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI576434,3,Ex-Mubi,SC1103,Nigeria,Kafir-Bicolor,Bicolor-kafir,Y,0,Converted
+PI576435,3,Lula,SC1104,Uganda,Kafir-Bicolor,Bicolor-kafir,Y,0,Converted
+PI576437,1,SAP-155,SC1203,Brazil,NA,NA,Y,1,Converted
+PI585291,6,Tx2903,NA,NA,NA,NA,Y,0,Bred
+PI585295,6,Tx2907,NA,NA,NA,NA,Y,0,Bred
+PI595699,6,SAP-340,SC929,India,Durra,Cernuum,Y,0,Converted
+PI595702,2,SAP-311,SC672,Zimbabwe,Kafir-Caudatum,Caffrorum-feterita,Y,1,Converted
+PI595714,3,SAP-139,SC1079,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI595718,3,SAP-162,SC1246,Chad,Kafir-Caudatum,Caudatum-kafir,Y,0,Converted
+PI595720,5,SAP-149,SC1154,Ethiopia,Durra-Bicolor,Durra-dochna,Y,0,Converted
+PI595739,3,SAP-131,SC1055,Sudan,Caudatum,Zerazera,Y,0,Converted
+PI595740,3,SAP-133,SC1057,Uganda,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI595741,6,SAP-134,SC1063,Senegal,Guinea,Roxburghii,Y,1,Converted
+PI595743,6,SAP-154,SC1201,?,Guinea-Caudatum,Caudatum-guineense,Y,0,Converted
+PI595744,6,SAP-157,SC1211,Guatemala,Kafir-Caudatum,Caudatum-kafir,Y,0,Converted
+PI595745,3,SAP-159,NA,NA,NA,NA,N,NA,NA
+PI597945,6,SAP-336,SC855,Egypt,Durra,Durra,Y,0,Converted
+PI597946,6,SAP-286,SC606,Prob. China,Guinea-Bicolor,Dochna-roxburghii,Y,1,Converted
+PI597949,1,SAP-146,SC1108,India,Guinea,Roxburghii,Y,0,Converted
+PI597950,1,SAP-250,SC449,India,Guinea-Durra,Durra-roxburghii,Y,0,Converted
+PI597951,4,SAP-264,SC532,W. Volta,Guinea,Conspicuum,Y,0,Converted
+PI597952,6,SAP-323,SC738,Sudan,Caudatum,Caudatum,Y,NA,Converted
+PI597957,5,SAP-151,SC1158,Ethiopia,Durra-Bicolor,Durra-dochna,Y,0,Converted
+PI597958,6,SAP-197,SC184,South Africa,Kafir-Caudatum,Caffrorum-feterita,Y,0,Converted
+PI597960,4,SAP-137,SC1076,Nigeria,Caudatum-Bicolor,Caudatum-bicolor,Y,0,Converted
+PI597961,3,SAP-138,NA,NA,NA,NA,N,NA,NA
+PI597964,3,SAP-166,SC1319,Ethiopia,Caudatum,Zerazera,Y,1,Converted
+PI597965,3,SAP-395,SC1205,Senegal,Caudatum,Zerazera,Y,1,Converted
+PI597966,3,SAP-158,SC1212,Venezuela,Caudatum,Caudatum,Y,1,Converted
+PI597967,3,SAP-167,NA,NA,NA,NA,N,NA,NA
+PI597968,6,SAP-168,SC1321,Sudan,Guinea-Caudatum,Caudatum-guineense,Y,1,Converted
+PI597971,3,SAP-170,SC1328,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI597972,6,SAP-398,SC1329,Sudan,Durra-Caudatum,Caudatum-durra,Y,NA,Converted
+PI597973,6,SAP-171,SC1330,Sudan,Durra-Bicolor,Durra-bicolor,Y,1,Converted
+PI597976,4,SAP-172,SC1337,Mali,Guinea,Guineense,Y,0,Converted
+PI597980,3,SAP-173,SC1345,Mali,Caudatum,Caudatum,Y,1,Converted
+PI597982,3,SAP-175,SC1356,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI598069,6,RTx2909,NA,NA,NA,NA,Y,1,Bred
+PI598070,6,RTx2910,NA,NA,NA,NA,Y,NA,Bred
+PI601816,3,ICSV 400,NA,NA,NA,NA,Y,0,NA
+PI607931,3,Tx2911,NA,NA,NA,NA,Y,1,Bred
+PI609456,1,SAP-386,NA,NA,NA,NA,Y,NA,NA
+PI613536,6,KS 115,NA,NA,NA,NA,Y,NA,Bred
+PI629034,3,RTx437,NA,NA,NA,NA,Y,NA,Bred
+PI629040,5,Tx2917,NA,NA,NA,NA,Y,0,Bred
+PI629059,2,B.Tx2928,NA,NA,NA,NA,Y,0,Bred
+PI641824,2,KANSAS ORANGE,NA,NA,NA,NA,Y,1,Bred
+PI641836,2,ROX ORANGE,NA,NA,NA,NA,Y,1,Bred
+PI641849,2,WACONIA,NA,NA,NA,NA,Y,1,NA
+PI641874,5,DAY MILO,NA,NA,NA,NA,Y,0,Bred
+PI642791,3,BTx640,NA,NA,NA,NA,Y,NA,Bred
+PI642793,6,BTx641,NA,NA,NA,NA,Y,0,Bred
+PI642992,3,Standard Early Hegari,NA,NA,NA,NA,Y,1,Bred
+PI642998,6,Black Spanish,NA,NA,NA,NA,Y,1,NA
+PI651492,3,COWLEY,NA,NA,NA,NA,Y,1,NA
+PI651496,3,RIO,NA,NA,NA,NA,Y,1,NA
+PI653616,6,WRAY,NA,NA,NA,NA,Y,1,NA
+PI653617,6,KELLER,NA,NA,NA,NA,Y,1,NA
+PI655970,2,Standard Blackhull Kafir,NA,NA,NA,NA,Y,0,Bred
+PI655971,5,STANDARD WHITE MILO,NA,NA,NA,NA,Y,0,Bred
+PI655972,2,PINK KAFIR,NA,NA,NA,NA,Y,1,Bred
+PI655973,6,SPUR FETERITA,NA,NA,NA,NA,Y,1,Bred
+PI655974,2,TEXAS BLACKHULL KAFIR,NA,NA,NA,NA,Y,NA,Bred
+PI655975,2,WHEATLAND,NA,NA,NA,NA,Y,0,Bred
+PI655976,2,RED KAFIR,NA,NA,NA,NA,Y,1,Bred
+PI655977,3,TAM2566,NA,NA,NA,NA,Y,1,Bred
+PI655978,4,Tx2737,NA,NA,NA,NA,Y,0,Bred
+PI655979,6,Tx2741,NA,NA,NA,NA,Y,0,Bred
+PI655980,6,Tx2785,NA,NA,NA,NA,Y,1,Bred
+PI655981,4,SAP-50,NA,NA,NA,NA,Y,1,NA
+PI655982,2,SAP-380,NA,NA,NA,NA,Y,0,NA
+PI655983,2,SUGAR DRIP,NA,NA,NA,NA,Y,1,Bred
+PI655984,2,CHILTEX,NA,NA,NA,NA,Y,1,Bred
+PI655985,5,PLAINSMAN,NA,NA,NA,NA,Y,0,Bred
+PI655986,5,CAPROCK,NA,NA,NA,NA,Y,0,Bred
+PI655987,2,MARTIN,NA,NA,NA,NA,Y,0,Bred
+PI655988,NA,COMBINE KAFIR-60,NA,NA,NA,NA,Y,0,Bred
+PI655988,2,COMBINE KAFIR-60,NA,NA,NA,NA,Y,0,Bred
+PI655989,2,REDBINE-60,NA,NA,NA,NA,Y,0,Bred
+PI655990,5,COMBINE 7078,NA,NA,NA,NA,Y,0,Bred
+PI655991,2,TX 378 (REDLAN) B LINE,NA,NA,NA,NA,Y,0,Bred
+PI655992,2,TX 3197 (COMB KAFIR 60) B LINE,NA,NA,NA,NA,Y,0,Bred
+PI655993,2,TX 399(DALHART RES WHTLND)B LN,NA,NA,NA,NA,Y,0,Bred
+PI655994,6,WILEY,NA,NA,NA,NA,Y,1,Bred
+PI655995,6,DEER,NA,NA,NA,NA,Y,1,NA
+PI655996,4,RTx430,NA,NA,NA,NA,Y,0,Bred
+PI655997,6,R TX 431,NA,NA,NA,NA,Y,NA,Bred
+PI655998,4,KS19,NA,NA,NA,NA,Y,0,Bred
+PI655999,6,TX2784,NA,NA,NA,NA,Y,1,Bred
+PI656000,3,RTx432,NA,NA,NA,NA,Y,0,Bred
+PI656001,3,TX2783,NA,NA,NA,NA,Y,0,Bred
+PI656002,2,BOK11,NA,NA,NA,NA,Y,0,Bred
+PI656003,2,B AZ9504,NA,NA,NA,NA,Y,1,Bred
+PI656004,4,RTX435,NA,NA,NA,NA,Y,0,Bred
+PI656005,2,01MN1589-B,NA,NA,NA,NA,Y,0,Bred
+PI656006,6,88V1080,NA,NA,NA,NA,Y,0,NA
+PI656007,2,R9188,NA,NA,NA,NA,Y,0,Bred
+PI656008,3,RCV,NA,NA,NA,NA,Y,0,NA
+PI656009,3,RTAM428,NA,NA,NA,NA,Y,0,Bred
+PI656010,4,RTx2536,NA,NA,NA,NA,Y,0,Bred
+PI656011,3,90EON328,NA,NA,NA,NA,Y,0,NA
+PI656012,5,90M,NA,NA,NA,NA,Y,0,Bred
+PI656013,6,94Q63 ,NA,NA,NA,NA,Y,1,NA
+PI656014,6,Acme Broomcorn,NA,NA,NA,NA,Y,1,NA
+PI656015,6,Ajabsido,NA,NA,NA,NA,Y,1,NA
+PI656016,6,B KS66,NA,NA,NA,NA,Y,0,Bred
+PI656017,5,100M,NA,NA,NA,NA,Y,NA,Bred
+PI656018,2,BTx2752,NA,NA,NA,NA,N,NA,Bred
+PI656019,2,BTx3042,NA,NA,NA,NA,Y,0,Bred
+PI656020,2,BTx406,NA,NA,NA,NA,Y,0,Bred
+PI656021,5,44M,NA,NA,NA,NA,Y,0,Bred
+PI656022,2,BTx615,NA,NA,NA,NA,Y,0,Bred
+PI656023,2,Segaolane,NA,NA,NA,NA,Y,0,NA
+PI656024,3,SEPON82,NA,NA,NA,NA,Y,0,NA
+PI656025,6,Shan Qui Red,NA,NA,Bicolor,NA,Y,NA,NA
+PI656026,3,SOBERANO,NA,NA,NA,NA,Y,0,Bred
+PI656027,3,SRN39,NA,NA,NA,NA,Y,0,NA
+PI656028,2,Town ,NA,NA,NA,NA,Y,0,Bred
+PI656029,5,BTx642,NA,NA,NA,NA,Y,0,Bred
+PI656031,3,CE151-262-A1,NA,NA,NA,NA,Y,0,NA
+PI656032,6,CE260-12-1-1,NA,NA,NA,NA,Y,0,NA
+PI656033,5,60M,NA,NA,NA,NA,Y,0,Bred
+PI656034,3,Dorado,NA,NA,NA,NA,Y,0,Bred
+PI656035,3,El Mota ,NA,NA,NA,NA,Y,1,NA
+PI656036,3,ICSV 1089BF,NA,NA,NA,NA,Y,0,NA
+PI656037,3,ICSV 401,NA,NA,NA,NA,Y,0,NA
+PI656038,2,IS 8525(J),NA,NA,NA,NA,Y,1,NA
+PI656039,3,JOCORO,NA,NA,NA,NA,Y,0,NA
+PI656040,4,K886,NA,NA,NA,NA,Y,0,Bred
+PI656041,5,80M,NA,NA,NA,NA,Y,0,Bred
+PI656042,2,NSA440 - KARPER,NA,NA,NA,NA,Y,0,NA
+PI656043,3,KAT83369,NA,NA,NA,NA,N,NA,NA
+PI656044,3,Kuyuma,NA,NA,NA,NA,Y,0,Bred
+PI656046,6,LianTang Ai,NA,NA,Bicolor,NA,Y,1,NA
+PI656047,6,M35-1,NA,NA,NA,NA,Y,0,Bred
+PI656048,3,Malisor 84-7,NA,NA,NA,NA,Y,0,NA
+PI656049,2,Marupantse,NA,NA,NA,NA,Y,0,NA
+PI656050,3,Mota Maradi,NA,NA,NA,NA,Y,1,NA
+PI656051,3,MR732,NA,NA,NA,NA,Y,0,NA
+PI656052,6,N250B,NA,NA,NA,NA,Y,0,Bred
+PI656053,3,N290B,NA,NA,NA,NA,Y,0,Bred
+PI656054,4,N.Tenimissa,NA,NA,NA,NA,Y,0,NA
+PI656055,3,P-721,NA,NA,NA,NA,Y,0,Bred
+PI656056,3,P850029,NA,NA,NA,NA,Y,0,Bred
+PI656057,3,P898012,NA,NA,NA,NA,Y,1,Bred
+PI656058,2,P9517,NA,NA,NA,NA,Y,0,Bred
+PI656059,3,Pinolero 1,NA,NA,NA,NA,Y,0,NA
+PI656060,2,QL3-TEXAS,NA,NA,NA,NA,Y,0,Bred
+PI656061,2,QL3(India),NA,NA,NA,NA,Y,0,NA
+PI656062,3,96CD635,NA,NA,NA,NA,Y,0,NA
+PI656063,2,BQL41,NA,NA,NA,NA,Y,0,NA
+PI656064,6,Chiragon-2,NA,NA,NA,NA,N,NA,NA
+PI656065,6,Koro Kollo,NA,NA,NA,NA,Y,1,NA
+PI656066,6,Lakahiri,NA,NA,NA,NA,Y,0,NA
+PI656067,6,NA,NA,NA,NA,NA,Y,0,NA
+PI656068,3,SC 170-6-17,NA,NA,NA,NA,Y,0,NA
+PI656069,3,SC 326-6,NA,NA,NA,NA,Y,0,NA
+PI656070,3,SC 748-5,NA,NA,NA,NA,Y,0,NA
+PI656071,3,SC 1019,SC1019,Ethiopia,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI656072,5,SC 1047,SC1047,NA,NA,NA,N,NA,Converted
+PI656073,6,SC 1074,SC1074,Nigeria,Kafir,Caffrorum,Y,1,Converted
+PI656074,6,SC 1218,SC1218,Sudan,Guinea-Caudatum,Caudatum-guineense,Y,1,Converted
+PI656075,3,SC 1251,SC1251,Sudan,Caudatum,Zerazera,Y,0,Converted
+PI656076,3,SC 1271,SC1271,Ethiopia,Caudatum,Zerazera,Y,0,Converted
+PI656077,6,SC 1416,SC1416,Niger,Durra-Bicolor,Durra-bicolor,Y,0,Converted
+PI656078,1,SC 1424,SC1424,Mali,Kafir-Durra,Durra-kafir,Y,0,Converted
+PI656079,4,SC 1426,SC1426,Mali,Guinea,Guineense,Y,0,Converted
+PI656080,1,SC 1429,SC1429,Zimbabwe,Guinea,Guineense,Y,0,Converted
+PI656081,1,SC 1439,SC1439,NA,NA,NA,N,NA,Converted
+PI656082,5,SC 145,SC145,Ethiopia,Bicolor,Dochna,Y,1,Converted
+PI656083,6,SC 1451,SC1451,Malawi,Caudatum,Caudatum,Y,1,Converted
+PI656085,3,SC 1465,SC1465,Sudan,NA,NA,Y,0,Converted
+PI656086,6,SC 1471,SC1471,Sudan,Durra-Bicolor,Durra-bicolor,Y,1,Converted
+PI656087,3,SC 1476,SC1476,Sudan,NA,NA,Y,1,Converted
+PI656088,5,SC 1484,SC1484,Somalia,NA,NA,Y,0,Converted
+PI656089,5,SC 1489,SC1489,Somalia,Durra,Durra,Y,0,Converted
+PI656090,3,SC 1494,SC1494,Sudan,Guinea-Caudatum,Caudatum-guineense,Y,1,Converted
+PI656091,5,SC 22,SC22,Ethiopia,Durra,Durra,Y,0,Converted
+PI656092,5,SC 25,SC25,Ethiopia,Durra,Durra,Y,0,Converted
+PI656093,4,SC 295,SC295,Nigeria,Guinea,Conspicuum,Y,0,Converted
+PI656094,4,SC 301,SC301,Mali,Guinea,Guineense,Y,1,Converted
+PI656095,4,SC 373,SC373,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI656096,4,SC 391,SC391,Egypt,Caudatum,Caudatum-kaura,Y,0,Converted
+PI656097,6,SC 480,SC480,NA,NA,NA,N,NA,Converted
+PI656098,3,SC 49,SC49,Sudan,Guinea-Caudatum,Caudatum-guineense,N,1,Converted
+PI656099,6,SC 498,SC498,India,Durra,Nandyal,Y,0,Converted
+PI656100,6,SC 500,SC500,India,Durra,Nandyal,Y,0,Converted
+PI656101,3,SC 525,SC525,Nigeria,Guinea,Conspicuum,Y,1,Converted
+PI656102,1,SC 59,SC59,Sudan,Caudatum-Bicolor,Nigricans-bicolor,Y,1,Converted
+PI656103,6,SC 610,SC610,China,Bicolor,Nervosum-kaoliang,Y,1,Converted
+PI656104,6,SC 621,SC621,India,Bicolor,Dochna,Y,1,Converted
+PI656105,3,SC 639,SC639,India,Kafir-Caudatum,Caffrorum-darso,Y,1,Converted
+PI656106,3,SC 695,SC695,Tanzania,Caudatum,Dobbs,Y,1,Converted
+PI656107,3,SC 702,SC702,Sudan,Caudatum,Caudatum,Y,1,Converted
+PI656108,6,SC 833,SC833,India,Durra,Durra,Y,0,Converted
+PI656109,6,SC 85,SC85,Uganda,Caudatum-Bicolor,Nigricans-bicolor,Y,1,Converted
+PI656110,6,SC 968,SC968,Rhodesia,Durra-Bicolor,Subglabrescens,Y,1,Converted
+PI656111,1,SC 971,SC971,Puerto Rico,Kafir-Durra,Durra-kafir,Y,0,Converted
+PI656112,2,SC 1215,SC1215,Niger,Guinea-Kafir,Caffrorum-roxburghii,Y,0,Converted
+PI656113,6,SC 1277,SC1277,India,Durra,Durra,Y,0,Converted
+PI656114,6,SC 134,SC134,Ethiopia,Durra-Bicolor,Durra-dochna/subglabrescens,Y,0,Converted
+PI656115,5,SC 1440,SC1440,Gambia,Guinea,Margaritiferum,Y,0,Converted
+PI656116,6,SC 1506,SC1506,Mali,NA,NA,Y,1,Converted
+PI656118,3,SC 332,SC332,India,Durra-Caudatum,Nigricans-durra,Y,1,Converted
+PI656119,4,SC 386,SC386,Nigeria,Caudatum,Caudatum-kaura,Y,0,Converted
+PI656120,3,SC 790,SC790,India,Caudatum,Zerazera,Y,0,Converted
+PI656121,6,SC 947,SC947,India,S. bicolor subsp. verticilliflorum,Verticilliforum,Y,1,Converted
+PI659691,3,COMBINE HEGARI,NA,NA,NA,NA,Y,0,Bred
+PI659694,3,Tortillerio,NA,NA,NA,NA,N,0,Bred
+PI659695,5,IS 12623C,NA,NA,NA,NA,Y,0,NA
+PI659696,3,SC 720,SC720,Kenya,Caudatum,Caudatum-nigricans,Y,1,Converted
+PI659753,6,IS 5590C,NA,NA,NA,NA,Y,0,NA
