@@ -233,6 +233,18 @@ Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & Inferred 
 \end{table*}
 
 
+
+% Figure: CTL stacked GWAS
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_CTL.png}
+\caption{
+Condition-specific stacked Manhattan plots for control (CTL) lipid GWAS across representative individual-lipid and sum/ratio traits. Columns denote recurrent loci: A, \textit{SORBI\_3006G248300} (individual); B, \textit{SORBI\_3001G276500} (individual); C, \textit{SORBI\_3002G373700} (sum/ratio); D, \textit{SORBI\_3003G141800} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_58780498 ($p_{\mathrm{Wald,min}}=1.37\times10^{-10}$); B, SNP\_53871418 ($p_{\mathrm{Wald,min}}=6.44\times10^{-8}$); C, SNP\_73174964 ($p_{\mathrm{Wald,min}}=7.77\times10^{-13}$); D, SNP\_14021625 ($p_{\mathrm{Wald,min}}=1.30\times10^{-10}$). Recurrent peaks at the same marker positions across multiple traits support a shared/common locus-level signal.
+}
+\label{fig:gwas_ctl_stacked}
+\end{figure*}
+
+
 \subsection*{Recurrent GWAS signals across low-input lipid traits converge on shared stress- and growth-related processes}
 
 We next tested whether recurrent gene–lipid associations under LIN converged on shared biological processes across both individual lipid traits and higher-order class-sum and class-ratio traits. We applied an empirical recurrence filter based on repeated detection across phenotypes. For the individual-lipid GWAS, we retained gene–trait associations with $p \le 1\times10^{-7}$ for each phenotype and counted how often each gene recurred across traits. Under LIN conditions, 141 lipid phenotypes had at least one significant gene association, yielding 10,884 unique candidate genes. Restricting to genes detected in $\geq 7$ phenotypes reduced this to 48 recurrent candidates (approximately the top 0.5\% of the recurrence distribution). Of these, 30 genes had functional annotations in our functional and GO-based summary, while the rest were uncharacterized (ref GO). The most recurrent loci were associated with up to 11 phenotypes, indicating that only a small subset of genes showed repeatedly detectable effects across the LIN lipidome (Table).
@@ -262,7 +274,7 @@ Functional GO annotation and orthology-based curation showed that these recurren
 Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & Inferred / putative role \\
 \midrule
 
-\multirow{3}{*}{\centering\itshape Individual\\lipids}
+\multirow{3}{*}{\raggedright\itshape Individual\\lipids}
 & Nutrient status and remobilization
 & \makecell[l]{SORBI\_3001G056400;\\ SORBI\_3001G056500;\\ SORBI\_3001G384300;\\ SORBI\_3001G384500;\\ SORBI\_3002G117000}
 & 7--9
@@ -304,6 +316,16 @@ Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & Inferred 
 \end{tablenotes}
 \end{threeparttable}
 \end{table*}
+
+% Figure: LIN stacked GWAS
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_LIN.png}
+\caption{
+Condition-specific stacked Manhattan plots for low-input (LIN) lipid GWAS across representative individual-lipid and sum/ratio traits. Columns denote recurrent loci: A, \textit{SORBI\_3001G384300} (individual); B, \textit{SORBI\_3004G107800} (individual); C, \textit{SORBI\_3001G222700} (sum/ratio); D, \textit{SORBI\_3001G256400} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_67183097 ($p_{\mathrm{Wald,min}}=5.72\times10^{-9}$); B, SNP\_10366823 ($p_{\mathrm{Wald,min}}=2.64\times10^{-9}$); C, SNP\_21276112 ($p_{\mathrm{Wald,min}}=1.96\times10^{-13}$); D, SNP\_29811579 ($p_{\mathrm{Wald,min}}=2.08\times10^{-16}$). Recurrent co-localized peaks across multiple traits indicate a common genomic signal per highlighted locus.
+}
+\label{fig:gwas_lin_stacked}
+\end{figure*}
 
 
 \subsection*{LINEX-based reaction mapping and ratio-network rewiring}
