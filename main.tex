@@ -156,89 +156,15 @@ To characterize structural remodeling beyond total class abundance, we summarize
 
 LION enrichment analysis confirmed these shifts. LIN increased ontology terms linked to neutral-lipid accumulation and storage, including \textit{triacylglycerols [GL0301]}, \textit{glycerolipids [GL]}, \textit{diacylglycerols [GL0201]}, \textit{lipid storage}, and \textit{lipid droplet} (Fig.~\ref{fig:fig1_lipidomics_landscape}D) (\cite{Molenaar2019}). In contrast, CTL was enriched for membrane phospholipid categories and descriptors, including \textit{glycerophospholipids [GP]}, \textit{glycerophosphocholines [GP01]/diacylglycerophosphocholines [GP0101]}, \textit{glycerophosphoethanolamines [GP02]/diacylglycerophosphoethanolamines [GP0201]}, and \textit{membrane component} (Fig.~\ref{fig:fig1_lipidomics_landscape}D). Thus, LION supports that LIN is associated with a coordinated shift toward TG and concomitant phospholipid/membrane remodeling detected by both abundance contrasts and acyl-chain chemical-space changes.
 
+\subsection*{Recurrent GWAS signals across CTL lipid traits emphasize basal metabolism, growth regulation, and cell-wall-associated processes}
 
-\subsection*{Recurrent GWAS signals across low-input lipid traits converge on shared stress- and growth-related processes}
+We also explored whether recurrent gene–lipid associations under CTL conditions converged on common biological processes across both individual lipid species and SR traits. For the individual-lipid GWAS, we kept gene-level associations with $p \le 1 \times 10^{-7}$ for each phenotype and counted how often each gene was associated across traits. This yielded 3,478 candidate genes. Applying a recurrence threshold of association with $\geq 13$ phenotypes, approximately the top 0.5\% of genes reduced this to 17 highly recurrent candidates (Table; SuppTable).
 
-We next tested whether recurrent gene–lipid associations under LIN converged on shared biological processes across both individual lipid traits and higher-order class-sum and class-ratio (SR) traits. We applied an empirical recurrence filter based on repeated detection across phenotypes. For the individual-lipid GWAS, we retained gene–trait associations with $p \le 1\times10^{-7}$ for each phenotype and counted how often each gene recurred across traits. Under LIN conditions, 141 lipid phenotypes had at least one significant gene association, yielding 10,884 unique candidate genes. Restricting to genes detected in $\geq 7$ phenotypes reduced this to 48 recurrent candidates (approximately the top 0.5\% of the recurrence distribution). Of these, 30 genes had functional annotations in our GO-based summary, while the rest were uncharacterized or sparsely annotated. The most recurrent loci were associated with up to 11 phenotypes, indicating that only a small subset of genes showed repeatedly detectable effects across the LIN lipidome.
+Functional and GO annotation of these recurrent candidates highlighted roles in lipid metabolism and transport, photosynthesis and chloroplast function, and central carbohydrate metabolism. The most strongly recurrent genes were mainly lipid-related, including a lipoxygenase, a lipase-like hydrolase, and an acyltransferase-like gene involved in isoprenoid and farnesyl diphosphate biosynthesis, pointing to repeated associations with lipid turnover and lipid-derived signaling. Other recurrent genes encoded putative peptide transporters, a photosystem II chlorophyll-binding protein, Rubisco activase, and enzymes of glucose- and fructose-phosphate metabolism, such as glucose-6-phosphate 1-epimerase and a phosphofructokinase-related protein (ref GO). Overall, these recurrent GWAS signals from individual lipid traits in the CTL environment are closely linked to lipid metabolism, chloroplast-associated functions, and membrane transport.
 
-Although this recurrent gene set was not dominated by canonical lipid-metabolic enzymes with our filtering scheme, its annotations converged on biological processes likely engaged under LIN management. These included nutrient-status signaling and remobilization (tryptophan synthase genes, a phosphate-starvation regulator), cell-wall remodeling and growth modulation (expansin genes, a callose synthase), and defense-associated functions (thaumatin-like and defensin-like proteins, immunity-related kinases). Together, this pattern indicates that LIN conditions elicit a broader physiological response than nutrient limitation alone, integrating nutrient stress with structural remodeling and increased defense under reduced agrochemical inputs. Thus, the recurrent GWAS signals from individual lipid traits appear to capture coordinated stress adaptation and whole-plant acclimation, rather than changes limited to lipid biochemistry.
+We extended the recurrence analysis to SR phenotypes under CTL conditions. Using the same gene-level threshold, the combined control sum/ratio analysis identified 4,385 putative loci. Restricting to genes detected in \(\geq 72\) phenotypes (the upper ~0.5\% of the recurrence distribution) reduced this to 20 highly recurrent candidates, again yielding a compact set of loci with repeated effects across many traits (Table; SuppTable). For CTL SR, these loci were mainly enriched for genes involved in growth regulation, cell-wall dynamics, signaling, and development, rather than a broad stress-response or a lipid signature.
 
-We next tested whether this pattern extended to SR. Using the same gene-level threshold ($p \le 1\times10^{-7}$), the combined analysis of class sums and ratios identified 6,516 candidate genes. Restricting attention to genes detected in $\geq 50$ phenotypes yielded 31 highly recurrent candidates (about the top 0.5\%). As with individual lipid species, only a few loci showed repeated effects across the LIN lipidome, but these recurrent loci were enriched for higher-order regulation of lipid-class balance rather than specific molecular lipids.
-
-Functional GO annotation and orthology-based curation showed that these recurrent SR candidates are biased toward processes related to growth, stress acclimation, and regulatory control, rather than canonical lipid metabolism. Growth- and development-related candidates included a pentatricopeptide repeat protein orthologous to the slow-growth regulator \textit{SLO1}, an SS18 N-terminal domain protein implicated in seed and leaf ontogeny, and a DOG1-domain transcription-associated factor. A second subset was linked to abiotic stress acclimation and surface-barrier biosynthesis, including a CER1/WDA1-like aldehyde oxygenase for wax and cutin formation and a cullin-like protein involved in cold- and salt-responsive signaling. Additional defense- and signaling-related loci included a CAP/PR1-like protein, kinase-associated genes, and transport genes implicated in auxin and ion homeostasis. Overall, LIN lipid class sums and ratios appear to report an integrated physiological state shaped by developmental plasticity, stress adaptation, and defense-associated regulatory networks.
-
-\begin{table*}[!t]
-\centering
-\begin{threeparttable}
-\caption{Representative recurrent candidate genes from low-input GWAS of individual lipid traits and class-sum/class-ratio traits. \textit{Functional support and references for each theme are provided in the main text.}}
-\label{tab:lowinput_recurrent_combined}
-
-% tighter spacing so it fits
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.12}
-
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.2cm}
-                              >{\raggedright\arraybackslash}p{3.0cm}
-                              >{\raggedright\arraybackslash}p{4.3cm}
-                              >{\centering\arraybackslash}p{1.6cm}
-                              >{\raggedright\arraybackslash}X}
-\toprule
-Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & Inferred / putative role \\
-\midrule
-
-\multirow{3}{*}{\centering\itshape Individual\\lipids}
-& Nutrient status and remobilization
-& \makecell[l]{SORBI\_3001G056400;\\ SORBI\_3001G056500;\\ SORBI\_3001G384300;\\ SORBI\_3001G384500;\\ SORBI\_3002G117000}
-& 7--9
-& Tryptophan synthases and Trp--IAA context; PHR1-like phosphate-starvation regulation; LRR-RLK orthology linked to N-uptake traits; ATG8-interacting nutrient-stress recycling \\
-
-& Cell-wall remodeling
-& \makecell[l]{SORBI\_3004G107800;\\ SORBI\_3007G018000;\\ SORBI\_3001G238100;\\ SORBI\_3001G238000}
-& 7--9
-& Callose synthase and expansin-family candidates consistent with wall reorganization, cell shape control, and growth adjustment \\
-
-& Defense-related genes
-& \makecell[l]{SORBI\_3002G117300;\\ SORBI\_3001G312000;\\ SORBI\_3010G170150}
-& 7--10
-& Defense-associated annotations (e.g., thaumatin-like, defensin-like, immune-related kinase/$\beta$-glucosidase terms) consistent with stress signaling and pathogen response \\
-
-\midrule
-
-\multirow{3}{*}{\centering\itshape Class sums\\/\ ratios}
-& Growth and development
-& \makecell[l]{SORBI\_3001G256400;\\ SORBI\_3001G101700;\\ SORBI\_3002G153100}
-& 51--68
-& Developmental regulation via organellar and transcriptional control (e.g., PPR/SS18/DOG1-domain-associated functions) \\
-
-& Barrier formation and proteostasis under cold stress
-& \makecell[l]{SORBI\_3001G222700;\\ SORBI\_3002G141600}
-& 51--52
-& CER1/WDA1-like wax/cuticle pathway candidate and cullin-like proteostasis regulator, consistent with stress-responsive surface barriers and regulatory control under cold \\
-
-& Defense-related genes
-& \makecell[l]{SORBI\_3001G101900;\\ SORBI\_3003G247600}
-& 51--54
-& CAP/PR1-like protein and kinase-domain protein consistent with extracellular defense function and stress signaling \\
-
-\bottomrule
-\end{tabularx}
-
-\begin{tablenotes}\footnotesize
-\item \textit{Note:} The table summarizes representative recurrent candidates. Detailed functional rationale and citations for each theme are provided in the corresponding Discussion subsections.
-\end{tablenotes}
-\end{threeparttable}
-\end{table*}
-
-
-\subsection*{Recurrent GWAS signals across control lipid traits emphasize basal metabolism, growth regulation, and cell-wall-associated processes}
-
-We also explored whether recurrent gene–lipid associations under CTL conditions converged on common biological processes across both individual lipid species and SR traits. For the individual-lipid GWAS, we kept gene-level associations with $p \le 1 \times 10^{-7}$ for each phenotype and counted how often each gene was associated across traits. This yielded 3,478 candidate genes under control conditions. Applying a recurrence threshold of association with $\geq 13$ phenotypes, approximately the top 0.5\% of genes reduced this to 17 highly recurrent candidates/
-
-Functional GO annotation of these recurrent candidates highlighted roles in lipid metabolism and transport, photosynthesis and chloroplast function, and central carbohydrate metabolism. The most strongly recurrent genes were mainly lipid-related, including a lipoxygenase, a lipase-like hydrolase, and an acyltransferase-like gene involved in isoprenoid and farnesyl diphosphate biosynthesis, pointing to repeated associations with lipid turnover and lipid-derived signaling. Other recurrent genes encoded putative peptide transporters, a photosystem II chlorophyll-binding protein, Rubisco activase, and enzymes of glucose- and fructose-phosphate metabolism, such as glucose-6-phosphate 1-epimerase and a phosphofructokinase-related protein. Overall, these recurrent GWAS signals from individual lipid traits in the CTL environment are closely linked to core metabolism, chloroplast-associated functions, and membrane transport.
-
-We extended the recurrence analysis to SR phenotypes under CTL conditions. Using the same gene-level threshold (\(p \le 1 \times 10^{-7}\)), the combined control sum/ratio analysis identified 4,385 putative loci. Restricting to genes detected in \(\geq 72\) phenotypes (the upper ~0.5\% of the recurrence distribution) reduced this to 20 highly recurrent candidates, again yielding a compact set of loci with repeated effects across many traits. For CTL SR, these loci were mainly enriched for genes involved in growth regulation, cell-wall dynamics, signaling, and development, rather than a broad stress-response signature.
-
-Functional annotation and orthology-based curation highlighted several coherent themes. Many recurrent loci were linked to growth and development, including an \textit{NGR2/LAZY4}-related gene, a calcium-dependent protein kinase (\textit{CDPK26}-like), and a large ribosomal subunit protein uL15, orthologous to a pollen-development factor. A second group was associated with cell-wall organization and surface remodeling, including a polygalacturonase, a receptor-like kinase with predicted polysaccharide binding, and an elongation-factor-related gene implicated in cell-wall formation. We also detected a wound- and jasmonate-inducible \textit{TIFY} gene, consistent with roles in defense and tissue repair, and an ortholog of a microfibrillar-associated protein linked to yield-related traits. Overall, these recurrent CTL SR loci indicate that lipid-class balance under control conditions is tightly coupled to endogenous growth, cell-wall remodeling, and developmental programs, with relatively limited input from inducible stress-response pathways compared with the low-input condition.
+Many recurrent loci were linked to growth and development, including an \textit{NGR2/LAZY4}-related gene, a calcium-dependent protein kinase (\textit{CDPK26}-like), and a large ribosomal subunit protein uL15, orthologous to a pollen-development factor (ref). A second group was associated with cell-wall organization and surface remodeling, including a polygalacturonase, a receptor-like kinase with predicted polysaccharide binding, and an elongation-factor-related gene implicated in cell-wall formation (ref). We also detected a wound- and jasmonate-inducible \textit{TIFY} gene, consistent with roles in defense and tissue repair, and an ortholog of a microfibrillar-associated protein linked to yield-related traits (ref). Overall, these recurrent CTL SR loci indicate that lipid-class balance under CTL conditions is tightly coupled to endogenous growth, cell-wall remodeling, and developmental programs.
 
 \begin{table*}[!t]
 \centering
@@ -307,6 +233,79 @@ Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & Inferred 
 \end{table*}
 
 
+\subsection*{Recurrent GWAS signals across low-input lipid traits converge on shared stress- and growth-related processes}
+
+We next tested whether recurrent gene–lipid associations under LIN converged on shared biological processes across both individual lipid traits and higher-order class-sum and class-ratio traits. We applied an empirical recurrence filter based on repeated detection across phenotypes. For the individual-lipid GWAS, we retained gene–trait associations with $p \le 1\times10^{-7}$ for each phenotype and counted how often each gene recurred across traits. Under LIN conditions, 141 lipid phenotypes had at least one significant gene association, yielding 10,884 unique candidate genes. Restricting to genes detected in $\geq 7$ phenotypes reduced this to 48 recurrent candidates (approximately the top 0.5\% of the recurrence distribution). Of these, 30 genes had functional annotations in our functional and GO-based summary, while the rest were uncharacterized (ref GO). The most recurrent loci were associated with up to 11 phenotypes, indicating that only a small subset of genes showed repeatedly detectable effects across the LIN lipidome (Table).
+
+Although this recurrent gene set was not dominated by lipid-metabolic enzymes according to our filtering scheme, its annotations converged on biological processes likely engaged under LIN management. These included nutrient-status signaling and remobilization (tryptophan synthase genes, a phosphate-starvation regulator), cell-wall remodeling and growth modulation (expansin genes, a callose synthase), and defense-associated functions (thaumatin-like and defensin-like proteins, immunity-related kinases) (ref) (Table, Supplementary Table). Together, this pattern indicates that LIN conditions elicit a broader physiological response than nutrient limitation alone, integrating structural remodeling and increased defense. Thus, the recurrent GWAS signals from individual lipid traits appear to capture coordinated stress adaptation and whole-plant acclimation, rather than changes limited to lipid biochemistry.
+
+We next tested whether this pattern extended to class-sum and class-ratio. Using the same gene-level threshold ($p \le 1\times10^{-7}$), the combined analysis of class sums and ratios identified 6,516 candidate genes. Restricting attention to genes detected in $\geq 50$ phenotypes yielded 31 highly recurrent candidates (about the top 0.5\%). As with individual lipid species, only a few loci showed repeated effects across the LIN lipidome, but these recurrent loci were enriched for higher-order regulation of lipid-class balance rather than specific molecular lipids (Table; SuppTable).
+
+Functional GO annotation and orthology-based curation showed that these recurrent SR candidates are biased toward processes related to growth, stress acclimation, and regulatory control, rather than canonical lipid metabolism. Growth- and development-related candidates included a pentatricopeptide repeat protein orthologous to the slow-growth regulator \textit{SLO1}, an SS18 N-terminal domain protein implicated in seed and leaf ontogeny, and a DOG1-domain transcription-associated factor (ref). A second subset was linked to abiotic stress acclimation and surface-barrier biosynthesis, including a CER1/WDA1-like aldehyde oxygenase for wax and cutin formation and a cullin-like protein involved in cold- and salt-responsive signaling (ref). Additional defense- and signaling-related loci included a CAP/PR1-like protein, kinase-associated genes, and transport genes implicated in auxin and ion homeostasis (ref). Overall, LIN lipid class sums and ratios appear to report an integrated physiological state shaped by developmental plasticity, stress adaptation, and defense-associated regulatory networks.
+
+\begin{table*}[!t]
+\centering
+\begin{threeparttable}
+\caption{Representative recurrent candidate genes from low-input GWAS of individual lipid traits and class-sum/class-ratio traits. \textit{Functional support and references for each theme are provided in the main text.}}
+\label{tab:lowinput_recurrent_combined}
+
+% tighter spacing so it fits
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.2cm}
+                              >{\raggedright\arraybackslash}p{3.0cm}
+                              >{\raggedright\arraybackslash}p{4.3cm}
+                              >{\centering\arraybackslash}p{1.6cm}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & Inferred / putative role \\
+\midrule
+
+\multirow{3}{*}{\centering\itshape Individual\\lipids}
+& Nutrient status and remobilization
+& \makecell[l]{SORBI\_3001G056400;\\ SORBI\_3001G056500;\\ SORBI\_3001G384300;\\ SORBI\_3001G384500;\\ SORBI\_3002G117000}
+& 7--9
+& Tryptophan synthases and Trp--IAA context; PHR1-like phosphate-starvation regulation; LRR-RLK orthology linked to N-uptake traits; ATG8-interacting nutrient-stress recycling \\
+
+& Cell-wall remodeling
+& \makecell[l]{SORBI\_3004G107800;\\ SORBI\_3007G018000;\\ SORBI\_3001G238100;\\ SORBI\_3001G238000}
+& 7--9
+& Callose synthase and expansin-family candidates consistent with wall reorganization, cell shape control, and growth adjustment \\
+
+& Defense-related genes
+& \makecell[l]{SORBI\_3002G117300;\\ SORBI\_3001G312000;\\ SORBI\_3010G170150}
+& 7--10
+& Defense-associated annotations (e.g., thaumatin-like, defensin-like, immune-related kinase/$\beta$-glucosidase terms) consistent with stress signaling and pathogen response \\
+
+\midrule
+
+\multirow{3}{*}{\centering\itshape Class sums\\/\ ratios}
+& Growth and development
+& \makecell[l]{SORBI\_3001G256400;\\ SORBI\_3001G101700;\\ SORBI\_3002G153100}
+& 51--68
+& Developmental regulation via organellar and transcriptional control (e.g., PPR/SS18/DOG1-domain-associated functions) \\
+
+& Barrier formation and proteostasis under cold stress
+& \makecell[l]{SORBI\_3001G222700;\\ SORBI\_3002G141600}
+& 51--52
+& CER1/WDA1-like wax/cuticle pathway candidate and cullin-like proteostasis regulator, consistent with stress-responsive surface barriers and regulatory control under cold \\
+
+& Defense-related genes
+& \makecell[l]{SORBI\_3001G101900;\\ SORBI\_3003G247600}
+& 51--54
+& CAP/PR1-like protein and kinase-domain protein consistent with extracellular defense function and stress signaling \\
+
+\bottomrule
+\end{tabularx}
+
+\begin{tablenotes}\footnotesize
+\item \textit{Note:} The table summarizes representative recurrent candidates. Detailed functional rationale and citations for each theme are provided in the corresponding Discussion subsections.
+\end{tablenotes}
+\end{threeparttable}
+\end{table*}
+
+
 \subsection*{LINEX-based reaction mapping and ratio-network rewiring}
 
 To place lipid associations in a biochemical context, we queried LINEX2 (\cite{Morgat2016Rhea}) for RHEA-annotated reactions linking glycerolipids and glycerophospholipids. The curated subnetwork (Fig.~\ref{fig:fig4_linex_network}A; Supplementary Table~S11) captures four candidate branches connecting DG/MG, TG, and lysophospholipid pools: (i) PC+DG$\leftrightarrow$LPC+TG (LCAT-like), (ii) TG$\leftrightarrow$DG (PNPLA1-labeled lipase branch), (iii) PE+DG$\leftrightarrow$TG+LPE (LRO1/PDAT-like), and (iv) DG+MG$\leftrightarrow$TG (PNPLA3-labeled branch). These links are annotation-based hypotheses and do not directly establish \emph{in vivo} flux direction. As CTL and LIN were sampled in different field years, all LIN--CTL contrasts in this section are interpreted as between-trial compositional differences rather than isolated causal effects of LIN.
@@ -358,29 +357,44 @@ TG--DG synthesis arm & SORBI\_3009G034600 (DGAT-like) & 3 & 2 & $1.75\times10^{-
 
 Our lipidomics analysis indicates that the SAP undergoes substantial lipid remodeling under LIN conditions, with TG, PS, LPC/LPE, and SQDG showing the most pronounced changes. We identified candidate genes associated with these lipid traits and with broader stress-response pathways, but functional validation will be needed to assess their roles. We also found that lipidomic features can predict some phenotypes, such as plant height, whereas the prediction of flowering time was weaker. Finally, we developed an interactive Shiny application to support the visualization and exploration of the dataset.
 
+\subsection{Lipid oxidation, neutral-lipid turnover, and isoprenoid precursor supply in CTL}
 
-\subsection{Nutrient sensing and recycling pathways provide upstream context for lipid variation under LowInput}
+Within the CTL condition, recurrent GWAS candidates included loci linked to lipid and isoprenoid metabolism. One representative signal, \texttt{SORBI\_3006G248300} belongs to a lipoxygenase clade involved in oxylipin biosynthesis. Its homolog in maize, \textit{ZmLOX6} oxygenates polyunsaturated fatty acids, generating hydroperoxide intermediates and downstream oxylipins. Its transcript levels are strongly regulated by hormone- and pathogen-related stimuli, being induced by jasmonic acid and repressed by ABA, salicylic acid, and ethylene in the reported system (ref). This supports interpreting a LOX6-like association in sorghum as standing genetic variation in a lipid-oxidation module that affects the production of lipid-derived metabolites and thus lipid profiles under CTL conditions.
+
+A second candidate in the same locus group is \texttt{SORBI\_3006G248100} (orthologous to \textit{AtOBL1}). \textit{AtOBL1} localizes to lipid droplets and acts as a lipase on TG, DG, and MG, directly modulating acyl flux among storage and intermediate glycerolipid pools. In a lipid-focused GWAS, an \textit{OBL1}-like association most conservatively highlights a candidate regulator of TG/DG/MG interconversion and acyl remobilization, rather than a single deterministic shift in net storage versus mobilization (ref).
+
+Finally, \texttt{SORBI\_3006G248000} encodes a farnesyl-pyrophosphate synthase (FPS)-like trans-prenyltransferase that acts upstream of diverse isoprenoid end-products. Its homolog in rice, \texttt{OsFPPS3}, synthesizes core prenyl diphosphate backbones (including FPP) via sequential condensations, supplying branch-point intermediates for major terpenoid pathways (e.g., sterols, carotenoids, and related metabolites). (ref) 
+
+Together, the LOX6-like, OBL1-like, and FPS-like candidates define a coherent theme under CTL conditions. Lipid oxidation and oxylipin biology, neutral-lipid turnover at lipid droplets, and the supply of upstream isoprenoid precursors are key lipid metabolic processes, but functional validation is still needed to confirm their direct enzymatic roles.
+
+\subsection{Growth and developmental regulation candidates under CTL lipid GWAS}
+
+Several recurrent CTL-associated loci also map to core pathways that control vegetative growth and reproduction. Although they do not encode canonical lipid enzymes, they provide a developmental framework for why specific lipid traits repeatedly colocalize with the same genomic regions under CTL conditions. First,  \texttt{OS07G0614400} (rice ortholog of \texttt{SORBI\_3002G373700}) encodes a \textit{DRO1}-family homolog (DRL1-like) involved in root gravitropism and root growth angle variation. It is specifically expressed in root-tip columella cells, is auxin regulated, and controls root growth angle and root system architecture \citep{Kitomi2020}.  Second, \texttt{OsCDPK25} (rice homolog of \texttt{SORBI\_3005G025400}) encodes a calcium-dependent protein kinase. Perturbing \textit{OsCPK25/26} expression in rice alters stamen number, indicating a key role in reproductive organ development \citep{Zhang2014}. Third, Cen8.t00833/Os08g0310100 (homolog of  \texttt{SORBI\_3003G141700}) encodes an ortholog of the mitochondrial large-subunit ribosomal protein \textit{MRPL15}. \textit{OsMRPL15} knockout causes male sterility with pollen defects linked to impaired mitochondrial function, consistent with an essential role for mitochondrial translation in pollen development \citep{Xie2023}. 
+
+Together, these DRL1-, CDPK25-, and MRPL15-like loci define a CTL-specific theme of natural genetic variation in plant architecture, reproductive development, and organellar function.
+
+\subsection{Nutrient sensing and recycling pathways provide upstream context for lipid variation under LIN}
 
 Several LIN candidates converge on a common theme of nutrient stress and remobilization. Two adjacent loci, \texttt{SORBI\_3001G056400} and \texttt{SORBI\_3001G056500}, encode tryptophan synthase family members, placing amino acid metabolism upstream of the Trp–IAA regulatory module. Allelic variation that affects tryptophan availability is mechanistically interpretable because tryptophan is the main precursor of indole-3-acetic acid (IAA). This links nitrogen-stress physiology, hormone-regulated development, and lipid phenotypes without implying direct enzymatic action on those lipids. (\cite{Stepanova2008,Zhao2001,Fu2022,Liu2024,Wang2025}).
 
-Another nutrient-associated candidate is \texttt{SORBI\_3001G384500}, whose maize ortholog, \texttt{Zm00001d029012}, is a strong candidate for nitrogen-uptake traits in seedling waxy maize. This ortholog was consistently detected across environments by integrating GWAS and co-expression network analyses and was one of four genes repeatedly associated with nitrogen-uptake phenotypes \citep{Luo2025}. Although these data do not prove an equivalent function in sorghum, the cross-species concordance supports interpreting the LRR-RLK–like signal as part of nutrient-stress signaling, consistent with established roles of LRR-RLK families in plant development and abiotic/biotic stress responses \citep{Dufayard2017}.
+Another nutrient-associated candidate is \texttt{SORBI\_3001G384500}, whose maize ortholog, \texttt{Zm00001d029012}, is a strong candidate for nitrogen-uptake traits in seedling waxy maize. This ortholog was consistently detected across environments by integrating GWAS and co-expression network analyses and was one of four genes repeatedly associated with nitrogen-uptake phenotypes \citep{Luo2025}. Although these data do not prove an equivalent function in sorghum, the cross-species concordance supports interpreting the LRR-RLK–like signal as part of nutrient-stress signaling, consistent with established roles in plant development and abiotic/biotic stress responses \citep{Dufayard2017}.
 
-In parallel, the phosphate-starvation regulator \texttt{SORBI\_3001G384300} (a \textit{PHR1}-like MYB-CC transcription factor) supports a phosphorus-homeostasis axis already strongly implicated by phospholipid-associated GWAS signals. \textit{PHR1} coordinates transcriptional responses to phosphate limitation as a key upstream regulator of phosphate-starvation programs that coincide with phospholipid remodeling, making a PHR1-like association more consistent with regulatory variation in nutrient-stress signaling than with direct effects on lipid enzymatic activity (\cite{Pant2015,Rubio2001,Bustos2010,Nilsson2007,Rouached2011}).
+Moreover, the phosphate-starvation regulator \texttt{SORBI\_3001G384300} (a \textit{PHR1}-like MYB-CC transcription factor) supports a phosphorus-homeostasis axis already strongly implicated by phospholipid-associated GWAS signals. \textit{PHR1} coordinates transcriptional responses to phosphate limitation as a key upstream regulator of phosphate-starvation programs that coincide with phospholipid remodeling, making a PHR1-like association more consistent with regulatory variation in nutrient-stress signaling than with direct effects on lipid enzymatic activity (\cite{Pant2015,Rubio2001,Bustos2010,Nilsson2007,Rouached2011}).
 
-Finally, another candidate gene \texttt{SORBI\_3002G117000} encodes an ATG8-interacting protein, consistent with roles in starvation-induced recycling pathways. In plants, ATG8-interacting proteins such as ATI1/ATI2 act as selective autophagy cargo receptors during carbon starvation and related stresses, and ATG8 itself is lipidated with phosphatidylethanolamine (PE) during autophagosome biogenesis (\cite{Honig2012,Wu2021ATI,Michaeli2014}). Thus, an ATI-like candidate in our lipid GWAS supports genetic variation in nutrient-stress–induced recycling capacity that might modulate membrane and metabolite turnover under LIN conditions.
+Finally, another candidate gene \texttt{SORBI\_3002G117000} encodes an ATG8-interacting protein, consistent with roles in starvation-induced recycling pathways. In plants, ATG8-interacting proteins such as ATI1/ATI2 act as selective autophagy cargo receptors during carbon starvation and related stresses, and ATG8 itself is lipidated with PE during autophagosome biogenesis (\cite{Honig2012,Wu2021ATI,Michaeli2014}). Thus, an ATI-like candidate in our lipid GWAS supports genetic variation in nutrient-stress–induced recycling capacity that might modulate membrane and metabolite turnover under LIN conditions.
 
 Thus, Trp biosynthesis, nitrate-linked signaling candidates, phosphate-starvation regulation, and ATG8-mediated recycling define a coherent nutrient-stress framework that may underlie the enrichment of nutrient-signaling candidates among lipid-associated loci under LIN management.
 
 
 \subsection{Cell-wall remodeling candidates implicate wall plasticity and growth adjustment under LowInput}
 
-A prominent theme among the LIN candidates is cell-wall remodeling, highlighted by \texttt{SORBI\_3004G107800} (annotated as a \textit{CALS8}/GSL-type callose synthase in \textit{Arabidopsis}) and three expansin-family loci (\texttt{SORBI\_3007G018000}, \texttt{SORBI\_3001G238100}, \texttt{SORBI\_3001G238000}). Callose, a $\beta$-1,3-glucan polymer, is rapidly synthesized and degraded across diverse developmental and stress contexts, modulating wall permeability and mechanics. Thus, natural allelic variation at a callose synthase locus reflects variation in stress-inducible wall reinforcement and/or wall gating under nutrient limitation and early-season cold.
+Another prominent theme among the LIN candidates is cell-wall remodeling, highlighted by \texttt{SORBI\_3004G107800} (annotated as a \textit{CALS8}/GSL-type callose synthase in \textit{Arabidopsis}) and three expansin-family loci (\texttt{SORBI\_3007G018000}, \texttt{SORBI\_3001G238100}, \texttt{SORBI\_3001G238000}). Callose, a $\beta$-1,3-glucan polymer, is rapidly synthesized and degraded across diverse developmental and stress contexts, modulating wall permeability and mechanics. Thus, natural allelic variation at a callose synthase locus reflects variation in stress-inducible wall reinforcement and/or wall gating under nutrient limitation and early-season cold (ref).
 
 The expansin candidates provide a complementary, well-characterized route to altered wall plasticity. Expansins are a conserved class of plant cell-wall proteins that promote slow, irreversible wall extension under turgor-driven tensile stress by loosening cellulose-enriched networks without detectable hydrolytic activity \citep{McQueenMason1995,Cosgrove2000,Cosgrove2016,Cosgrove2024}. Current models posit that expansins disrupt noncovalent interactions between aligned wall polysaccharides, enabling controlled wall yielding in response to developmental and environmental cues \citep{Cosgrove2024,Ma2013}. Plant expansins are classified into EXPAs, EXPBs, and expansin-like EXLA/EXLB families, with extensive functional diversification. EXPAs are central to acid-growth responses and can act at cellulose–cellulose junctions with maximal activity at acidic pH, whereas EXPBs show strong activity in arabinoxylan-rich grass walls and can facilitate rapid wall penetration or loosening \citep{Kende2004,Cosgrove2024,Cosgrove1997,Valdivia2007,Valdivia2009,Yennawar2006,Tabuchi2011}. Across species, expansins are repeatedly linked to growth and stress acclimation, and transgenic studies show that altered expansin expression can modify cell length, wall stiffness, and whole-plant architecture \citep{Ma2013,Marowa2016,Samalova2022,Wang2024}. 
 
-Together, the callose synthase candidate and multiple expansin loci support a coherent view in which LIN-associated genetic variation includes regulators of both wall deposition and wall loosening. This candidate set offers an upstream basis for the plastic adjustment of growth and cell morphology under abiotic stress, while maintaining a conservative inference and downstream phenotypic consequences still require targeted functional validation.
+Together, the callose synthase candidate and multiple expansin loci support a coherent view in which LIN-associated genetic variation includes regulators of both wall deposition and wall loosening. This candidate set offers an upstream basis for the plastic adjustment of growth and cell morphology under abiotic stress, while maintaining a conservative inference. The downstream phenotypic consequences still require targeted functional validation.
 
-\subsection{Growth and developmental regulators among LowInput candidates implicate organellar function, reproductive programs, and architectural control}
+\subsection{Growth and developmental regulators among LIN candidates implicate organellar function, reproductive programs, and architectural control}
 
 Beyond loci linked to nutrient stress and cell wall biology, the LIN candidate set includes several genes with established roles in growth and development. \texttt{SORBI\_3001G256400}, the closest homolog of \textit{SLO1} (SLOw growth1) in \textit{Arabidopsis}, encodes a mitochondrial pentatricopeptide repeat (PPR) protein required for specific RNA-editing events in complex~I subunit transcripts \citep{Sung2010}. \textit{SLO1} disruption in \emph{Arabidopsis} causes pleiotropic growth defects consistent with impaired mitochondrial function, supporting a model in which natural variation at an \textit{SLO1}-like locus modulates whole-plant vigor via altered organelle performance \citep{Sung2010}. 
 
@@ -390,27 +404,11 @@ Thus, \textit{SLO1}-, \textit{TGA10}-, and \textit{GIF1}-like candidates indicat
 
 \subsection{Cuticle barrier formation and ubiquitin-mediated proteostasis as cold-linked candidates under LowInput}
 
-Two LIN candidates are consistent with upstream processes that influence cold and stress performance without directly modifying the measured lipid species. \texttt{SORBI\_3001G222700}, similar to \textit{CER1} protein, is a wax/cuticle-associated locus homologous to the \textit{CER1}/WDA1 in rice. It is involved in very-long-chain fatty acid–derived wax biosynthesis and cuticle formation \citep{Jung2006WDA1}. Cuticular waxes form a hydrophobic barrier on aerial epidermal tissues and limit non-stomatal water loss while protecting against diverse stresses \citep{Jung2006WDA1,LeeSuh2022}. Temperature stress often alters wax deposition and composition, and cold can increase leaf wax load in multiple species, linking wax-related genetic variation to cold-associated field performance \citep{LeeSuh2022}. 
+Two LIN candidates are consistent with upstream processes that influence cold and stress performance without directly modifying the measured lipid species. \texttt{SORBI\_3001G222700}, similar to \textit{CER1} protein, is a wax/cuticle-associated locus homologous to \textit{CER1}/WDA1 in rice. It is involved in very-long-chain fatty acid–derived wax biosynthesis and cuticle formation \citep{Jung2006WDA1}. Cuticular waxes form a hydrophobic barrier on aerial epidermal tissues and limit non-stomatal water loss while protecting against diverse stresses \citep{Jung2006WDA1,LeeSuh2022}. Temperature stress often alters wax deposition and composition, and cold can increase leaf wax load in multiple species, linking wax-related genetic variation to cold-associated field performance \citep{LeeSuh2022}. 
 
 \texttt{SORBI\_3002G141600} has a homolog in rice as a cullin-like protein (CUL1-like). Cullins act as core scaffolds in cullin–RING E3 ubiquitin ligase complexes that control protein turnover in major hormone and stress-response pathways. Cullin-mediated ubiquitination has been implicated in cold-response regulation by modulating the stability of key transcription factors in canonical cold signaling cascades, including ICE1/CBFs \citep{WangXie2024}. 
 
 Together, a \textit{WDA1-like} wax locus and a CUL1-like proteostasis locus provide a strong, cold-linked framework for interpreting the LIN candidates and indicate that these associations mainly reflect upstream barrier and regulatory mechanisms rather than direct lipid-modifying enzymes.
-
-\subsection{Lipid oxidation, neutral-lipid turnover, and isoprenoid precursor supply in Control}
-
-Within the CTL condition, recurrent GWAS candidates included loci linked to lipid and isoprenoid metabolism. One representative signal, \texttt{SORBI\_3006G248300} belongs to a lipoxygenase clade involved in oxylipin biosynthesis. Its homolog in maize, \textit{ZmLOX6} oxygenates polyunsaturated fatty acids, generating hydroperoxide intermediates and downstream oxylipins. Its transcript levels are strongly regulated by hormone- and pathogen-related stimuli, being induced by jasmonic acid and repressed by ABA, salicylic acid, and ethylene in the reported system. This supports interpreting a LOX6-like association in sorghum as standing genetic variation in a lipid-oxidation module that affects the production of lipid-derived metabolites and thus lipid profiles under CTL conditions.
-
-A second candidate in the same locus group, \texttt{SORBI\_3006G248100} (orthologous to \textit{AtOBL1}), is consistent with allelic variation in neutral-lipid turnover at lipid droplets. \textit{AtOBL1} localizes to lipid droplets and acts as a lipase on TG, DG, and MG, directly modulating acyl flux among storage and intermediate glycerolipid pools. In a lipid-focused GWAS, an \textit{OBL1}-like association most conservatively highlights a candidate regulator of TG/DG/MG interconversion and acyl remobilization, rather than a single deterministic shift in net storage versus mobilization.
-
-Finally, \texttt{SORBI\_3006G248000} encodes a farnesyl-pyrophosphate synthase (FPS)-like trans-prenyltransferase that acts upstream of diverse isoprenoid end-products. Trans-prenyltransferases synthesize core prenyl diphosphate backbones (including FPP) via sequential condensations, supplying branch-point intermediates for major terpenoid pathways (e.g., sterols, carotenoids, and related metabolites). 
-
-Together, the LOX6-like, OBL1-like, and FPS-like candidates define a coherent theme under CTL conditions. Lipid oxidation and oxylipin biology, neutral-lipid turnover at lipid droplets, and provision of upstream isoprenoid precursors, while recognizing that GWAS primarily prioritizes loci for later functional validation rather than proving direct causal enzymatic roles.
-
-\subsection{Growth and developmental regulation candidates under Control lipid GWAS}
-
-Several recurrent CTL-associated loci map to core pathways that control vegetative growth and reproduction. Although they do not encode canonical lipid enzymes, they provide a developmental framework for why specific lipid traits repeatedly colocalize with the same genomic regions under CTL conditions. First,  \textttt{OS07G0614400} (rice ortholog of \texttt{SORBI\_3002G373700}) encodes a \textit{DRO1}-family homolog (DRL1-like) involved in root gravitropism and root growth angle variation. It is specifically expressed in root-tip columella cells, is auxin regulated, and controls root growth angle and root system architecture \citep{Kitomi2020}.  Second, \texttt{OsCDPK25} (rice homolog of \texttt{SORBI\_3005G025400}) encodes a calcium-dependent protein kinase. Perturbing \textit{OsCPK25/26} expression in rice alters stamen number, indicating a key role in reproductive organ development \citep{Zhang2014}. Third, Cen8.t00833/Os08g0310100 (homolog of  \texttt{SORBI\_3003G141700}) encodes an ortholog of the mitochondrial large-subunit ribosomal protein \textit{MRPL15}. \textit{OsMRPL15} knockout causes male sterility with pollen defects linked to impaired mitochondrial function, consistent with an essential role for mitochondrial translation in pollen development \citep{Xie2023}. 
-
-Together, these DRL1-, CDPK25-, and MRPL15-like loci define a CTL-specific theme of natural genetic variation in plant architecture, reproductive development, and organellar function.
 
 \section*{Conclusion}
 
@@ -548,7 +546,7 @@ This work was performed in part by the Molecular Education, Technology and Resea
 \section{Acknowledgments}
 
 
-\bibliography{SoLD}
+
 
 \pagebreak
 
