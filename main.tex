@@ -158,11 +158,11 @@ LION enrichment analysis confirmed these shifts. LIN increased ontology terms li
 
 \subsection*{Recurrent GWAS signals across CTL lipid traits emphasize basal metabolism, growth regulation, and cell-wall-associated processes}
 
-We also explored whether recurrent gene–lipid associations under CTL conditions converged on common biological processes across both individual lipid species and SR traits. For the individual-lipid GWAS, we kept gene-level associations with $p \le 1 \times 10^{-7}$ for each phenotype and counted how often each gene was associated across traits. This yielded 3,478 candidate genes. Applying a recurrence threshold of association with $\geq 13$ phenotypes, approximately the top 0.5\% of genes reduced this to 17 highly recurrent candidates (Table; SuppTable).
+We also explored whether recurrent gene–lipid associations under CTL conditions converged on common biological processes across both individual lipid species and SR traits. For the individual-lipid GWAS, we kept gene-level associations with $p \le 1 \times 10^{-7}$ for each phenotype and counted how often each gene was associated across traits. This yielded 3,478 candidate genes. Applying a recurrence threshold of association with $\geq 13$ phenotypes, approximately the top 0.5\% of genes reduced this to 17 highly recurrent candidates (Table \ref{tab:T1_control_recurrent_combined}; SuppTable S7).
 
-Functional and GO annotation of these recurrent candidates highlighted roles in lipid metabolism and transport, photosynthesis and chloroplast function, and central carbohydrate metabolism. The most strongly recurrent genes were mainly lipid-related, including a lipoxygenase, a lipase-like hydrolase, and an acyltransferase-like gene involved in isoprenoid and farnesyl diphosphate biosynthesis, pointing to repeated associations with lipid turnover and lipid-derived signaling. Other recurrent genes encoded putative peptide transporters, a photosystem II chlorophyll-binding protein, Rubisco activase, and enzymes of glucose- and fructose-phosphate metabolism, such as glucose-6-phosphate 1-epimerase and a phosphofructokinase-related protein (ref GO). Overall, these recurrent GWAS signals from individual lipid traits in the CTL environment are closely linked to lipid metabolism, chloroplast-associated functions, and membrane transport.
+Functional and GO annotation of these recurrent candidates highlighted roles in lipid metabolism and transport, photosynthesis and chloroplast function, and central carbohydrate metabolism. The most strongly recurrent genes were mainly lipid-related, including a lipoxygenase, a lipase-like hydrolase, and an acyltransferase-like gene involved in isoprenoid and farnesyl diphosphate biosynthesis, pointing to repeated associations with lipid turnover and lipid-derived signaling. Other recurrent genes encoded putative peptide transporters, a photosystem II chlorophyll-binding protein, Rubisco activase, and enzymes of glucose- and fructose-phosphate metabolism, such as glucose-6-phosphate 1-epimerase and a phosphofructokinase-related protein \citep{GeneOntologyConsortium2026}. Overall, these recurrent GWAS signals from individual lipid traits in the CTL environment are closely linked to lipid metabolism, chloroplast-associated functions, and membrane transport.
 
-We extended the recurrence analysis to SR phenotypes under CTL conditions. Using the same gene-level threshold, the combined control sum/ratio analysis identified 4,385 putative loci. Restricting to genes detected in \(\geq 72\) phenotypes (the upper ~0.5\% of the recurrence distribution) reduced this to 20 highly recurrent candidates, again yielding a compact set of loci with repeated effects across many traits (Table; SuppTable). For CTL SR, these loci were mainly enriched for genes involved in growth regulation, cell-wall dynamics, signaling, and development, rather than a broad stress-response or a lipid signature.
+We extended the recurrence analysis to SR phenotypes under CTL conditions. Using the same gene-level threshold, the combined control sum/ratio analysis identified 4,385 putative loci. Restricting to genes detected in \(\geq 72\) phenotypes (the upper ~0.5\% of the recurrence distribution) reduced this to 20 highly recurrent candidates, again yielding a compact set of loci with repeated effects across many traits (Table \ref{tab:T1_control_recurrent_combined}; SuppTable S8). For CTL SR, these loci were mainly enriched for genes involved in growth regulation, cell-wall dynamics, signaling, and development, rather than a broad stress-response or a lipid signature \citep{GeneOntologyConsortium2026}.
 
 Many recurrent loci were linked to growth and development, including an \textit{NGR2/LAZY4}-related gene, a calcium-dependent protein kinase (\textit{CDPK26}-like), and a large ribosomal subunit protein uL15, orthologous to a pollen-development factor (ref). A second group was associated with cell-wall organization and surface remodeling, including a polygalacturonase, a receptor-like kinase with predicted polysaccharide binding, and an elongation-factor-related gene implicated in cell-wall formation (ref). We also detected a wound- and jasmonate-inducible \textit{TIFY} gene, consistent with roles in defense and tissue repair, and an ortholog of a microfibrillar-associated protein linked to yield-related traits (ref). Overall, these recurrent CTL SR loci indicate that lipid-class balance under CTL conditions is tightly coupled to endogenous growth, cell-wall remodeling, and developmental programs.
 
@@ -170,7 +170,7 @@ Many recurrent loci were linked to growth and development, including an \textit{
 \centering
 \begin{threeparttable}
 \caption{Representative recurrent candidate genes from control GWAS of individual lipid traits and class-sum/class-ratio traits. \textit{Functional support and references for each theme are provided in the main text.}}
-\label{tab:control_recurrent_combined}
+\label{tab:T1_control_recurrent_combined}
 
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.12}
@@ -237,7 +237,7 @@ Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & Inferred 
 % Figure: CTL stacked GWAS
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_CTL.png}
+\includegraphics[width=\textwidth]{fig/main/Figure2_GWAS_CTL.png}
 \caption{
 Condition-specific stacked Manhattan plots for control (CTL) lipid GWAS across representative individual-lipid and sum/ratio traits. Columns denote recurrent loci: A, \textit{SORBI\_3006G248300} (individual); B, \textit{SORBI\_3001G276500} (individual); C, \textit{SORBI\_3002G373700} (sum/ratio); D, \textit{SORBI\_3003G141800} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_58780498 ($p_{\mathrm{Wald,min}}=1.37\times10^{-10}$); B, SNP\_53871418 ($p_{\mathrm{Wald,min}}=6.44\times10^{-8}$); C, SNP\_73174964 ($p_{\mathrm{Wald,min}}=7.77\times10^{-13}$); D, SNP\_14021625 ($p_{\mathrm{Wald,min}}=1.30\times10^{-10}$). Recurrent peaks at the same marker positions across multiple traits support a shared/common locus-level signal.
 }
@@ -247,19 +247,19 @@ Condition-specific stacked Manhattan plots for control (CTL) lipid GWAS across r
 
 \subsection*{Recurrent GWAS signals across low-input lipid traits converge on shared stress- and growth-related processes}
 
-We next tested whether recurrent gene–lipid associations under LIN converged on shared biological processes across both individual lipid traits and higher-order class-sum and class-ratio traits. We applied an empirical recurrence filter based on repeated detection across phenotypes. For the individual-lipid GWAS, we retained gene–trait associations with $p \le 1\times10^{-7}$ for each phenotype and counted how often each gene recurred across traits. Under LIN conditions, 141 lipid phenotypes had at least one significant gene association, yielding 10,884 unique candidate genes. Restricting to genes detected in $\geq 7$ phenotypes reduced this to 48 recurrent candidates (approximately the top 0.5\% of the recurrence distribution). Of these, 30 genes had functional annotations in our functional and GO-based summary, while the rest were uncharacterized (ref GO). The most recurrent loci were associated with up to 11 phenotypes, indicating that only a small subset of genes showed repeatedly detectable effects across the LIN lipidome (Table).
+We next tested whether recurrent gene–lipid associations under LIN converged on shared biological processes across both individual lipid traits and higher-order class-sum and class-ratio traits. We applied an empirical recurrence filter based on repeated detection across phenotypes. For the individual-lipid GWAS, we retained gene–trait associations with $p \le 1\times10^{-7}$ for each phenotype and counted how often each gene recurred across traits. Under LIN conditions, 141 lipid phenotypes had at least one significant gene association, yielding 10,884 unique candidate genes. Restricting to genes detected in $\geq 7$ phenotypes reduced this to 48 recurrent candidates (approximately the top 0.5\% of the recurrence distribution) (\ref{tab:T2_lowinput_recurrent_combined}; SuppTable S9) . Of these, 30 genes had functional annotations in our functional and GO-based summary, while the rest were uncharacterized (\cite{GeneOntologyConsortium2026}). The most recurrent loci were associated with up to 11 phenotypes, indicating that only a small subset of genes showed repeatedly detectable effects across the LIN lipidome (\ref{tab:T2_lowinput_recurrent_combined}).
 
-Although this recurrent gene set was not dominated by lipid-metabolic enzymes according to our filtering scheme, its annotations converged on biological processes likely engaged under LIN management. These included nutrient-status signaling and remobilization (tryptophan synthase genes, a phosphate-starvation regulator), cell-wall remodeling and growth modulation (expansin genes, a callose synthase), and defense-associated functions (thaumatin-like and defensin-like proteins, immunity-related kinases) (ref) (Table, Supplementary Table). Together, this pattern indicates that LIN conditions elicit a broader physiological response than nutrient limitation alone, integrating structural remodeling and increased defense. Thus, the recurrent GWAS signals from individual lipid traits appear to capture coordinated stress adaptation and whole-plant acclimation, rather than changes limited to lipid biochemistry.
+Although this recurrent gene set was not dominated by lipid-metabolic enzymes according to our filtering scheme, its annotations converged on biological processes likely engaged under LIN management. These included nutrient-status signaling and remobilization (tryptophan synthase genes, a phosphate-starvation regulator), cell-wall remodeling and growth modulation (expansin genes, a callose synthase), and defense-associated functions (thaumatin-like and defensin-like proteins, immunity-related kinases) (ref) (\ref{tab:T2_lowinput_recurrent_combined}; SuppTable S9). Together, this pattern indicates that LIN conditions elicit a broader physiological response than nutrient limitation alone, integrating structural remodeling and increased defense. Thus, the recurrent GWAS signals from individual lipid traits appear to capture coordinated stress adaptation and whole-plant acclimation, rather than changes limited to lipid biochemistry.
 
-We next tested whether this pattern extended to class-sum and class-ratio. Using the same gene-level threshold ($p \le 1\times10^{-7}$), the combined analysis of class sums and ratios identified 6,516 candidate genes. Restricting attention to genes detected in $\geq 50$ phenotypes yielded 31 highly recurrent candidates (about the top 0.5\%). As with individual lipid species, only a few loci showed repeated effects across the LIN lipidome, but these recurrent loci were enriched for higher-order regulation of lipid-class balance rather than specific molecular lipids (Table; SuppTable).
+We next tested whether this pattern extended to class-sum and class-ratio. Using the same gene-level threshold ($p \le 1\times10^{-7}$), the combined analysis of class sums and ratios identified 6,516 candidate genes. Restricting attention to genes detected in $\geq 50$ phenotypes yielded 31 highly recurrent candidates (about the top 0.5\%) (\ref{tab:T2_lowinput_recurrent_combined}; SuppTable S10). As with individual lipid species, only a few loci showed repeated effects across the LIN lipidome, however, these recurrent loci were enriched for higher-order regulation of lipid-class balance rather than specific molecular lipids.
 
-Functional GO annotation and orthology-based curation showed that these recurrent SR candidates are biased toward processes related to growth, stress acclimation, and regulatory control, rather than canonical lipid metabolism. Growth- and development-related candidates included a pentatricopeptide repeat protein orthologous to the slow-growth regulator \textit{SLO1}, an SS18 N-terminal domain protein implicated in seed and leaf ontogeny, and a DOG1-domain transcription-associated factor (ref). A second subset was linked to abiotic stress acclimation and surface-barrier biosynthesis, including a CER1/WDA1-like aldehyde oxygenase for wax and cutin formation and a cullin-like protein involved in cold- and salt-responsive signaling (ref). Additional defense- and signaling-related loci included a CAP/PR1-like protein, kinase-associated genes, and transport genes implicated in auxin and ion homeostasis (ref). Overall, LIN lipid class sums and ratios appear to report an integrated physiological state shaped by developmental plasticity, stress adaptation, and defense-associated regulatory networks.
+Functional GO annotation and orthology-based curation showed that these recurrent SR candidates are biased toward processes related to growth, stress acclimation, and regulatory control rather than canonical lipid metabolism. Growth- and development-related candidates included a pentatricopeptide repeat protein orthologous to the slow-growth regulator \textit{SLO1}, an SS18 N-terminal domain protein implicated in seed and leaf ontogeny, and a DOG1-domain transcription-associated factor (ref). A second subset was linked to abiotic stress acclimation and surface-barrier biosynthesis, including a CER1/WDA1-like aldehyde oxygenase for wax and cutin formation and a cullin-like protein involved in cold- and salt-responsive signaling (ref). Additional defense- and signaling-related loci included a CAP/PR1-like protein, kinase-associated genes, and transport genes implicated in auxin and ion homeostasis (ref). Overall, LIN lipid class sums and ratios appear to report an integrated physiological state shaped by developmental plasticity, stress adaptation, and defense-associated regulatory networks.
 
 \begin{table*}[!t]
 \centering
 \begin{threeparttable}
 \caption{Representative recurrent candidate genes from low-input GWAS of individual lipid traits and class-sum/class-ratio traits. \textit{Functional support and references for each theme are provided in the main text.}}
-\label{tab:lowinput_recurrent_combined}
+\label{tab:T2_lowinput_recurrent_combined}
 
 % tighter spacing so it fits
 \setlength{\tabcolsep}{4pt}
@@ -330,11 +330,27 @@ Condition-specific stacked Manhattan plots for low-input (LIN) lipid GWAS across
 
 \subsection*{LINEX-based reaction mapping and ratio-network rewiring}
 
-To place lipid associations in a biochemical context, we queried LINEX2 (\cite{Morgat2016Rhea}) for RHEA-annotated reactions linking glycerolipids and glycerophospholipids. The curated subnetwork (Fig.~\ref{fig:fig4_linex_network}A; Supplementary Table~S11) captures four candidate branches connecting DG/MG, TG, and lysophospholipid pools: (i) PC+DG$\leftrightarrow$LPC+TG (LCAT-like), (ii) TG$\leftrightarrow$DG (PNPLA1-labeled lipase branch), (iii) PE+DG$\leftrightarrow$TG+LPE (LRO1/PDAT-like), and (iv) DG+MG$\leftrightarrow$TG (PNPLA3-labeled branch). These links are annotation-based hypotheses and do not directly establish \emph{in vivo} flux direction. As CTL and LIN were sampled in different field years, all LIN--CTL contrasts in this section are interpreted as between-trial compositional differences rather than isolated causal effects of LIN.
+To place lipid associations in a biochemical context, we queried LINEX2 (\cite{Morgat2016Rhea}) for RHEA-annotated reactions linking glycerolipids and glycerophospholipids. The curated subnetwork (Fig.~\ref{fig:Fig4_linex_rewiring_abc}A; Supplementary Table~S11) captures four candidate branches connecting DG/MG, TG, and lysophospholipid pools: (i) PC+DG$\leftrightarrow$LPC+TG (LCAT-like), (ii) TG$\leftrightarrow$DG (PNPLA1-labeled lipase branch), (iii) PE+DG$\leftrightarrow$TG+LPE (LRO1/PDAT-like), and (iv) DG+MG$\leftrightarrow$TG (PNPLA3-labeled branch). These links are annotation-based hypotheses and do not directly establish \emph{in vivo} flux direction. As CTL and LIN were sampled in different field years, all LIN--CTL contrasts in this section are interpreted as between-trial compositional differences rather than isolated causal effects of LIN.
 
-To extend beyond single-edge annotation, we built class log-ratio networks from class totals using the same compositional framework explained in \emph{Methods}.  Within each condition, we computed Spearman correlations among ratio features (3003 possible ratio--ratio edges) and controlled for multiplicity by BH adjustment. Of these 3003 edges, 2102 (CTL) and 2100 (LIN) were significant at BH-adjusted $p<0.05$. For visualization, we retained strong edges defined as BH-adjusted \(p<0.05\) and \(|r|\ge 0.55\), and then plotted the top 140 edges per condition (ranked by \(|r|\)) for matched network density (Supplementary Fig.~\ref{fig:suppfig_ratio_network_ab}A,B).
 
-We then quantified differential rewiring between conditions (Fig.~\ref{fig:fig4_linex_network}C) using edge-wise $\Delta r=r_{\mathrm{LI}}-r_{\mathrm{C}}$. Across all 3003 edges, rewiring classes included 278 sign-flips, 586 gained-in-LIN edges, 588 lost-in-LIN edges, and 257 strength-rewired edges (edge-state definitions in Supplementary Table~SXX). For the displayed high-effect subset (\(|\Delta r|\ge 0.25\), with significance in at least one condition), 98 edges were retained, with 48 sign-flips, 32 lost in LIN, 17 gained in LIN, and 1 strength-rewired edge (significant in both conditions with the same sign but changed magnitude). Representative sign-flip edges include DG/PC--LPC/PS ($r_{\mathrm{C}}=+0.609$, $r_{\mathrm{LI}}=-0.322$, $\Delta r=-0.931$), PC/PG--PG/PS ($-0.581\rightarrow+0.188$, $\Delta r=+0.770$), and PC/PE--PE/PA ($+0.320\rightarrow-0.444$, $\Delta r=-0.764$). The predominance of sign reversals indicates qualitative reorganization of lipid-ratio coordination, not merely uniform scaling of lipid pools.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure4_LINEX_Enriched_Subnetwork_with_CE.png}
+\caption{
+LINEX-supported lipid reaction remodeling between low-input (LI) and control conditions.
+\textbf{A}, LINEX-enriched lipid reaction subnetwork linking candidate reactions to substrate/product lipid species. Reactions include \textit{LCAT} (hypothesized), \textit{PNPLA1}, \textit{LRO1}, and \textit{PNPLA3}; arrows indicate reaction direction.
+\textbf{B}, Differential rewiring network from class-ratio correlations (LI versus control). Edge color denotes rewiring class (gained in LI, lost in LI, rewired strength, or sign-flip), edge width indicates rewiring magnitude, and node size indicates degree.
+\textbf{C}, LINEX reaction-consistency scores (LI $-$ control; log10 scale) comparing products versus substrates for each reaction. Positive values indicate relative product enrichment in LI, negative values indicate relative substrate enrichment in LI; error bars show empirical confidence intervals and asterisks indicate significance.
+Together, panels A--C support a coherent shift in lipid reaction topology under low-input conditions, with both network-level rewiring and directionally consistent reaction-level changes.
+}
+\label{fig:Fig4_linex_rewiring_abc}
+\end{figure}
+
+
+
+To extend beyond single-edge annotation, we built class log-ratio networks from class totals using the same compositional framework explained in \emph{Methods}.  Within each condition, we computed Spearman correlations among ratio features (3003 possible ratio--ratio edges) and controlled for multiplicity by BH adjustment. Of these 3003 edges, 2102 (CTL) and 2100 (LIN) were significant at BH-adjusted $p<0.05$. For visualization, we retained strong edges defined as BH-adjusted \(p<0.05\) and \(|r|\ge 0.55\), and then plotted the top 140 edges per condition (ranked by \(|r|\)) for matched network density (Supplementary Fig.~\ref{fig:S7_supp_ratio_network_ab}A,B).
+
+We then quantified differential rewiring between conditions (Fig.~\ref{fig:Fig4_linex_rewiring_abc}B) using edge-wise $\Delta r=r_{\mathrm{LI}}-r_{\mathrm{C}}$. Across all 3003 edges, rewiring classes included 278 sign-flips, 586 gained-in-LIN edges, 588 lost-in-LIN edges, and 257 strength-rewired edges (edge-state definitions in Supplementary Table~S12). For the displayed high-effect subset (\(|\Delta r|\ge 0.25\), with significance in at least one condition), 98 edges were retained, with 48 sign-flips, 32 lost in LIN, 17 gained in LIN, and 1 strength-rewired edge (significant in both conditions with the same sign but changed magnitude). Representative sign-flip edges include DG/PC--LPC/PS ($r_{\mathrm{C}}=+0.609$, $r_{\mathrm{LI}}=-0.322$, $\Delta r=-0.931$), PC/PG--PG/PS ($-0.581\rightarrow+0.188$, $\Delta r=+0.770$), and PC/PE--PE/PA ($+0.320\rightarrow-0.444$, $\Delta r=-0.764$). The predominance of sign reversals indicates qualitative reorganization of lipid-ratio coordination, not merely uniform scaling of lipid pools.
 
 As a mechanistic cross-check, we translated each LINEX reaction into a simple class-level balance score per sample. For sample \(i\), let \(\ell_{i,c}=\log_{10}(C_{i,c}+\varepsilon_i)\) denote the log-abundance of lipid class \(c\). For each reaction, we computed
 \[
@@ -348,11 +364,11 @@ so that a larger \(S_{i,\mathrm{rxn}}\) indicates a relative enrichment of the p
 \item PNPLA3: \(S_i=\ell_{i,\mathrm{TG}}-\mathrm{mean}(\ell_{i,\mathrm{DG}},\ell_{i,\mathrm{MG}})\).
 \end{itemize}
 
-We compared scores between LIN and CTL using paired, genotype-matched tests (\(n = 355\) pairs) and summarized effects as \(\mathrm{median}(S_{\mathrm{LI}}) - \mathrm{median}(S_{\mathrm{C}})\). Positive LIN–CTL effect sizes indicate a shift toward products, and negative values indicate a shift toward substrates. LIN–CTL effects were positive for PNPLA3 (+0.327), LCAT* (+0.238), and LRO1 (+0.232), and negative for PNPLA1 (-0.268), with BH–adjusted \(p < 10^{-56}\) (Supplementary Table~SXX; Fig.~\ref{fig:fig4_linex_network}E). Thus, branches producing TG-associated product states (and lysophospholipid coproducts in phospholipid-linked transfers) were directionally consistent with the inferred remodeling pattern, while the TG$\rightarrow$DG hydrolytic branch showed the opposite trend.
+We compared scores between LIN and CTL using paired, genotype-matched tests (\(n = 355\) pairs) and summarized effects as \(\mathrm{median}(S_{\mathrm{LI}}) - \mathrm{median}(S_{\mathrm{C}})\). Positive LIN–CTL effect sizes indicate a shift toward products, and negative values indicate a shift toward substrates. LIN–CTL effects were positive for PNPLA3 (+0.327), LCAT* (+0.238), and LRO1 (+0.232), and negative for PNPLA1 (-0.268), with BH–adjusted \(p < 10^{-56}\) (Fig.~\ref{fig:Fig4_linex_rewiring_abc}C;Supplementary Table~S12). Thus, branches producing TG-associated product states (and lysophospholipid coproducts in phospholipid-linked transfers) were directionally consistent with the inferred remodeling pattern, while the TG$\rightarrow$DG hydrolytic branch showed the opposite trend.
 
 These network findings are concordant with the lipidome overview (Fig.~\ref{fig:fig1_lipidomics_landscape}). TG enrichment, SQDG depletion, PS/phospholipid headgroup rebalancing, and LPC/LPE remodeling were identified here as coordinated changes in ratio architecture rather than isolated abundance shifts. Together, LINEX topology, differential rewiring, and reaction-consistency scoring support a coherent between-trial remodeling program and provide mechanistic hypotheses for future within-trial validation.
 
-Finally, we cross-referenced LINEX reaction branches with GWAS candidate genes (Supplementary Table~\ref{tab:supp_linex_gwas_gene_support}; branch-level summary in Supplementary Table~\ref{tab:supp_linex_gwas_branch_support}). LIN showed strong support for LCAT-like and TG/DG-cycle genes, including SORBI\_3001G103800 (LCAT-like 1; 19 LIN traits, 14 reaction-linked), SORBI\_3001G041900 (PNPLA-domain TAG lipase-like; 8 LIN traits, 8 reaction-linked), and SORBI\_3010G170000 (DGAT1; 22 LIN traits, 7 reaction-linked), with best $p$-values ranging from $3.16\times10^{-15}$ to $1.13\times10^{-9}$. These concordant network and genetic signals support a coherent between-trial remodeling program and provide mechanistic hypotheses for future within-trial validation.
+Finally, we cross-referenced LINEX reaction branches with GWAS candidate genes (Supplementary Table S13; branch-level summary in Supplementary Table S14). LIN showed strong support for LCAT-like and TG/DG-cycle genes, including SORBI\_3001G103800 (LCAT-like 1; 19 LIN traits, 14 reaction-linked), SORBI\_3001G041900 (PNPLA-domain TAG lipase-like; 8 LIN traits, 8 reaction-linked), and SORBI\_3010G170000 (DGAT1; 22 LIN traits, 7 reaction-linked), with best $p$-values ranging from $3.16\times10^{-15}$ to $1.13\times10^{-9}$. These concordant network and genetic signals support a coherent between-trial remodeling program and provide mechanistic hypotheses for future within-trial validation.
 
 \begin{table*}[!ht]
 \centering
@@ -381,7 +397,7 @@ Our lipidomics analysis indicates that the SAP undergoes substantial lipid remod
 
 \subsection{Lipid oxidation, neutral-lipid turnover, and isoprenoid precursor supply in CTL}
 
-Within the CTL condition, recurrent GWAS candidates included loci linked to lipid and isoprenoid metabolism. One representative signal, \texttt{SORBI\_3006G248300} belongs to a lipoxygenase clade involved in oxylipin biosynthesis. Its homolog in maize, \textit{ZmLOX6} oxygenates polyunsaturated fatty acids, generating hydroperoxide intermediates and downstream oxylipins. Its transcript levels are strongly regulated by hormone- and pathogen-related stimuli, being induced by jasmonic acid and repressed by ABA, salicylic acid, and ethylene in the reported system (ref). This supports interpreting a LOX6-like association in sorghum as standing genetic variation in a lipid-oxidation module that affects the production of lipid-derived metabolites and thus lipid profiles under CTL conditions.
+Within the CTL condition, recurrent GWAS candidates included loci linked to lipid and isoprenoid metabolism. One representative signal, \texttt{SORBI\_3006G248300}, belongs to a lipoxygenase clade involved in oxylipin biosynthesis. Its homolog in maize, \textit{ZmLOX6} oxygenates polyunsaturated fatty acids, generating hydroperoxide intermediates and downstream oxylipins. Its transcript levels are strongly regulated by hormone- and pathogen-related stimuli, being induced by jasmonic acid and repressed by ABA, salicylic acid, and ethylene in the reported system (ref). This supports interpreting a LOX6-like association in sorghum as standing genetic variation in a lipid-oxidation module that affects the production of lipid-derived metabolites and thus lipid profiles under CTL conditions.
 
 A second candidate in the same locus group is \texttt{SORBI\_3006G248100} (orthologous to \textit{AtOBL1}). \textit{AtOBL1} localizes to lipid droplets and acts as a lipase on TG, DG, and MG, directly modulating acyl flux among storage and intermediate glycerolipid pools. In a lipid-focused GWAS, an \textit{OBL1}-like association most conservatively highlights a candidate regulator of TG/DG/MG interconversion and acyl remobilization, rather than a single deterministic shift in net storage versus mobilization (ref).
 
@@ -660,6 +676,26 @@ Lower triangle shows correlation coefficients; upper triangle shows significance
 \end{figure*}
 
 
+
+% =========================      
+% SUPP FIGURE S7
+% =========================                                                              
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_tmp_RatioNetwork_AB.png}
+\caption{
+Condition-specific class-ratio correlation networks.
+\textbf{A}, Control network.
+\textbf{B}, Low-input network.
+Nodes represent lipid class ratios, edge color indicates the sign and magnitude of correlation (red, positive; blue, negative), edge width scales with absolute correlation strength, and node size indicates node degree.
+Networks were constructed from pairwise ratio correlations and filtered to retain strong, significant edges (Benjamini--Hochberg adjusted $p<0.05$; high-$|\rho|$ subset), highlighting the most connected ratio modules under each condition.
+Differences in connectivity and module composition between A and B indicate condition-dependent rewiring of lipid class-ratio structure.
+}
+\label{fig:S7_supp_ratio_network_ab}
+\end{figure}
+
+
 \clearpage
 
 
@@ -748,44 +784,44 @@ and jackknife stability scores.
 \makeatother
 \label{S6c_Table}                                                                                  
 \textbf{Species counts by superclass.} Number of lipid species detected per lipid superclass (glycerolipids, glycerophospholipids, sphingolipids, etc.) in each condition.                      
+                                                                                                                                                      
                                                                                                  
 % --- Table S7 ---                                                                                 
-\paragraph*{S7 Table.}
+\paragraph*{S7 Table.}    
 \phantomsection
-\makeatletter 
-\def\@currentlabelname{S7 Table}
+\makeatletter
+\def\@currentlabelname{S7 Table} 
 \makeatother
 \label{S7_Table}                                                                                   
-\textbf{OPLS-DA VIP ratios.} Top discriminatory class ratios from OPLS-DA analysis ranked by Variable Importance in Projection (VIP) scores, with VIP $>$ 1 indicating significant contribution 
-to class separation.                                                                               
+\textbf{GWAS candidate genes for individual lipid traits.} Annotated candidate genes within 25 kb of significant SNPs from GWAS of individual lipid species under CTL conditions.               
                                                                                                  
 % --- Table S8 ---                                                                                 
-\paragraph*{S8 Table.}    
+\paragraph*{S8 Table.}
 \phantomsection
 \makeatletter
 \def\@currentlabelname{S8 Table} 
 \makeatother
 \label{S8_Table}                                                                                   
-\textbf{GWAS candidate genes for individual lipid traits.} Annotated candidate genes within 25 kb of significant SNPs from GWAS of individual lipid species under LowInput conditions.               
-                                                                                                 
+\textbf{GWAS candidate genes for lipid sum/ratio traits.} Annotated candidate genes within 25 kb of significant SNPs from GWAS of lipid class sums and ratios under CTL conditions.
+
 % --- Table S9 ---                                                                                 
-\paragraph*{S9 Table.}
+\paragraph*{S9 Table.}    
 \phantomsection
 \makeatletter
 \def\@currentlabelname{S9 Table} 
 \makeatother
 \label{S9_Table}                                                                                   
-\textbf{GWAS candidate genes for lipid sum/ratio traits.} Annotated candidate genes within 25 kb of significant SNPs from GWAS of lipid class sums and ratios under LowInput conditions.              
+\textbf{GWAS candidate genes for individual lipid traits.} Annotated candidate genes within 25 kb of significant SNPs from GWAS of individual lipid species under LIN conditions.               
                                                                                                  
-% --- Table S10 ---                                                                                
-\paragraph*{S10 Table.}  
+% --- Table S10 ---                                                                                 
+\paragraph*{S10 Table.}
 \phantomsection
 \makeatletter
 \def\@currentlabelname{S10 Table} 
 \makeatother
-\label{S10_Table}                                                                                  
-\textbf{GWAS functional category summary.} Summary of GWAS hits organized by functional category (Lipid metabolism, Nitrogen response, Phosphorus response, Cold stress) with gene counts and representative candidates.                                                                         
-                                                                                                 
+\label{S10_Table}                                                                                   
+\textbf{GWAS candidate genes for lipid sum/ratio traits.} Annotated candidate genes within 25 kb of significant SNPs from GWAS of lipid class sums and ratios under LIN conditions.              
+                       
 % --- Table S11 ---                                                                                
 \paragraph*{S11 Table.}       
 \phantomsection
@@ -793,89 +829,7 @@ to class separation.
 \def\@currentlabelname{S11 Table} 
 \makeatother
 \label{S11_Table}                                                                                  
-\textbf{LINEX lipid reactions with RHEA annotations.} Enzymatic reactions from the LINEX lipid network database with associated gene symbols, reaction types, substrates, products, and RHEA database identifiers.                                                                              
-                                                                                                 
-% --- Table S12 ---                                                                                
-\paragraph*{S12 Table.} 
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S12 Table} 
-\makeatother
-\label{S12_Table}                                                                                  
-\textbf{Lipid module assignments.} Assignment of 226 lipid species to correlation-derived modules based on hierarchical clustering of Spearman correlation distances, including module ID and dominant lipid class.                                                                              
-                                                                                                 
-% --- Table S13 ---                                                                                
-\paragraph*{S13 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S13 Table} 
-\makeatother
-\label{S13_Table}                                                                                  
-\textbf{Lipid module summary.} Summary statistics for each lipid module including number of lipids, constituent classes, and dominant class designation.                                              
-                                                                                                 
-% --- Table S14 ---                                                                                
-\paragraph*{S14 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S14 Table} 
-\makeatother
-\label{S14_Table}                                                                                  
-\textbf{Module SHAP importance for plant height (our dataset).} Mean absolute SHAP values for each lipid module predicting plant height in our dataset, ranked by importance with bootstrap confidence intervals.                                                                                        
-                                                                                                 
-% --- Table S15 ---                                                                                
-\paragraph*{S15 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S15 Table} 
-\makeatother
-\label{S15_Table}                                                                                  
-\textbf{Module SHAP importance for plant height (\cite{Boyles2016}).} Mean absolute SHAP values for each lipid module predicting plant height in the independent \cite{Boyles2016} dataset for cross-validation of module importance rankings.                                                    
-                                                                                                 
-% --- Table S16 ---                                                                                
-\paragraph*{S16 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S16 Table} 
-\makeatother
-\label{S16_Table}                                                                                  
-\textbf{M1 module abundance in tall vs short plants.} Statistical comparison of M1 (TG-dominated module) lipid abundances between tall and short plant height quartiles.                            
-                                                                                                 
-% --- Table S17 ---                                                                                
-\paragraph*{S17 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S17 Table} 
-\makeatother
-\label{S17_Table}                                                                                  
-\textbf{M1 per-lipid correlations with plant height.} Pearson correlation coefficients between individual lipids within module M1 and plant height phenotype.                                     
-                                                                                                 
-% --- Table S18 ---                                                                                
-\paragraph*{S18 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S18 Table} 
-\makeatother
-\label{S18_Table}                                                                                  
-\textbf{Flowering time $R^2$ across environments.} Cross-validated $R^2$ values for XGBoost module-based prediction of flowering time across five environments (Ours\_DTA, MI20, NE20, IA21\_1,
-IA21\_2).                                                                                         
-                                                                                                 
-% --- Table S19 ---                                                                                
-\paragraph*{S19 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S19 Table} 
-\makeatother
-\label{S19_Table}                                                                                  
-\textbf{Flowering time module SHAP across environments.} Module-level SHAP importance values for flowering time prediction in each of the five environments evaluated.                              
-                                                                                                 
-% --- Table S20 ---                                                                                
-\paragraph*{S20 Table.}
-\phantomsection
-\makeatletter
-\def\@currentlabelname{S20 Table} 
-\makeatother
-\label{S20_Table}                                                                                  
-\textbf{Flowering time module consistency.} Number of environments in which each lipid module appears in the top 10 SHAP importance rankings, identifying consistently important modules across environments.                      
+\textbf{LINEX lipid reactions with RHEA annotations.} Enzymatic reactions from the LINEX lipid network database with associated gene symbols, reaction types, substrates, products, and RHEA database identifiers.
 
 \end{document}
 
