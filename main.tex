@@ -399,14 +399,20 @@ TG--DG synthesis arm & SORBI\_3009G034600 (DGAT-like) & 3 & 2 & $1.75\times10^{-
 
 The SoLD Shiny application provides an integrated interface to explore lipid phenotypes and their genetic associations in the Sorghum Association Panel across field environments. Users can browse lipid abundance patterns, visualize condition contrasts, and then query the corresponding GWAS outputs and recurrence-based gene summaries within the same workflow. A key feature is hierarchical filtering (class $\rightarrow$ subclass $\rightarrow$ sub-subclass $\rightarrow$ individual lipid), with support for multiple phenotype representations, including individual traits, class sums, and class ratios. The application also supports viewing traits under different data representations (e.g., Raw, \%TIC, and compositional modes such as CLT/CLR), enabling users to assess whether a pattern is driven by absolute abundance differences or by redistribution within a compositional lipidome.
 
-Figure~\ref{fig:Fig5} illustrates this end-to-end use case. In the Boxplots module (Fig.~\ref{fig:Fig5}A), selecting Class = Terpenoid and Subclass = Triterpenoid reveals a clear shift between conditions for the summed triterpenoid phenotype, with a significant between-condition contrast (Wilcoxon $p < 0.001$). The same phenotype context can then be carried into the Gene Hits module (Fig.~\ref{fig:Fig5}B), which summarizes candidate loci after applying consistent filters (dataset, trait source, significance threshold, and lipid class/subclass). Under this filtered view, \texttt{SORBI\_3008G142400} is highlighted among the returned candidate genes and is annotated as a terpene cyclase/mutase family member, which is consistent with enzymatic steps expected in triterpenoid biosynthesis.
+Figure~\ref{fig:Fig5_shiny_app} illustrates this end-to-end use case. In the Boxplots module (Fig.~\ref{fig:Fig5_shiny_app}A), selecting Class = Terpenoid and Subclass = Triterpenoid reveals a clear shift between conditions for the summed triterpenoid phenotype, with a significant between-condition contrast (Wilcoxon $p < 0.001$). The same phenotype context can then be carried into the Gene Hits module (Fig.~\ref{fig:Fig5_shiny_app}B), which summarizes candidate loci after applying consistent filters (dataset, trait source, significance threshold, and lipid class/subclass). Under this filtered view, \texttt{SORBI\_3008G142400} is highlighted among the returned candidate genes and is annotated as a terpene cyclase/mutase family member, which is consistent with enzymatic steps expected in triterpenoid biosynthesis.
 
 This genetic signal is also biologically plausible in light of prior sorghum work showing that adult leaf wax chemistry can be triterpenoid-rich and that the \textit{Sobic.008G142400.1} locus encodes an oxidosqualene cyclase contributing to major sorghum leaf triterpenoids \citep{Busta2021}. In SoLD, we treat this concordance as supportive context that helps prioritize candidates for follow-up, rather than as proof that the measured triterpenoid phenotype derives exclusively from surface wax. Overall, the Shiny app is designed to make these lipid-to-locus connections transparent and reproducible, and to facilitate rapid hypothesis generation and candidate prioritization from population-scale lipidomics data.
 
 
 
-%\caption{\textbf{SoLD Shiny app example workflow for triterpenoid traits.}
-%(A) Boxplots module showing the distribution and between-condition contrast for the summed triterpenoid subclass after filtering by Class = Terpenoid and Subclass = Triterpenoid. (B) Gene Hits module showing candidate genes returned under the same lipid-class/subclass filter context, with recurrence and strength-of-association summaries for the selected dataset and trait source.}
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure5_shiny_triterpenoid_AB.png}
+\caption{\textbf{SoLD Shiny app example workflow for triterpenoid traits.}
+(A) Boxplots module showing the distribution and between-condition contrast for the summed triterpenoid subclass after filtering by Class = Terpenoid and Subclass = Triterpenoid. (B) Gene Hits module showing candidate genes returned under the same lipid-class/subclass filter context, with recurrence and strength-of-association summaries for the selected dataset and trait source.}
+\label{fig:Fig5_shiny_app}
+\end{figure*}
+
 
 
 
